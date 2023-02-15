@@ -1,5 +1,5 @@
 @php
 
-echo "wrong grahams oi";
+echo "wrong grahams oi, ok!";
 
 @end
