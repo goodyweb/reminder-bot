@@ -2,4 +2,4 @@
 
 echo "wrong grahams oi, ok!";
 
-@end
+@endphp
