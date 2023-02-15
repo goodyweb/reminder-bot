@@ -1,3 +1,3 @@
 <?php
-echo "hello world! in Goody Web Solutions Inc.";
+echo "Hello World! in Goody Web Solutions Inc.";
 ?>
