@@ -1,0 +1,1 @@
+resources/views/sample.blade.php
