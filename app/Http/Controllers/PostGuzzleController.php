@@ -7,14 +7,33 @@ use Illuminate\Support\Facades\Http;
  
 class PostGuzzleController extends Controller
 {
+
+    public function triggerNotificstion(){
+        
+    }
     public function notification()
     {
-        return Http::post('https://discord.com/api/webhooks/1075708882908885063/gZ5ngJlKh2o43RTMJeA8ZNdVM_pwAUCiVNN5aWiNomCgHd_GCHqpwTvmKJ-wQ8uVdbkr', [
-            'content' => "Remind Me!",
+
+        return Http::post('https://discord.com/api/webhooks/1076018435655475290/kPKW5L5Nfeh6TRuvqzQpYAdW8qLAVpfpOxllTwgzvdKf4UbHM1FlyUNMEzDzpw-Wo8rz', [
+            'content' => "Remind Me every minute!",
             'embeds' => [
                 [
-                    'title' => "An awesome new notification!",
-                    'description' => "Discord Webhooks are great!",
+                    'title' => "Reminders everyMinute!",
+                    'description' => "it will reminds every minute!",
+                    'color' => '7506394',
+                ]
+            ],
+        ]);
+
+    }
+    public function notification1()
+    {
+        return Http::post('https://discord.com/api/webhooks/1076018435655475290/kPKW5L5Nfeh6TRuvqzQpYAdW8qLAVpfpOxllTwgzvdKf4UbHM1FlyUNMEzDzpw-Wo8rz', [
+            'content' => "Remind Me every five minutes!",
+            'embeds' => [
+                [
+                    'title' => "Reminders every five Minute!",
+                    'description' => "it will reminds every 5 minutes!",
                     'color' => '7506394',
                 ]
             ],

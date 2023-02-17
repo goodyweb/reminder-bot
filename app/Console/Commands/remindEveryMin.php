@@ -4,21 +4,21 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 
-class sendDiscordNotif extends Command
+class remindEveryMin extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'make:reminder';
+    protected $signature = 'command:name';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Reminder discord';
+    protected $description = 'Command description';
 
     /**
      * Execute the console command.
