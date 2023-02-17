@@ -9,7 +9,7 @@ class DiscordNotificationController extends Controller
 {
     public function notification()
     {
-        return Http::post('https://discord.com/api/webhooks/1075674306446635058/WtJOVdaft8lx8cw9A8S11YI6uxE2fAv-JBH8WYGKG0teQlNG-mcQrP7GSe0cjk9wxRgz', [
+        return Http::post('https://discord.com/api/webhooks/1075711731327848478/RsKhkCk68Bcj9FRU7nFhMrmBlMpCpxKGCYEbO9ntMdwW57b9JNayPXMn8_QT7Yhjx9jn', [
             'content' => "Learning how to send notifications with goodyweb.com.ph!",
             'embeds' => [
                 [
