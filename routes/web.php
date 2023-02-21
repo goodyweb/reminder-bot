@@ -3,7 +3,6 @@
 use App\Http\Controllers\PostGuzzleController;
 use App\Http\Controllers\DiscordNotificationController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\CountdownsController;
@@ -44,7 +43,9 @@ Route::post('delete-user', [UsersController::class, 'destroy']);
 
 //Route::get('notification',[PostGuzzleController::class,'notification']);
 Route::get('testview',[PostGuzzleController::class,'testView']);
-Route::get('/dashboard',[PostGuzzleController::class,'notification'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('dashboard',[DashboardController::class,'index'])->middleware(['auth', 'verified'])->name('dashboard');
+
+
 
 
 
@@ -60,8 +61,6 @@ Route::get('posts',[PostGuzzleController::class,'index']);
 Route::get('posts/store', [PostGuzzleController::class, 'store' ]);
 
 Route::get('notification', [DiscordNotificationController::class, 'notification' ]);
-
-Route::resource('dashboard', DashboardController::class);
 Route::resource('products', ProductsController::class);
 Route::resource('reminders', RemindersController::class);
 

@@ -14,7 +14,7 @@ class DashboardController extends Controller
 public function index()
 {
     $reminders = Reminders::all();
-    return view('dashboard', compact('reminders'));
+    return view('dashboard')->with('reminders', $reminders);
 }
 
 public function create()
