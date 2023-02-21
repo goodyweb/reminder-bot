@@ -12,7 +12,7 @@
         </div>
     </div>
 
-    <div class="card">
+    <div class="card mb-3 mb-md-0">
         <div class="card-body">
 
             @if ($errors->any())
@@ -47,6 +47,11 @@
                     <label for="footer" class="form-label">Footer<span class="text-danger">*</span></label>
                     <input id="footer" name="footer" type="text" class="form-control" placeholder="Footer">
                 </div>
+
+            <div class="form-control mb-4">
+                <label for="dateend" class="form-label">End Date and Time: <span class="text-danger">*</span></label>
+                <input class="form-control mb-4"type ="datetime-local" id="dateend" name="dateend" value="2018-07-22" min="2018-01-01" max="2030-12-31">
+            </div>
                 <div class="mb-3">
                     <label for="image" class="form-label">Reminder Image <span class="text-danger">*</span></label>
                     <input id="image" name="image" type="file" class="form-control">
@@ -63,4 +68,3 @@
 
     </div>
 @endsection
-
