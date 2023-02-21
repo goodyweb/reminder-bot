@@ -3,6 +3,10 @@
 use App\Http\Controllers\PostGuzzleController;
 use App\Http\Controllers\DiscordNotificationController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PostsController;
+use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\CountdownsController;
+use App\Http\Controllers\RemindersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,3 +40,20 @@ Route::get('posts',[PostGuzzleController::class,'index']);
 Route::get('posts/store', [PostGuzzleController::class, 'store' ]);
 
 Route::get('notification', [DiscordNotificationController::class, 'notification' ]);
+Route::resource('products', ProductsController::class);
+Route::resource('reminders', RemindersController::class);
+
+Route::prefix('posts')->group(function () {
+    Route::get('index', [PostsController::class, 'index']);
+    Route::post('store', [PostsController::class, 'store']);
+    Route::post('edit', [PostsController::class, 'edit']);
+    Route::delete('destroy', [PostsController::class, 'destroy']);
+});
+
+Route::prefix('countdowns')->group(function () {
+    Route::get('show', [CountdownsController::class, 'show']);
+    Route::post('store', [CountdownsController::class, 'store']);
+    Route::post('edit', [CountdownsController::class, 'edit']);
+    Route::delete('destroy', [CountdownsController::class, 'destroy']);
+});
+
