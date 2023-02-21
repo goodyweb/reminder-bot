@@ -7,11 +7,11 @@
     "require": {
         "php": "^8.0.2",
         "guzzlehttp/guzzle": "^7.5",
+        "laravel-notification-channels/discord": "^1.4",
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
-        
-        "yajra/laravel-datatables-oracle": "^9.19",
-        "laravel/tinker": "^2.7"
+        "laravel/tinker": "^2.7",
+        "yajra/laravel-datatables-oracle": "^10.3"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

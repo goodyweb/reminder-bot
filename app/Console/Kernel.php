@@ -1,12 +1,17 @@
 <?php
 
 namespace App\Console;
-
+use App\Console\Commands;
+use DB;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
 class Kernel extends ConsoleKernel
 {
+
+    protected $commands = [            
+        Commands\remindCommand::class
+    ];
     /**
      * Define the application's command schedule.
      *
@@ -15,7 +20,9 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+     
+      $schedule->command('command:remind')->everyMinute();
+   
     }
 
     /**
@@ -25,6 +32,8 @@ class Kernel extends ConsoleKernel
      */
     protected function commands()
     {
+        
+
         $this->load(__DIR__.'/Commands');
 
         require base_path('routes/console.php');
