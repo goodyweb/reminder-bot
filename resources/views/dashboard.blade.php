@@ -38,7 +38,7 @@
                                     <td>{{$val->title}}</td>
                                     <td>{{$val->content}}</td>
                                     <td>{{$val->description}}</td>
-                                    <td> <a href="#" class="btn btn-outline-primary btn-sm">View Details </a></td>
+                                    <td> <a href="{{route('reminders.show', $val->id)}}" class="btn btn-outline-primary btn-sm">View Details </a></td>
                                 </tr>
                                 @endforeach
                                 </tbody>
