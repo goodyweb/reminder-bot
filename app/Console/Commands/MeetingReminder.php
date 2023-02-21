@@ -41,3 +41,4 @@ class MeetingReminder extends Command
             $booking->save();
     }
 }
+}

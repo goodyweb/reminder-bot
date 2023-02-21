@@ -45,10 +45,7 @@ Route::post('delete-user', [UsersController::class, 'destroy']);
 Route::get('testview',[PostGuzzleController::class,'testView']);
 Route::get('/dashboard',[PostGuzzleController::class,'notification'])->middleware(['auth', 'verified'])->name('dashboard');
 
-require __DIR__.'/auth.php';
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
