@@ -31,9 +31,9 @@
                         <th class="pt-0">Description</th>
                         <th class="pt-0">Webhook Link</th>
                         <th class="pt-0">Footer</th>
-                        <th class="pt-0">Reminder Image</th>
-                        <th class="pt-0">Created At</th>
-                        <th class="pt-0">Actions</th>
+                        <th class="pt-0">Date End</th>
+                        <th class="pt-0">Rerminder Image</th>
+                        <th class="text-center">Actions</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -45,8 +45,8 @@
                             <td>{{$val->description}}</td>
                             <td>{{$val->webhook}}</td>
                             <td>{{$val->footer}}</td>
-                            <td><img alt="img" src="/img/{{ $val->image }}" width="100px"></td>
-                            <td>{{ $val->created_at }}</td>
+                            <td>{{$val->dateend}}</td>
+                            <td><img alt="img" src="/img/{{ $val->image }}" class="text-center" width="100px" height="100px"></td>
                             <td>
                                 <form action="{{ route('reminders.destroy',$val->id) }}" method="POST">
                                     {{ csrf_field()  }}

@@ -48,6 +48,11 @@
                     <label for="footer" class="form-label">Reminder Footer<span class="text-danger">*</span></label>
                     <input value="{{$reminder->footer}}" id="footer" name="footer" type="footer" class="form-control" placeholder="Reminder Footer">
                 </div>
+
+                <div class="mb-3">
+                    <label for="dateend" class="form-label">End Date and Time: <span class="text-danger">*</span></label>
+                    <input value="{{$reminder->dateend}}" type ="datetime-local" id="dateend" name="dateend" value="2018-07-22" min="2018-01-01" max="2030-12-31">
+                </div>
                 
                 <div class="mb-3">
                     <label for="image" class="form-label">Reminder Image Data <span class="text-danger">*</span></label>
