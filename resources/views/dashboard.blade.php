@@ -58,8 +58,8 @@
                                 <div class="col">
                                     <h3 class="mb-0">Events</h3>
                                 </div>
-                                <div class="col text-right">
-                                    <a href="/events" class="btn btn-sm btn-warning">See all</a>
+                                <div class="col text-left">
+                                    <a href="{{route('reminders.index')}}" class="btn btn-sm btn-warning">See all</a>
                                 </div>
                             </div>
                         </div>
