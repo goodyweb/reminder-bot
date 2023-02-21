@@ -20,8 +20,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-     // $schedule->call('App\Http\Controllers\PostGuzzleController@notification1')->everyFiveMinutes();
-     // $schedule->call('App\Http\Controllers\PostGuzzleController@notification')->everyMinute();
+     
       $schedule->command('command:remind')->everyMinute();
    
     }

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Console\Commands;
-
+use App\Controllers\PostGuzzleController;
 use Illuminate\Console\Command;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Support\Facades\Http;
@@ -25,16 +25,21 @@ class remindCommand extends Command
    
     public function handle()
     {
-        
-        $tasks = Task::with('user')
-                    ->where('reminder_at', '<=', now()->toDateTimeString())
-                    ->get();
-        
-                foreach ($tasks as $task) {
-                    $task->user->notify(new TaskReminderNotification($task));
-                    $task->update(['reminder_at' => NULL]);
-                }
-        
-                return 0;
+     
+
+       return app()->call('App\Http\Controllers\PostGuzzleController@notification');
+
+        /** Http::post('https://discord.com/api/webhooks/1076018435655475290/kPKW5L5Nfeh6TRuvqzQpYAdW8qLAVpfpOxllTwgzvdKf4UbHM1FlyUNMEzDzpw-Wo8rz', [
+            'content' => "Remind Me every minute!",
+            'embeds' => [
+                [
+                    'title' => "Reminders everyMinute!",
+                    'description' => "it will reminds every minute!",
+                    'color' => '7506394',
+                ]
+            ],
+        ]);
+        return 0;
+        */
     }
 }

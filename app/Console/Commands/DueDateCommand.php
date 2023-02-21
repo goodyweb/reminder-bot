@@ -4,7 +4,7 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 
-class remindEveryMin extends Command
+class DueDateCommand extends Command
 {
     /**
      * The name and signature of the console command.
