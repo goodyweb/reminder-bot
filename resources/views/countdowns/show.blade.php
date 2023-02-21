@@ -48,7 +48,7 @@
                             <input id="title" name="title" type="text" class="form-control" placeholder="Countdown Title">
                         </div>
                         <div class="mb-3">
-                            <label for="event" class="form-label">Events</span>
+                            <label for="event" class="form-label">Events</label>
                             <input id="event" name="event" type="text" class="form-control" placeholder="Event Details">
                         </div>
                         
