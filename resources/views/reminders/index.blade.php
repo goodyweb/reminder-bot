@@ -45,7 +45,9 @@
                             <td>{{$val->description}}</td>
                             <td>{{$val->webhook}}</td>
                             <td>{{$val->footer}}</td>
-                            <td>{{$val->dateend}}</td>
+                            <?php $date=date_create($val->dateend); ?>
+                            <td><?php echo date_format($date, "F d Y"); ?></td>
+
                             <td><img alt="img" src="/img/{{ $val->image }}" class="text-center" width="100px" height="100px"></td>
                             <td>
                                 <form action="{{ route('reminders.destroy',$val->id) }}" method="POST">
