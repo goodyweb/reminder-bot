@@ -47,16 +47,8 @@
                             <td>{{$val->footer}}</td>
                             <?php $date=date_create($val->dateend); ?>
                             <td>
-                            <div id="countdown">
-                                
-                                    
-                                    <p><span id="days"></span>Days</p>
-                                    
-                                    <p><span id="hours"></span>Hours</p>
-                                    <p><span id="minutes"></span>Minutes</p>
-                                    <p><span id="seconds"></span>Seconds</p>
-                                
-                            </div></td>
+                                {{ $carbonTime }}
+                            </td>
 
                             <td><img alt="img" src="/img/{{ $val->image }}" class="text-center" width="100px" height="100px"></td>
                             <td>

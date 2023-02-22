@@ -1,6 +1,8 @@
 <?php
  
 namespace App\Http\Controllers;
+
+use Carbon\carbon;
 use App\Models\User;
 use App\Models\Reminders;
 use Illuminate\Http\Request;
@@ -64,7 +66,8 @@ class PostGuzzleController extends Controller
     }
     public function show($id)
     {
+        $carbonTime = Carbon::now()->toDateTimeString();
         $results = Reminders::find($id);
-        return view('reminder_view.show', compact('results'));
+        return view('reminder_view.show', compact('results', 'carbonTime'));
     }
 }
