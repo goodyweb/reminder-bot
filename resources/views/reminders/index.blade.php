@@ -46,7 +46,17 @@
                             <td>{{$val->webhook}}</td>
                             <td>{{$val->footer}}</td>
                             <?php $date=date_create($val->dateend); ?>
-                            <td><?php echo date_format($date, "F d Y"); ?></td>
+                            <td>
+                            <div id="countdown">
+                                
+                                    
+                                    <p><span id="days"></span>Days</p>
+                                    
+                                    <p><span id="hours"></span>Hours</p>
+                                    <p><span id="minutes"></span>Minutes</p>
+                                    <p><span id="seconds"></span>Seconds</p>
+                                
+                            </div></td>
 
                             <td><img alt="img" src="/img/{{ $val->image }}" class="text-center" width="100px" height="100px"></td>
                             <td>
@@ -59,6 +69,54 @@
                                 </form>
                             </td>
                         </tr>
+<script>
+
+ (function () {
+  const second = 1000,
+        minute = second * 60,
+        hour = minute * 60,
+        day = hour * 24;
+
+  //this is for countdown view
+  
+  let today = new Date(),
+      t = {!! json_encode($val->dateend) !!}.split(/[- :]/),
+      endDate = new Date(t[0], t[1] - 1, t[2], t[3] || 0, t[4] || 0, t[5] || 0),
+      dd = String(today.getDate()).padStart(2, "0"),
+      mm = String(today.getMonth() + 1).padStart(2, "0"),
+      yyyy = today.getFullYear(),
+      nextYear = endDate.getFullYear(),
+      dd1 = String(endDate.getDate()).padStart(2, "0"),
+      mm1 = String(endDate.getMonth() + 1).padStart(2, "0"),
+      birthday = mm1 + "/" + dd1 + "/" + yyyy;
+  today = mm + "/" + dd + "/" + yyyy;
+  if (today > birthday) {
+    birthday = dayMonth + nextYear;
+  }
+  //end
+  
+  const countDown = new Date(birthday).getTime(),
+      x = setInterval(function() {    
+
+        const now = new Date().getTime(),
+              distance = countDown - now;
+
+        document.getElementById("days").innerText = Math.floor(distance / (day)),
+          document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
+          document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
+          document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+
+        //do something later when date is reached
+        if (distance < 0) {
+          document.getElementById("headline").innerText = "Times Up!";
+          document.getElementById("countdown").style.display = "none";
+          document.getElementById("content").style.display = "block";
+          clearInterval(x);
+        }
+        //seconds
+      }, 0)
+  }());
+    </script>
                     @endforeach
                     </tbody>
                 </table>
@@ -67,4 +125,6 @@
 
         
     </div>
+
+    
 @endsection

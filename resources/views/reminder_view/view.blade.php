@@ -1,3 +1,8 @@
+@extends('templates.master')
+
+
+@section('content')
+
 <style type="text/css">
    /* general styling */
    :root {
@@ -78,55 +83,10 @@ li span {
   }
 }
 
-
-    
 </style>
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Reminder') }}
-        </h2>
-    </x-slot>
-<body>
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                  
-                    {{ __("hello!") }}
-                    <br><center>
-                    <?php $date=date_create($results->stopped_at);
-                        echo date_format($date, "d F Y H:i:s"); 
-                    ?>
-                   </center>
-                    <div class="container1">
-                       
-                            <h1 id="headline">Countdown to my {{$results->content}}</h1>
-                            <div id="countdown">
-                                <ul>
-                                    
-                                <li><span id="days"></span>Days</li>
-                                
-                                <li><span id="hours"></span>Hours</li>
-                                <li><span id="minutes"></span>Minutes</li>
-                                <li><span id="seconds"></span>Seconds</li>
-                                </ul>
-                            </div>
-                            <div id="content" class="emoji">
-                                <span>🥳</span>
-                                <span>🎉</span>
-                                <span>🎂</span>
-                            </div>
-                       
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
-    </x-app-layout>
- 
- <script>
+
+
+<script>
 
  (function () {
   const second = 1000,
@@ -137,7 +97,7 @@ li span {
   //this is for countdown view
   
   let today = new Date(),
-      t = {!! json_encode($results->stopped_at) !!}.split(/[- :]/),
+      t = {!! json_encode($results->dateend) !!}.split(/[- :]/),
       endDate = new Date(t[0], t[1] - 1, t[2], t[3] || 0, t[4] || 0, t[5] || 0),
       dd = String(today.getDate()).padStart(2, "0"),
       mm = String(today.getMonth() + 1).padStart(2, "0"),
@@ -174,3 +134,43 @@ li span {
       }, 0)
   }());
     </script>
+
+<body>
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-gray-900">
+                  
+                    {{ __("hello!") }}
+                    <br><center>
+                    <?php $date=date_create($results->dateend);
+                        echo date_format($date, "d F Y H:i:s"); 
+                    ?>
+                   </center>
+                    <div class="container1">
+                       
+                            <h1 id="headline">Countdown to my {{$results->content}}</h1>
+                            <div id="countdown">
+                                <ul>
+                                    
+                                <li><span id="days"></span>Days</li>
+                                
+                                <li><span id="hours"></span>Hours</li>
+                                <li><span id="minutes"></span>Minutes</li>
+                                <li><span id="seconds"></span>Seconds</li>
+                                </ul>
+                            </div>
+                            <div id="content" class="emoji">
+                                <span>🥳</span>
+                                <span>🎉</span>
+                                <span>🎂</span>
+                            </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+   
+@endsection
