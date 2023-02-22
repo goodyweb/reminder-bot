@@ -2,7 +2,7 @@
  
 namespace App\Http\Controllers;
 use App\Models\User;
-use App\Models\Reminder;
+use App\Models\Reminders;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Console\Scheduling\Schedule;
@@ -17,7 +17,7 @@ class PostGuzzleController extends Controller
     {
 
         //$results = User::all();
-        $results = Reminder::all();
+        $results = Reminders::all();
         //$results = Reminder::where('id','like', 2)->get();
 
         
@@ -64,7 +64,7 @@ class PostGuzzleController extends Controller
     }
     public function testView()
     {
-        $results = Reminder::find(1);
+        $results = Reminders::find(1);
         return view('reminder_view.view')->with('results', $results);
     }
 }

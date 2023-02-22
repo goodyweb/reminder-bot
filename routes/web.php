@@ -44,7 +44,7 @@ Route::post('delete-user', [UsersController::class, 'destroy']);
 
 //Route::get('notification',[PostGuzzleController::class,'notification']);
 Route::get('testview',[PostGuzzleController::class,'testView']);
-Route::get('dashboard',[DashboardController::class])->middleware(['auth', 'verified']);
+Route::get('dashboard',[DashboardController::class])->middleware(['auth', 'verified'])->name('');
 
 
 
