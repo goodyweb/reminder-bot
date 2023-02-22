@@ -23,6 +23,7 @@ class RemindersController extends Controller
             'content' => 'required',
             'description' => 'required',
             'webhook' => 'required',
+            'dateend'=> 'required',
             'footer' => 'required',
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
@@ -56,7 +57,8 @@ class RemindersController extends Controller
             'content' => 'required',
             'description' => 'required',
             'webhook' => 'required',
-            'footer' => 'required'
+            'footer' => 'required',
+            'dateend'=> 'required'
         ]);
 
         $input = $request->all();

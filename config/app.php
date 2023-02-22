@@ -181,7 +181,6 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        NotificationChannels\Discord\DiscordServiceProvider::class,
 
         /*
          * Package Service Providers...

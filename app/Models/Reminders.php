@@ -17,6 +17,7 @@ class Reminders extends Model
         'description',
         'webhook',
         'footer',
+        'dateend',
         'image'
     ];
 }

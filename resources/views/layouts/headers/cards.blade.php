@@ -2,7 +2,6 @@
     <div class="container-fluid">
         <div class="header-body">
             <!-- Card stats -->
-            
                 <div class="col-xl-4 col-lg-6">
                     <div class="bg-light card card-stats mb-4 mb-xl-0">
                         <div class="card-body">
@@ -21,10 +20,7 @@
                                 <span class="text-nowrap">Overall</span>
                             </p>
                         </div>
-                    </div>
                 </div>
-            </div>
-            
-
-   
+        </div>          
     </div>
+</div>
