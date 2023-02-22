@@ -128,7 +128,7 @@
                             <li class="dropdown-item py-2">
                                
                                    
-                                    <!-- Authentication -->
+                                   
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
                             <i class="me-2 icon-md" data-feather="log-out"></i>
