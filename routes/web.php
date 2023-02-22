@@ -3,13 +3,13 @@
 use App\Http\Controllers\PostGuzzleController;
 use App\Http\Controllers\DiscordNotificationController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\CountdownsController;
 use App\Http\Controllers\RemindersController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
-use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,14 +44,26 @@ Route::post('delete-user', [UsersController::class, 'destroy']);
 
 //Route::get('notification',[PostGuzzleController::class,'notification']);
 Route::get('testview',[PostGuzzleController::class,'testView']);
-Route::get('dashboard',[DashboardController::class])->middleware(['auth', 'verified']);
+//Route::get('/dashboard',[PostGuzzleController::class,'notification'])->middleware(['auth', 'verified'])->name('dashboard');
 
 
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__.'/auth.php';
 
 Route::get('posts',[PostGuzzleController::class,'index']);
 Route::get('posts/store', [PostGuzzleController::class, 'store' ]);
 
 Route::get('notification', [DiscordNotificationController::class, 'notification' ]);
+
+//Route::resource('dashboard', DashboardController::class);
+Route::get('dashboard',[ DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+
 Route::resource('products', ProductsController::class);
 Route::resource('reminders', RemindersController::class);
 
@@ -68,5 +80,3 @@ Route::prefix('countdowns')->group(function () {
     Route::post('edit', [CountdownsController::class, 'edit']);
     Route::delete('destroy', [CountdownsController::class, 'destroy']);
 });
-
-require __DIR__.'/auth.php';
