@@ -38,7 +38,7 @@ class PostGuzzleController extends Controller
             }*/
             
             
-                $date = date_create($result->stopped_at);
+                $date = date_create($result->dateend);
                 
                 $dateDisplay = date_format($date, "F d, Y H:i:s"); 
                 $dateDisplay1 = date_format($date, "F d, Y "); 
@@ -60,7 +60,7 @@ class PostGuzzleController extends Controller
                 ]);
             
         }
-        //return view('remind-bot.index')->with('results', $results);
+        return view('remind-bot.index')->with('results', $results);
     }
     public function testView()
     {
