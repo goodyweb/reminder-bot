@@ -63,7 +63,7 @@
                                 <form action="{{ route('reminders.destroy',$val->id) }}" method="POST">
                                     {{ csrf_field()  }}
                                     @method('DELETE')
-                                    <a class="btn btn-sm btn-success" href="/testview/{{$val->id}}"><i data-feather="eye"></i> Show</a>
+                                    <a class="btn btn-sm btn-success" href="{{route('reminder_view.show', $val->id)}}"><i data-feather="eye"></i> Show</a>
                                     <a class="btn btn-sm btn-warning" href="{{route('reminders.edit', $val->id)}}"><i data-feather="link"></i> Edit</a>
                                     <button class="btn btn-sm btn-danger" type="submit"><i data-feather="trash"></i> Delete</button>
                                 </form>

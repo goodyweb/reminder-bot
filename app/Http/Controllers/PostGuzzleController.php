@@ -62,9 +62,9 @@ class PostGuzzleController extends Controller
         }
         return view('remind-bot.index')->with('results', $results);
     }
-    public function testView()
+    public function show($id)
     {
-        $results = Reminders::all();
-        return view('reminder_view.view')->with('results', $results);
+        $results = Reminders::find($id);
+        return view('reminder_view.show', compact('results'));
     }
 }

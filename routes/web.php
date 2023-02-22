@@ -43,7 +43,7 @@ Route::post('edit-user', [UsersController::class, 'edit']);
 Route::post('delete-user', [UsersController::class, 'destroy']);
 
 //Route::get('notification',[PostGuzzleController::class,'notification']);
-Route::get('testview/{view}',[PostGuzzleController::class,'testView']);
+//Route::get('/testview/{testView}',[PostGuzzleController::class,'testView']);
 Route::get('dashboard',[DashboardController::class])->middleware(['auth', 'verified'])->name('');
 
 
@@ -66,6 +66,7 @@ Route::get('dashboard',[ DashboardController::class, 'index'])->middleware(['aut
 
 Route::resource('products', ProductsController::class);
 Route::resource('reminders', RemindersController::class);
+Route::resource('reminder_view', PostGuzzleController::class);
 
 Route::prefix('posts')->group(function () {
     Route::get('index', [PostsController::class, 'index']);
