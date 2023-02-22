@@ -64,7 +64,7 @@ class PostGuzzleController extends Controller
     }
     public function testView()
     {
-        $results = Reminders::find(1);
+        $results = Reminders::all();
         return view('reminder_view.view')->with('results', $results);
     }
 }
