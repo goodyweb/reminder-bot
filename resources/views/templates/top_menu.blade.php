@@ -120,15 +120,25 @@
                                 <img class="wd-80 ht-80 rounded-circle" src="{{asset('img/bg-login.jpg')}}" alt="">
                             </div>
                             <div class="text-center">
-                                <p class="tx-16 fw-bolder">Reymark Jan</p>
-                                <p class="tx-12 text-muted">s.gandalla.reymarkjan@cmu.edu.ph</p>
+                                <p class="tx-16 fw-bolder">{{ Auth::user()->name }}</p>
+                                <p class="tx-12 text-muted">{{ Auth::user()->email }}</p>
                             </div>
                         </div>
                         <ul class="list-unstyled p-1">
                             <li class="dropdown-item py-2">
-                                <a href="#" class="text-body ms-0">
-                                    <i class="me-2 icon-md" data-feather="log-out"></i>
-                                    <span>Log Out</span>
+                               
+                                   
+                                    <!-- Authentication -->
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <i class="me-2 icon-md" data-feather="log-out"></i>
+                            <x-dropdown-link 
+                                    onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                               <span>Log Out</span>
+                            </x-dropdown-link>
+                        </form>
+                                    
                                 </a>
                             </li>
                         </ul>
