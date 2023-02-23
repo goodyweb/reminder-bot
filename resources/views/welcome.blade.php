@@ -37,9 +37,9 @@
 
                 <div class="row input-group-newsletter">
                         
-                            <div class="col- auto"> <button class="btn btn-primary" id="submitButton" type="submit"> <a href="{{ route('login') }}">Log in</button> </div>
+                            <div class="col- auto"> <button class="btn btn-primary" id="submitButton" type="submit"> <a style="text-decoration:none" href="{{ route('login') }}">Log in</button> </div>
                                 <br>
-                            <div class="col- auto"><button class="btn btn-primary" id="submitButton" type="submit"> <a href="{{ route('register') }}">Register</button> </div>
+                            <div class="col- auto"><button class="btn btn-primary" id="submitButton" type="submit"> <a style="text-decoration:none" href="{{ route('register') }}">Register</button> </div>
     
                 </div>
 
