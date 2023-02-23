@@ -68,6 +68,10 @@ Route::resource('products', ProductsController::class);
 Route::resource('reminders', RemindersController::class);
 Route::resource('reminder_view', PostGuzzleController::class);
 
+Route::prefix('reminders')->group(function () {
+    Route::get('table', [RemindersController::class, 'table']);
+});
+
 Route::prefix('posts')->group(function () {
     Route::get('index', [PostsController::class, 'index']);
     Route::post('store', [PostsController::class, 'store']);

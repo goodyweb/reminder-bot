@@ -15,6 +15,7 @@
     <!-- common css -->
     <link href="{{asset('css/style.min.css')}}" rel="stylesheet" />
     <!-- end common css -->
+    <link href="{{asset('css/card.min.css')}}" rel="stylesheet" />
 
     <link href="{{asset('css/style.min.css')}}" rel="stylesheet" />
     <link  type="text/css" href="{{asset('css/dataTables.bootstrap5.min.css')}}" rel="stylesheet" />
