@@ -60,13 +60,13 @@
             <div class="mb-3">
                         <label for="type">Type <span class="text-danger">*</span></label>
                             <select name="type" id="type" class="form-control mb-4">
-                                    <option value="Weeks"> Multiple Reminder</option>
-                                    <option value="Days">Countdown</option>
+                                    <option value="reminders"> Multiple Reminder</option>
+                                    <option value="countdown">Countdown</option>
                                 </select>
                         </div>
             <div class="mb-3">
-                        <label for="type">Format <span class="text-danger">*</span></label>
-                            <select name="type" id="type" class="form-control mb-4">
+                        <label for="typeDays">Format <span class="text-danger">*</span></label>
+                            <select name="typeDays" id="typeDays" class="form-control mb-4">
                                     <option value="Weeks"> Months / Days / Hours / Minutes / Seconds</option>
                                     <option value="Days">Days / Hours / Minutes / Seconds</option>
                                     <option value="Just Days">Just Days</option>
