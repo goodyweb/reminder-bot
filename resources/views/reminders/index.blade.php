@@ -45,15 +45,20 @@
                             <td>{{$val->description}}</td>
                             <td>{{$val->webhook}}</td>
                             <td>{{$val->footer}}</td>
+
                             <?php 
                                 $setDate = Carbon\Carbon::parse($val->dateend)->setTimezone('Asia/Manila')->diff(Carbon\Carbon::now()->setTimezone('Asia/Manila'));
-                           // $setDate = intval(strtotime($val->dateend)) - intval(strtotime(Carbon\Carbon::now()->setTimezone('Asia/Manila')));
-                            //$date=date_create($setDate); ?>
+                            ?>
                             <?php $dateTime=Carbon\Carbon::now()->setTimezone('Asia/Manila'); ?>
                             
                             <td>
+                                @if($val->type == "Weeks")
                             <?php echo $setDate->days ." days " . $setDate->h . " hours " . $setDate->i . " minutes " . $setDate->s . " seconds"; ?>
-                                <!--{{ Carbon\Carbon::now()->setTimezone('Asia/Manila')->format('g:i a') }}-->
+                            @elseif($val->type == "Days")
+                            <?php echo $setDate->days ." days " . $setDate->h . " hours " . $setDate->i . " minutes " . $setDate->s . " seconds"; ?>
+                            @elseif($val->type == "Just Days")
+                            <?php echo $setDate->days ." days "; ?>
+                            @endif
                             </td>
 
                             <td><img alt="img" src="/img/{{ $val->image }}" class="text-center" width="100px" height="100px"></td>
