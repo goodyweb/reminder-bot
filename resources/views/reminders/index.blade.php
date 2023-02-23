@@ -45,25 +45,28 @@
                             <td>{{$val->description}}</td>
                             <td>{{$val->webhook}}</td>
                             <td>{{$val->footer}}</td>
-                            <?php $date=date_create($val->dateend); ?>
+
+                            <?php 
+                                $setDate = Carbon\Carbon::parse($val->dateend)->setTimezone('Asia/Manila')->diff(Carbon\Carbon::now()->setTimezone('Asia/Manila'));
+                            ?>
+                            <?php $dateTime=Carbon\Carbon::now()->setTimezone('Asia/Manila'); ?>
+                            
                             <td>
-                            <div id="countdown">
-                                
-                                    
-                                    <p><span id="days"></span>Days</p>
-                                    
-                                    <p><span id="hours"></span>Hours</p>
-                                    <p><span id="minutes"></span>Minutes</p>
-                                    <p><span id="seconds"></span>Seconds</p>
-                                
-                            </div></td>
+                                @if($val->type == "Weeks")
+                            <?php echo $setDate->days ." days " . $setDate->h . " hours " . $setDate->i . " minutes " . $setDate->s . " seconds"; ?>
+                            @elseif($val->type == "Days")
+                            <?php echo $setDate->days ." days " . $setDate->h . " hours " . $setDate->i . " minutes " . $setDate->s . " seconds"; ?>
+                            @elseif($val->type == "Just Days")
+                            <?php echo $setDate->days ." days "; ?>
+                            @endif
+                            </td>
 
                             <td><img alt="img" src="/img/{{ $val->image }}" class="text-center" width="100px" height="100px"></td>
                             <td>
                                 <form action="{{ route('reminders.destroy',$val->id) }}" method="POST">
                                     {{ csrf_field()  }}
                                     @method('DELETE')
-                                    <a class="btn btn-sm btn-success" href="{{route('reminders.show', $val->id)}}"><i data-feather="eye"></i> Show</a>
+                                    <a class="btn btn-sm btn-success" href="{{route('reminder_view.show', $val->id)}}"><i data-feather="eye"></i> Show</a>
                                     <a class="btn btn-sm btn-warning" href="{{route('reminders.edit', $val->id)}}"><i data-feather="link"></i> Edit</a>
                                     <button class="btn btn-sm btn-danger" type="submit"><i data-feather="trash"></i> Delete</button>
                                 </form>
