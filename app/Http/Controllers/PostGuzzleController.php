@@ -1,6 +1,8 @@
 <?php
  
 namespace App\Http\Controllers;
+
+use Carbon\carbon;
 use App\Models\User;
 use App\Models\Reminders;
 use Illuminate\Http\Request;
@@ -16,21 +18,21 @@ class PostGuzzleController extends Controller
     public function notification()
     {
 
-        //$results = User::all();
-        $results = Reminders::all();
-        //$results = Reminder::where('id','like', 2)->get();
+        //$countdowns = User::all();
+        $countdowns = Reminders::all();
+        //$countdowns = Reminder::where('id','like', 2)->get();
 
         
-        foreach($results as $result){
-            /**if($result->type == "daily"){
+        foreach($countdowns as $countdown){
+            /**if($countdown->type == "daily"){
             
             
-                return Http::post($result->webhook, [
-                    'content' => $result->content,
+                return Http::post($countdown->webhook, [
+                    'content' => $countdown->content,
                     'embeds' => [
                         [
-                            'title' => $result->title,
-                            'description' => $result->description,
+                            'title' => $countdown->title,
+                            'description' => $countdown->description,
                             'color' => '7506394',
                         ]
                     ],
@@ -38,7 +40,7 @@ class PostGuzzleController extends Controller
             }*/
             
             
-                $date = date_create($result->dateend);
+                $date = date_create($countdown->dateend, timezone_open('Asia/Manila'));
                 
                 $dateDisplay = date_format($date, "F d, Y H:i:s"); 
                 $dateDisplay1 = date_format($date, "F d, Y "); 
@@ -48,23 +50,57 @@ class PostGuzzleController extends Controller
                 $hours_remaining = floor(($remaining % 86400) / 3600);
                 
 
-                return Http::post($result->webhook, [
-                    'content' => $result->content,
+                return Http::post($countdown->webhook, [
+                    'content' => $countdown->content,
                     'embeds' => [
                         [
-                            'title' => $result->title,
-                            'description' => $result->description . " \n" . $dateDisplay1 . " \n" . $days_remaining . " days and ". $hours_remaining . " hours left",
+                            'title' => $countdown->title,
+                            'description' => $countdown->description . " \n" . $dateDisplay1 . " \n" . $days_remaining . " days and ". $hours_remaining . " hours left",
                             'color' => '7506394',
                         ]
                     ],
                 ]);
             
         }
-        return view('remind-bot.index')->with('results', $results);
+
+       
+
+        //return view('remind-bot.index')->with('countdowns', $countdowns);
+    }
+
+    public function notifyCountdown(){
+
+        $countdowns = Countdowns::All();
+
+        foreach($countdowns as $countdown){
+            if($countdown->type == "weekdays")
+            $date = date_create($countdown->dateend);
+                
+                $dateDisplay = date_format($date, "F d, Y H:i:s"); 
+                $dateDisplay1 = date_format($date, "F d, Y "); 
+                $setDate = strtotime($dateDisplay);
+                $remaining = $setDate - time();
+                $days_remaining = floor($remaining / 86400);
+                $hours_remaining = floor(($remaining % 86400) / 3600);
+                
+
+                return Http::post($countdown->webhook, [
+                    'content' => $countdown->content,
+                    'embeds' => [
+                        [
+                            'title' => $countdown->title,
+                            'description' => $countdown->description . " \n" . $dateDisplay1 . " \n" . $days_remaining . " days and ". $hours_remaining . " hours left",
+                            'color' => '7506394',
+                        ]
+                    ],
+                ]);
+
+        }
     }
     public function show($id)
     {
+        $carbonTime = Carbon::now()->toDateTimeString();
         $results = Reminders::find($id);
-        return view('reminder_view.show', compact('results'));
+        return view('reminder_view.show', compact('results', 'carbonTime'));
     }
 }

@@ -129,7 +129,26 @@ body, html {
                             <td>{{$val->description}}</td>
                             <td>{{$val->webhook}}</td>
                             <td>{{$val->footer}}</td>
+<<<<<<< HEAD
                             <td>{{$val->dateend}}</td>
+=======
+
+                            <?php 
+                                $setDate = Carbon\Carbon::parse($val->dateend)->setTimezone('Asia/Manila')->diff(Carbon\Carbon::now()->setTimezone('Asia/Manila'));
+                            ?>
+                            <?php $dateTime=Carbon\Carbon::now()->setTimezone('Asia/Manila'); ?>
+                            
+                            <td>
+                                @if($val->type == "Weeks")
+                            <?php echo $setDate->days ." days " . $setDate->h . " hours " . $setDate->i . " minutes " . $setDate->s . " seconds"; ?>
+                            @elseif($val->type == "Days")
+                            <?php echo $setDate->days ." days " . $setDate->h . " hours " . $setDate->i . " minutes " . $setDate->s . " seconds"; ?>
+                            @elseif($val->type == "Just Days")
+                            <?php echo $setDate->days ." days "; ?>
+                            @endif
+                            </td>
+
+>>>>>>> 7d8a97837c17a6bf98e97560e914f87fe9bdc4cb
                             <td><img alt="img" src="/img/{{ $val->image }}" class="text-center" width="100px" height="100px"></td>
                             <td>
                                 <form action="{{ route('reminders.destroy',$val->id) }}" method="POST">

@@ -5,6 +5,7 @@ use App\Controllers\PostGuzzleController;
 use Illuminate\Console\Command;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Support\Facades\Http;
+use App\Models\Reminders;
 
 class remindCommand extends Command
 {
@@ -26,6 +27,7 @@ class remindCommand extends Command
     public function handle()
     {
      
+        
 
        return app()->call('App\Http\Controllers\PostGuzzleController@notification');
 
