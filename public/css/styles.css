@@ -11348,7 +11348,7 @@ video.bg-video {
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(250, 211, 18, 0.39);
+  background-color: rgba(255, 223, 0, 0.70);
 }
 .masthead .masthead-content {
   position: relative;
@@ -11379,7 +11379,7 @@ video.bg-video {
   text-transform: uppercase;
   letter-spacing: 2px;
   padding: calc(1rem + 2px);
-  color: rgba(250, 211, 18, 0.99);
+  color: rgba(255, 223, 0, 1);
   background-color: rgba(39,33,10, 1);
 }
 
@@ -11416,7 +11416,7 @@ video.bg-video {
 @media (min-width: 1200px) {
   .masthead {
     width: 65vw;
-    color: rgba(250, 211, 18, 0.99);
+    color: rgba(255, 223, 0, 0.70);
   }
 }
 .social-icons {
@@ -11447,6 +11447,6 @@ video.bg-video {
     top: 0;
     right: 2.5rem;
     width: auto;
-    color: rgba(250, 211, 18, 0.99);
+    color: rgba(255, 223, 0, 0.70);
   }
 }

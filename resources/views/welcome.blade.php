@@ -43,9 +43,11 @@
                         <!-- Email address input-->
 
                 <div class="row input-group-newsletter">
-
-                        <div><a class="col-auto btn btn-primary" href="{{ route('login') }}">Login</a></div>
-                        <div><a class="col-auto btn btn-primary" href="{{ route('register') }}">Register</a></div>  
+                        
+                            <div class="col- auto"> <button class="btn btn-primary" id="submitButton" type="submit"> <a href="{{ route('login') }}">Log in</button> </div>
+                                <br>
+                            <div class="col- auto"><button class="btn btn-primary" id="submitButton" type="submit"> <a href="{{ route('register') }}">Register</button> </div>
+    
                 </div>
 
                         <!-- Submit success message-->
