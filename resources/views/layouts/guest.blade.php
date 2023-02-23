@@ -28,7 +28,7 @@
     <video class="bg-video" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop"><source src="assets/mp4/bg.mp4" type="video/mp4" /></video>
         <!-- Masthead-->
         <div class="masthead1 " >
-            <div class="masthead1-content text-white">
+            <div class="masthead1-content text-dark">
                 <div class="container-fluid ">
                 <div class="bg-light min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
             <div>
