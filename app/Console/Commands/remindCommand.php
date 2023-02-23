@@ -27,7 +27,7 @@ class remindCommand extends Command
     public function handle()
     {
      
-        
+   
 
        return app()->call('App\Http\Controllers\PostGuzzleController@notification');
 
