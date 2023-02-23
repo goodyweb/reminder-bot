@@ -48,7 +48,7 @@
         <!-- Email Address -->
         <div>
             <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
+            <x-text-input id="email" class="block mt-2 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
 
@@ -83,6 +83,7 @@
                     {{ __('Forgot your password?') }}
                 </a>
             @endif
+<<<<<<< HEAD
         </div>
                 
         </div>
@@ -110,3 +111,12 @@
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
 </html>
+=======
+                        
+            <x-primary-button class="ml-3">
+                {{ __('Log in') }}
+            </x-primary-button>
+        </div>
+    </form>
+</x-guest-layout>
+>>>>>>> 8b9604a54b2e2c3d4d7819e34ad81ab2acac5360

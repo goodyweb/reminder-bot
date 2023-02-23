@@ -11450,3 +11450,55 @@ video.bg-video {
     color: rgba(255, 223, 0, 0.70);
   }
 }
+
+
+
+
+
+
+
+
+
+.masthead1 {
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+  display: flex;
+  align-items: right;
+  justify-content: right;
+  
+}
+.masthead1 .masthead1-content {
+  position: relative;
+  max-width: 28rem;
+  color: rgba(39,33,10, 0.79);
+  flex: 1 1 auto;
+}
+
+  .masthead1 .masthead1-content {
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+  }
+
+  .masthead1:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(250, 211, 18, 0.39);
+  }
+  @media (min-width: 1200px) {
+    .masthead1 {
+      width: 67vw;
+      color: rgba(250, 211, 18, 0.99);
+    }
+  }
+  .masthead1:before {
+    transform: skewX(-9deg);
+    transform-origin: top right; 
+  }
+  
