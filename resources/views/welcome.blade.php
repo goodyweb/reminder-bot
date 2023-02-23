@@ -65,9 +65,9 @@
         <!-- For more icon options, visit https://fontawesome.com/icons?d=gallery&p=2&s=brands-->
         <div class="social-icons">
             <div class="d-flex flex-row flex-lg-column justify-content-center align-items-center h-100 mt-3 mt-lg-0">
-                <a class="btn btn-dark m-3" href="https://youtu.be/dQw4w9WgXcQ"><i class="fab fa-twitter"></i></a>
-                <a class="btn btn-dark m-3" href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
-                <a class="btn btn-dark m-3" href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+                <a class="btn btn-dark m-3" href="https://www.goodyweb.com.ph/"><i class="fas fa-globe"></i></a>
+                <a class="btn btn-dark m-3" href="https://www.facebook.com/goodyweb.com.ph"><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-dark m-3" type="submit" value="SUBMIT EMAIL TO: contact@goodyweb.com.ph" href="mailto:contact@goodyweb.com.ph"><i class="fa fa-envelope"></i></a>
             </div>
         </div>
         <!-- Bootstrap core JS-->
