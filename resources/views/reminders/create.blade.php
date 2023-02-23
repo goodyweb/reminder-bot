@@ -48,15 +48,11 @@
                     <input id="footer" name="footer" type="text" class="form-control" placeholder="Footer">
                 </div>
 
-            <div class="form-control mb-4">
-                            <label for="date" class="form-label">Date: <span class="text-danger">*</span></label>
-                            <input class="form-control mb-4" type="date" id="date" name="date" value="2023-02-23" min="2023-01-01" max="2030-12-31">
-                        </div>
+                <div class="mb-3">
+                    <label for="dateend" class="form-label">End Date and Time: <span class="text-danger">*</span></label>
+                    <input class="form-control mb-4"type ="datetime-local" id="dateend" name="dateend" value="2018-07-22" min="2018-01-01" max="2030-12-31">
+                </div>
 
-            <div class="form-control mb-4">
-                            <label for="time">Time <span class="text-danger">*</span></label>
-                            <input class="form-control mb-4" type="time" id="time" name="time" min="09:00" max="18:00" required>
-                        </div>
             <div class="mb-3">
                         <label for="type">Type <span class="text-danger">*</span></label>
                             <select name="type" id="type" class="form-control mb-4">

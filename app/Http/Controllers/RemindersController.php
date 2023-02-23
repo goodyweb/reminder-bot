@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use Carbon\carbon;
 use App\Models\Reminders;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class RemindersController extends Controller
@@ -10,7 +11,8 @@ class RemindersController extends Controller
     public function index()
     {
         $reminders = Reminders::all();
-        return view('reminders.index', compact('reminders'));
+        $users = User::all();
+        return view('reminders.index', compact('reminders', 'users'));
     }
 
     public function create()

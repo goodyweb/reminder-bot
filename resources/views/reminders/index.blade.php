@@ -65,7 +65,10 @@ body, html {
                         <p class="card-text card-text-post">
                           {{$val->content}}
                         </p>
-                        <p><small>Written by {{ $val->footer }} | {{ $val->dateend }}</small></p>
+                        @foreach($users as user)
+                        @if($val->)
+                        <p><small>Written by {{ auth()->user()->name }} | {{ $val->dateend }}</small></p>
+                        @endforeach
                         <hr>
                         <div class="button-group row">
                           <div class="col-8">
