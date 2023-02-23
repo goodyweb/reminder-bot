@@ -1,11 +1,4 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -67,7 +60,7 @@
             <div class="d-flex flex-row flex-lg-column justify-content-center align-items-center h-100 mt-3 mt-lg-0">
                 <a class="btn btn-dark m-3" href="https://www.goodyweb.com.ph/"><i class="fas fa-globe"></i></a>
                 <a class="btn btn-dark m-3" href="https://www.facebook.com/goodyweb.com.ph"><i class="fab fa-facebook-f"></i></a>
-                <a class="btn btn-dark m-3" type="submit" value="SUBMIT EMAIL TO: contact@goodyweb.com.ph" href="mailto:contact@goodyweb.com.ph"><i class="fa fa-envelope"></i></a>
+                <a class="btn btn-dark m-3" type="submit" value="SUBMIT EMAIL TO: contact@goodyweb.com.ph"href="mailto:contact@goodyweb.com.ph"><i class="fa fa-envelope"></i></a>
             </div>
         </div>
         <!-- Bootstrap core JS-->
