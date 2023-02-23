@@ -11348,7 +11348,7 @@ video.bg-video {
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(255, 223, 0, 0.42);
+  background-color: rgba(255, 223, 0, 0.50);
 }
 .masthead .masthead-content {
   position: relative;
@@ -11482,7 +11482,7 @@ video.bg-video {
     left: 0;
     height: 100%;
     width: 100%;
-    background-color: rgba(250, 211, 18, 0.42);
+    background-color: rgba(250, 211, 18, 0.50);
   }
   @media (min-width: 1200px) {
     .masthead1 {
