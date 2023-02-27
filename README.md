@@ -41,7 +41,7 @@ A reminder bot system, designed by Goody Web Solutions Inc. first student intern
     - Run <code>composer install</code> 
 <br><br>
 2. Database Configuration<a name="database-configuration"></a>
-- Run both Apache and MySQL in the XAMPP Control Panel
+- Run both <code>Apache</code> and <code>MySQL</code> in the XAMPP Control Panel
 - Go to <code>localhost/phpmyadmin</code> in your browser or Navicat. Create new database on your database.
 - copy <code>.env.example</code> to <code>.env</code>
 - edit <code>.env</code>
