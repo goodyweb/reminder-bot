@@ -53,22 +53,28 @@ A reminder bot system, designed by Goody Web Solutions Inc. first student intern
 - Run command <code>php artisan migrate</code> to generate all table migrations which is exist in this project.
 - Run command <code>php artisan optimize</code> to creates a compiled file of commonly used classes in other to reduce the amount of files that must be included on each request.
 - Run <code>php artisan serve</code> to start your laravel server.
-- You can now register a new user to use the application.
+- You can now register a new user to use the system.
 
 ## Steps to follow<a name="#steps-to-follow"></a>
 
-1. Dashboard <br>
+1. Register
+
+2. Login
+
+3. Forgot your password
+
+4. Dashboard <br>
 After logging in for the first time, you can see on the dashboard the number of users, all reminders, and the upcoming events.
 
-2. Reminders
+5. Reminders
 - Card View
 
 - Table View
 
-2. View, Edit, and Delete Reminders <br>
+6. View, Edit, and Delete Reminders <br>
 If you go to Reminders, you can view all the reminders. Reminders can be viewed, edited, and deleted from here.
 
-4. Add New Reminder
+7. Add New Reminder
 - Multiple Reminder
 
 - Countdown Reminder
