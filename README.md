@@ -12,7 +12,8 @@
 # Table of contents
 1. [BOTReminder](#BOTReminder)
 2. [Installation](#Installation)
-    1. [Sub paragraph](#subparagraph1)
+    1. [Clone the repository](#clone)
+    2. [Database Configuration](#database-configuration)
 3. [Another paragraph](#paragraph2)
 
 ## BOTReminder<a name="BOTReminder"></a>
@@ -22,7 +23,7 @@ A reminder bot system, designed by Goody Web Solutions Inc. first student intern
 ## Installation<a name="Installation"></a>
 - Download this project or clone this repo and save to your local.
 
-1. Clone the Repository
+1. Clone the Repository<a name="clone"></a>
 - Go to <code>C:/xampp/htdocs</code>
     - <code>cd 'C:/xampp/htdocs'</code>
 - Clone the repository
@@ -32,7 +33,7 @@ A reminder bot system, designed by Goody Web Solutions Inc. first student intern
 - Install all Dependencies needed
     - Run <code>composer install</code> 
 <br><br>
-2. Database Configuration
+2. Database Configuration<a name="database-configuration"></a>
 - Run both Apache and MySQL in the XAMPP Control Panel
 - Go to <code>localhost/phpmyadmin</code> in your browser or Navicat. Create new database on your database.
 - copy <code>.env.example</code> to <code>.env</code>
