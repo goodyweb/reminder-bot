@@ -38,7 +38,7 @@ class PostGuzzleController extends Controller
                     ],
                 ]);
             }*/
-            if($countdown->type2 == "reminders"){
+           // if($countdown->type2 == "reminders"){
 
                 $bookings = Reminders::where('dateend', '<=', Carbon::now()->add(20, 'minute')->toDateTimeString())
                     ->where('dateend', '>', Carbon::now()->toDateTimeString())
@@ -78,7 +78,7 @@ class PostGuzzleController extends Controller
 
                         //}
                     }
-                }
+               /** }
                 else{
                     
                     $bookings = Reminders::where('dateend', '<=', Carbon::now()->add(20, 'minute')->toDateTimeString())
@@ -120,7 +120,7 @@ class PostGuzzleController extends Controller
                         //}
                     }
 
-                }
+                }*/
         }
            
       //return view('remind-bot.index')->with('countdowns', $countdowns);
