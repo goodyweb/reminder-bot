@@ -34,7 +34,7 @@ A reminder bot system, designed by Goody Web Solutions Inc. first student intern
 - Go to <code>C:/xampp/htdocs</code>
     - <code>cd 'C:/xampp/htdocs'</code>
 - Clone the repository
-    - Run <code>git clone https://github.com/hectordolo/laravel-sbadmin.git</code>
+    - Run <code>git clone <https://github.com/hectordolo/laravel-sbadmin.git></code>
 - Go to the 'Project_Directory'
     - <code>cd 'PROJECT_DIRECTORY'</code>
 - Install all Dependencies needed
