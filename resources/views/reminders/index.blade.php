@@ -116,10 +116,6 @@ body, html {
                         <th class="pt-0">Reminder Title</th>
                         <th class="pt-0">Content Detail</th>
                         <th class="pt-0">Description</th>
-<<<<<<< HEAD
-=======
-                        <!--<th class="pt-0">Webhook Link</th>-->
->>>>>>> main
                         <th class="pt-0">Footer</th>
                         <th class="pt-0">Date End</th>
                         <th></th>
