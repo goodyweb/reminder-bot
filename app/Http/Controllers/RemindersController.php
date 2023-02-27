@@ -55,6 +55,7 @@ class RemindersController extends Controller
         $reminder->type2 = $request->input('type2');
         $reminder->user_id = auth()->user()->id;
         $reminder->image = $filename;
+        $reminder->nitified = 0;
         $reminder->save();
 
         return redirect()->route('reminders.index')

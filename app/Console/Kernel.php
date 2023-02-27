@@ -3,6 +3,7 @@
 namespace App\Console;
 use App\Console\Commands;
 use DB;
+use App\Models\Reminders;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -20,9 +21,21 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-     
-      $schedule->command('command:remind')->everyMinute();
-   
+      $reminders = Reminders::all();
+
+      foreach($reminders as $reminder)
+        {
+            if($reminder->notif == 'monthly'){
+                $schedule->command('command:remind')->monthly();
+            }elseif($reminder->notif == 'daily'){
+                $schedule->command('command:remind')->daily();
+            }elseif($reminder->notif == 'hourly'){
+                $schedule->command('command:remind')->hourly();
+            }elseif($reminder->notif == 'minutes'){
+                $schedule->command('command:remind')->everyFiveMinutes();
+            }
+            
+        }
     }
 
     /**
