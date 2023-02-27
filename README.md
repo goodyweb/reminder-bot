@@ -9,7 +9,7 @@
 
 # Documentation
 
-# Table of contents
+# Table of Contents
 1. [BOTReminder](#BOTReminder)
 2. [Installation](#Installation)
     1. [Clone the repository](#clone)
