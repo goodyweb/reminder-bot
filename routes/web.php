@@ -5,6 +5,7 @@ use App\Http\Controllers\DiscordNotificationController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PostsController;
+use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\CountdownsController;
 use App\Http\Controllers\RemindersController;
@@ -22,9 +23,10 @@ use App\Http\Controllers\UsersController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/',[PagesController::class,'welcome']);
+/*Route::get('/', function () {
     return view('welcome');
-})->name('home');
+})->name('home');*/
 
 
 Route::middleware('auth')->group(function () {

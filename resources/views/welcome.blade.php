@@ -35,11 +35,26 @@
                     <form id="contactForm" data-sb-form-api-token="API_TOKEN">
                         <!-- Email address input-->
 
-                <div class="row input-group-newsletter">
-
-                        <div><a class="col-auto btn btn-primary" href="{{ route('login') }}">Login</a></div>
-                        <div><a class="col-auto btn btn-primary" href="{{ route('register') }}">Register</a></div>  
+                        <div id="siteNav" class="site-nav">
+    <nav class="nav-portal">
+      <ul>
+        @auth()
+          <li>
+            <a href="{{ route('dashboard') }}" style="color:black; text-decoration:none; font-size: 20px;">
+              Return to Portal {{ auth()->user()->getName() }}!
+            </a>
+          </li>
+        @endauth
+        @guest()
+        <div class="row input-group-newsletter">       
+                            <div class="col- auto"><button class="btn btn-primary" id="submitButton" type="submit"> <a style="text-decoration:none" href="{{ route('login') }}">Log in</button> </div>
+                                <br>
+                            <div class="col- auto"><button class="btn btn-primary" id="submitButton" type="submit"> <a style="text-decoration:none" href="{{ route('register') }}">Register</button> </div>
                 </div>
+        @endguest
+      
+    </nav>
+  </div>
 
                         <!-- Submit success message-->
                         <!---->
