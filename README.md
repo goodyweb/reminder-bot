@@ -11,14 +11,21 @@
 
 # Table of Contents
 1. [BOTReminder](#BOTReminder)
-2. [Installation](#Installation)
+2. [Pre-requisite](#pre-requisite)
+3. [Installation](#Installation)
     1. [Clone the repository](#clone)
     2. [Database Configuration](#database-configuration)
-3. [Another paragraph](#paragraph2)
+4. [Another paragraph](#paragraph2)
 
 ## BOTReminder<a name="BOTReminder"></a>
 
 A reminder bot system, designed by Goody Web Solutions Inc. first student interns from Central Mindanao University, was built using Laravel 9 and bootstrap.
+
+## Pre-requisite<a name=pre-requisite"></a>
+- XAMPP
+- NPM
+- Git/Git Bash
+- Composer
 
 ## Installation<a name="Installation"></a>
 - Download this project or clone this repo and save to your local.
