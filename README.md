@@ -13,18 +13,18 @@
 
 - Download this project or clone this repo and save to your local
 - If clone Run <code>git clone https://github.com/hectordolo/laravel-sbadmin.git 'PROJECT_DIRECTORY'</code>
-- <li><code>cd 'PROJECT_DIRECTORY'</code></li>
-- Run <li><code>composer install</code></li> to install all dependencies needed.
-- <li><code>php artisan key:generate</code></li>
+- <code>cd 'PROJECT_DIRECTORY'</code>
+- Run <code>composer install</code> to install all dependencies needed.
+- <code>php artisan key:generate</code>
 - Create new database on your database.
-- copy <li><code>.env.example</code></li> to <li><code>.env</code></li>
-- edit <li><code>.env</code></li>
-    <li>- set <code>DB_DATABASE = "Your_Database_name"</code></li>
-    <li>- set <code>DB_USERNAME = "Your_username"</code></li>
-    <li>- set <code>DB_Password = "Your_password"</code></li>
-- Run command <li><code>php artisan migrate</code></li> to generate all table migrations which is exist in this project.
-- Run command <li><code>php artisan optimize</code></li> to creates a compiled file of commonly used classes in other to reduce the amount of files that must be included on each request.
-- Run <li><code>php artisan serve</code></li> to start your laravel server.
+- copy <code>.env.example</code> to <code>.env</code>
+- edit <code>.env</code>
+    - set <code>DB_DATABASE = "Your_Database_name"</code>
+    - set <code>DB_USERNAME = "Your_username"</code>
+    - set <code>DB_Password = "Your_password"</code>
+- Run command <code>php artisan migrate</code> to generate all table migrations which is exist in this project.
+- Run command <code>php artisan optimize</code> to creates a compiled file of commonly used classes in other to reduce the amount of files that must be included on each request.
+- Run <code>php artisan serve</code> to start your laravel server.
 - You can now register a new user to use the application.
 
 ## About Laravel
