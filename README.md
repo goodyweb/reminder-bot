@@ -12,7 +12,7 @@
 ## Installation
 
 - Download this project or clone this repo and save to your local
-- If clone Run <li><code>git clone https://github.com/hectordolo/laravel-sbadmin.git 'PROJECT_DIRECTORY'</code></li>
+- If clone Run <code>git clone https://github.com/hectordolo/laravel-sbadmin.git 'PROJECT_DIRECTORY'</code>
 - <li><code>cd 'PROJECT_DIRECTORY'</code></li>
 - Run <li><code>composer install</code></li> to install all dependencies needed.
 - <li><code>php artisan key:generate</code></li>
