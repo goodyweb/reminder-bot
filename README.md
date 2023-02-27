@@ -14,12 +14,9 @@
 A reminder bot system, designed by Goody Web Solutions Inc. first student interns from Central Mindanao University, was built using Laravel 9 and bootstrap.
 
 ## Installation
-1. [Clone the Repository](#clone-the-repository)
-2. Database Configuration
-<br><br>
 - Download this project or clone this repo and save to your local.
 
-### 1. Clone the Repository
+1. Clone the Repository
 - Go to <code>C:/xampp/htdocs</code>
     - <code>cd 'C:/xampp/htdocs'</code>
 - Clone the repository
@@ -29,7 +26,7 @@ A reminder bot system, designed by Goody Web Solutions Inc. first student intern
 - Install all Dependencies needed
     - Run <code>composer install</code> 
 <br><br>
-### 2. Database Configuration
+2. Database Configuration
 - Run both Apache and MySQL in the XAMPP Control Panel
 - Go to <code>localhost/phpmyadmin</code> in your browser or Navicat. Create new database on your database.
 - copy <code>.env.example</code> to <code>.env</code>
