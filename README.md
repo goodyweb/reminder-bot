@@ -16,9 +16,9 @@ A reminder bot system, designed by Goody Web Solutions Inc. first student intern
 ## Installation
 1. Clone the Repository
 2. Database Configuration
-
+<br><br>
 Download this project or clone this repo and save to your local.
-
+<br><br>
 1. Clone the Repository
 - Go to <code>C:/xampp/htdocs</code>
     - <code>cd 'C:/xampp/htdocs'</code>
@@ -28,7 +28,7 @@ Download this project or clone this repo and save to your local.
     - <code>cd 'PROJECT_DIRECTORY'</code>
 - Install all Dependencies needed
     - Run <code>composer install</code> 
-    <br><br>
+<br><br>
 2. Database Configuration
 - Run both Apache and MySQL in the XAMPP Control Panel
 - Go to <code>localhost/phpmyadmin</code> in your browser or Navicat. Create new database on your database.
