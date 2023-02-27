@@ -18,7 +18,6 @@ A reminder bot system, designed by Goody Web Solutions Inc. first student intern
 2. Database Configuration
 <br><br>
 - Download this project or clone this repo and save to your local.
-<br><br>
 
 1. Clone the Repository
 - Go to <code>C:/xampp/htdocs</code>
