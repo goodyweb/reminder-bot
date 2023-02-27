@@ -21,7 +21,7 @@
 
 A reminder bot system, designed by Goody Web Solutions Inc. first student interns from Central Mindanao University, was built using Laravel 9 and bootstrap.
 
-## Pre-requisite<a name=pre-requisite"></a>
+## Pre-requisite<a name="pre-requisite"></a>
 - XAMPP
 - NPM
 - Git/Git Bash
