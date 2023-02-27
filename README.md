@@ -9,6 +9,10 @@
 
 # Documentation
 
+## BOTReminder
+
+A reminder bot system, designed by Goody Web Solutions Inc. first student interns from Central Mindanao University, was built using Laravel 9 and bootstrap.
+
 ## Installation
 
 - Download this project or clone this repo and save to your local
