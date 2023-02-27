@@ -25,31 +25,31 @@ class PostGuzzleController extends Controller
           
             if($countdown->type2 == "reminders")
             {
-                if($countdown->type == "Months" && $countdown->type2 == "reminders")
+                if($countdown->notif == "Months" && $countdown->type2 == "reminders")
                 {
                     $this->everyMonth();
-                }elseif($countdown->type == "Days" && $countdown->type2 == "reminders")
+                }elseif($countdown->notif == "Days" && $countdown->type2 == "reminders")
                 {
                     $this->everyDay();
-                }elseif($countdown->type == "Hours" && $countdown->type2 == "reminders")
+                }elseif($countdown->notif == "Hours" && $countdown->type2 == "reminders")
                 {
                     $this->everyHour();
-                }elseif($countdown->type == "Minutes" && $countdown->type2 == "reminders")
+                }elseif($countdown->notif == "Minutes" && $countdown->type2 == "reminders")
                 {
                     $this->everyMinute();
                 }
                 
             }elseif($countdown->type2 == "countdown"){
-                if($countdown->type == "Months" && $countdown->type2 == "countdown")
+                if($countdown->notif == "Months" && $countdown->type2 == "countdown")
                 {
                     $this->everyMonth();
-                }elseif($countdown->type == "Days" && $countdown->type2 == "countdown")
+                }elseif($countdown->notif == "Days" && $countdown->type2 == "countdown")
                 {
                     $this->everyDay();
-                }elseif($countdown->type == "Hours" && $countdown->type2 == "countdown")
+                }elseif($countdown->notif == "Hours" && $countdown->type2 == "countdown")
                 {
                     $this->everyHour();
-                }elseif($countdown->type == "Minutes" && $countdown->type2 == "countdown")
+                }elseif($countdown->notif == "Minutes" && $countdown->type2 == "countdown")
                 {
                     $this->everyMinute();
                 }
