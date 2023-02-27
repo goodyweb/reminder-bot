@@ -140,9 +140,10 @@ li span {
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                  
-                    {{ __("hello!") }}
+
+                <center><h1>" {{$results->content}} " countdown</h1></center>
                     <br><center>
+                      <b>Ends @ </b><br>
                     <?php $date=date_create($results->dateend);
                         echo date_format($date, "d F Y H:i:s"); 
                     ?>
@@ -161,9 +162,10 @@ li span {
                                 </ul>
                             </div>
                             <div id="content" class="emoji">
-                                <span>🥳</span>
-                                <span>🎉</span>
-                                <span>🎂</span>
+                            
+                                <span>The</span>
+                                <span>Countdown</span>
+                                <span>Ends </span>
                             </div>
                        
                     </div>

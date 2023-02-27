@@ -41,7 +41,6 @@ class PostGuzzleController extends Controller
             if($countdown->type2 == "reminders"){
 
                 $bookings = Reminders::where('dateend', '<=', Carbon::now()->add(20, 'minute')->toDateTimeString())
-                    ->where('dateend', '>', Carbon::now()->toDateTimeString())
                     ->where('notified', 0)
                     ->get();
                     foreach($bookings as $booking){
@@ -82,7 +81,6 @@ class PostGuzzleController extends Controller
                 else{
                     
                     $bookings = Reminders::where('dateend', '<=', Carbon::now()->add(20, 'minute')->toDateTimeString())
-                    ->where('dateend', '>', Carbon::now()->toDateTimeString())
                     ->where('notified', 0)
                     ->get();
                     foreach($bookings as $booking){

@@ -27,6 +27,7 @@
 
             <form action="{{ route('reminders.store') }}" method="POST" enctype="multipart/form-data">
                 {{ csrf_field() }}
+                
                 <div class="mb-3">
                     <label for="title" class="form-label">Reminder Title <span class="text-danger">*</span></label>
                     <input id="title" name="title" type="text" class="form-control" placeholder="Title Name">
@@ -54,15 +55,15 @@
                 </div>
 
             <div class="mb-3">
-                        <label for="type">Type <span class="text-danger">*</span></label>
-                            <select name="type" id="type" class="form-control mb-4">
+                        <label for="type2">Type <span class="text-danger">*</span></label>
+                            <select name="type2" id="type2" class="form-control mb-4">
                                     <option value="reminders"> Multiple Reminder</option>
                                     <option value="countdown">Countdown</option>
                                 </select>
                         </div>
             <div class="mb-3">
-                        <label for="typeDays">Format <span class="text-danger">*</span></label>
-                            <select name="typeDays" id="typeDays" class="form-control mb-4">
+                        <label for="type">Format <span class="text-danger">*</span></label>
+                            <select name="type" id="type" class="form-control mb-4">
                                     <option value="Weeks"> Months / Days / Hours / Minutes / Seconds</option>
                                     <option value="Days">Days / Hours / Minutes / Seconds</option>
                                     <option value="Just Days">Just Days</option>

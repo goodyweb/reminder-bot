@@ -65,10 +65,8 @@ body, html {
                         <p class="card-text card-text-post">
                           {{$val->content}}
                         </p>
-                        @foreach($users as user)
-                        @if($val->)
-                        <p><small>Written by {{ auth()->user()->name }} | {{ $val->dateend }}</small></p>
-                        @endforeach
+                        <p><small>Written by {{ $val->user->name }} | {{ $val->dateend }}</small></p>
+                      
                         <hr>
                         <div class="button-group row">
                           <div class="col-8">
@@ -116,7 +114,6 @@ body, html {
                         <th class="pt-0">Reminder Title</th>
                         <th class="pt-0">Content Detail</th>
                         <th class="pt-0">Description</th>
-                        <th class="pt-0">Webhook Link</th>
                         <th class="pt-0">Footer</th>
                         <th class="pt-0">Date End</th>
                         <th class="pt-0">Image</th>
@@ -130,10 +127,13 @@ body, html {
                             <td>{{$val->title}}</td>
                             <td>{{$val->content}}</td>
                             <td>{{$val->description}}</td>
-                            <td>{{$val->webhook}}</td>
                             <td>{{$val->footer}}</td>
-                            @if($val->dateend == Carbon\Carbon::now()->setTimezone('Asia/Manila'))
-                                <td>end</td>
+                            @if($val->dateend >= Carbon\Carbon::now()->setTimezone('Asia/Manila'))
+                            
+                              <?php 
+                                    $date = new DateTime($val->dateend);
+                                    $date1 = date_format($date, "F d, Y H:i:s");?>
+                                <td>Ends on <?php echo $date1; ?></td>
                             @else
                             <?php 
                                     $setDate = Carbon\Carbon::now()->setTimezone('Asia/Manila')->diff(Carbon\Carbon::parse($val->dateend)->setTimezone('Asia/Manila'));
@@ -141,7 +141,7 @@ body, html {
                                 <?php $dateTime=Carbon\Carbon::now()->setTimezone('Asia/Manila'); ?>
                                 
                                 <td>
-                                    @if($val->type == "Weeks")
+                                @if($val->type == "Weeks")
                                 <?php echo $setDate->days ." days " . $setDate->h . " hours " . $setDate->i . " minutes " . $setDate->s . " seconds"; ?>
                                 @elseif($val->type == "Days")
                                 <?php echo $setDate->days ." days " . $setDate->h . " hours " . $setDate->i . " minutes " . $setDate->s . " seconds"; ?>

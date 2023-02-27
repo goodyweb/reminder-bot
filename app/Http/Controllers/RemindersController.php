@@ -29,17 +29,34 @@ class RemindersController extends Controller
             'webhook' => 'required',
             'dateend'=> 'required',
             'footer' => 'required',
+            'type' => 'required',
+            'type2' => 'required',
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        $input = $request->all();
         if ($image = $request->file('image')) {
             $destinationPath = 'img/';
             $reminderImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
             $image->move($destinationPath, $reminderImage);
-            $input['image'] = "$reminderImage";
+            $filename = $reminderImage;
+        } else {
+            $filename = 'no-img.png';
         }
-        Reminders::create($input);
+       
+
+        $reminder = new Reminders();
+        $reminder->title = $request->input('title');
+        $reminder->content = $request->input('content');
+        $reminder->description = $request->input('description');
+        $reminder->webhook = $request->input('webhook');
+        $reminder->footer = $request->input('footer');
+        $reminder->dateend = $request->input('dateend');
+        $reminder->type = $request->input('type');
+        $reminder->type2 = $request->input('type2');
+        $reminder->user_id = auth()->user()->id;
+        $reminder->image = $filename;
+        $reminder->save();
+
         return redirect()->route('reminders.index')
             ->with('success','Reminder created successfully.');
     }
