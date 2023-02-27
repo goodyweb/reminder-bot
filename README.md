@@ -12,6 +12,7 @@
 ## Installation
 
 - Download this project or clone this repo and save to your local
+- <li><code>git clone https://github.com/hectordolo/laravel-sbadmin.git 'PROJECT_DIRECTORY'</code></li>
 - If clone Run git clone <span style="color:black">https://github.com/goodyweb/reminder-bot.git</span> https://github.com/goodyweb/reminder-bot.git 'PROJECT_DIRECTORY'
 - cd 'PROJECT_DIRECTORY'
 - Run composer install to install all dependencies needed.
