@@ -12,7 +12,7 @@
 ## Installation
 
 - Download this project or clone this repo and save to your local
-- If clone Run git clone https://github.com/goodyweb/reminder-bot.git 'PROJECT_DIRECTORY'
+- If clone Run git clone <span style="color:blue">some *blue* text</span> https://github.com/goodyweb/reminder-bot.git 'PROJECT_DIRECTORY'
 - cd 'PROJECT_DIRECTORY'
 - Run composer install to install all dependencies needed.
 - php artisan key:generate
