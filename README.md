@@ -26,7 +26,7 @@ Download this project or clone this repo and save to your local.
     - Run <code>git clone https://github.com/hectordolo/laravel-sbadmin.git</code>
 - Go to the 'Project_Directory'
     - <code>cd 'PROJECT_DIRECTORY'</code>
--Install all Dependencies needed
+- Install all Dependencies needed
     - Run <code>composer install</code> 
     
 2. Database Configuration
