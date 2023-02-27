@@ -31,6 +31,7 @@ class RemindersController extends Controller
             'footer' => 'required',
             'type' => 'required',
             'type2' => 'required',
+            'notif' => 'required',
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
@@ -55,7 +56,7 @@ class RemindersController extends Controller
         $reminder->type2 = $request->input('type2');
         $reminder->user_id = auth()->user()->id;
         $reminder->image = $filename;
-        $reminder->nitified = 0;
+        $reminder->notified = $request->input('notif');
         $reminder->save();
 
         return redirect()->route('reminders.index')
