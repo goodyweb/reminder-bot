@@ -12,20 +12,19 @@
 ## Installation
 
 - Download this project or clone this repo and save to your local
-- <li><code>git clone https://github.com/hectordolo/laravel-sbadmin.git 'PROJECT_DIRECTORY'</code></li>
-- If clone Run git clone <span style="color:black">https://github.com/goodyweb/reminder-bot.git</span> https://github.com/goodyweb/reminder-bot.git 'PROJECT_DIRECTORY'
-- cd 'PROJECT_DIRECTORY'
-- Run composer install to install all dependencies needed.
-- php artisan key:generate
+- If clone Run <li><code>git clone https://github.com/hectordolo/laravel-sbadmin.git 'PROJECT_DIRECTORY'</code></li>
+- <li><code>cd 'PROJECT_DIRECTORY'</code></li>
+- Run <li><code>composer install</code></li> to install all dependencies needed.
+- <li><code>php artisan key:generate</code></li>
 - Create new database on your database.
-- copy .env.example to .env
-- edit .env
-    - set DB_DATABASE = "Your_Database_name"
-    - set DB_USERNAME = "Your_username"
-    - set DB_Password = "Your_password"
-- Run command php artisan migrate to generate all table migrations which is exist in this project.
-- Run command php artisan optimize to creates a compiled file of commonly used classes in other to reduce the amount of files that must be included on each request.
-- Run php artisan serve to start your laravel server.
+- copy <li><code>.env.example</code></li> to <li><code>.env</code></li>
+- edit <li><code>.env</code></li>
+    <li>- set <code>DB_DATABASE = "Your_Database_name"</code></li>
+    <li>- set <code>DB_USERNAME = "Your_username"</code></li>
+    <li>- set <code>DB_Password = "Your_password"</code></li>
+- Run command <li><code>php artisan migrate</code></li> to generate all table migrations which is exist in this project.
+- Run command <li><code>php artisan optimize</code></li> to creates a compiled file of commonly used classes in other to reduce the amount of files that must be included on each request.
+- Run <li><code>php artisan serve</code></li> to start your laravel server.
 - You can now register a new user to use the application.
 
 ## About Laravel
