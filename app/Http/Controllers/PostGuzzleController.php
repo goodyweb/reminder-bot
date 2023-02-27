@@ -107,7 +107,7 @@ class PostGuzzleController extends Controller
                             $setDate = strtotime($dateDisplay);
                             $remaining = $setDate - time();
                             $days_remaining = floor($remaining/60/60/24);
-                            $months_remaining = floor(($remaining/60/60/24)*30);
+                            $months_remaining = floor(($remaining/60/60/24)/30);
                             $hours_remaining = floor(($remaining-($days_remaining*60*60*24))/60/60);
                             $minutes_remaining = floor(($remaining-($days_remaining*60*60*24)-($hours_remaining*60*60))/60);
                             $seconds_remaining = floor(($remaining-($days_remaining*60*60*24)-($hours_remaining*60*60))-($minutes_remaining*60));
@@ -135,7 +135,7 @@ class PostGuzzleController extends Controller
                             $setDate = strtotime($dateDisplay);
                             $remaining = $setDate - time();
                             $days_remaining = floor($remaining/60/60/24);
-                            $months_remaining = floor(($remaining/60/60/24)*30);
+                            $months_remaining = floor(($remaining/60/60/24)/30);
                             $hours_remaining = floor(($remaining-($days_remaining*60*60*24))/60/60);
                             $minutes_remaining = floor(($remaining-($days_remaining*60*60*24)-($hours_remaining*60*60))/60);
                             $seconds_remaining = floor(($remaining-($days_remaining*60*60*24)-($hours_remaining*60*60))-($minutes_remaining*60));
@@ -176,7 +176,7 @@ class PostGuzzleController extends Controller
                 $setDate = strtotime($dateDisplay);
                 $remaining = $setDate - time();
                 $days_remaining = floor($remaining/60/60/24);
-                $months_remaining = floor(($remaining/60/60/24)*30);
+                $months_remaining = floor(($remaining/60/60/24)/30);
                 $hours_remaining = floor(($remaining-($days_remaining*60*60*24))/60/60);
                 $minutes_remaining = floor(($remaining-($days_remaining*60*60*24)-($hours_remaining*60*60))/60);
                 $seconds_remaining = floor(($remaining-($days_remaining*60*60*24)-($hours_remaining*60*60))-($minutes_remaining*60));
@@ -204,7 +204,7 @@ class PostGuzzleController extends Controller
                 $setDate = strtotime($dateDisplay);
                 $remaining = $setDate - time();
                 $days_remaining = floor($remaining/60/60/24);
-                $months_remaining = floor(($remaining/60/60/24)*30);
+                $months_remaining = floor(($remaining/60/60/24)/30);
                 $hours_remaining = floor(($remaining-($days_remaining*60*60*24))/60/60);
                 $minutes_remaining = floor(($remaining-($days_remaining*60*60*24)-($hours_remaining*60*60))/60);
                 $seconds_remaining = floor(($remaining-($days_remaining*60*60*24)-($hours_remaining*60*60))-($minutes_remaining*60));
@@ -229,7 +229,7 @@ class PostGuzzleController extends Controller
                 $setDate = strtotime($dateDisplay);
                 $remaining = $setDate - time();
                 $days_remaining = floor($remaining/60/60/24);
-                $months_remaining = floor(($remaining/60/60/24)*30);
+                $months_remaining = floor(($remaining/60/60/24)/30);
                 $hours_remaining = floor(($remaining-($days_remaining*60*60*24))/60/60);
                 $minutes_remaining = floor(($remaining-($days_remaining*60*60*24)-($hours_remaining*60*60))/60);
                 $seconds_remaining = floor(($remaining-($days_remaining*60*60*24)-($hours_remaining*60*60))-($minutes_remaining*60));
@@ -270,7 +270,7 @@ class PostGuzzleController extends Controller
                 $setDate = strtotime($dateDisplay);
                 $remaining = $setDate - time();
                 $days_remaining = floor($remaining/60/60/24);
-                $months_remaining = floor(($remaining/60/60/24)*30);
+                $months_remaining = floor(($remaining/60/60/24)/30);
                 $hours_remaining = floor(($remaining-($days_remaining*60*60*24))/60/60);
                 $minutes_remaining = floor(($remaining-($days_remaining*60*60*24)-($hours_remaining*60*60))/60);
                 $seconds_remaining = floor(($remaining-($days_remaining*60*60*24)-($hours_remaining*60*60))-($minutes_remaining*60));
@@ -298,7 +298,7 @@ class PostGuzzleController extends Controller
                 $setDate = strtotime($dateDisplay);
                 $remaining = $setDate - time();
                 $days_remaining = floor($remaining/60/60/24);
-                $months_remaining = floor(($remaining/60/60/24)*30);
+                $months_remaining = floor(($remaining/60/60/24)/30);
                 $hours_remaining = floor(($remaining-($days_remaining*60*60*24))/60/60);
                 $minutes_remaining = floor(($remaining-($days_remaining*60*60*24)-($hours_remaining*60*60))/60);
                 $seconds_remaining = floor(($remaining-($days_remaining*60*60*24)-($hours_remaining*60*60))-($minutes_remaining*60));
@@ -323,7 +323,7 @@ class PostGuzzleController extends Controller
                 $setDate = strtotime($dateDisplay);
                 $remaining = $setDate - time();
                 $days_remaining = floor($remaining/60/60/24);
-                $months_remaining = floor(($remaining/60/60/24)*30);
+                $months_remaining = floor(($remaining/60/60/24)/30);
                 $hours_remaining = floor(($remaining-($days_remaining*60*60*24))/60/60);
                 $minutes_remaining = floor(($remaining-($days_remaining*60*60*24)-($hours_remaining*60*60))/60);
                 $seconds_remaining = floor(($remaining-($days_remaining*60*60*24)-($hours_remaining*60*60))-($minutes_remaining*60));
@@ -363,7 +363,7 @@ class PostGuzzleController extends Controller
                 $setDate = strtotime($dateDisplay);
                 $remaining = $setDate - time();
                 $days_remaining = floor($remaining/60/60/24);
-                $months_remaining = floor(($remaining/60/60/24)*30);
+                $months_remaining = floor(($remaining/60/60/24)/30);
                 $hours_remaining = floor(($remaining-($days_remaining*60*60*24))/60/60);
                 $minutes_remaining = floor(($remaining-($days_remaining*60*60*24)-($hours_remaining*60*60))/60);
                 $seconds_remaining = floor(($remaining-($days_remaining*60*60*24)-($hours_remaining*60*60))-($minutes_remaining*60));
@@ -391,7 +391,7 @@ class PostGuzzleController extends Controller
                 $setDate = strtotime($dateDisplay);
                 $remaining = $setDate - time();
                 $days_remaining = floor($remaining/60/60/24);
-                $months_remaining = floor(($remaining/60/60/24)*30);
+                $months_remaining = floor(($remaining/60/60/24)/30);
                 $hours_remaining = floor(($remaining-($days_remaining*60*60*24))/60/60);
                 $minutes_remaining = floor(($remaining-($days_remaining*60*60*24)-($hours_remaining*60*60))/60);
                 $seconds_remaining = floor(($remaining-($days_remaining*60*60*24)-($hours_remaining*60*60))-($minutes_remaining*60));
@@ -419,7 +419,7 @@ class PostGuzzleController extends Controller
                 $setDate = strtotime($dateDisplay);
                 $remaining = $setDate - time();
                 $days_remaining = floor($remaining/60/60/24);
-                $months_remaining = floor(($remaining/60/60/24)*30);
+                $months_remaining = floor(($remaining/60/60/24)/30);
                 $hours_remaining = floor(($remaining-($days_remaining*60*60*24))/60/60);
                 $minutes_remaining = floor(($remaining-($days_remaining*60*60*24)-($hours_remaining*60*60))/60);
                 $seconds_remaining = floor(($remaining-($days_remaining*60*60*24)-($hours_remaining*60*60))-($minutes_remaining*60));
