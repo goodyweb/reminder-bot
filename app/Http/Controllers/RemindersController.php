@@ -41,7 +41,7 @@ class RemindersController extends Controller
             $image->move($destinationPath, $reminderImage);
             $filename = $reminderImage;
         } else {
-            $filename = 'no-img.png';
+            $filename = 'no-img.jpg';
         }
        
 
@@ -56,7 +56,7 @@ class RemindersController extends Controller
         $reminder->type2 = $request->input('type2');
         $reminder->user_id = auth()->user()->id;
         $reminder->image = $filename;
-        $reminder->notified = $request->input('notif');
+        $reminder->notif = $request->input('notif');
         $reminder->save();
 
         return redirect()->route('reminders.index')

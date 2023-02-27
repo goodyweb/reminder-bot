@@ -70,10 +70,15 @@
                                 </select>
                         </div>
 
-<!-- <div class="form-control mb-4">
-                <label for="dateend" class="form-label">End Date and Time: <span class="text-danger">*</span></label>
-                <input class="form-control mb-4"type ="datetime-local" id="dateend" name="dateend" value="2018-07-22" min="2018-01-01" max="2030-12-31">
-            </div>-->
+                      <div class="form-control mb-4">
+                        <label for="notif" class="form-label">Notify Me?: <span class="text-danger">*</span></label>
+                        <select name="notif" id="notif" class="form-control mb-4">
+                                    <option value="monthly"> Monthly</option>
+                                    <option value="daily">Daily</option>
+                                    <option value="hourly">Hourly</option>
+                                    <option value="minutes">Minutes</option>
+                                </select>
+                      </div>
             
                 <div class="mb-3">
                     <label for="image" class="form-label">Reminder Image <span class="text-danger">*</span></label>
