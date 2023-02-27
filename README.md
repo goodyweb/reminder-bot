@@ -14,18 +14,31 @@
 A reminder bot system, designed by Goody Web Solutions Inc. first student interns from Central Mindanao University, was built using Laravel 9 and bootstrap.
 
 ## Installation
+1. Clone the Repository
+2. Database Configuration
 
-- Download this project or clone this repo and save to your local
-- If clone Run <code>git clone https://github.com/hectordolo/laravel-sbadmin.git 'PROJECT_DIRECTORY'</code>
-- <code>cd 'PROJECT_DIRECTORY'</code>
-- Run <code>composer install</code> to install all dependencies needed.
-- <code>php artisan key:generate</code>
-- Create new database on your database.
+Download this project or clone this repo and save to your local.
+
+1. Clone the Repository
+- Go to <code>C:/xampp/htdocs</code>
+    - <code>cd 'C:/xampp/htdocs'</code>
+- Clone the repository
+    - Run <code>git clone https://github.com/hectordolo/laravel-sbadmin.git</code>
+- Go to the 'Project_Directory'
+    - <code>cd 'PROJECT_DIRECTORY'</code>
+-Install all Dependencies needed
+    - Run <code>composer install</code> 
+    
+2. Database Configuration
+- Run both Apache and MySQL in the XAMPP Control Panel
+- Go to <code>localhost/phpmyadmin</code> in your browser or Navicat. Create new database on your database.
 - copy <code>.env.example</code> to <code>.env</code>
 - edit <code>.env</code>
     - set <code>DB_DATABASE = "Your_Database_name"</code>
     - set <code>DB_USERNAME = "Your_username"</code>
     - set <code>DB_Password = "Your_password"</code>
+- Generate application key
+    - <code>php artisan key:generate</code>
 - Run command <code>php artisan migrate</code> to generate all table migrations which is exist in this project.
 - Run command <code>php artisan optimize</code> to creates a compiled file of commonly used classes in other to reduce the amount of files that must be included on each request.
 - Run <code>php artisan serve</code> to start your laravel server.
