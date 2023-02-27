@@ -9,12 +9,13 @@ body, html {
 /* Style tab links */
 .tablink {
   background-color: black;
+  border-radius: 15px 50px 5px; 
   color: white;
   float: left;
   border: none;
   outline: none;
   cursor: pointer;
-  padding: 14px 16px;
+  padding: 12px 14px;
   font-size: 15px;
   width: 20%;
 }
@@ -29,35 +30,36 @@ body, html {
   display: none;
   padding: 15px 20px;
   height: auto;
+  border-radius: 15px 50px;
 }
 
-#Home {background-color: orange;}
-#News {background-color: orange;}
+#Home {background-color: #ffc729;}
+#News {background-color: #ffc729;}
 </style>
 @extends('templates.master')
 @section('content')
 
 <div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
     <div class="d-flex align-items-center flex-wrap text-nowrap">
-        <a href="{{route('reminders.create')}}" class="btn btn-warning btn-icon-text mb-2 mb-md-0">
+        <a href="{{route('reminders.create')}}" class="btn btn-warning btn-icon-text mb-2 mb-md-0" style="border-radius: 15px 50px 30px 5px" >
           <i data-feather="plus"></i> Add New Reminders
         </a>
     </div>
 </div>
 
-  <button class="tablink" onclick="openPage('Home', this, 'orange')" id="defaultOpen">Card View</button>
-  <button class="tablink" onclick="openPage('News', this, 'orange')">Table View</button> 
+  <button class="tablink" onclick="openPage('Home', this, '#ffc729')" id="defaultOpen">Card View</button>
+  <button class="tablink" onclick="openPage('News', this, '#ffc729')">Table View</button> 
     <div>
         <h2 class="mb-3 mb-md-0 text-center"><b>ALL REMINDERS</b></h2>
         <hr>
       </div>
 
 <div id="Home" class="tabcontent">
-<div class="container-fluid mt--7">
+<div class="container">
         @if(count($reminders) > 0)
           <div class="row">
               @foreach ($reminders as $index => $val)
-              <div class="col-xl-4 mt-5 mb-5 mb-xl-0">
+              <div class="col-xl-4 mt-4 mb-4 mb-xl-0">
                   <div class="card shadow">
                       <img class="card-img-top card-img-top-post" src="/img/{{ $val->image }}">
                       <div class="card-body card-body-post">
@@ -77,7 +79,7 @@ body, html {
                                 <form action="{{ route('reminders.destroy',$val->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button class="btn btn-outline-danger btn-sm" type="submit"><i data-feather="trash"></i> Delete</button>
+                                    <button type="button" class="btn btn-outline-danger btn-sm" onclick="confirm('Are you sure you want to dissolve the {{ $val->title }} class?') ? this.parentElement.submit() : ''"><i data-feather="trash"></i> Delete</button>
                                 </form>
                             </div>
                         </div>
@@ -99,7 +101,7 @@ body, html {
 </div>
 
 <div id="News" class="tabcontent">
-    <div class="card">
+    <div class="card" style="border-radius: 15px 50px 5px">
         <div class="card-body">
             @if ($message = session('success'))
                 <div class="alert alert-success">
@@ -114,8 +116,13 @@ body, html {
                         <th class="pt-0">Reminder Title</th>
                         <th class="pt-0">Content Detail</th>
                         <th class="pt-0">Description</th>
+<<<<<<< HEAD
+=======
+                        <!--<th class="pt-0">Webhook Link</th>-->
+>>>>>>> main
                         <th class="pt-0">Footer</th>
                         <th class="pt-0">Date End</th>
+                        <th></th>
                         <th class="pt-0">Image</th>
                         <th class="text-center">Actions</th>
                     </tr>
@@ -149,7 +156,7 @@ body, html {
                                 <?php echo $setDate->days ." days "; ?>
                                 @endif
                                 </td>
-                            @endif
+                           
                             <td><img alt="img" src="/img/{{ $val->image }}" class="text-center" width="100px" height="100px"></td>
                             <td>
                                 <form action="{{ route('reminders.destroy',$val->id) }}" method="POST">
@@ -157,7 +164,7 @@ body, html {
                                     @method('DELETE')
                                     <a class="btn btn-sm btn-success" href="{{route('reminder_view.show', $val->id)}}"><i data-feather="eye"></i> Show</a>
                                     <a class="btn btn-sm btn-warning" href="{{route('reminders.edit', $val->id)}}"><i data-feather="link"></i> Edit</a>
-                                    <button class="btn btn-sm btn-danger" type="submit"><i data-feather="trash"></i> Delete</button>
+                                    <button type="button" class="btn btn-danger btn-sm" onclick="confirm('Are you sure you want to dissolve the {{ $val->title }} class?') ? this.parentElement.submit() : ''"><i data-feather="trash"></i> Delete</button>
                                 </form>
                             </td>
                         </tr>

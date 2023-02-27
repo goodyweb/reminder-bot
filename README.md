@@ -7,11 +7,59 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+# Documentation
+
+# Table of Contents
+1. [BOTReminder](#BOTReminder)
+2. [Pre-requisite](#pre-requisite)
+3. [Installation](#Installation)
+    1. [Clone the repository](#clone)
+    2. [Database Configuration](#database-configuration)
+4. [Another paragraph](#paragraph2)
+
+## BOTReminder<a name="BOTReminder"></a>
+
+A reminder bot system, designed by Goody Web Solutions Inc. first student interns from Central Mindanao University, was built using Laravel 9 and bootstrap.
+
+## Pre-requisite<a name="pre-requisite"></a>
+- XAMPP
+- NPM
+- Git/Git Bash
+- Composer
+
+## Installation<a name="Installation"></a>
+- Download this project or clone this repo and save to your local.
+
+1. Clone the Repository<a name="clone"></a>
+- Go to <code>C:/xampp/htdocs</code>
+    - <code>cd 'C:/xampp/htdocs'</code>
+- Clone the repository
+    - Run <code>git clone https://github.com/hectordolo/laravel-sbadmin.git</code>
+- Go to the 'Project_Directory'
+    - <code>cd 'PROJECT_DIRECTORY'</code>
+- Install all Dependencies needed
+    - Run <code>composer install</code> 
+<br><br>
+2. Database Configuration<a name="database-configuration"></a>
+- Run both <code>Apache</code> and <code>MySQL</code> in the XAMPP Control Panel
+- Go to <code>localhost/phpmyadmin</code> in your browser or Navicat. Create new database on your database.
+- copy <code>.env.example</code> to <code>.env</code>
+- edit <code>.env</code>
+    - set <code>DB_DATABASE = "Your_Database_name"</code>
+    - set <code>DB_USERNAME = "Your_username"</code>
+    - set <code>DB_Password = "Your_password"</code>
+- Generate application key
+    - <code>php artisan key:generate</code>
+- Run command <code>php artisan migrate</code> to generate all table migrations which is exist in this project.
+- Run command <code>php artisan optimize</code> to creates a compiled file of commonly used classes in other to reduce the amount of files that must be included on each request.
+- Run <code>php artisan serve</code> to start your laravel server.
+- You can now register a new user to use the application.
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
+
 - [Powerful dependency injection container](https://laravel.com/docs/container).
 - Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
 - Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
