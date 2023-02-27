@@ -11318,6 +11318,7 @@ video.bg-video {
   height: auto;
   transform: translateX(-50%) translateY(-50%);
   z-index: 0;
+  
 }
 
 @media (pointer: coarse) and (hover: none) {
@@ -11348,7 +11349,11 @@ video.bg-video {
   left: 0;
   height: 100%;
   width: 100%;
+<<<<<<< HEAD
   background-color: rgba(255, 223, 0, 0.50);
+=======
+  background-color: rgba(255, 223, 0, 0.60);
+>>>>>>> 9bb963b01e33f67ed5adda33e8d5c10fc377656c
 }
 .masthead .masthead-content {
   position: relative;
@@ -11389,6 +11394,7 @@ video.bg-video {
     width: 75vw;
     min-height: 0;
     padding-bottom: 0;
+    
   }
   .masthead:before {
     transform: skewX(-9deg);
@@ -11463,19 +11469,19 @@ video.bg-video {
 }
 .masthead1 .masthead1-content {
   position: relative;
-  max-width: 28rem;
+  max-width: 31rem;
   color: rgba(39,33,10, 0.79);
   flex: 1 1 auto;
 }
 
   .masthead1 .masthead1-content {
-    padding-top: 3rem;
-    padding-bottom: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 5rem;
   }
 
   .masthead1:before {
     content: "";
-    position: absolute;
+    position:absolute;
     top: 0;
     bottom: 0;
     right: 0;
@@ -11486,12 +11492,12 @@ video.bg-video {
   }
   @media (min-width: 1200px) {
     .masthead1 {
-      width: 67vw;
+      width: 68vw;
       color: rgba(250, 211, 18, 0.99);
     }
   }
   .masthead1:before {
-    transform: skewX(-9deg);
+    transform: skewX(-15deg);
     transform-origin: top right; 
   }
   
