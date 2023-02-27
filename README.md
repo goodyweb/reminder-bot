@@ -66,7 +66,7 @@ After logging in for the first time, you can see on the dashboard the number of 
 - Table View
 
 2. View, Edit, and Delete Reminders <br>
-If you go to Reminders. Here you can view all reminders. Reminders can be viewed, edited, deleted from here.
+If you go to Reminders, you can view all the reminders. Reminders can be viewed, edited, and deleted from here.
 
 4. Add New Reminder
 - Multiple Reminder
