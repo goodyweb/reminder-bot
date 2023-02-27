@@ -152,7 +152,7 @@ body, html {
                                 <?php echo $setDate->days ." days "; ?>
                                 @endif
                                 </td>
-                           
+                           @endif
                             <td><img alt="img" src="/img/{{ $val->image }}" class="text-center" width="100px" height="100px"></td>
                             <td>
                                 <form action="{{ route('reminders.destroy',$val->id) }}" method="POST">
