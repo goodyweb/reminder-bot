@@ -57,7 +57,7 @@ A reminder bot system, designed by Goody Web Solutions Inc. first student intern
 
 ## Steps to follow<a name="#steps-to-follow"></a>
 
-1. Dashboard
+1. Dashboard <br>
 After logging in for the first time, you can see on the dashboard the number of users, all reminders, and the upcoming events.
 
 2. Reminders
