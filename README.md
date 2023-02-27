@@ -17,7 +17,7 @@ A reminder bot system, designed by Goody Web Solutions Inc. first student intern
 1. Clone the Repository
 2. Database Configuration
 <br><br>
-Download this project or clone this repo and save to your local.
+- Download this project or clone this repo and save to your local.
 <br><br>
 
 1. Clone the Repository
