@@ -7,27 +7,31 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-# Documentation
+### Documentation
 
 ## Installation
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
-
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- Download this project or clone this repo and save to your local
+- If clone Run git clone https://github.com/goodyweb/reminder-bot.git 'PROJECT_DIRECTORY'
+- cd 'PROJECT_DIRECTORY'
+- Run composer install to install all dependencies needed.
+- php artisan key:generate
+- Create new database on your database.
+- copy .env.example to .env
+- edit .env
+    - set DB_DATABASE = "Your_Database_name"
+    - set DB_USERNAME = "Your_username"
+    - set DB_Password = "Your_password"
+- Run command php artisan migrate to generate all table migrations which is exist in this project.
+- Run command php artisan optimize to creates a compiled file of commonly used classes in other to reduce the amount of files that must be included on each request.
+- Run php artisan serve to start your laravel server.
+- You can now register a new user to use the application.
 
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
+
 - [Powerful dependency injection container](https://laravel.com/docs/container).
 - Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
 - Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
