@@ -20,6 +20,7 @@
     <link href="{{asset('css/style.min.css')}}" rel="stylesheet" />
     <link  type="text/css" href="{{asset('css/dataTables.bootstrap5.min.css')}}" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="{{asset('css/toastr.min.css')}}">
+    
 </head>
 <body class="navbar-dark" data-base-url="/">
 <div class="main-wrapper" id="app">
