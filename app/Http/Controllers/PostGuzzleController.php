@@ -25,16 +25,16 @@ class PostGuzzleController extends Controller
           
             if($countdown->type2 == "reminders")
             {
-                if($countdown->notif == "monthly" && $countdown->type2 == "reminders")
+                if($countdown->notif == "monthly" && $countdown->dateend <= Carbon::now()->addMonth()->toDateTimeString())
                 {
                     $this->everyMonth();
-                }elseif($countdown->notif == "daily" && $countdown->type2 == "reminders")
+                }elseif($countdown->notif == "daily" && $countdown->dateend <= Carbon::now()->addDay()->toDateTimeString())
                 {
                     $this->everyDay();
-                }elseif($countdown->notif == "hourly" && $countdown->type2 == "reminders")
+                }elseif($countdown->notif == "hourly" && $countdown->dateend <= Carbon::now()->addHour()->toDateTimeString())
                 {
                     $this->everyHour();
-                }elseif($countdown->notif == "minutes" && $countdown->type2 == "reminders")
+                }elseif($countdown->notif == "minutes" && $countdown->dateend <= Carbon::now()->add(20, 'minutes')->toDateTimeString())
                 {
                     $this->everyMinute();
                 }
@@ -370,7 +370,7 @@ class PostGuzzleController extends Controller
                     'embeds' => [
                         [
                             'title' => $booking->title,
-                            'description' => $booking->description . " \n" . $dateDisplay1 . " \n" . $months_remaining . " months " . $days_remaining . " days ". $hours_remaining . " hours and ". $minutes_remaining . " minutes and ". $seconds_remaining . " seconds left ",
+                            'description' => $booking->description . " \n" . $dateDisplay1 . " \n" . $months_remaining . " months " . $days_remaining . " days ". $hours_remaining . " hours ". $minutes_remaining . " minutes and ". $seconds_remaining . " seconds left ",
                             'color' => '7506394',
                         ]
                     ],
@@ -769,21 +769,33 @@ class PostGuzzleController extends Controller
                 $minutes_remaining = floor(($remaining-($days_remaining*60*60*24)-($hours_remaining*60*60))/60);
                 $seconds_remaining = floor(($remaining-($days_remaining*60*60*24)-($hours_remaining*60*60))-($minutes_remaining*60));
                 
+                if($minutes_remaining == 0){
 
-                return Http::post($booking->webhook, [
-                    'content' => $booking->content,
-                    'embeds' => [
-                        [
-                            'title' => $booking->title,
-                            'description' => $booking->description . " \n" . $dateDisplay1 . " \n" . $days_remaining . " days ". $hours_remaining . " hours and ". $minutes_remaining . " minutes and ". $seconds_remaining . " seconds left ",
-                            'color' => '7506394',
-                        ]
-                    ],
-                ]);
-            
+                    return Http::post($booking->webhook, [
+                        'content' => $booking->content,
+                        'embeds' => [
+                            [
+                                'title' => $booking->title,
+                                'description' => $booking->description . "\n" . $dateDisplay1 . " \n <b> Time's Up! </b>",
+                                'color' => '7506394',
+                            ]
+                        ],
+                    ]);
+                }else{
 
-                $booking->notified = 1;
-                $booking->save();
+                    return Http::post($booking->webhook, [
+                        'content' => $booking->content,
+                        'embeds' => [
+                            [
+                                'title' => $booking->title,
+                                'description' => $booking->description . "\n" . $dateDisplay1 . " \n" . $days_remaining . " days ". $hours_remaining . " hours and ". $minutes_remaining . " minutes and ". $seconds_remaining . " seconds left ",
+                                'color' => '7506394',
+                            ]
+                        ],
+                    ]);
+                }
+
+              
             }elseif($booking->type == "Just Days" && $booking->notif == "minutes"){
                 $date = date_create($booking->dateend, timezone_open('Asia/Manila'));
             

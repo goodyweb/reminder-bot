@@ -29,17 +29,10 @@
                 {{ csrf_field() }}
                 
                 <div class="mb-3">
-                    <label for="title" class="form-label">Reminder Title <span class="text-danger">*</span></label>
+                    <label for="title" class="form-label">Reminder Details <span class="text-danger">*</span></label>
                     <input id="title" name="title" type="text" class="form-control" placeholder="Title Name">
                 </div>
-                <div class="mb-3">
-                    <label for="content" class="form-label">Content Detail<span class="text-danger">*</span></label>
-                    <input id="content" name="content" type="text" class="form-control" placeholder="Content Detail">
-                </div>
-                <div class="mb-3">
-                    <label for="description" class="form-label">Description<span class="text-danger">*</span></label>
-                    <textarea class="form-control" placeholder="Description" name="description" id="description" cols="12" rows="3"></textarea>
-                </div>
+                
                 <div class="mb-3">
                     <label for="webhook" class="form-label">Webhook<span class="text-danger">*</span></label>
                     <input id="webhook" name="webhook" type="text" class="form-control" placeholder="Webhook Link">

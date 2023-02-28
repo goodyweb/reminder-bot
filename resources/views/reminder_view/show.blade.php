@@ -117,6 +117,7 @@ li span {
 
         const now = new Date().getTime(),
               distance = countDown - now;
+              distance1 = Math.floor((distance % (minute)) / second);
 
         document.getElementById("days").innerText = Math.floor(distance / (day)),
           document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
@@ -124,7 +125,7 @@ li span {
           document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
 
         //do something later when date is reached
-        if (distance < 0) {
+        if (distance1 <= 0.000001) {
           document.getElementById("headline").innerText = "Times Up!";
           document.getElementById("countdown").style.display = "none";
           document.getElementById("content").style.display = "block";

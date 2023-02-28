@@ -116,9 +116,7 @@ body, html {
                         <th class="pt-0">Reminder Title</th>
                         <th class="pt-0">Content Detail</th>
                         <th class="pt-0">Description</th>
-                        <th class="pt-0">Footer</th>
                         <th class="pt-0">Date End</th>
-                        <th></th>
                         <th class="pt-0">Image</th>
                         <th class="text-center">Actions</th>
                     </tr>
@@ -130,13 +128,12 @@ body, html {
                             <td>{{$val->title}}</td>
                             <td>{{$val->content}}</td>
                             <td>{{$val->description}}</td>
-                            <td>{{$val->footer}}</td>
-                            @if($val->dateend >= Carbon\Carbon::now()->setTimezone('Asia/Manila'))
+                            @if($val->dateend <= Carbon\Carbon::now()->setTimezone('Asia/Manila'))
                             
                               <?php 
                                     $date = new DateTime($val->dateend);
                                     $date1 = date_format($date, "F d, Y H:i:s");?>
-                                <td>Ends on <?php echo $date1; ?></td>
+                                <td>Ended on <?php echo $date1; ?></td>
                             @else
                             <?php 
                                     $setDate = Carbon\Carbon::now()->setTimezone('Asia/Manila')->diff(Carbon\Carbon::parse($val->dateend)->setTimezone('Asia/Manila'));
