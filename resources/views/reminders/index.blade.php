@@ -67,7 +67,7 @@ body, html {
                         <p class="card-text card-text-post">
                           {{$val->content}}
                         </p>
-                        <p><small>Written by {{ $val->user->name }} | {{ $val->dateend }}</small></p>
+                        <p><small>Written by {{ $val->title }} | {{ $val->dateend }}</small></p>
                       
                         <hr>
                         <div class="button-group row">

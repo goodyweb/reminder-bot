@@ -54,20 +54,23 @@
                     <input class="form-control mb-4"type ="datetime-local" id="dateend" name="dateend" value="2018-07-22" min="2018-01-01" max="2030-12-31">
                 </div>
 
-            <div class="mb-3">
+            <div class="form-row">
+            <div class="col">
                         <label for="type2">Type <span class="text-danger">*</span></label>
-                            <select name="type2" id="type2" class="form-control mb-4">
+                            <select name="type2" id="type2" class="form-control mb-4" required>
                                     <option value="reminders"> Multiple Reminder</option>
                                     <option value="countdown">Countdown</option>
                                 </select>
                         </div>
-            <div class="mb-3">
-                        <label for="type">Format <span class="text-danger">*</span></label>
-                            <select name="type" id="type" class="form-control mb-4">
+            <div class="mb-3" hidden>
+                        <label for="format" class="col-form-label">1Format</label>
+                            <select name="format" id="countdown" class="form-control mb-4" required>
+                                    <option selected disabled value="">Select ...</option>
                                     <option value="Weeks"> Months / Days / Hours / Minutes / Seconds</option>
                                     <option value="Days">Days / Hours / Minutes / Seconds</option>
                                     <option value="Just Days">Just Days</option>
                                 </select>
+                        </div>
                         </div>
 
 <!-- <div class="form-control mb-4">
