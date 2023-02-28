@@ -26,7 +26,7 @@
     <video class="bg-video" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop"><source src="assets/mp4/bg.mp4" type="video/mp4" /></video>
         <!-- Masthead-->
         <div class="masthead1 " >
-            <div class="masthead1-content text-light">
+            <div class="masthead1-content text-dark">
                 <div class="container-fluid ">
                 <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-light shadow-md overflow-hidden sm:rounded-lg" style="--bs-bg-opacity: .6;">
             <div>
