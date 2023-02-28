@@ -14,7 +14,7 @@ class PostGuzzleController extends Controller
 
     public function triggerNotification(){
         
-    }
+    }  
     public function notification()
     {
 
