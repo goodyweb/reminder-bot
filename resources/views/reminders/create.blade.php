@@ -29,15 +29,15 @@
                 {{ csrf_field() }}
                 
                 <div class="mb-3">
-                    <label for="title" class="form-label">Reminder Title <span class="text-danger">*</span></label>
+                    <label for="title" class="form-label">Reminder Details <span class="text-danger">*</span></label>
                     <input id="title" name="title" type="text" class="form-control" placeholder="Title Name">
                 </div>
                 <div class="mb-3">
-                    <label for="content" class="form-label">Content Detail<span class="text-danger">*</span></label>
+                    <label for="content" class="form-label">Month<span class="text-danger">*</span></label>
                     <input id="content" name="content" type="text" class="form-control" placeholder="Content Detail">
                 </div>
                 <div class="mb-3">
-                    <label for="description" class="form-label">Description<span class="text-danger">*</span></label>
+                    <label for="description" class="form-label">Day<span class="text-danger">*</span></label>
                     <textarea class="form-control" placeholder="Description" name="description" id="description" cols="12" rows="3"></textarea>
                 </div>
                 <div class="mb-3">
@@ -73,10 +73,15 @@
                         </div>
                         </div>
 
-<!-- <div class="form-control mb-4">
-                <label for="dateend" class="form-label">End Date and Time: <span class="text-danger">*</span></label>
-                <input class="form-control mb-4"type ="datetime-local" id="dateend" name="dateend" value="2018-07-22" min="2018-01-01" max="2030-12-31">
-            </div>-->
+                      <div class="form-control mb-4">
+                        <label for="notif" class="form-label">Notify Me?: <span class="text-danger">*</span></label>
+                        <select name="notif" id="notif" class="form-control mb-4">
+                                    <option value="monthly"> Monthly</option>
+                                    <option value="daily">Daily</option>
+                                    <option value="hourly">Hourly</option>
+                                    <option value="minutes">Minutes</option>
+                                </select>
+                      </div>
             
                 <div class="mb-3">
                     <label for="image" class="form-label">Reminder Image <span class="text-danger">*</span></label>
