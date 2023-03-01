@@ -11349,11 +11349,7 @@ video.bg-video {
   left: 0;
   height: 100%;
   width: 100%;
-<<<<<<< HEAD
   background-color: rgba(255, 223, 0, 0.50);
-=======
-  background-color: rgba(255, 223, 0, 0.60);
->>>>>>> 9bb963b01e33f67ed5adda33e8d5c10fc377656c
 }
 .masthead .masthead-content {
   position: relative;

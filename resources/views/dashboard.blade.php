@@ -51,6 +51,8 @@
                         </div>
                 </div>
             </div>
+
+            <x-guest-layout>
             <div class="col-xl-4 mb-5 mb-xl-0">
                 <div class="card shadow">
                         <div class="bg-light card-header border-0">
@@ -93,5 +95,5 @@
         
     </div>
 
-
+</x-guest-layout>
 @endsection
