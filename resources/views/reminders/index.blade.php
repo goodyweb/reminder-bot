@@ -124,7 +124,11 @@ body, html {
                     <tbody>
                     @foreach($reminders as $index => $val)
                         <tr>
-                            <td>{{++$index}}</td>
+                            <td>{{++$index}}
+                           <?php echo $monthNow = Carbon\Carbon::now()->month;
+                           
+                           ?>
+                            </td>
                             <td>{{$val->title}}</td>
                             <td>{{$val->content}}</td>
                             <td>{{$val->description}}</td>

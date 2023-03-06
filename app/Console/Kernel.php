@@ -21,24 +21,10 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        
-      $reminders = Reminders::all();
 
-      foreach($reminders as $reminder)
-        {
-            if($reminder->notif == 'monthly'){
-                $schedule->command('remind:monthly')->monthly();
-            }elseif($reminder->notif == 'daily'){
-                $schedule->command('remind:daily')->daily();
-            }elseif($reminder->notif == 'hourly'){
-                $schedule->command('remind:hourly')->hourly();
-            }elseif($reminder->notif == 'minutes'){
-                $schedule->command('remind:minutes')->everyMinute();
-            }
+        $schedule->command('remind:daily')->everyMinute();
 
-            
-        }
-       //$schedule->command('command:remind')->everyMinute();
+       
     }
 
     /**
