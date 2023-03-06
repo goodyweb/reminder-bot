@@ -4,21 +4,21 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 
-class RemindEveryHourCommand extends Command
+class RemindQuarterlyCommand extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'remind:hourly';
+    protected $signature = 'remind:daily2';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Remind me Every hour';
+    protected $description = 'Remind me everyday';
 
     /**
      * Execute the console command.
@@ -27,6 +27,6 @@ class RemindEveryHourCommand extends Command
      */
     public function handle()
     {
-        return app()->call('App\Http\Controllers\PostGuzzleController@notificationEveryHour');
+        return app()->call('App\Http\Controllers\ReminderController@fixDateNotifyQuarterly');
     }
 }
