@@ -22,7 +22,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/toastr.min.css')}}">
     
 </head>
-<body class="navbar-dark" data-base-url="/">
+<body class="navbar-dark " data-base-url="/">
 <div class="main-wrapper" id="app">
     <div class="horizontal-menu">
         @include('templates.top_menu')
