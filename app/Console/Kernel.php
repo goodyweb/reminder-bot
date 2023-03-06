@@ -3,7 +3,7 @@
 namespace App\Console;
 use App\Console\Commands;
 use DB;
-use App\Models\FixedDate;
+use App\Models\Notify;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -22,12 +22,14 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
 
-        $fixeddates = FixedDate::all();
+        
 
-        foreach($fixeddates as $fixeddate){
-            if($fixeddate->frequency == "Annually"){
+        $notify = Notify::All();
+        foreach($notify as $notif){
+        
+            if($notif->name == "Annually"){
                 $schedule->command('remind:daily1')->everyMinute();
-            }elseif($fixeddate->frequency == "Quarterly"){
+            }elseif($notif->name == "Quarterly"){
                 $schedule->command('remind:daily2')->everyMinute();
             }else{
                 $schedule->command('remind:daily3')->everyMinute();

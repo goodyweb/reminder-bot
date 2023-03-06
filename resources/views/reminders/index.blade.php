@@ -128,11 +128,9 @@ body, html {
                     @foreach($fixeddate as $index => $val)
                         <tr>
                             <td>{{++$index}}
-                           <?php echo $monthNow = Carbon\Carbon::now()->month;
                            
-                           ?>
                             </td>
-                            <td>{{$val->title}}</td>
+                            <td>{{$val->title }} </td>
                             <td>{{$val->content}}</td>
                             <td>{{$val->description}}</td>
                             @if($val->dateend <= Carbon\Carbon::now()->setTimezone('Asia/Manila'))
