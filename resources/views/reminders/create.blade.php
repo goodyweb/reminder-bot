@@ -19,85 +19,42 @@
         </div>
     </div>
 
-<div class="card bg-warning mb-3 mb-md-0 " style="border-radius: 15px 50px 30px">
-        <div class="card-body">
-    <div class="card shadow-lg p-3 mb-3 mb-md-0" style="border-radius: 15px 50px 30px">
-    <h3 class="heading-small text-primary mb-4 mt-3" style="text-align: center"><b>[ REMINDER EVENT ]</b></h3><hr>
-        <div class="card-body">
-            <div class="pl-lg-4 row">
-                <div class="col-12 col-md-6">
-                    <div class="row">
-                        <div class="mb-3">
-                        <label for="details" class="form-label"><b>Reminder Details</b><span class="text-danger">*</span></label>
-                        <textarea class="form-control" placeholder="Details" name="details" id="details" cols="12" rows="2"></textarea>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="webhook" class="form-label"><b>Webhook</b><span class="text-danger">*</span></label>
-                        <input id="webhook" name="webhook" type="text" class="form-control" placeholder="Webhook Link">
-                    </div>
-                </div>
-                    <div class="pl-lg-4 row">
-                        <h6 class="heading-small text-muted mb-4 mt-3">Start Date</h6>
-                            <div class="col-12 col-md-6">
-                                <label class="form-control-label" for="startMonth">Month</label>
-                                <select id="startMonth" name="startMonth" class="form-select" required>
-                                    <option value="">-- Select Month --</option>
-                                    <option value="1">Janaury</option>
-                                    <option value="2">February</option>
-                                    <option value="3">March</option>
-                                    <option value="4">April</option>
-                                    <option value="5">May</option>
-                                    <option value="6">June</option>
-                                    <option value="7">July</option>
-                                    <option value="8">August</option>
-                                    <option value="9">September</option>
-                                    <option value="10">October</option>
-                                    <option value="11">November</option>
-                                    <option value="12">December</option>
-                                </select>
-                            </div>
-
-                            <div class="col-12 col-md-6">
-                                <label class="form-control-label" for="startDay">Day</label>
-                                    <select id="startDay" name="startDay" class="form-select" required>
-                                        <option value="">-- Select Day --</option>
-                                        <option value="1">Monday</option>
-                                        <option value="2">Tuesday</option>
-                                        <option value="3">Wednesday</option>
-                                        <option value="4">Thursday</option>
-                                        <option value="5">Friday</option>
-                                        <option value="6">Saturday</option>
-                                        <option value="7">Sunday</option>
-                                    </select>
-                                </div>
-                            </div>
+    @if ($errors->any())
+        <div class="mt-2 alert alert-danger">
+            <ul class="mb-0">
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+               
+    <div class="card bg-warning mb-3 mb-md-0 " style="border-radius: 15px 50px 30px">
+            <div class="card-body">
+        <div class="card shadow-lg p-3 mb-3 mb-md-0" style="border-radius: 15px 50px 30px">
+        <h3 class="heading-small text-primary mb-4 mt-3" style="text-align: center"><b>[ REMINDER EVENT ]</b></h3><hr>
+            <div class="card-body">
+                <form action="{{ route('fixeddate.store') }}" method="POST" enctype="multipart/form-data">
+                {{ csrf_field() }}
+                <div class="pl-lg-4 row">
+                    <div class="col-12 col-md-6">
+                        <div class="row">
+                            <div class="mb-3">
+                            <label for="details" class="form-label"><b>Reminder Details</b><span class="text-danger">*</span></label>
+                            <textarea class="form-control" placeholder="Details" name="details" id="details" cols="12" rows="2"></textarea>
                         </div>
 
-                        <div class="col-12 col-md-6">
-                            <div class="row">
-                                <div class="mb-3">
-                                    <label for="frequency" class="form-label"><b>Notify Me? : </b><span class="text-danger">*</span></label>
-                                    <select name="frequency" id="frequency" class="form-select">
-                                        <option value="monthly"> Monthly</option>
-                                        <option value="daily">Daily</option>
-                                        <option value="hourly">Hourly</option>
-                                        <option value="minutes">Minutes</option>
-                                    </select>
-                                </div>
-
-                                <div class="mb-3"><br>
-                                    <label for="image" class="form-label"><b>Reminder Image</b><span class="text-muted">(optional)</span></label>
-                                    <input id="image" name="image" type="file" class="form-control">
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <h6 class="heading-small text-muted mb-4 mt-3">End Date</h6>
+                        <div class="mb-3">
+                            <label for="webhook" class="form-label"><b>Webhook</b><span class="text-danger">*</span></label>
+                            <input id="webhook" name="webhook" type="text" class="form-control" placeholder="Webhook Link">
+                        </div>
+                    </div>
+                        <div class="pl-lg-4 row">
+                            <h6 class="heading-small text-muted mb-4 mt-3">Start Date</h6>
                                 <div class="col-12 col-md-6">
-                                    <label class="form-control-label" for="endMonth">Month</label>
-                                    <select id="endMonth" name="endMonth" class="form-select" required>
-                                        <option value="">-- Select month --</option>
+                                    <label class="form-control-label" for="startMonth">Month</label>
+                                    <select id="startMonth" name="startMonth" class="form-select" required>
+                                        <option value="">-- Select Month --</option>
                                         <option value="1">Janaury</option>
                                         <option value="2">February</option>
                                         <option value="3">March</option>
@@ -114,28 +71,83 @@
                                 </div>
 
                                 <div class="col-12 col-md-6">
-                                    <label class="form-control-label" for="endDay">Day</label>
-                                    <select class="form-select" id="endDay" name="endDay" required>
-                                        <option value="">-- Select day --</option>
-                                        <option value="1">Monday</option>
-                                        <option value="2">Tuesday</option>
-                                        <option value="3">Wednesday</option>
-                                        <option value="4">Thursday</option>
-                                        <option value="5">Friday</option>
-                                        <option value="6">Saturday</option>
-                                        <option value="7">Sunday</option>
-                                    </select>
+                                    <label class="form-control-label" for="startDay">Day</label>
+                                        <select id="startDay" name="startDay" class="form-select" required>
+                                            <option value="">-- Select Day --</option>
+                                            <option value="1">Monday</option>
+                                            <option value="2">Tuesday</option>
+                                            <option value="3">Wednesday</option>
+                                            <option value="4">Thursday</option>
+                                            <option value="5">Friday</option>
+                                            <option value="6">Saturday</option>
+                                            <option value="7">Sunday</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6">
+                                <div class="row">
+                                    <div class="mb-3">
+                                        <label for="frequency" class="form-label"><b>Notify Me? : </b><span class="text-danger">*</span></label>
+                                        <select name="frequency" id="frequency" class="form-select">
+                                            <option value="monthly"> Monthly</option>
+                                            <option value="daily">Daily</option>
+                                            <option value="hourly">Hourly</option>
+                                            <option value="minutes">Minutes</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="mb-3"><br>
+                                        <label for="image" class="form-label"><b>Reminder Image</b><span class="text-muted">(optional)</span></label>
+                                        <input id="image" name="image" type="file" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <h6 class="heading-small text-muted mb-4 mt-3">End Date</h6>
+                                    <div class="col-12 col-md-6">
+                                        <label class="form-control-label" for="endMonth">Month</label>
+                                        <select id="endMonth" name="endMonth" class="form-select" required>
+                                            <option value="">-- Select month --</option>
+                                            <option value="1">Janaury</option>
+                                            <option value="2">February</option>
+                                            <option value="3">March</option>
+                                            <option value="4">April</option>
+                                            <option value="5">May</option>
+                                            <option value="6">June</option>
+                                            <option value="7">July</option>
+                                            <option value="8">August</option>
+                                            <option value="9">September</option>
+                                            <option value="10">October</option>
+                                            <option value="11">November</option>
+                                            <option value="12">December</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-12 col-md-6">
+                                        <label class="form-control-label" for="endDay">Day</label>
+                                        <select class="form-select" id="endDay" name="endDay" required>
+                                            <option value="">-- Select day --</option>
+                                            <option value="1">Monday</option>
+                                            <option value="2">Tuesday</option>
+                                            <option value="3">Wednesday</option>
+                                            <option value="4">Thursday</option>
+                                            <option value="5">Friday</option>
+                                            <option value="6">Saturday</option>
+                                            <option value="7">Sunday</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="mb-3"><br>
-                        <button type="submit" class="btn btn-success btn-icon-text mb-2 mb-md-0" style="border-radius: 15px 50px 30px 5px">Save Reminder Data</button>
+                        <div class="mb-3"><br>
+                            <button type="submit" class="btn btn-success btn-icon-text mb-2 mb-md-0" style="border-radius: 15px 50px 30px 5px">Save Reminder Data</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     </div>
     </div>
 

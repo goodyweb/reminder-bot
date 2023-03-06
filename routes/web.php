@@ -5,6 +5,7 @@ use App\Http\Controllers\DiscordNotificationController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PostsController;
+use App\Http\Controllers\FixeddateController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\CountdownsController;
@@ -68,10 +69,15 @@ Route::get('dashboard',[ DashboardController::class, 'index'])->middleware(['aut
 
 Route::resource('products', ProductsController::class);
 Route::resource('reminders', RemindersController::class);
+Route::resource('reminders', FixeddateController::class);
 Route::resource('reminder_view', PostGuzzleController::class);
 
 Route::prefix('reminders')->group(function () {
     Route::get('table', [RemindersController::class, 'table']);
+});
+
+Route::prefix('reminders')->group(function () {
+    Route::get('table', [FixedDateController::class, 'table']);
 });
 
 Route::prefix('posts')->group(function () {
