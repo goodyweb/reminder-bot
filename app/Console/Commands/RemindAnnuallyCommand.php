@@ -4,21 +4,21 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 
-class RemindEveryMonthCommand extends Command
+class RemindAnnuallyCommand extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'remind:monthly';
+    protected $signature = 'remind:daily1';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Remind every month';
+    protected $description = 'Remind me everyday with annually';
 
     /**
      * Execute the console command.
@@ -27,6 +27,6 @@ class RemindEveryMonthCommand extends Command
      */
     public function handle()
     {
-        return app()->call('App\Http\Controllers\PostGuzzleController@notificationEveryMonth');
+        return app()->call('App\Http\Controllers\ReminderController@fixDateNotifyAnnually');
     }
 }
