@@ -31,7 +31,7 @@ class Kernel extends ConsoleKernel
                 $schedule->command('remind:daily1')->everyMinute();
             }elseif($notif->name == "Quarterly"){
                 $schedule->command('remind:daily2')->everyMinute();
-            }else{
+            }elseif($notif->name == "Monthly"){
                 $schedule->command('remind:daily3')->everyMinute();
             }
         }

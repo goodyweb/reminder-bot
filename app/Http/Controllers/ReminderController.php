@@ -15,9 +15,10 @@ class ReminderController extends Controller
 
         $monthNow = Carbon::now()->month;
         $dayNow = Carbon::now()->day;
+        $yearNow = Carbon::now()->year;
 
         $fixeddates = FixedDate::where('startMonth', '<=', $monthNow)
-        ->orwhere('endMonth', '>=', $monthNow)
+        ->where('endMonth', '>=', $monthNow)
         ->where('startDay', '<=', $dayNow)
         ->where('frequency', 'like', 'Annually')
         ->get();
@@ -66,13 +67,13 @@ class ReminderController extends Controller
                                 ]
                             ],
                         ]);
-                     }elseif($fixeddate->endDay > Carbon::now()->day && $fixeddate->endMonth == Carbon::now()->month){
+                     }elseif($fixeddate->endDay > Carbon::now()->day && $fixeddate->endMonth == Carbon::now()->month && $fixeddate->year == Carbon::now()->year){
                         Http::post($fixeddate->webhook, [
                             'content' => "Hello, Good day ". $fixeddate->user->name ,
                             'embeds' => [
                                 [
                                     'title' => $fixeddate->details,
-                                    'description' => $days_remaining . " days left ",
+                                    'description' => $days_remaining . " days left",
                                     'color' => '7506394',
                                 ]
                             ],
@@ -93,14 +94,14 @@ class ReminderController extends Controller
         $dayNow = Carbon::now()->day;
 
         $fixeddates = FixedDate::where('startMonth', '<=', $monthNow)
-        ->orwhere('endMonth', '>=', $monthNow)
+        ->where('endMonth', '>=', $monthNow)
         ->where('startDay', '<=', $dayNow)
         ->where('frequency', 'like', 'Quarterly')
         ->get();
 
         foreach($fixeddates as $fixeddate){
 
-            if($fixeddate->endMonth <= $monthNow ){
+            if($fixeddate->endMonth >= $monthNow ){
 
                 if($fixeddate->endMonth == $monthNow){
                    
@@ -177,7 +178,7 @@ class ReminderController extends Controller
                                 ]
                             ],
                         ]);
-                     }elseif($fixeddate->endDay == Carbon::now()->day ){
+                     }elseif($fixeddate->endDay > Carbon::now()->day ){
                         Http::post($fixeddate->webhook, [
                             'content' => "Hello, Good day ". $fixeddate->user->name ,
                             'embeds' => [
@@ -196,11 +197,11 @@ class ReminderController extends Controller
     }
     public function fixDateNotifyMonthly(){
 
-        $monthNow = 12;
+        $monthNow = Carbon::now()->month;
         $dayNow = Carbon::now()->day;
 
         $fixeddates = FixedDate::where('startMonth', '<=', $monthNow)
-        ->orwhere('endMonth', '>=', $monthNow)
+        ->where('endMonth', '>=', $monthNow)
         ->where('startDay', '<=', $dayNow)
         ->where('frequency', 'like', 'Monthly')
         ->get();
@@ -232,14 +233,48 @@ class ReminderController extends Controller
                      if($fixeddate->endDay == Carbon::now()->day){
 
                         
-                      //  if($fixeddate->startMonth == 12 || $fixeddate->endMonth == 12)
-                       // {
-                        $addstartmonth = $fixeddate->startMonth + 1;
-                        $addendmonth = $fixeddate->endMonth + 1;
-                        $fixeddate->startMonth = $addstartmonth;
-                        $fixeddate->endMonth = $addendmonth;
-                        $fixeddate->save();
+                        if($fixeddate->startMonth <= 11 && $fixeddate->endMonth <= 11)
+                        {
+                            $addstartmonth = $fixeddate->startMonth + 1;
+                            $addendmonth = $fixeddate->endMonth + 1;
+                            $fixeddate->startMonth = $addstartmonth;
+                            $fixeddate->endMonth = $addendmonth;
+                            $fixeddate->year = Carbon::now()->year;
+                            
+                        }elseif($fixeddate->startMonth >= 12 && $fixeddate->endMonth >= 12)
+                        {
 
+                            $addstartmonth = ($fixeddate->startMonth + 1) - 12;
+                            $addendmonth = ($fixeddate->endMonth + 1) - 12;
+                            $fixeddate->startMonth = $addstartmonth;
+                            $fixeddate->endMonth = $addendmonth;
+                            $fixeddate->year = Carbon::now()->year +1;
+
+                            
+
+                        }elseif($fixeddate->startMonth <= 11 && $fixeddate->endMonth >= 12)
+                        {
+
+                            $addstartmonth = $fixeddate->startMonth + 1;
+                            $addendmonth = ($fixeddate->endMonth + 1) - 12;
+                            $fixeddate->startMonth = $addstartmonth;
+                            $fixeddate->endMonth = $addendmonth;
+                            $fixeddate->year = Carbon::now()->year +1;
+                            
+
+                        }elseif($fixeddate->startMonth >= 12 && $fixeddate->endMonth <= 11)
+                        {
+
+                            $addstartmonth = ($fixeddate->startMonth + 1) - 12;
+                            $addendmonth = $fixeddate->endMonth + 1;
+                            $fixeddate->startMonth = $addstartmonth;
+                            $fixeddate->endMonth = $addendmonth;
+                            $fixeddate->year = Carbon::now()->year;
+                            
+
+                        }
+                       
+                        $fixeddate->save();
                         Http::post($fixeddate->webhook, [
                             'content' => "Hello, Good day ". $fixeddate->user->name ,
                             'embeds' => [
@@ -250,13 +285,13 @@ class ReminderController extends Controller
                                 ]
                             ],
                         ]);
-                     }else{
+                     }elseif($fixeddate->endDay > Carbon::now()->day ){
                         Http::post($fixeddate->webhook, [
                             'content' => "Hello, Good day ". $fixeddate->user->name ,
                             'embeds' => [
                                 [
                                     'title' => $fixeddate->details,
-                                    'description' => $days_remaining . " days left ",
+                                    'description' => $days_remaining . " days left this is test ",
                                     'color' => '7506394',
                                 ]
                             ],
@@ -265,5 +300,120 @@ class ReminderController extends Controller
 
                 }   
         }
+    }
+/**  ============== unfixeddate reminder ================== */
+    public function unfixedDadteNotification() {
+
+        $unfixeddates = UnfixedDate::all();
+
+        $monthNow = Carbon::now()->month;
+        $dayNow = Carbon::now()->day;
+
+
+        
+
+
+        foreach($unfixeddates as $unfixeddate){
+
+            if($unfixeddate->week == 1){
+
+            }elseif($unfixeddate->week == 1){
+
+            }elseif($unfixeddate->week == 1){
+
+            }
+        if($unfixeddate->frequency == 'Monthly'){
+            if($unfixeddate->month == $monthNow ){
+
+                if($unfixeddate->month == $monthNow){
+                   
+                    $days_remaining = $unfixeddate->endDay - $dayNow;
+                }else{
+                    if($unfixeddate->month == 1 || $unfixeddate->month == 3 || $unfixeddate->month == 5 || $unfixeddate->month == 7 || $unfixeddate->month == 8 || $unfixeddate->month == 10 || $unfixeddate->month == 12){
+                        $days_remaining = ($unfixeddate->endDay + 31) - $dayNow;
+                    }elseif($unfixeddate->month == 4 || $unfixeddate->month == 6 || $unfixeddate->month == 9 || $unfixeddate->month == 11){
+                        $days_remaining = ($unfixeddate->endDay + 31) - $dayNow;
+                    }else{
+                        if(date('L', strtotime(Carbon::now())) == 0){
+                            
+                        $days_remaining = ($unfixeddate->endDay + 28) - $dayNow;
+                        }else {
+                            
+                        $days_remaining = ($unfixeddate->endDay + 29) - $dayNow;
+                        }
+                    }
+                   
+                }
+                
+                     if($unfixeddate->endDay == Carbon::now()->day){
+            
+                        
+                        if($unfixeddate->month <= 11)
+                        {
+                           
+                            $addmonth = $unfixeddate->month + 1;
+                            $unfixeddate->month = $addmonth;
+                            $unfixeddate->year = Carbon::now()->year;
+                            
+                        }elseif($unfixeddate->month >= 12)
+                        {
+            
+                            $addmonth = ($unfixeddate->month + 1) - 12;
+                            $unfixeddate->month = $addmonth;
+                            $unfixeddate->year = Carbon::now()->year +1;
+                        }
+                       
+                        $unfixeddate->save();
+                        Http::post($unfixeddate->webhook, [
+                            'content' => "Hello, Good day ". $unfixeddate->user->name ,
+                            'embeds' => [
+                                [
+                                    'title' => $unfixeddate->details,
+                                    'description' => "This is your scheduled day of  Monthly" .$unfixeddate->details,
+                                    'color' => '7506394',
+                                ]
+                            ],
+                        ]);
+                     }elseif($unfixeddate->endDay > Carbon::now()->day ){
+                        Http::post($unfixeddate->webhook, [
+                            'content' => "Hello, Good day ". $unfixeddate->user->name ,
+                            'embeds' => [
+                                [
+                                    'title' => $unfixeddate->details,
+                                    'description' => $days_remaining . " days left this is test ",
+                                    'color' => '7506394',
+                                ]
+                            ],
+                        ]);
+                     }
+            }
+
+        }elseif($unfixeddate->frequency == 'Quarterly'){
+
+            Http::post($unfixeddate->webhook, [
+                'content' => "Hello, Good day ". $unfixeddate->user->name ,
+                'embeds' => [
+                    [
+                        'title' => $unfixeddate->details,
+                        'description' => $days_remaining . " days left this is test ",
+                        'color' => '7506394',
+                    ]
+                ],
+            ]);
+        }elseif($unfixeddate->frequency == 'Annually'){
+            
+            Http::post($unfixeddate->webhook, [
+                'content' => "Hello, Good day ". $unfixeddate->user->name ,
+                'embeds' => [
+                    [
+                        'title' => $unfixeddate->details,
+                        'description' => $days_remaining . " days left this is test ",
+                        'color' => '7506394',
+                    ]
+                ],
+            ]);
+        }
+        
+    }
     }
 }
