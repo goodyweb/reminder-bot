@@ -117,8 +117,8 @@ body, html {
                         <th class="pt-0">Content Detail</th>
                         <th class="pt-0">Description</th>
                         <th class="pt-0">Date End</th>
-                        <th class="pt-0">Image</th>
-                        <th class="text-center">Actions</th>
+                        <th class="pt-0">Image <?php echo Carbon\Carbon::now()->dayOfWeek ?></th>
+                        <th class="text-center">Actions </th>
                     </tr>
                     </thead>
                     <tbody>
@@ -129,7 +129,7 @@ body, html {
                             </td>
                             <td>{{$val->title }} </td>
                             <td>{{$val->content}}</td>
-                            <td>{{$val->description}}</td>
+                            <td>{{$val->description}} <?php echo  $val->description + 1?></td>
                             @if($val->dateend <= Carbon\Carbon::now()->setTimezone('Asia/Manila'))
                             
                               <?php 

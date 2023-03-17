@@ -301,211 +301,377 @@ class ReminderController extends Controller
                 }   
         }
     }
-/**  ============== unfixeddate reminder ================== */
-    public function unfixedDadteNotification() {
 
-        $unfixeddates = UnfixedDate::all();
+/**  ============== unfixeddate reminder ================== */
+    public function unfixedDateNotification() {
 
         $monthNow = Carbon::now()->month;
-        $dayNow = Carbon::now()->day;
+        $weekNow = Carbon::now()->weekOfMonth;
+        $dayNow = Carbon::now()->dayOfWeek;
 
-
+        $unfixeddates = UnfixedDate::where('month', '<=', $monthNow)
+        ->where('week', '>=', $weekNow)
+        ->where('day', '<=', $dayNow)
+        ->where('frequency', 'like', 'Monthly')
+        ->get();
         
-
 
         foreach($unfixeddates as $unfixeddate){
-            if($unfixeddate->month == 1){
 
-                selectDate($unfixeddate->id);
-                
-            }elseif($unfixeddate->month == 2){
+                if($unfixeddate->month == $monthNow){ 
+                    
+                    
 
-            }elseif($unfixeddate->month == 3){
+                    if($unfixeddate->week == $weekNow && $unfixeddate->day ==  $dayNow){
 
-            }elseif($unfixeddate->month == 4){
 
-            }elseif($unfixeddate->month == 5){
+                            $unfixeddate->month = $monthNow + 1;
+                            //$unfixeddate->week = $weekNow;
+                            //$unfixeddate->day = $dayNow;
+                            //$unfixeddate->save();
+                            //$unfixeddate->save();
 
-            }elseif($unfixeddate->month == 6){
+                            Http::post($unfixeddate->webhook, [
+                                'content' => "Hello, Good day ". $unfixeddate->user->name ,
+                                'embeds' => [
+                                    [
+                                        'title' => $unfixeddate->details,
+                                        'description' => " Today is Your Due date ",
+                                        'color' => '7506394',
+                                    ]
+                                ],
+                            ]);
 
-            }elseif($unfixeddate->month == 7){
-
-            }elseif($unfixeddate->month == 8){
-
-            }elseif($unfixeddate->month == 9){
-
-            }elseif($unfixeddate->month == 10){
-
-            }elseif($unfixeddate->month == 11){
-
-            }elseif($unfixeddate->month == 12){
-
-            }
-           
-        if($unfixeddate->frequency == 'Monthly'){
-            if($unfixeddate->month == $monthNow ){
-
-                if($unfixeddate->month == $monthNow){
-                   
-                    $days_remaining = $unfixeddate->endDay - $dayNow;
-                }else{
-                    if($unfixeddate->month == 1 || $unfixeddate->month == 3 || $unfixeddate->month == 5 || $unfixeddate->month == 7 || $unfixeddate->month == 8 || $unfixeddate->month == 10 || $unfixeddate->month == 12){
-                        $days_remaining = ($unfixeddate->endDay + 31) - $dayNow;
-                    }elseif($unfixeddate->month == 4 || $unfixeddate->month == 6 || $unfixeddate->month == 9 || $unfixeddate->month == 11){
-                        $days_remaining = ($unfixeddate->endDay + 31) - $dayNow;
-                    }else{
-                        if(date('L', strtotime(Carbon::now())) == 0){
                             
-                        $days_remaining = ($unfixeddate->endDay + 28) - $dayNow;
-                        }else {
-                            
-                        $days_remaining = ($unfixeddate->endDay + 29) - $dayNow;
-                        }
-                    }
-                   
-                }
-                
-                     if($unfixeddate->endDay == Carbon::now()->day){
-            
                         
-                        if($unfixeddate->month <= 11)
-                        {
-                           
-                            $addmonth = $unfixeddate->month + 1;
-                            $unfixeddate->month = $addmonth;
-                            $unfixeddate->year = Carbon::now()->year;
-                            
-                        }elseif($unfixeddate->month >= 12)
-                        {
-            
-                            $addmonth = ($unfixeddate->month + 1) - 12;
-                            $unfixeddate->month = $addmonth;
-                            $unfixeddate->year = Carbon::now()->year +1;
+                    }elseif($unfixeddate->week == $weekNow && $unfixeddate->day >  $dayNow){
+                        
+                        if($unfixeddate->day == 0){
+
+                            Http::post($unfixeddate->webhook, [
+                                'content' => "Hello, Good day ". $unfixeddate->user->name ,
+                                'embeds' => [
+                                    [
+                                        'title' => $unfixeddate->details,
+                                        'description' => " Your Due date is on Sunday ",
+                                        'color' => '7506394',
+                                    ]
+                                ],
+                            ]);
+                        }elseif($unfixeddate->day == 1){
+
+                            Http::post($unfixeddate->webhook, [
+                                'content' => "Hello, Good day ". $unfixeddate->user->name ,
+                                'embeds' => [
+                                    [
+                                        'title' => $unfixeddate->details,
+                                        'description' => " Your Due date is on Monday ",
+                                        'color' => '7506394',
+                                    ]
+                                ],
+                            ]);
+                        }elseif($unfixeddate->day == 2){
+
+                            Http::post($unfixeddate->webhook, [
+                                'content' => "Hello, Good day ". $unfixeddate->user->name ,
+                                'embeds' => [
+                                    [
+                                        'title' => $unfixeddate->details,
+                                        'description' => " Your Due date is on Tuesday ",
+                                        'color' => '7506394',
+                                    ]
+                                ],
+                            ]);
+                        }elseif($unfixeddate->day == 3){
+
+                            Http::post($unfixeddate->webhook, [
+                                'content' => "Hello, Good day ". $unfixeddate->user->name ,
+                                'embeds' => [
+                                    [
+                                        'title' => $unfixeddate->details,
+                                        'description' => " Your Due date is on Wednesday ",
+                                        'color' => '7506394',
+                                    ]
+                                ],
+                            ]);
+                        }elseif($unfixeddate->day == 4){
+
+                            Http::post($unfixeddate->webhook, [
+                                'content' => "Hello, Good day ". $unfixeddate->user->name ,
+                                'embeds' => [
+                                    [
+                                        'title' => $unfixeddate->details,
+                                        'description' => " Your Due date is on Thursday ",
+                                        'color' => '7506394',
+                                    ]
+                                ],
+                            ]);
+                        }elseif($unfixeddate->day == 5){
+
+                            Http::post($unfixeddate->webhook, [
+                                'content' => "Hello, Good day ". $unfixeddate->user->name ,
+                                'embeds' => [
+                                    [
+                                        'title' => $unfixeddate->details,
+                                        'description' => " Your Due date is on Friday ",
+                                        'color' => '7506394',
+                                    ]
+                                ],
+                            ]);
+                        }elseif($unfixeddate->day == 6){
+
+                            Http::post($unfixeddate->webhook, [
+                                'content' => "Hello, Good day ". $unfixeddate->user->name ,
+                                'embeds' => [
+                                    [
+                                        'title' => $unfixeddate->details,
+                                        'description' => " Your Due date is on Saturday ",
+                                        'color' => '7506394',
+                                    ]
+                                ],
+                            ]);
                         }
-                       
-                        $unfixeddate->save();
-                        Http::post($unfixeddate->webhook, [
-                            'content' => "Hello, Good day ". $unfixeddate->user->name ,
-                            'embeds' => [
-                                [
-                                    'title' => $unfixeddate->details,
-                                    'description' => "This is your scheduled day of  Monthly" .$unfixeddate->details,
-                                    'color' => '7506394',
-                                ]
-                            ],
-                        ]);
-                     }elseif($unfixeddate->endDay > Carbon::now()->day ){
-                        Http::post($unfixeddate->webhook, [
-                            'content' => "Hello, Good day ". $unfixeddate->user->name ,
-                            'embeds' => [
-                                [
-                                    'title' => $unfixeddate->details,
-                                    'description' => $days_remaining . " days left this is test ",
-                                    'color' => '7506394',
-                                ]
-                            ],
-                        ]);
-                     }
+                    }   
             }
-
-        }elseif($unfixeddate->frequency == 'Quarterly'){
-
-            Http::post($unfixeddate->webhook, [
-                'content' => "Hello, Good day ". $unfixeddate->user->name ,
-                'embeds' => [
-                    [
-                        'title' => $unfixeddate->details,
-                        'description' => $days_remaining . " days left this is test ",
-                        'color' => '7506394',
-                    ]
-                ],
-            ]);
-        }elseif($unfixeddate->frequency == 'Annually'){
-            
-            Http::post($unfixeddate->webhook, [
-                'content' => "Hello, Good day ". $unfixeddate->user->name ,
-                'embeds' => [
-                    [
-                        'title' => $unfixeddate->details,
-                        'description' => $days_remaining . " days left this is test ",
-                        'color' => '7506394',
-                    ]
-                ],
-            ]);
         }
+                }
+    public function unfixedDateNotifyQuarterly(){
+        $monthNow = Carbon::now()->month;
+        $weekNow = Carbon::now()->weekOfMonth;
+        $dayNow = Carbon::now()->dayOfWeek;
+
+        $unfixeddates = UnfixedDate::all();
         
-    }
-    }
 
-    public function selectDate($id){
+        foreach($unfixeddates as $unfixeddate){
 
+            if($unfixeddate->frequency == 'Quarterly'){
 
-        if($unfixeddate->week == 1){
-            if($unfixeddate->day == 1){
+                if($unfixeddate->month >= $monthNow){ 
+                    
                 
-            }elseif($unfixeddate->day == 2){
-
-            }elseif($unfixeddate->day == 3){
-
-            }else if($unfixeddate->day == 4){
-
-            }elseif($unfixeddate->day == 5){
-
-            }elseif($unfixeddate->day == 6){
-
-            }elseif($unfixeddate->day == 7){
-
-            }
-
-        }elseif($unfixeddate->week == 2){
-            if($unfixeddate->day == 1){
-
-            }elseif($unfixeddate->day == 2){
-
-            }elseif($unfixeddate->day == 3){
-
-            }else if($unfixeddate->day == 4){
-
-            }elseif($unfixeddate->day == 5){
-
-            }elseif($unfixeddate->day == 6){
-
-            }elseif($unfixeddate->day == 7){
-
-            }
-        }elseif($unfixeddate->week == 3){
-            if($unfixeddate->day == 1){
-
-            }elseif($unfixeddate->day == 2){
-
-            }elseif($unfixeddate->day == 3){
-
-            }else if($unfixeddate->day == 4){
-
-            }elseif($unfixeddate->day == 5){
-
-            }elseif($unfixeddate->day == 6){
-
-            }elseif($unfixeddate->day == 7){
-
-            }
-        }elseif($unfixeddate->week == 4){
-            if($unfixeddate->day == 1){
-
-            }elseif($unfixeddate->day == 2){
-
-            }elseif($unfixeddate->day == 3){
-
-            }else if($unfixeddate->day == 4){
-
-            }elseif($unfixeddate->day == 5){
-
-            }elseif($unfixeddate->day == 6){
-
-            }elseif($unfixeddate->day == 7){
-
-            }
-        }
+                    if($unfixeddate->week == $weekNow && $unfixeddate->day >  $dayNow){
+                        
+                        if($unfixeddate->day == 0){
+                
+                            Http::post($unfixeddate->webhook, [
+                                'content' => "Hello, Good day ". $unfixeddate->user->name ,
+                                'embeds' => [
+                                    [
+                                        'title' => $unfixeddate->details,
+                                        'description' => " Your Due date is on Sunday ",
+                                        'color' => '7506394',
+                                    ]
+                                ],
+                            ]);
+                        }elseif($unfixeddate->day == 1){
+                
+                            Http::post($unfixeddate->webhook, [
+                                'content' => "Hello, Good day ". $unfixeddate->user->name ,
+                                'embeds' => [
+                                    [
+                                        'title' => $unfixeddate->details,
+                                        'description' => " Your Due date is on Monday ",
+                                        'color' => '7506394',
+                                    ]
+                                ],
+                            ]);
+                        }elseif($unfixeddate->day == 2){
+                
+                            Http::post($unfixeddate->webhook, [
+                                'content' => "Hello, Good day ". $unfixeddate->user->name ,
+                                'embeds' => [
+                                    [
+                                        'title' => $unfixeddate->details,
+                                        'description' => " Your Due date is on Tuesday ",
+                                        'color' => '7506394',
+                                    ]
+                                ],
+                            ]);
+                        }elseif($unfixeddate->day == 3){
+                
+                            Http::post($unfixeddate->webhook, [
+                                'content' => "Hello, Good day ". $unfixeddate->user->name ,
+                                'embeds' => [
+                                    [
+                                        'title' => $unfixeddate->details,
+                                        'description' => " Your Due date is on Wednesday ",
+                                        'color' => '7506394',
+                                    ]
+                                ],
+                            ]);
+                        }elseif($unfixeddate->day == 4){
+                
+                            Http::post($unfixeddate->webhook, [
+                                'content' => "Hello, Good day ". $unfixeddate->user->name ,
+                                'embeds' => [
+                                    [
+                                        'title' => $unfixeddate->details,
+                                        'description' => " Your Due date is on Thursday ",
+                                        'color' => '7506394',
+                                    ]
+                                ],
+                            ]);
+                        }elseif($unfixeddate->day == 5){
+                
+                            Http::post($unfixeddate->webhook, [
+                                'content' => "Hello, Good day ". $unfixeddate->user->name ,
+                                'embeds' => [
+                                    [
+                                        'title' => $unfixeddate->details,
+                                        'description' => " Your Due date is on Friday ",
+                                        'color' => '7506394',
+                                    ]
+                                ],
+                            ]);
+                        }elseif($unfixeddate->day == 6){
+                
+                            Http::post($unfixeddate->webhook, [
+                                'content' => "Hello, Good day ". $unfixeddate->user->name ,
+                                'embeds' => [
+                                    [
+                                        'title' => $unfixeddate->details,
+                                        'description' => " Your Due date is on Saturday ",
+                                        'color' => '7506394',
+                                    ]
+                                ],
+                            ]);
+                        }
+                    }elseif($unfixeddate->week == $weekNow && $unfixeddate->day ==  $dayNow){
+                        Http::post($unfixeddate->webhook, [
+                            'content' => "Hello, Good day ". $unfixeddate->user->name ,
+                            'embeds' => [
+                                [
+                                    'title' => $unfixeddate->details,
+                                    'description' => " Today is Your Due date ",
+                                    'color' => '7506394',
+                                ]
+                            ],
+                        ]);
+                    }
+                }   
+                
+                }
+                }
     }
-    
+
+    public function unfixedDateNotifyAnnually(){
+        $monthNow = Carbon::now()->month;
+        $weekNow = Carbon::now()->weekOfMonth;
+        $dayNow = Carbon::now()->dayOfWeek;
+
+        $unfixeddates = UnfixedDate::all();
+        
+
+        foreach($unfixeddates as $unfixeddate){
+
+           if($unfixeddate->frequency == 'Annually'){
+                if($unfixeddate->month >= $monthNow){ 
+                    
+                
+                    if($unfixeddate->week == $weekNow && $unfixeddate->day >  $dayNow){
+                        
+                        if($unfixeddate->day == 0){
+                
+                            Http::post($unfixeddate->webhook, [
+                                'content' => "Hello, Good day ". $unfixeddate->user->name ,
+                                'embeds' => [
+                                    [
+                                        'title' => $unfixeddate->details,
+                                        'description' => " Your Due date is on Sunday ",
+                                        'color' => '7506394',
+                                    ]
+                                ],
+                            ]);
+                        }elseif($unfixeddate->day == 1){
+                
+                            Http::post($unfixeddate->webhook, [
+                                'content' => "Hello, Good day ". $unfixeddate->user->name ,
+                                'embeds' => [
+                                    [
+                                        'title' => $unfixeddate->details,
+                                        'description' => " Your Due date is on Monday ",
+                                        'color' => '7506394',
+                                    ]
+                                ],
+                            ]);
+                        }elseif($unfixeddate->day == 2){
+                
+                            Http::post($unfixeddate->webhook, [
+                                'content' => "Hello, Good day ". $unfixeddate->user->name ,
+                                'embeds' => [
+                                    [
+                                        'title' => $unfixeddate->details,
+                                        'description' => " Your Due date is on Tuesday ",
+                                        'color' => '7506394',
+                                    ]
+                                ],
+                            ]);
+                        }elseif($unfixeddate->day == 3){
+                
+                            Http::post($unfixeddate->webhook, [
+                                'content' => "Hello, Good day ". $unfixeddate->user->name ,
+                                'embeds' => [
+                                    [
+                                        'title' => $unfixeddate->details,
+                                        'description' => " Your Due date is on Wednesday ",
+                                        'color' => '7506394',
+                                    ]
+                                ],
+                            ]);
+                        }elseif($unfixeddate->day == 4){
+                
+                            Http::post($unfixeddate->webhook, [
+                                'content' => "Hello, Good day ". $unfixeddate->user->name ,
+                                'embeds' => [
+                                    [
+                                        'title' => $unfixeddate->details,
+                                        'description' => " Your Due date is on Thursday ",
+                                        'color' => '7506394',
+                                    ]
+                                ],
+                            ]);
+                        }elseif($unfixeddate->day == 5){
+                
+                            Http::post($unfixeddate->webhook, [
+                                'content' => "Hello, Good day ". $unfixeddate->user->name ,
+                                'embeds' => [
+                                    [
+                                        'title' => $unfixeddate->details,
+                                        'description' => " Your Due date is on Friday ",
+                                        'color' => '7506394',
+                                    ]
+                                ],
+                            ]);
+                        }elseif($unfixeddate->day == 6){
+                
+                            Http::post($unfixeddate->webhook, [
+                                'content' => "Hello, Good day ". $unfixeddate->user->name ,
+                                'embeds' => [
+                                    [
+                                        'title' => $unfixeddate->details,
+                                        'description' => " Your Due date is on Saturday ",
+                                        'color' => '7506394',
+                                    ]
+                                ],
+                            ]);
+                        }
+                    }elseif($unfixeddate->week == $weekNow && $unfixeddate->day ==  $dayNow){
+                
+                
+                        Http::post($unfixeddate->webhook, [
+                            'content' => "Hello, Good day ". $unfixeddate->user->name ,
+                            'embeds' => [
+                                [
+                                    'title' => $unfixeddate->details,
+                                    'description' => " Today is Your Due date ",
+                                    'color' => '7506394',
+                                ]
+                            ],
+                        ]);
+                    }
+                }   
+                }
+                }
+    }
 }
