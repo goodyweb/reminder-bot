@@ -47,8 +47,8 @@ body, html {
     </div>
 </div>
 
-  <button class="tablink" onclick="openPage('Home', this, '#ffc729')" id="defaultOpen">Card View</button>
-  <button class="tablink" onclick="openPage('News', this, '#ffc729')">Table View</button> 
+  <button class="tablink" onclick="openPage('Home', this, '#ffc729')">Card View</button>
+  <button class="tablink" onclick="openPage('News', this, '#ffc729')" id="defaultOpen">Table View</button> 
     <div>
         <h2 class="mb-3 mb-md-0 text-center text-color: yellow background-color: #F9B904;"><b>ALL REMINDERS</b></h2>
         <hr>

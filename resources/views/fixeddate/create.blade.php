@@ -9,7 +9,7 @@
             <h4 class="mb-3 mb-md-0 text-muted" >ADD NEW REMINDER</h4> 
         </div>
         <div class="d-flex align-items-center flex-wrap text-nowrap">
-            <a href="{{route('reminders.index')}}" class="btn btn-info btn-icon-text mb-2 mb-md-0" style="border-radius: 15px 50px 30px">
+            <a href="{{route('fixeddate.index')}}" class="btn btn-light btn-icon-text mb-2 mb-md-0" style="border-radius: 15px 50px">
                 All Reminders
             </a>
         </div>
@@ -33,7 +33,7 @@
                     <div class="col-12 col-md-6">
                         <div class="row">
                             <div class="mb-3">
-                            <label for="details" class="form-label"><b>Reminder Details</b><span class="text-danger">*</span></label>
+                            <label for="details" class="form-label"><b>Reminder details</b><span class="text-danger">*</span></label>
                             <textarea class="form-control" placeholder="Details" name="details" id="details" cols="12" rows="2"></textarea>
                             <div id="editor" style="font-family: 'Open Sans', sans-serif"></div>
                         </div>
@@ -44,11 +44,11 @@
                         </div>
                     </div>
                         <div class="pl-lg-4 row">
-                            <h5 class="heading-small text-muted mb-4 mt-3"><b><hr>Start Date</b></h5>
+                            <h5 class="heading-small text-muted mb-4 mt-3"><b><hr>Start date</b></h5>
                                 <div class="col-12 col-md-6">
                                     <label class="form-control-label" for="startMonth">Month</label>
                                     <select id="startMonth" name="startMonth" class="form-select" required>
-                                        <option value="">-- Select Month --</option>
+                                        <option value="">-- Select month --</option>
                                         <option value="January">January</option>
                                         <option value="February">February</option>
                                         <option value="March">March</option>
@@ -67,7 +67,7 @@
                                 <div class="col-12 col-md-6">
                                     <label class="form-control-label" for="startDay">Day</label>
                                         <select id="startDay" name="startDay" class="form-select" required>
-                                            <option value="">-- Select Day --</option>
+                                            <option value="">-- Select day --</option>
                                             <option value="Monday">Monday</option>
                                             <option value="Tuesday">Tuesday</option>
                                             <option value="Wednesday">Wednesday</option>
@@ -83,8 +83,9 @@
                             <div class="col-12 col-md-6">
                                 <div class="row">
                                     <div class="mb-3">
-                                        <label for="frequency" class="form-label"><b>Notify Me? : </b><span class="text-danger">*</span></label>
+                                        <label for="frequency" class="form-label"><b>Notify me? : </b><span class="text-danger">*</span></label>
                                         <select name="frequency" id="frequency" class="form-select">
+                                            <option value="">-- Please select --</option>
                                             <option value="Monthly"> Monthly</option>
                                             <option value="Daily">Daily</option>
                                             <option value="Hourly">Hourly</option>
@@ -93,17 +94,17 @@
                                     </div>
 
                                     <div class="mb-3"><br>
-                                        <label for="image" class="form-label"><b>Reminder Image</b><span class="text-muted">(optional)</span></label>
+                                        <label for="image" class="form-label"><b>Reminder image</b><span class="text-muted">(optional)</span></label>
                                         <input id="image" name="image" type="file" class="form-control">
                                     </div>
                                 </div>
 
                                 <div class="row">
-                                    <h5 class="heading-small text-muted mb-4 mt-3"><b><hr>End Date</b></h5>
+                                    <h5 class="heading-small text-muted mb-4 mt-3"><b><hr>End date</b></h5>
                                     <div class="col-12 col-md-6">
                                         <label class="form-control-label" for="endMonth">Month</label>
                                         <select id="endMonth" name="endMonth" class="form-select" required>
-                                            <option value="">-- Select Month --</option>
+                                            <option value="">-- Select month --</option>
                                             <option value="January">January</option>
                                             <option value="February">February</option>
                                             <option value="March">March</option>
@@ -122,7 +123,7 @@
                                     <div class="col-12 col-md-6">
                                         <label class="form-control-label" for="endDay">Day</label>
                                         <select class="form-select" id="e   ndDay" name="endDay" required>
-                                            <option value="">-- Select Day --</option>
+                                            <option value="">-- Select day --</option>
                                             <option value="Monday">Monday</option>
                                             <option value="Tuesday">Tuesday</option>
                                             <option value="Wednesday">Wednesday</option>
@@ -136,7 +137,7 @@
                             </div>
                         </div>
                             <div class="mb-3"><br>
-                                <button type="submit" class="btn btn-success btn-icon-text mb-2 mb-md-0" style="border-radius: 15px 50px 30px 5px">Save Reminder Data</button>
+                                <button type="submit" class="btn btn-primary btn-icon-text mb-2 mb-md-0">Save Reminder Data</button>
                             </div>
                         </div>
                     </div>

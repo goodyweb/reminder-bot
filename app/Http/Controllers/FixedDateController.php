@@ -55,7 +55,7 @@ class FixeddateController extends Controller
             $image->move($destinationPath, $reminderImage);
             $filename = $reminderImage;
         } else {
-            $filename = 'no-img.jpg';
+            $filename = 'no-img.png';
         }
        
 
