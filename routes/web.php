@@ -69,15 +69,15 @@ Route::get('dashboard',[ DashboardController::class, 'index'])->middleware(['aut
 
 Route::resource('products', ProductsController::class);
 Route::resource('reminders', RemindersController::class);
-Route::resource('reminders', FixeddateController::class);
+Route::resource('fixeddate', FixeddateController::class);
 Route::resource('reminder_view', PostGuzzleController::class);
 
 Route::prefix('reminders')->group(function () {
     Route::get('table', [RemindersController::class, 'table']);
 });
 
-Route::prefix('reminders')->group(function () {
-    Route::get('table', [FixedDateController::class, 'table']);
+Route::prefix('fixeddate')->group(function () {
+    Route::get('table', [FixeddateController::class, 'table']);
 });
 
 Route::prefix('posts')->group(function () {

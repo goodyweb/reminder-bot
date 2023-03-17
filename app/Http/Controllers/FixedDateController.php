@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\FixedDate;
+use App\Models\Fixeddate;
 use App\Models\User;
 use Illuminate\Http\Request;
 
-class FixedDateController extends Controller
+class FixeddateController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class FixedDateController extends Controller
     {
         $fixeddate = Fixeddate::all();
         $users = User::all();
-        return view('reminders.index', compact('fixeddate', 'users'));
+        return view('fixeddate.index', compact('fixeddate', 'users'));
     }
 
 
@@ -27,7 +27,7 @@ class FixedDateController extends Controller
      */
     public function create()
     {
-        
+        return view('fixeddate.create'); 
     }
     
     /**
@@ -67,10 +67,10 @@ class FixedDateController extends Controller
         $fixeddate->endMonth = $request->input('endMonth');
         $fixeddate->endDay = $request->input('endDay');
         $fixeddate->image = $filename;
-        $fixeddate->notif = $request->input('notif');
+        $fixeddate->frequency = $request->input('frequency');
         $fixeddate->save();
 
-        return redirect()->route('reminders.index')
+        return redirect()->route('fixeddate.index')
             ->with('success','Reminder created successfully.');
     }
 
@@ -80,7 +80,7 @@ class FixedDateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Fixeddate $fixeddate)
     {
         //
     }
@@ -91,31 +91,42 @@ class FixedDateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Fixeddate $fixeddate)
     {
-        //
+        return view('fixeddate.edit', compact('fixeddate'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function update(Request $request, Fixeddate $fixeddate)
     {
-        //
+        $request->validate([
+            'details' => 'required',
+            'webhook' => 'required',
+            'startMonth'=> 'required',
+            'startDay' => 'required',
+            'endMonth' => 'required',
+            'endDay' => 'required',
+            'frequency' => 'required',
+        ]);
+
+        $input = $request->all();
+        if ($image = $request->file('image')) {
+            $destinationPath = 'img/';
+            $reminderImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $reminderImage);
+            $input['image'] = "$reminderImage";
+        } else {
+            unset($input['image']);
+        }
+
+        $fixeddate->update($input);
+        return redirect()->route('fixeddate.index')
+            ->with('success','Reminder updated successfully.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function destroy(Fixeddate $fixeddate)
     {
-        //
+        $fixeddate->delete();
+        return redirect()->route('fixeddate.index')
+            ->with('success','Reminder deleted successfully');
     }
 }

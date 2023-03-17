@@ -18,11 +18,17 @@
                     <i class="link-icon" data-feather="check-square"></i>
                     <span class="menu-title">Posts</span>
                 </a>
-            </li>-->
+            </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{url('reminders')}}">
                     <i class="link-icon" data-feather="clipboard"></i>
                     <span class="menu-title">Reminders</span>
+                </a>
+            </li>-->
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('fixeddate')}}">
+                    <i class="link-icon" data-feather="clipboard"></i>
+                    <span class="menu-title">Fixed Date</span>
                 </a>
             </li>
             <li class="nav-item">

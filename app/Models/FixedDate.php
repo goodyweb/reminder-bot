@@ -5,11 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class FixedDate extends Model
+class Fixeddate extends Model
 {
     use HasFactory;
 
     protected $table = 'fixeddate';
+    protected $fillable = [
+        'details' ,
+        'webhook' ,
+        'startMonth',
+        'startDay' ,
+        'endMonth',
+        'endDay',
+        'frequency',
+        'image'
+    ];
     public $primaryKey = 'id';
     
     public function user()

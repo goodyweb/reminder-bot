@@ -63,17 +63,14 @@ body, html {
                   <div class="card shadow">
                       <img class="card-img-top card-img-top-post" src="/img/{{ $val->image }}">
                       <div class="card-body card-body-post">
-                        <h3 class="card-title">{{ $val->title }}</h3>
-                        <p class="card-text card-text-post">
-                          {{$val->content}}
-                        </p>
-                        <p><small>Written by {{ $val->details }} | {{ $val->updated_at }}</small></p>
+                        <h2 class="card-title"><b>{{ $val->details }}</b></h2>             
+                        <p><small>Written by Goody Web | {{ $val->updated_at }}</small></p>
                       
                         <hr>
                         <div class="button-group row">
                           <div class="col-8">
                             <a href="{{route('reminder_view.show', $val->id)}}" class="btn btn-outline-primary btn-sm"><i data-feather="eye"></i>View</a>            
-                            <a href="{{route('reminders.edit', $val->id)}}" class="btn btn-outline-info btn-sm"><i data-feather="link"></i>Edit</a>
+                            <a href="{{route('fixeddate.edit', $val->id)}}" class="btn btn-outline-info btn-sm"><i data-feather="link"></i>Edit</a>
                           </div>
                             <div class="col-4 text-right">
                                 <form action="{{ route('fixeddate.destroy',$val->id) }}" method="POST">
@@ -115,11 +112,9 @@ body, html {
                         <th class="pt-0">#</th>
                         <th class="pt-0">Reminder Details</th>
                         <th class="pt-0">Webhook</th>
-                        <th class="pt-0">Types Notifications</th>
-                        <th class="pt-0">Start Date(Month)</th>
-                        <th class="pt-0">Start Date(Day)</th>
-                        <th class="pt-0">End Date(Month)</th>
-                        <th class="pt-0">End Date(Day)</th>
+                        <th class="pt-0">Type Notifications</th>
+                        <th class="pt-0">Start Date</th>
+                        <th class="pt-0">End Date</th>
                         <th class="pt-0">Image</th>
                         <th class="text-center">Actions</th>
                     </tr>
@@ -127,44 +122,20 @@ body, html {
                     <tbody>
                     @foreach($fixeddate as $index => $val)
                         <tr>
-                            <td>{{++$index}}
-                           <?php echo $monthNow = Carbon\Carbon::now()->month;
-                           
-                           ?>
-                            </td>
-                            <td>{{$val->title}}</td>
-                            <td>{{$val->content}}</td>
-                            <td>{{$val->description}}</td>
-                            @if($val->dateend <= Carbon\Carbon::now()->setTimezone('Asia/Manila'))
-                            
-                              <?php 
-                                    $date = new DateTime($val->dateend);
-                                    $date1 = date_format($date, "F d, Y H:i:s");?>
-                                <td>Ended on <?php echo $date1; ?></td>
-                            @else
-                            <?php 
-                                    $setDate = Carbon\Carbon::now()->setTimezone('Asia/Manila')->diff(Carbon\Carbon::parse($val->dateend)->setTimezone('Asia/Manila'));
-                                ?>
-                                <?php $dateTime=Carbon\Carbon::now()->setTimezone('Asia/Manila'); ?>
-                                
-                                <td>
-                                @if($val->type == "Weeks")
-                                <?php echo $setDate->days ." days " . $setDate->h . " hours " . $setDate->i . " minutes " . $setDate->s . " seconds"; ?>
-                                @elseif($val->type == "Days")
-                                <?php echo $setDate->days ." days " . $setDate->h . " hours " . $setDate->i . " minutes " . $setDate->s . " seconds"; ?>
-                                @elseif($val->type == "Just Days")
-                                <?php echo $setDate->days ." days "; ?>
-                                @endif
-                                </td>
-                           @endif
+                            <td>{{++$index}}</td>
+                            <td>{{$val->details}}</td>
+                            <td>{{$val->webhook}}</td>
+                            <td>{{$val->frequency}}</td>
+                            <td>{{$val->startDay}} of {{$val->startMonth}}</td>
+                            <td>{{$val->endDay}} of {{$val->endMonth}}</td>
                             <td><img alt="img" src="/img/{{ $val->image }}" class="text-center" width="100px" height="100px"></td>
                             <td>
-                                <form action="{{ route('reminders.destroy',$val->id) }}" method="POST">
+                                <form action="{{ route('fixeddate.destroy',$val->id) }}" method="POST">
                                     {{ csrf_field()  }}
                                     @method('DELETE')
                                     <a class="btn btn-sm btn-success" href="{{route('reminder_view.show', $val->id)}}"><i data-feather="eye"></i> Show</a>
-                                    <a class="btn btn-sm btn-warning" href="{{route('reminders.edit', $val->id)}}"><i data-feather="link"></i> Edit</a>
-                                    <button type="button" class="btn btn-danger btn-sm" onclick="confirm('Are you sure you want to dissolve the {{ $val->title }} class?') ? this.parentElement.submit() : ''"><i data-feather="trash"></i> Delete</button>
+                                    <a class="btn btn-sm btn-warning" href="{{route('fixeddate.edit', $val->id)}}"><i data-feather="link"></i> Edit</a>
+                                    <button type="button" class="btn btn-danger btn-sm" onclick="confirm('Are you sure you want to dissolve the {{ $val->details }} reminder?') ? this.parentElement.submit() : ''"><i data-feather="trash"></i> Delete</button>
                                 </form>
                             </td>
                         </tr>
