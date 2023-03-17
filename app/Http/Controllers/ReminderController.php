@@ -314,14 +314,34 @@ class ReminderController extends Controller
 
 
         foreach($unfixeddates as $unfixeddate){
+            if($unfixeddate->month == 1){
 
-            if($unfixeddate->week == 1){
+                selectDate($unfixeddate->id);
+                
+            }elseif($unfixeddate->month == 2){
 
-            }elseif($unfixeddate->week == 1){
+            }elseif($unfixeddate->month == 3){
 
-            }elseif($unfixeddate->week == 1){
+            }elseif($unfixeddate->month == 4){
+
+            }elseif($unfixeddate->month == 5){
+
+            }elseif($unfixeddate->month == 6){
+
+            }elseif($unfixeddate->month == 7){
+
+            }elseif($unfixeddate->month == 8){
+
+            }elseif($unfixeddate->month == 9){
+
+            }elseif($unfixeddate->month == 10){
+
+            }elseif($unfixeddate->month == 11){
+
+            }elseif($unfixeddate->month == 12){
 
             }
+           
         if($unfixeddate->frequency == 'Monthly'){
             if($unfixeddate->month == $monthNow ){
 
@@ -416,4 +436,76 @@ class ReminderController extends Controller
         
     }
     }
+
+    public function selectDate($id){
+
+
+        if($unfixeddate->week == 1){
+            if($unfixeddate->day == 1){
+                
+            }elseif($unfixeddate->day == 2){
+
+            }elseif($unfixeddate->day == 3){
+
+            }else if($unfixeddate->day == 4){
+
+            }elseif($unfixeddate->day == 5){
+
+            }elseif($unfixeddate->day == 6){
+
+            }elseif($unfixeddate->day == 7){
+
+            }
+
+        }elseif($unfixeddate->week == 2){
+            if($unfixeddate->day == 1){
+
+            }elseif($unfixeddate->day == 2){
+
+            }elseif($unfixeddate->day == 3){
+
+            }else if($unfixeddate->day == 4){
+
+            }elseif($unfixeddate->day == 5){
+
+            }elseif($unfixeddate->day == 6){
+
+            }elseif($unfixeddate->day == 7){
+
+            }
+        }elseif($unfixeddate->week == 3){
+            if($unfixeddate->day == 1){
+
+            }elseif($unfixeddate->day == 2){
+
+            }elseif($unfixeddate->day == 3){
+
+            }else if($unfixeddate->day == 4){
+
+            }elseif($unfixeddate->day == 5){
+
+            }elseif($unfixeddate->day == 6){
+
+            }elseif($unfixeddate->day == 7){
+
+            }
+        }elseif($unfixeddate->week == 4){
+            if($unfixeddate->day == 1){
+
+            }elseif($unfixeddate->day == 2){
+
+            }elseif($unfixeddate->day == 3){
+
+            }else if($unfixeddate->day == 4){
+
+            }elseif($unfixeddate->day == 5){
+
+            }elseif($unfixeddate->day == 6){
+
+            }elseif($unfixeddate->day == 7){
+
+            }
+        }
+    }
+    
 }
