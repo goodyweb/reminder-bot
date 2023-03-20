@@ -86,7 +86,7 @@ class PostGuzzleController extends Controller
                             
             
                             return Http::post($booking->webhook, [
-                                'content' => $booking->content,
+                                'content' => 'Hello '. $booking->user->name . ' !',
                                 'embeds' => [
                                     [
                                         'title' => $booking->title,

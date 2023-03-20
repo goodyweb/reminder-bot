@@ -27,6 +27,6 @@ class RemindEverydayCommand extends Command
      */
     public function handle()
     {
-        return app()->call('App\Http\Controllers\PostGuzzleController@notificationEveryday');
+        return app()->call('App\Http\Controllers\ReminderController@fixDateNotify');
     }
 }
