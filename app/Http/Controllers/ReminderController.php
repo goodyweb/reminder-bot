@@ -16,7 +16,7 @@ class ReminderController extends Controller
         $monthNow = Carbon::now()->month;
         $dayNow = Carbon::now()->day;
 
-        $fixeddates = FixedDate::where('year', '==', $yearNow)
+        $fixeddates = FixedDate::where('year', '<=', $yearNow)
         ->where('startMonth', '<=', $monthNow)
         ->where('endMonth', '>=', $monthNow)
         ->where('startDay', '<=', $dayNow)
@@ -202,7 +202,7 @@ class ReminderController extends Controller
         $monthNow = Carbon::now()->month;
         $dayNow = Carbon::now()->day;
 
-        $fixeddates = FixedDate::where('year', '==', $yearNow)
+        $fixeddates = FixedDate::where('year', '<=', $yearNow)
         ->where('startMonth', '<=', $monthNow)
         ->where('endMonth', '>=', $monthNow)
         ->where('startDay', '<=', $dayNow)
@@ -310,7 +310,7 @@ class ReminderController extends Controller
         $monthNow = Carbon::now()->month;
         $dayNow = Carbon::now()->day;
 
-        $fixeddates = FixedDate::where('year', '==', $yearNow)
+        $fixeddates = FixedDate::where('year', '<=', $yearNow)
         ->where('startMonth', '<=', $monthNow)
         ->where('endMonth', '>=', $monthNow)
         ->where('startDay', '<=', $dayNow)
@@ -421,7 +421,7 @@ class ReminderController extends Controller
         $weekNow = Carbon::now()->weekOfMonth;
         $dayNow = Carbon::now()->dayOfWeek;
 
-        $unfixeddates = UnfixedDate::where('year', '==', $yearNow)
+        $unfixeddates = UnfixedDate::where('year', '<=', $yearNow)
         ->where('month', '<=', $monthNow)
         ->where('week', '>=', $weekNow)
         ->where('day', '>=', $dayNow)
@@ -560,7 +560,7 @@ class ReminderController extends Controller
         $weekNow = Carbon::now()->weekOfMonth;
         $dayNow = Carbon::now()->dayOfWeek;
 
-        $unfixeddates = UnfixedDate::where('year', '==', $yearNow)
+        $unfixeddates = UnfixedDate::where('year', '<=', $yearNow)
         ->where('month', '<=', $monthNow)
         ->where('week', '>=', $weekNow)
         ->where('day', '>=', $dayNow)
@@ -704,7 +704,7 @@ class ReminderController extends Controller
         $weekNow = Carbon::now()->weekOfMonth;
         $dayNow = Carbon::now()->dayOfWeek;
 
-        $unfixeddates = UnfixedDate::where('year', '==', $yearNow)
+        $unfixeddates = UnfixedDate::where('year', '<=', $yearNow)
         ->where('month', '<=', $monthNow)
         ->where('week', '>=', $weekNow)
         ->where('day', '>=', $dayNow)
