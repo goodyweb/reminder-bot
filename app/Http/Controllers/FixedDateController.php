@@ -45,6 +45,7 @@ class FixeddateController extends Controller
             'startDay' => 'required',
             'endMonth' => 'required',
             'endDay' => 'required',
+            'year' => 'required',
             'frequency' => 'required',
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
@@ -66,6 +67,7 @@ class FixeddateController extends Controller
         $fixeddate->startDay = $request->input('startDay');
         $fixeddate->endMonth = $request->input('endMonth');
         $fixeddate->endDay = $request->input('endDay');
+        $fixeddate->year = $request->input('year');
         $fixeddate->image = $filename;
         $fixeddate->frequency = $request->input('frequency');
         $fixeddate->save();
@@ -105,6 +107,7 @@ class FixeddateController extends Controller
             'startDay' => 'required',
             'endMonth' => 'required',
             'endDay' => 'required',
+            'year' => 'required',
             'frequency' => 'required',
         ]);
 

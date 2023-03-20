@@ -111,7 +111,7 @@ body, html {
                     <tr>
                         <th class="pt-0">#</th>
                         <th class="pt-0">Reminder Details</th>
-                        <!--<th class="pt-0">Webhook Link</th>-->
+                        <th class="pt-0">Webhook</th>
                         <th class="pt-0">Type Notifications</th>
                         <th class="pt-0">Start Date</th>
                         <th class="pt-0">End Date</th>
@@ -124,17 +124,17 @@ body, html {
                         <tr>
                             <td>{{++$index}}</td>
                             <td>{{$val->details}}</td>
-                            <!-- <td>{{$val->webhook}}</td>-->
+                            <td>{{$val->webhook}}</td>
                             <td>{{$val->frequency}}</td>
-                            <td>{{$val->startMonth}}/{{$val->startDay}}/{{$val->year}}</td>
-                            <td>{{$val->endMonth}}/{{$val->endDay}}/{{$val->year}}</td>
+                            <td>{{$val->startDay}} of {{$val->startMonth}}</td>
+                            <td>{{$val->endDay}} of {{$val->endMonth}}</td>
                             <td><img alt="img" src="/img/{{ $val->image }}" class="text-center" width="100px" height="100px"></td>
                             <td>
                                 <form action="{{ route('fixeddate.destroy',$val->id) }}" method="POST">
                                     {{ csrf_field()  }}
                                     @method('DELETE')
-                                    <a class="btn btn-success" href="{{route('reminder_view.show', $val->id)}}"><i data-feather="eye"></i> Show</a>
-                                    <a class="btn btn-warning" href="{{route('fixeddate.edit', $val->id)}}"><i data-feather="link"></i> Edit</a>
+                                    <a class="btn btn-sm btn-success" href="{{route('reminder_view.show', $val->id)}}"><i data-feather="eye"></i> Show</a>
+                                    <a class="btn btn-sm btn-warning" href="{{route('fixeddate.edit', $val->id)}}"><i data-feather="link"></i> Edit</a>
                                     <button type="button" class="btn btn-danger btn-sm" onclick="confirm('Are you sure you want to dissolve the {{ $val->details }} reminder?') ? this.parentElement.submit() : ''"><i data-feather="trash"></i> Delete</button>
                                 </form>
                             </td>

@@ -49,32 +49,56 @@
                                     <label class="form-control-label" for="startMonth">Month</label>
                                     <select id="startMonth" name="startMonth" class="form-select" required>
                                         <option value="{{ old('startMonth') == null ? 'selected' : '' }}">-- Select Month --</option>
-                                        <option value="January" {{ old('startMonth', $fixeddate->startMonth) == 'January' ? 'selected' : 'selected' }}>January</option>
-                                        <option value="February" {{ old('startMonth', $fixeddate->startMonth) == 'February' ? 'selected' : '' }}>February</option>
-                                        <option value="March" {{ old('startMonth', $fixeddate->startMonth) == 'March' ? 'selected' : '' }}>March</option>
-                                        <option value="April" {{ old('startMonth', $fixeddate->startMonth) == 'April' ? 'selected' : '' }}>April</option>
-                                        <option value="May" {{ old('startMonth', $fixeddate->startMonth) == 'May' ? 'selected' : '' }}>May</option>
-                                        <option value="June" {{ old('startMonth', $fixeddate->startMonth) == 'June' ? 'selected' : '' }}>June</option>
-                                        <option value="July" {{ old('startMonth', $fixeddate->startMonth) == 'July' ? 'selected' : '' }}>July</option>
-                                        <option value="August" {{ old('startMonth', $fixeddate->startMonth) == 'August' ? 'selected' : '' }}>August</option>
-                                        <option value="September" {{ old('startMonth', $fixeddate->startMonth) == 'September' ? 'selected' : '' }}>September</option>
-                                        <option value="October" {{ old('startMonth', $fixeddate->startMonth) == 'October' ? 'selected' : '' }}>October</option>
-                                        <option value="November" {{ old('startMonth', $fixeddate->startMonth) == 'November' ? 'selected' : '' }}>November</option>
-                                        <option value="December" {{ old('startMonth', $fixeddate->startMonth) == 'December' ? 'selected' : '' }}>December</option>
+                                        <option value="1" {{ old('startMonth', $fixeddate->startMonth) == '1' ? 'selected' : 'selected' }}>January</option>
+                                        <option value="2" {{ old('startMonth', $fixeddate->startMonth) == '2' ? 'selected' : '' }}>February</option>
+                                        <option value="3" {{ old('startMonth', $fixeddate->startMonth) == '3' ? 'selected' : '' }}>March</option>
+                                        <option value="4" {{ old('startMonth', $fixeddate->startMonth) == '4' ? 'selected' : '' }}>April</option>
+                                        <option value="5" {{ old('startMonth', $fixeddate->startMonth) == '5' ? 'selected' : '' }}>May</option>
+                                        <option value="6" {{ old('startMonth', $fixeddate->startMonth) == '6' ? 'selected' : '' }}>June</option>
+                                        <option value="7" {{ old('startMonth', $fixeddate->startMonth) == '7' ? 'selected' : '' }}>July</option>
+                                        <option value="8" {{ old('startMonth', $fixeddate->startMonth) == '8' ? 'selected' : '' }}>August</option>
+                                        <option value="9" {{ old('startMonth', $fixeddate->startMonth) == '9' ? 'selected' : '' }}>September</option>
+                                        <option value="10" {{ old('startMonth', $fixeddate->startMonth) == '10' ? 'selected' : '' }}>October</option>
+                                        <option value="11" {{ old('startMonth', $fixeddate->startMonth) == '11' ? 'selected' : '' }}>November</option>
+                                        <option value="12" {{ old('startMonth', $fixeddate->startMonth) == '12' ? 'selected' : '' }}>December</option>
                                     </select>
                                 </div>
 
-                                <div class="col-12 col-md-6">
+                                <div class="col-12 col-md-2">
                                     <label class="form-control-label" for="startDay">Day</label>
                                         <select id="startDay" name="startDay" class="form-select" required>
-                                            <option value="{{ old('startDay') == null ? 'selected' : '' }}">-- Select Day --</option>
-                                            <option value="Monday" {{ old('startDay', $fixeddate->startDay) == 'Monday' ? 'selected' : '' }}>Monday</option>
-                                            <option value="Tuesday" {{ old('startDay', $fixeddate->startDay) == 'Tuesday' ? 'selected' : '' }}>Tuesday</option>
-                                            <option value="Wednesday" {{ old('startDay', $fixeddate->startDay) == 'Wednesday' ? 'selected' : '' }}>Wednesday</option>
-                                            <option value="Thursday" {{ old('startDay', $fixeddate->startDay) == 'Thursday' ? 'selected' : '' }}>Thursday</option>
-                                            <option value="Friday" {{ old('startDay', $fixeddate->startDay) == 'Friday' ? 'selected' : '' }}>Friday</option>
-                                            <option value="Saturday" {{ old('startDay', $fixeddate->startDay) == 'Saturday' ? 'selected' : '' }}>Saturday</option>
-                                            <option value="Sunday" {{ old('startDay', $fixeddate->startDay) == 'Sunday' ? 'selected' : '' }}>Sunday</option>
+                                            <option value="{{ old('startDay') == null ? 'selected' : '' }}">-- / --</option>
+                                            <option value="01" {{ old('startDay', $fixeddate->startDay) == '01' ? 'selected' : '' }}>01</option>
+                                            <option value="02" {{ old('startDay', $fixeddate->startDay) == '02' ? 'selected' : '' }}>02</option>
+                                            <option value="03" {{ old('startDay', $fixeddate->startDay) == '03' ? 'selected' : '' }}>03</option>
+                                            <option value="04" {{ old('startDay', $fixeddate->startDay) == '04' ? 'selected' : '' }}>04</option>
+                                            <option value="05" {{ old('startDay', $fixeddate->startDay) == '05' ? 'selected' : '' }}>05</option>
+                                            <option value="06" {{ old('startDay', $fixeddate->startDay) == '06' ? 'selected' : '' }}>06</option>
+                                            <option value="07" {{ old('startDay', $fixeddate->startDay) == '07' ? 'selected' : '' }}>07</option>
+                                            <option value="08" {{ old('startDay', $fixeddate->startDay) == '08' ? 'selected' : '' }}>08</option>
+                                            <option value="09" {{ old('startDay', $fixeddate->startDay) == '09' ? 'selected' : '' }}>09</option>
+                                            <option value="10" {{ old('startDay', $fixeddate->startDay) == '10' ? 'selected' : '' }}>10</option>
+                                            <option value="11" {{ old('startDay', $fixeddate->startDay) == '11' ? 'selected' : '' }}>11</option>
+                                            <option value="12" {{ old('startDay', $fixeddate->startDay) == '12' ? 'selected' : '' }}>12</option>
+                                            <option value="13" {{ old('startDay', $fixeddate->startDay) == '13' ? 'selected' : '' }}>13</option>
+                                            <option value="14" {{ old('startDay', $fixeddate->startDay) == '14' ? 'selected' : '' }}>14</option>
+                                            <option value="15" {{ old('startDay', $fixeddate->startDay) == '15' ? 'selected' : '' }}>15</option>
+                                            <option value="16" {{ old('startDay', $fixeddate->startDay) == '16' ? 'selected' : '' }}>16</option>
+                                            <option value="17" {{ old('startDay', $fixeddate->startDay) == '17' ? 'selected' : '' }}>17</option>
+                                            <option value="18" {{ old('startDay', $fixeddate->startDay) == '18' ? 'selected' : '' }}>18</option>
+                                            <option value="19" {{ old('startDay', $fixeddate->startDay) == '19' ? 'selected' : '' }}>19</option>
+                                            <option value="20" {{ old('startDay', $fixeddate->startDay) == '20' ? 'selected' : '' }}>20</option>
+                                            <option value='21' {{ old('startDay', $fixeddate->startDay) == '21' ? 'selected' : '' }}>21</option>
+                                            <option value='22' {{ old('startDay', $fixeddate->startDay) == '22' ? 'selected' : '' }}>22</option>
+                                            <option value='23' {{ old('startDay', $fixeddate->startDay) == '23' ? 'selected' : '' }}>23</option>
+                                            <option value='24' {{ old('startDay', $fixeddate->startDay) == '24' ? 'selected' : '' }}>24</option>
+                                            <option value='25' {{ old('startDay', $fixeddate->startDay) == '25' ? 'selected' : '' }}>25</option>
+                                            <option value='26' {{ old('startDay', $fixeddate->startDay) == '26' ? 'selected' : '' }}>26</option>
+                                            <option value='27' {{ old('startDay', $fixeddate->startDay) == '27' ? 'selected' : '' }}>27</option>
+                                            <option value='28' {{ old('startDay', $fixeddate->startDay) == '28' ? 'selected' : '' }}>28</option>
+                                            <option value='29' {{ old('startDay', $fixeddate->startDay) == '29' ? 'selected' : '' }}>29</option>
+                                            <option value='30' {{ old('startDay', $fixeddate->startDay) == '30' ? 'selected' : '' }}>30</option>
+                                            <option value='31' {{ old('startDay', $fixeddate->startDay) == '31' ? 'selected' : '' }}>31</option>
                                         </select>
                                     </div>
                                 </div>
@@ -82,13 +106,13 @@
 
                             <div class="col-12 col-md-6">
                                 <div class="row">
-                                    <div class="mb-3">
-                                        <label for="frequency" class="form-label"><b>Notify Me? : </b><span class="text-danger">*</span></label>
+                                    <div class="mb-3 col-md-4">
+                                        <label for="frequency" class="form-label"><b>Frequency : </b><span class="text-danger">*</span></label>
                                         <select name="frequency" id="frequency" class="form-select">
-                                            <option value="Monthly" {{ old('frequency', $fixeddate->frequency) == 'Monthly' ? 'selected' : '' }}> Monthly</option>
-                                            <option value="Daily" {{ old('frequency', $fixeddate->frequency) == 'Daily' ? 'selected' : '' }}>Daily</option>
-                                            <option value="Hourly" {{ old('frequency', $fixeddate->frequency) == 'Hourly' ? 'selected' : '' }}>Hourly</option>
-                                            <option value="Minutes" {{ old('frequency', $fixeddate->frequency) == 'Minutes' ? 'selected' : '' }}>Minutes</option>
+                                            <option value="{{ old('endMonth') == null ? 'N/A' : '' }}"> -- / --</option>
+                                            <option value="Monthly" {{ old('frequency', $fixeddate->frequency) == 'Monthly' ? 'selected' : '' }}>Montly</option>
+                                            <option value="Quarterly" {{ old('frequency', $fixeddate->frequency) == 'Quarterly' ? 'selected' : '' }}>Quarterly</option>
+                                            <option value="Annually" {{ old('frequency', $fixeddate->frequency) == 'Annually' ? 'selected' : '' }}>Annually</option>
                                         </select>
                                     </div>
 
@@ -104,33 +128,57 @@
                                     <div class="col-12 col-md-6">
                                         <label class="form-control-label" for="endMonth">Month</label>
                                         <select id="endMonth" name="endMonth" class="form-select" required>
-                                        <option value="{{ old('endMonth') == null ? 'selected' : '' }}">-- Select Month --</option>
-                                        <option value="January" {{ old('endMonth', $fixeddate->endMonth) == 'January' ? 'selected' : '' }}>January</option>
-                                        <option value="February" {{ old('endMonth', $fixeddate->endMonth) == 'February' ? 'selected' : '' }}>February</option>
-                                        <option value="March" {{ old('endMonth', $fixeddate->endMonth) == 'March' ? 'selected' : '' }}>March</option>
-                                        <option value="April" {{ old('endMonth', $fixeddate->endMonth) == 'April' ? 'selected' : '' }}>April</option>
-                                        <option value="May" {{ old('endMonth', $fixeddate->endMonth) == 'May' ? 'selected' : '' }}>May</option>
-                                        <option value="June" {{ old('endMonth', $fixeddate->endMonth) == 'June' ? 'selected' : '' }}>June</option>
-                                        <option value="July" {{ old('endMonth', $fixeddate->endMonth) == 'July' ? 'selected' : '' }}>July</option>
-                                        <option value="August" {{ old('endMonth', $fixeddate->endMonth) == 'August' ? 'selected' : '' }}>August</option>
-                                        <option value="September" {{ old('endMonth', $fixeddate->endMonth) == 'September' ? 'selected' : '' }}>September</option>
-                                        <option value="October" {{ old('endMonth', $fixeddate->endMonth) == 'October' ? 'selected' : '' }}>October</option>
-                                        <option value="November" {{ old('endMonth', $fixeddate->endMonth) == 'November' ? 'selected' : '' }}>November</option>
-                                        <option value="December" {{ old('endMonth', $fixeddate->endMonth) == 'December' ? 'selected' : '' }}>December</option>
+                                            <option value="{{ old('endMonth') == null ? 'selected' : '' }}">-- Select Month --</option>
+                                            <option value="1" {{ old('endMonth', $fixeddate->endMonth) == '1' ? 'selected' : 'selected' }}>January</option>
+                                            <option value="2" {{ old('endMonth', $fixeddate->endMonth) == '2' ? 'selected' : '' }}>February</option>
+                                            <option value="3" {{ old('endMonth', $fixeddate->endMonth) == '3' ? 'selected' : '' }}>March</option>
+                                            <option value="4" {{ old('endMonth', $fixeddate->endMonth) == '4' ? 'selected' : '' }}>April</option>
+                                            <option value="5" {{ old('endMonth', $fixeddate->endMonth) == '5' ? 'selected' : '' }}>May</option>
+                                            <option value="6" {{ old('endMonth', $fixeddate->endMonth) == '6' ? 'selected' : '' }}>June</option>
+                                            <option value="7" {{ old('endMonth', $fixeddate->endMonth) == '7' ? 'selected' : '' }}>July</option>
+                                            <option value="8" {{ old('endMonth', $fixeddate->endMonth) == '8' ? 'selected' : '' }}>August</option>
+                                            <option value="9" {{ old('endMonth', $fixeddate->endMonth) == '9' ? 'selected' : '' }}>September</option>
+                                            <option value="10" {{ old('endMonth', $fixeddate->endMonth) == '10' ? 'selected' : '' }}>October</option>
+                                            <option value="11" {{ old('endMonth', $fixeddate->endMonth) == '11' ? 'selected' : '' }}>November</option>
+                                            <option value="12" {{ old('endMonth', $fixeddate->endMonth) == '12' ? 'selected' : '' }}>December</option>
                                         </select>
                                     </div>
 
-                                    <div class="col-12 col-md-6">
+                                    <div class="col-12 col-md-2">
                                         <label class="form-control-label" for="endDay">Day</label>
                                         <select class="form-select" id="endDay" name="endDay" required>
-                                            <option value="{{ old('startDay') == null ? 'selected' : '' }}">-- Select Day --</option>
-                                            <option value="Monday" {{ old('endDay', $fixeddate->endDay) == 'Monday' ? 'selected' : '' }}>Monday</option>
-                                            <option value="Tuesday" {{ old('endDay', $fixeddate->endDay) == 'Tuesday' ? 'selected' : '' }}>Tuesday</option>
-                                            <option value="Wednesday" {{ old('endDay', $fixeddate->endDay) == 'Wednesday' ? 'selected' : '' }}>Wednesday</option>
-                                            <option value="Thursday" {{ old('endDay', $fixeddate->endDay) == 'Thursday' ? 'selected' : '' }}>Thursday</option>
-                                            <option value="Friday" {{ old('endDay', $fixeddate->endDay) == 'Friday' ? 'selected' : '' }}>Friday</option>
-                                            <option value="Saturday" {{ old('endDay', $fixeddate->endDay) == 'Saturday' ? 'selected' : '' }}>Saturday</option>
-                                            <option value="Sunday" {{ old('endDay', $fixeddate->endDay) == 'Sunday' ? 'selected' : '' }}>Sunday</option>
+                                        <option value="{{ old('endDay') == null ? 'selected' : '' }}">-- / --</option>
+                                            <option value="01" {{ old('endDay', $fixeddate->endDay) == '01' ? 'selected' : '' }}>01</option>
+                                            <option value="02" {{ old('endDay', $fixeddate->endDay) == '02' ? 'selected' : '' }}>02</option>
+                                            <option value="03" {{ old('endDay', $fixeddate->endDay) == '03' ? 'selected' : '' }}>03</option>
+                                            <option value="04" {{ old('endDay', $fixeddate->endDay) == '04' ? 'selected' : '' }}>04</option>
+                                            <option value="05" {{ old('endDay', $fixeddate->endDay) == '05' ? 'selected' : '' }}>05</option>
+                                            <option value="06" {{ old('endDay', $fixeddate->endDay) == '06' ? 'selected' : '' }}>06</option>
+                                            <option value="07" {{ old('endDay', $fixeddate->endDay) == '07' ? 'selected' : '' }}>07</option>
+                                            <option value="08" {{ old('endDay', $fixeddate->endDay) == '08' ? 'selected' : '' }}>08</option>
+                                            <option value="09" {{ old('endDay', $fixeddate->endDay) == '09' ? 'selected' : '' }}>09</option>
+                                            <option value="10" {{ old('endDay', $fixeddate->endDay) == '10' ? 'selected' : '' }}>10</option>
+                                            <option value="11" {{ old('endDay', $fixeddate->endDay) == '11' ? 'selected' : '' }}>11</option>
+                                            <option value="12" {{ old('endDay', $fixeddate->endDay) == '12' ? 'selected' : '' }}>12</option>
+                                            <option value="13" {{ old('endDay', $fixeddate->endDay) == '13' ? 'selected' : '' }}>13</option>
+                                            <option value="14" {{ old('endDay', $fixeddate->endDay) == '14' ? 'selected' : '' }}>14</option>
+                                            <option value="15" {{ old('endDay', $fixeddate->endDay) == '15' ? 'selected' : '' }}>15</option>
+                                            <option value="16" {{ old('endDay', $fixeddate->endDay) == '16' ? 'selected' : '' }}>16</option>
+                                            <option value="17" {{ old('endDay', $fixeddate->endDay) == '17' ? 'selected' : '' }}>17</option>
+                                            <option value="18" {{ old('endDay', $fixeddate->endDay) == '18' ? 'selected' : '' }}>18</option>
+                                            <option value="19" {{ old('endDay', $fixeddate->endDay) == '19' ? 'selected' : '' }}>19</option>
+                                            <option value="20" {{ old('endDay', $fixeddate->endDay) == '20' ? 'selected' : '' }}>20</option>
+                                            <option value='21' {{ old('endDay', $fixeddate->endDay) == '21' ? 'selected' : '' }}>21</option>
+                                            <option value='22' {{ old('endDay', $fixeddate->endDay) == '22' ? 'selected' : '' }}>22</option>
+                                            <option value='23' {{ old('endDay', $fixeddate->endDay) == '23' ? 'selected' : '' }}>23</option>
+                                            <option value='24' {{ old('endDay', $fixeddate->endDay) == '24' ? 'selected' : '' }}>24</option>
+                                            <option value='25' {{ old('endDay', $fixeddate->endDay) == '25' ? 'selected' : '' }}>25</option>
+                                            <option value='26' {{ old('endDay', $fixeddate->endDay) == '26' ? 'selected' : '' }}>26</option>
+                                            <option value='27' {{ old('endDay', $fixeddate->endDay) == '27' ? 'selected' : '' }}>27</option>
+                                            <option value='28' {{ old('endDay', $fixeddate->endDay) == '28' ? 'selected' : '' }}>28</option>
+                                            <option value='29' {{ old('endDay', $fixeddate->endDay) == '29' ? 'selected' : '' }}>29</option>
+                                            <option value='30' {{ old('endDay', $fixeddate->endDay) == '30' ? 'selected' : '' }}>30</option>
+                                            <option value='31' {{ old('endDay', $fixeddate->endDay) == '31' ? 'selected' : '' }}>31</option>
                                         </select>
                                     </div>
                                 </div>

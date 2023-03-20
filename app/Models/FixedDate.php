@@ -17,6 +17,7 @@ class Fixeddate extends Model
         'startDay' ,
         'endMonth',
         'endDay',
+        'year',
         'frequency',
         'image'
     ];

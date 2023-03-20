@@ -9,7 +9,7 @@
             <h4 class="mb-3 mb-md-0 text-muted" >ADD NEW REMINDER</h4> 
         </div>
         <div class="d-flex align-items-center flex-wrap text-nowrap">
-            <a href="{{route('fixeddate.index')}}" class="btn btn-light btn-icon-text mb-2 mb-md-0" style="border-radius: 15px 30px">
+            <a href="{{route('fixeddate.index')}}" class="btn btn-light btn-icon-text mb-2 mb-md-0" style="border-radius: 15px 50px">
                 All Reminders
             </a>
         </div>
@@ -38,89 +38,62 @@
                             <div id="editor" style="font-family: 'Open Sans', sans-serif"></div>
                         </div>
 
-                        <div class="">
+                        <div class="mb-3">
                             <label for="webhook" class="form-label"><b>Webhook</b><span class="text-danger">*</span></label>
                             <input id="webhook" name="webhook" type="text" class="form-control" placeholder="Webhook Link">
                         </div>
                     </div>
-                        <div class="row">
+                        <div class="pl-lg-4 row">
                             <h5 class="heading-small text-muted mb-4 mt-3"><b><hr>Start date</b></h5>
                                 <div class="col-12 col-md-6">
                                     <label class="form-control-label" for="startMonth">Month</label>
                                     <select id="startMonth" name="startMonth" class="form-select" required>
-                                        <option value="">-- // --</option>
-                                        <option value="1">January</option>
-                                        <option value="2">February</option>
-                                        <option value="3">March</option>
-                                        <option value="4">April</option>
-                                        <option value="5">May</option>
-                                        <option value="6">June</option>
-                                        <option value="7">July</option>
-                                        <option value="8">August</option>
-                                        <option value="9">September</option>
-                                        <option value="10">October</option>
-                                        <option value="11">November</option>
-                                        <option value="12">December</option>
+                                        <option value="">-- Select month --</option>
+                                        <option value="January">January</option>
+                                        <option value="February">February</option>
+                                        <option value="March">March</option>
+                                        <option value="April">April</option>
+                                        <option value="May">May</option>
+                                        <option value="June">June</option>
+                                        <option value="July">July</option>
+                                        <option value="August">August</option>
+                                        <option value="September">September</option>
+                                        <option value="October">October</option>
+                                        <option value="November">November</option>
+                                        <option value="December">December</option>
                                     </select>
                                 </div>
 
-                                <div class="col-12 col-md-2">
+                                <div class="col-12 col-md-6">
                                     <label class="form-control-label" for="startDay">Day</label>
                                         <select id="startDay" name="startDay" class="form-select" required>
-                                            <option value="">-/-</option>
-                                            <option value='01'>01</option>
-                                            <option value='02'>02</option>
-                                            <option value='03'>03</option>
-                                            <option value='04'>04</option>
-                                            <option value='05'>05</option>
-                                            <option value='06'>06</option>
-                                            <option value='07'>07</option>
-                                            <option value='08'>08</option>
-                                            <option value='09'>09</option>
-                                            <option value='10'>10</option>
-                                            <option value='11'>11</option>
-                                            <option value='12'>12</option>
-                                            <option value='13'>13</option>
-                                            <option value='14'>14</option>
-                                            <option value='15'>15</option>
-                                            <option value='16'>16</option>
-                                            <option value='17'>17</option>
-                                            <option value='18'>18</option>
-                                            <option value='19'>19</option>
-                                            <option value='20'>20</option>
-                                            <option value='21'>21</option>
-                                            <option value='22'>22</option>
-                                            <option value='23'>23</option>
-                                            <option value='24'>24</option>
-                                            <option value='25'>25</option>
-                                            <option value='26'>26</option>
-                                            <option value='27'>27</option>
-                                            <option value='28'>28</option>
-                                            <option value='29'>29</option>
-                                            <option value='30'>30</option>
-                                            <option value='31'>31</option>
+                                            <option value="">-- Select day --</option>
+                                            <option value="Monday">Monday</option>
+                                            <option value="Tuesday">Tuesday</option>
+                                            <option value="Wednesday">Wednesday</option>
+                                            <option value="Thursday">Thursday</option>
+                                            <option value="Friday">Friday</option>
+                                            <option value="Saturday">Saturday</option>
+                                            <option value="Sunday">Sunday</option>
                                         </select>
-                                    </div>
-                                    <div class="col-12 col-md-2">
-                                        <label class="form-control-label" for="Year">Year</label>
-                                        <input class="form-control" value="2023" id="endYear" name="endYear" disabled>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="mb-3 col-md-6">
+                            <div class="col-12 col-md-6">
                                 <div class="row">
                                     <div class="mb-3">
-                                        <label for="frequency" class="form-label"><b>Frequency : </b><span class="text-danger">*</span></label>
+                                        <label for="frequency" class="form-label"><b>Notify me? : </b><span class="text-danger">*</span></label>
                                         <select name="frequency" id="frequency" class="form-select">
                                             <option value="">-- Please select --</option>
-                                            <option value="Monthly">Monthly</option>
-                                            <option value="Hourly">Quarterly</option>
-                                            <option value="Minutes">Annually</option>
+                                            <option value="Monthly"> Monthly</option>
+                                            <option value="Daily">Daily</option>
+                                            <option value="Hourly">Hourly</option>
+                                            <option value="Minutes">Minutes</option>
                                         </select>
                                     </div>
 
-                                    <div class=""><br>
+                                    <div class="mb-3"><br>
                                         <label for="image" class="form-label"><b>Reminder image</b><span class="text-muted">(optional)</span></label>
                                         <input id="image" name="image" type="file" class="form-control">
                                     </div>
@@ -131,73 +104,39 @@
                                     <div class="col-12 col-md-6">
                                         <label class="form-control-label" for="endMonth">Month</label>
                                         <select id="endMonth" name="endMonth" class="form-select" required>
-                                            <option value="">-- // --</option>
-                                            <option value="01">January</option>
-                                            <option value="02">February</option>
-                                            <option value="03">March</option>
-                                            <option value="04">April</option>
-                                            <option value="05">May</option>
-                                            <option value="06">June</option>
-                                            <option value="07">July</option>
-                                            <option value="08">August</option>
-                                            <option value="09">September</option>
-                                            <option value="10">October</option>
-                                            <option value="11">November</option>
-                                            <option value="12">December</option>
+                                            <option value="">-- Select month --</option>
+                                            <option value="January">January</option>
+                                            <option value="February">February</option>
+                                            <option value="March">March</option>
+                                            <option value="April">April</option>
+                                            <option value="May">May</option>
+                                            <option value="June">June</option>
+                                            <option value="July">July</option>
+                                            <option value="August">August</option>
+                                            <option value="September">September</option>
+                                            <option value="October">October</option>
+                                            <option value="November">November</option>
+                                            <option value="December">December</option>
                                         </select>
                                     </div>
 
-                                    <div class="col-12 col-md-2">
+                                    <div class="col-12 col-md-6">
                                         <label class="form-control-label" for="endDay">Day</label>
                                         <select class="form-select" id="endDay" name="endDay" required>
-                                            <option value="">-/-</option>
-                                            <option value='01'>01</option>
-                                            <option value='02'>02</option>
-                                            <option value='03'>03</option>
-                                            <option value='04'>04</option>
-                                            <option value='05'>05</option>
-                                            <option value='06'>06</option>
-                                            <option value='07'>07</option>
-                                            <option value='08'>08</option>
-                                            <option value='09'>09</option>
-                                            <option value='10'>10</option>
-                                            <option value='11'>11</option>
-                                            <option value='12'>12</option>
-                                            <option value='13'>13</option>
-                                            <option value='14'>14</option>
-                                            <option value='15'>15</option>
-                                            <option value='16'>16</option>
-                                            <option value='17'>17</option>
-                                            <option value='18'>18</option>
-                                            <option value='19'>19</option>
-                                            <option value='20'>20</option>
-                                            <option value='21'>21</option>
-                                            <option value='22'>22</option>
-                                            <option value='23'>23</option>
-                                            <option value='24'>24</option>
-                                            <option value='25'>25</option>
-                                            <option value='26'>26</option>
-                                            <option value='27'>27</option>
-                                            <option value='28'>28</option>
-                                            <option value='29'>29</option>
-                                            <option value='30'>30</option>
-                                            <option value='31'>31</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-12 col-md-3">
-                                        <label class="form-control-label" for="endYear">Year</label>
-                                        <select class="form-select" id="year" name="year" required>
-                                            <option value="">-/-</option>
-                                            <option value='2023'>2023</option>
-                                            <option value='2024'>2024</option>
-                                            <option value='2025'>2025</option>
-                                            <option value='2026'>2026</option>
+                                            <option value="">-- Select day --</option>
+                                            <option value="Monday">Monday</option>
+                                            <option value="Tuesday">Tuesday</option>
+                                            <option value="Wednesday">Wednesday</option>
+                                            <option value="Thursday">Thursday</option>
+                                            <option value="Friday">Friday</option>
+                                            <option value="Saturday">Saturday</option>
+                                            <option value="Sunday">Sunday</option>
                                         </select>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                            <div class=""><br>
+                            <div class="mb-3"><br>
                                 <button type="submit" class="btn btn-primary btn-icon-text mb-2 mb-md-0">Save Reminder Data</button>
                             </div>
                         </div>
