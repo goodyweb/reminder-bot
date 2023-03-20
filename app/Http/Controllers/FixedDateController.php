@@ -5,7 +5,7 @@ use App\Models\Fixeddate;
 use App\Models\User;
 use Illuminate\Http\Request;
 
-class FixeddateController extends Controller
+class FixedDateController extends Controller
 {
     /**
      * Display a listing of the resource.

@@ -33,8 +33,8 @@ body, html {
   border-radius: 15px 50px;
 }
 
-#Home {background-color: #F9B904;}
-#News {background-color: #F9B904;}
+#Home {background-color: #FFD20A;}
+#News {background-color: #FFD20A;}
 </style>
 @extends('templates.master')
 @section('content')
@@ -47,8 +47,8 @@ body, html {
     </div>
 </div>
 
-  <button class="tablink" onclick="openPage('Home', this, '#ffc729')">Card View</button>
-  <button class="tablink" onclick="openPage('News', this, '#ffc729')" id="defaultOpen">Table View</button> 
+  <button class="tablink" onclick="openPage('Home', this, '#FFD20A')" id="defaultOpen">Card View</button>
+  <button class="tablink" onclick="openPage('News', this, '#FFD20A')">Table View</button> 
     <div>
         <h2 class="mb-3 mb-md-0 text-center text-color: yellow background-color: #F9B904;"><b>ALL REMINDERS</b></h2>
         <hr>
@@ -60,23 +60,23 @@ body, html {
           <div class="row">
               @foreach ($fixeddate as $index => $val)
               <div class="col-xl-4 mt-4 mb-4 mb-xl-0">
-                  <div class="card shadow">
-                      <img class="card-img-top card-img-top-post" src="/img/{{ $val->image }}">
-                      <div class="card-body card-body-post">
+                  <div class="card shadow" style="border-radius: 15px 50px 5px">
+                      <!--<img class="card-img-top card-img-top-post" src="/img/{{ $val->image }}">-->
+                      <div class="card-body card-body-post"><hr>
                         <h2 class="card-title"><b>{{ $val->details }}</b></h2>             
                         <p><small>Written by Goody Web | {{ $val->updated_at }}</small></p>
                       
                         <hr>
                         <div class="button-group row">
                           <div class="col-8">
-                            <a href="{{route('reminder_view.show', $val->id)}}" class="btn btn-outline-primary btn-sm"><i data-feather="eye"></i>View</a>            
-                            <a href="{{route('fixeddate.edit', $val->id)}}" class="btn btn-outline-info btn-sm"><i data-feather="link"></i>Edit</a>
+                            <a href="{{route('reminder_view.show', $val->id)}}" class="btn btn-info btn-sm"><i data-feather="eye"></i>View</a>            
+                            <a href="{{route('fixeddate.edit', $val->id)}}" class="btn btn-warning btn-sm"><i data-feather="link"></i>Edit</a>
                           </div>
                             <div class="col-4 text-right">
                                 <form action="{{ route('fixeddate.destroy',$val->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="button" class="btn btn-outline-danger btn-sm" onclick="confirm('Are you sure you want to dissolve the {{ $val->details }} class?') ? this.parentElement.submit() : ''"><i data-feather="trash"></i> Delete</button>
+                                    <button type="button" class="btn btn-danger btn-sm" onclick="confirm('Are you sure you want to dissolve the {{ $val->details }} class?') ? this.parentElement.submit() : ''"><i data-feather="trash"></i> Delete</button>
                                 </form>
                             </div>
                         </div>
@@ -126,14 +126,14 @@ body, html {
                             <td>{{$val->details}}</td>
                             <!-- <td>{{$val->webhook}}</td>-->
                             <td>{{$val->frequency}}</td>
-                            <td>{{$val->startMonth}}/{{$val->startDay}}/{{$val->year}}</td>
+                            <td>{{$val->startMonth}}/{{$val->startDay}}/<?php echo date("Y"); ?></td>
                             <td>{{$val->endMonth}}/{{$val->endDay}}/{{$val->year}}</td>
                             <td><img alt="img" src="/img/{{ $val->image }}" class="text-center" width="100px" height="100px"></td>
                             <td>
                                 <form action="{{ route('fixeddate.destroy',$val->id) }}" method="POST">
                                     {{ csrf_field()  }}
                                     @method('DELETE')
-                                    <a class="btn btn-success" href="{{route('reminder_view.show', $val->id)}}"><i data-feather="eye"></i> Show</a>
+                                    <a class="btn btn-info" href="{{route('reminder_view.show', $val->id)}}"><i data-feather="eye"></i> Show</a>
                                     <a class="btn btn-warning" href="{{route('fixeddate.edit', $val->id)}}"><i data-feather="link"></i> Edit</a>
                                     <button type="button" class="btn btn-danger btn-sm" onclick="confirm('Are you sure you want to dissolve the {{ $val->details }} reminder?') ? this.parentElement.submit() : ''"><i data-feather="trash"></i> Delete</button>
                                 </form>

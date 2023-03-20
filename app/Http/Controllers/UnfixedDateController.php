@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Unfixeddate;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UnfixedDateController extends Controller
@@ -13,8 +14,11 @@ class UnfixedDateController extends Controller
      */
     public function index()
     {
-        //
+        $unfixeddate = Unfixeddate::all();
+        $users = User::all();
+        return view('unfixeddate.index', compact('unfixeddate', 'users'));
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -23,9 +27,9 @@ class UnfixedDateController extends Controller
      */
     public function create()
     {
-        //
+        return view('unfixeddate.create'); 
     }
-
+    
     /**
      * Store a newly created resource in storage.
      *
@@ -34,7 +38,37 @@ class UnfixedDateController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'details' => 'required',
+            'webhook' => 'required',
+            'month'=> 'required',
+            'week' => 'required',
+            'day' => 'required',
+            'frequency' => 'required',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        if ($image = $request->file('image')) {
+            $destinationPath = 'img/';
+            $reminderImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $reminderImage);
+            $filename = $reminderImage;
+        } else {
+            $filename = 'no-img.png';
+        }
+       
+
+        $unfixeddate = new Unfixeddate();
+        $unfixeddate->details = $request->input('details');
+        $unfixeddate->webhook = $request->input('webhook');
+        $unfixeddate->month = $request->input('month');
+        $unfixeddate->week = $request->input('week');
+        $unfixeddate->day = $request->input('day');
+        $unfixeddate->frequency = $request->input('frequency');
+        $unfixeddate->save();
+
+        return redirect()->route('unfixeddate.index')
+            ->with('success','Reminder created successfully.');
     }
 
     /**
@@ -43,7 +77,7 @@ class UnfixedDateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Unfixeddate $unfixeddate)
     {
         //
     }
@@ -54,31 +88,43 @@ class UnfixedDateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Unfixeddate $unfixeddate)
     {
-        //
+        return view('unfixeddate.edit', compact('unfixeddate'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function update(Request $request, Unfixeddate $unfixeddate)
     {
-        //
+        $request->validate([
+            'details' => 'required',
+            'webhook' => 'required',
+            'startMonth'=> 'required',
+            'startDay' => 'required',
+            'endMonth' => 'required',
+            'endDay' => 'required',
+            'year' => 'required',
+            'frequency' => 'required',
+        ]);
+
+        $input = $request->all();
+        if ($image = $request->file('image')) {
+            $destinationPath = 'img/';
+            $reminderImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $reminderImage);
+            $input['image'] = "$reminderImage";
+        } else {
+            unset($input['image']);
+        }
+
+        $unfixeddate->update($input);
+        return redirect()->route('unfixeddate.index')
+            ->with('success','Reminder updated successfully.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function destroy(Unfixeddate $unfixeddate)
     {
-        //
+        $unfixeddate->delete();
+        return redirect()->route('unfixeddate.index')
+            ->with('success','Reminder deleted successfully');
     }
 }

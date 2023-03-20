@@ -33,22 +33,22 @@ body, html {
   border-radius: 15px 50px;
 }
 
-#Home {background-color: #F9B904;}
-#News {background-color: #F9B904;}
+#Home {background-color: #FFD20A;}
+#News {background-color: #FFD20A;}
 </style>
 @extends('templates.master')
 @section('content')
 
 <div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
     <div class="d-flex align-items-center flex-wrap text-nowrap">
-        <a href="{{route('fixeddate.create')}}" class="btn btn-warning btn-icon-text mb-2 mb-md-0" style="border-radius: 15px 50px 30px 5px" >
+        <a href="{{route('unfixeddate.create')}}" class="btn btn-warning btn-icon-text mb-2 mb-md-0" style="border-radius: 15px 50px 30px 5px" >
           <i data-feather="plus"></i> Add New Reminders
         </a>
     </div>
 </div>
 
-  <button class="tablink" onclick="openPage('Home', this, '#ffc729')">Card View</button>
-  <button class="tablink" onclick="openPage('News', this, '#ffc729')" id="defaultOpen">Table View</button> 
+  <button class="tablink" onclick="openPage('Home', this, '#FFD20A')" id="defaultOpen">Card View</button>
+  <button class="tablink" onclick="openPage('News', this, '#FFD20A')">Table View</button> 
     <div>
         <h2 class="mb-3 mb-md-0 text-center text-color: yellow background-color: #F9B904;"><b>ALL REMINDERS</b></h2>
         <hr>
@@ -56,24 +56,23 @@ body, html {
 
 <div id="Home" class="tabcontent">
 <div class="container">
-        @if(count($fixeddate) > 0)
+        @if(count($unfixeddate) > 0)
           <div class="row">
-              @foreach ($fixeddate as $index => $val)
+              @foreach ($unfixeddate as $index => $val)
               <div class="col-xl-4 mt-4 mb-4 mb-xl-0">
-                  <div class="card shadow">
-                      <img class="card-img-top card-img-top-post" src="/img/{{ $val->image }}">
-                      <div class="card-body card-body-post">
+                  <div class="card shadow" style="border-radius: 15px 50px 5px">
+                      <div class="card-body card-body-post"><hr>
                         <h2 class="card-title"><b>{{ $val->details }}</b></h2>             
-                        <p><small>Written by Goody Web | {{ $val->updated_at }}</small></p>
+                        <p><small>Written by Goody Web | {{ $val->created_at }}</small></p>
                       
                         <hr>
                         <div class="button-group row">
                           <div class="col-8">
                             <a href="{{route('reminder_view.show', $val->id)}}" class="btn btn-outline-primary btn-sm"><i data-feather="eye"></i>View</a>            
-                            <a href="{{route('fixeddate.edit', $val->id)}}" class="btn btn-outline-info btn-sm"><i data-feather="link"></i>Edit</a>
+                            <a href="{{route('unfixeddate.edit', $val->id)}}" class="btn btn-outline-info btn-sm"><i data-feather="link"></i>Edit</a>
                           </div>
                             <div class="col-4 text-right">
-                                <form action="{{ route('fixeddate.destroy',$val->id) }}" method="POST">
+                                <form action="{{ route('unfixeddate.destroy',$val->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button type="button" class="btn btn-outline-danger btn-sm" onclick="confirm('Are you sure you want to dissolve the {{ $val->details }} class?') ? this.parentElement.submit() : ''"><i data-feather="trash"></i> Delete</button>
@@ -111,30 +110,30 @@ body, html {
                     <tr>
                         <th class="pt-0">#</th>
                         <th class="pt-0">Reminder Details</th>
-                        <th class="pt-0">Webhook</th>
+                        <!--<th class="pt-0">Webhook</th>-->
                         <th class="pt-0">Type Notifications</th>
-                        <th class="pt-0">Start Date</th>
-                        <th class="pt-0">End Date</th>
-                        <th class="pt-0">Image</th>
+                        <th class="pt-0">Month</th>
+                        <th class="pt-0">Week</th>
+                        <th class="pt-0">Day</th>
                         <th class="text-center">Actions</th>
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($fixeddate as $index => $val)
+                    @foreach($unfixeddate as $index => $val)
                         <tr>
                             <td>{{++$index}}</td>
                             <td>{{$val->details}}</td>
-                            <td>{{$val->webhook}}</td>
+                            <!--<td>{{$val->webhook}}</td>-->
                             <td>{{$val->frequency}}</td>
-                            <td>{{$val->startDay}} of {{$val->startMonth}}</td>
-                            <td>{{$val->endDay}} of {{$val->endMonth}}</td>
-                            <td><img alt="img" src="/img/{{ $val->image }}" class="text-center" width="100px" height="100px"></td>
+                            <td>{{$val->month}}</td>
+                            <td>{{$val->week}}</td>
+                            <td>{{$val->day}}</td>
                             <td>
-                                <form action="{{ route('fixeddate.destroy',$val->id) }}" method="POST">
+                                <form action="{{ route('unfixeddate.destroy',$val->id) }}" method="POST">
                                     {{ csrf_field()  }}
                                     @method('DELETE')
                                     <a class="btn btn-sm btn-success" href="{{route('reminder_view.show', $val->id)}}"><i data-feather="eye"></i> Show</a>
-                                    <a class="btn btn-sm btn-warning" href="{{route('fixeddate.edit', $val->id)}}"><i data-feather="link"></i> Edit</a>
+                                    <a class="btn btn-sm btn-warning" href="{{route('unfixeddate.edit', $val->id)}}"><i data-feather="link"></i> Edit</a>
                                     <button type="button" class="btn btn-danger btn-sm" onclick="confirm('Are you sure you want to dissolve the {{ $val->details }} reminder?') ? this.parentElement.submit() : ''"><i data-feather="trash"></i> Delete</button>
                                 </form>
                             </td>

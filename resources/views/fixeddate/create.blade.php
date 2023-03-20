@@ -103,20 +103,21 @@
                                     </div>
                                     <div class="col-12 col-md-2">
                                         <label class="form-control-label" for="Year">Year</label>
-                                        <input class="form-control" value="2023" id="endYear" name="endYear" disabled>
+                                        <input class="form-control" value="<?php echo date("Y"); ?>" id="year" name="year" disabled><br>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="mb-3 col-md-6">
+                            <div class="col-md-6">
                                 <div class="row">
                                     <div class="mb-3">
                                         <label for="frequency" class="form-label"><b>Frequency : </b><span class="text-danger">*</span></label>
                                         <select name="frequency" id="frequency" class="form-select">
                                             <option value="">-- Please select --</option>
                                             <option value="Monthly">Monthly</option>
-                                            <option value="Hourly">Quarterly</option>
-                                            <option value="Minutes">Annually</option>
+                                            <option value="Quarterly">Quarterly</option>
+                                            <option value="SemiAnnually">Semi-Annually</option>
+                                            <option value="Annually">Annually</option>
                                         </select>
                                     </div>
 

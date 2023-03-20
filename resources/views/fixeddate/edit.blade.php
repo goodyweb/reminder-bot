@@ -101,6 +101,10 @@
                                             <option value='31' {{ old('startDay', $fixeddate->startDay) == '31' ? 'selected' : '' }}>31</option>
                                         </select>
                                     </div>
+                                    <div class="col-12 col-md-2">
+                                        <label class="form-control-label" for="Year">Year</label>
+                                        <input class="form-control" value="<?php echo date("Y"); ?>" id="year" name="year" disabled><br>
+                                    </div>
                                 </div>
                             </div>
 
@@ -112,6 +116,7 @@
                                             <option value="{{ old('endMonth') == null ? 'N/A' : '' }}"> -- / --</option>
                                             <option value="Monthly" {{ old('frequency', $fixeddate->frequency) == 'Monthly' ? 'selected' : '' }}>Montly</option>
                                             <option value="Quarterly" {{ old('frequency', $fixeddate->frequency) == 'Quarterly' ? 'selected' : '' }}>Quarterly</option>
+                                            <option value="SemiAnnually" {{ old('frequency', $fixeddate->frequency) == 'SemiAnnually' ? 'selected' : '' }}>Semi-Annually</option>
                                             <option value="Annually" {{ old('frequency', $fixeddate->frequency) == 'Annually' ? 'selected' : '' }}>Annually</option>
                                         </select>
                                     </div>
@@ -179,6 +184,15 @@
                                             <option value='29' {{ old('endDay', $fixeddate->endDay) == '29' ? 'selected' : '' }}>29</option>
                                             <option value='30' {{ old('endDay', $fixeddate->endDay) == '30' ? 'selected' : '' }}>30</option>
                                             <option value='31' {{ old('endDay', $fixeddate->endDay) == '31' ? 'selected' : '' }}>31</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12 col-md-3">
+                                        <label class="form-control-label" for="endYear">Year</label>
+                                        <select class="form-select" id="year" name="year" required>
+                                            <option value='2023' {{ old('year', $fixeddate->year) == '2023' ? 'selected' : '' }}>2023</option>
+                                            <option value='2024' {{ old('year', $fixeddate->year) == '2024' ? 'selected' : '' }}>2024</option>
+                                            <option value='2025' {{ old('year', $fixeddate->year) == '2025' ? 'selected' : '' }}>2025</option>
+                                            <option value='2026' {{ old('year', $fixeddate->year) == '2026' ? 'selected' : '' }}>2026</option>
                                         </select>
                                     </div>
                                 </div>

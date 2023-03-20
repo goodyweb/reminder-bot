@@ -97,7 +97,7 @@ li span {
   //this is for countdown view
   
   let today = new Date(),
-      t = {!! json_encode($results->dateend) !!}.split(/[- :]/),
+      t = {!! json_encode($results->year) !!}.split(/[- :]/),
       endDate = new Date(t[0], t[1] - 1, t[2], t[3] || 0, t[4] || 0, t[5] || 0),
       dd = String(today.getDate()).padStart(2, "0"),
       mm = String(today.getMonth() + 1).padStart(2, "0"),

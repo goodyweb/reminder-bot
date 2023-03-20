@@ -1,4 +1,4 @@
-<nav class="bottom-navbar">
+<nav class="bottom-navbar" style="background-color: black">
     <div class="container">
         <ul class="nav page-navigation">
             <li class="nav-item">
@@ -32,12 +32,12 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{url('countdowns/show')}}">
+                <a class="nav-link" href="{{url('unfixeddate')}}">
                     <i class="link-icon" data-feather="clock"></i>
-                    <span class="menu-title">Countdowns</span>
+                    <span class="menu-title">Unfixed Date</span>
                 </a>
             </li>
-            <li class="nav-item">
+            <!--<li class="nav-item">
                 <a class="nav-link" href="">
                     <i class="link-icon" data-feather="box"></i>
                     <span class="menu-title">Other Menu</span>
@@ -48,7 +48,7 @@
                 <a href="https://www.nobleui.com/html/documentation/docs.html" target="_blank" class="nav-link">
                     <i class="link-icon" data-feather="hash"></i>
                     <span class="menu-title">Documentation</span></a>
-            </li>
+            </li>-->
         </ul>
     </div>
 </nav>

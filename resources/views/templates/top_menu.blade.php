@@ -1,7 +1,7 @@
-<nav class="navbar top-navbar">
+<nav class="navbar top-navbar" style="background-color: #FFD20A">
     <div class="container">
         <div class="navbar-content">
-            <a href="#" class="navbar-brand">
+            <a href="#" class="navbar-brand" style="color: black">
                 BOT<span>Reminder</span>
             </a>
             <form class="search-form">
