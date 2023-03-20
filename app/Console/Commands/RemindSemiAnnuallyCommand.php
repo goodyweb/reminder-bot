@@ -5,7 +5,7 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 
 
-class RemindAnnuallyCommand extends Command
+class RemindSemiAnnuallyCommand extends Command
 {
     /**
      * The name and signature of the console command.
