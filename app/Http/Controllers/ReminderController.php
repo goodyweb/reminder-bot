@@ -195,6 +195,7 @@ class ReminderController extends Controller
            
                 }   
         }
+        return $fixeddates;
     }
     public function fixDateNotifyMonthly(){
 
