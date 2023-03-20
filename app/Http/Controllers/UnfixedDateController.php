@@ -98,11 +98,9 @@ class UnfixedDateController extends Controller
         $request->validate([
             'details' => 'required',
             'webhook' => 'required',
-            'startMonth'=> 'required',
-            'startDay' => 'required',
-            'endMonth' => 'required',
-            'endDay' => 'required',
-            'year' => 'required',
+            'month'=> 'required',
+            'week' => 'required',
+            'day' => 'required',
             'frequency' => 'required',
         ]);
 

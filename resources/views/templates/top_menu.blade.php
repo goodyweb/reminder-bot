@@ -2,7 +2,7 @@
     <div class="container">
         <div class="navbar-content">
             <a href="#" class="navbar-brand" style="color: black">
-                BOT<span>Reminder</span>
+                BOT<span><b>Reminder</b></span>
             </a>
             <form class="search-form">
                 <div class="input-group">

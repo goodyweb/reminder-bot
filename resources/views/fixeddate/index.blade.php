@@ -50,7 +50,7 @@ body, html {
   <button class="tablink" onclick="openPage('Home', this, '#FFD20A')" id="defaultOpen">Card View</button>
   <button class="tablink" onclick="openPage('News', this, '#FFD20A')">Table View</button> 
     <div>
-        <h2 class="mb-3 mb-md-0 text-center text-color: yellow background-color: #F9B904;"><b>ALL REMINDERS</b></h2>
+        <h2 class="mb-3 mb-md-0 text-center text-color: yellow background-color: #FFD20A;"><b>ALL REMINDERS</b></h2>
         <hr>
       </div>
 
