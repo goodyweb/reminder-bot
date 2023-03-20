@@ -325,7 +325,7 @@ class ReminderController extends Controller
                     if($unfixeddate->week == $weekNow && $unfixeddate->day ==  $dayNow){
 
 
-                            $unfixeddate->month = $monthNow + 1;
+                            //$unfixeddate->month = $monthNow + 1;
                             //$unfixeddate->week = $weekNow;
                             //$unfixeddate->day = $dayNow;
                             //$unfixeddate->save();
