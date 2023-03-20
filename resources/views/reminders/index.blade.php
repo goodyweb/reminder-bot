@@ -113,6 +113,7 @@ body, html {
                     <thead>
                     <tr>
                         <th class="pt-0">#</th>
+<<<<<<< HEAD
                         <th class="pt-0">Reminder Details</th>
                         <th class="pt-0">Webhook</th>
                         <th class="pt-0">Types Notifications</th>
@@ -122,6 +123,14 @@ body, html {
                         <th class="pt-0">End Date(Day)</th>
                         <th class="pt-0">Image</th>
                         <th class="text-center">Actions</th>
+=======
+                        <th class="pt-0">Reminder Title</th>
+                        <th class="pt-0">Content Detail</th>
+                        <th class="pt-0">Description</th>
+                        <th class="pt-0">Date End</th>
+                        <th class="pt-0">Image <?php echo Carbon\Carbon::now()->dayOfWeek ?></th>
+                        <th class="text-center">Actions </th>
+>>>>>>> dcc7459 (adding and updating unfixed function on reminderController)
                     </tr>
                     </thead>
                     <tbody>
@@ -132,7 +141,7 @@ body, html {
                             </td>
                             <td>{{$val->title }} </td>
                             <td>{{$val->content}}</td>
-                            <td>{{$val->description}}</td>
+                            <td>{{$val->description}} <?php echo  $val->description + 1?></td>
                             @if($val->dateend <= Carbon\Carbon::now()->setTimezone('Asia/Manila'))
                             
                               <?php 
