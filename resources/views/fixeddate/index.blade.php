@@ -115,7 +115,6 @@ body, html {
                         <th class="pt-0">Type Notifications</th>
                         <th class="pt-0">Start Date</th>
                         <th class="pt-0">End Date</th>
-                        <th class="pt-0">Image</th>
                         <th class="text-center">Actions</th>
                     </tr>
                     </thead>
@@ -128,7 +127,6 @@ body, html {
                             <td>{{$val->frequency}}</td>
                             <td>{{$val->startMonth}}/{{$val->startDay}}/<?php echo date("Y"); ?></td>
                             <td>{{$val->endMonth}}/{{$val->endDay}}/{{$val->year}}</td>
-                            <td><img alt="img" src="/img/{{ $val->image }}" class="text-center" width="100px" height="100px"></td>
                             <td>
                                 <form action="{{ route('fixeddate.destroy',$val->id) }}" method="POST">
                                     {{ csrf_field()  }}

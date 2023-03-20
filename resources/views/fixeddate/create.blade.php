@@ -38,13 +38,28 @@
                             <div id="editor" style="font-family: 'Open Sans', sans-serif"></div>
                         </div>
 
-                        <div class="">
+                        <div class="mb-3">
                             <label for="webhook" class="form-label"><b>Webhook</b><span class="text-danger">*</span></label>
                             <input id="webhook" name="webhook" type="text" class="form-control" placeholder="Webhook Link">
                         </div>
-                    </div>
+
                         <div class="row">
-                            <h5 class="heading-small text-muted mb-4 mt-3"><b><hr>Start date</b></h5>
+                        <div class="mb-3 col-md-6">
+                            <label for="frequency" class="form-label"><b>Frequency : </b><span class="text-danger">*</span></label>
+                                <select name="frequency" id="frequency" class="form-select">
+                                    <option value="">-- Please select --</option>
+                                    <option value="Monthly">Monthly</option>
+                                    <option value="Quarterly">Quarterly</option>
+                                    <option value="SemiAnnually">Semi-Annually</option>
+                                    <option value="Annually">Annually</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <h5 class="heading-small text-muted mb-4 mt-3"><b>Start date</b></h5>
                                 <div class="col-12 col-md-6">
                                     <label class="form-control-label" for="startMonth">Month</label>
                                     <select id="startMonth" name="startMonth" class="form-select" required>
@@ -101,34 +116,13 @@
                                             <option value='31'>31</option>
                                         </select>
                                     </div>
-                                    <div class="col-12 col-md-2">
+                                    <div class="col-12 col-md-3">
                                         <label class="form-control-label" for="Year">Year</label>
                                         <input class="form-control" value="<?php echo date("Y"); ?>" id="year" name="year" disabled><br>
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="col-md-6">
                                 <div class="row">
-                                    <div class="mb-3">
-                                        <label for="frequency" class="form-label"><b>Frequency : </b><span class="text-danger">*</span></label>
-                                        <select name="frequency" id="frequency" class="form-select">
-                                            <option value="">-- Please select --</option>
-                                            <option value="Monthly">Monthly</option>
-                                            <option value="Quarterly">Quarterly</option>
-                                            <option value="SemiAnnually">Semi-Annually</option>
-                                            <option value="Annually">Annually</option>
-                                        </select>
-                                    </div>
-
-                                    <div class=""><br>
-                                        <label for="image" class="form-label"><b>Reminder image</b><span class="text-muted">(optional)</span></label>
-                                        <input id="image" name="image" type="file" class="form-control">
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <h5 class="heading-small text-muted mb-4 mt-3"><b><hr>End date</b></h5>
+                                    <h5 class="heading-small text-muted mb-4 mt-3"><b>End date</b></h5>
                                     <div class="col-12 col-md-6">
                                         <label class="form-control-label" for="endMonth">Month</label>
                                         <select id="endMonth" name="endMonth" class="form-select" required>

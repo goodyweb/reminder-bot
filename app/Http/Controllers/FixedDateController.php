@@ -47,7 +47,6 @@ class FixedDateController extends Controller
             'endDay' => 'required',
             'year' => 'required',
             'frequency' => 'required',
-            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         if ($image = $request->file('image')) {
@@ -68,7 +67,6 @@ class FixedDateController extends Controller
         $fixeddate->endMonth = $request->input('endMonth');
         $fixeddate->endDay = $request->input('endDay');
         $fixeddate->year = $request->input('year');
-        $fixeddate->image = $filename;
         $fixeddate->frequency = $request->input('frequency');
         $fixeddate->save();
 
@@ -110,17 +108,6 @@ class FixedDateController extends Controller
             'year' => 'required',
             'frequency' => 'required',
         ]);
-
-        $input = $request->all();
-        if ($image = $request->file('image')) {
-            $destinationPath = 'img/';
-            $reminderImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $image->move($destinationPath, $reminderImage);
-            $input['image'] = "$reminderImage";
-        } else {
-            unset($input['image']);
-        }
-
         $fixeddate->update($input);
         return redirect()->route('fixeddate.index')
             ->with('success','Reminder updated successfully.');
