@@ -24,18 +24,20 @@ class Kernel extends ConsoleKernel
 
         
 
-       // $notify = Notify::All();
-       // foreach($notify as $notif){
+       $notify = Notify::All();
+       foreach($notify as $notif){
         
-           // if($notif->name == "Annually"){
-             //   $schedule->command('remind:daily1')->everyMinute();
-           // }elseif($notif->name == "Quarterly"){
-           //     $schedule->command('remind:daily2')->everyMinute();
-           // }elseif($notif->name == "Monthly"){
-            //    $schedule->command('remind:daily3')->everyMinute();
-                $schedule->command('remind:unfixedmonthly')->everyMinute();
-            //}
-       // }
+           if($notif->name == "Annually"){
+                $schedule->command('remind:daily1')->everyMinute();//this is fixed date
+                $schedule->command('remind:unfixedannually')->everyMinute();//this is unfixed date
+           }elseif($notif->name == "Quarterly"){
+                $schedule->command('remind:daily2')->everyMinute();//this is fixed date
+                $schedule->command('remind:unfixedquarterly')->everyMinute();//this is unfixed date
+            }elseif($notif->name == "Monthly"){
+                $schedule->command('remind:daily3')->everyMinute();//this is fixed date
+                $schedule->command('remind:unfixedmonthly')->everyMinute();//this is unfixed date
+            }
+        }
         
 
        

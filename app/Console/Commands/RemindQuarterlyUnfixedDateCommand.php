@@ -4,14 +4,14 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 
-class RemindMonthlyUnfixedDateCommand extends Command
+class RemindQuarterlyUnfixedDateCommand extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'remind:unfixedmonthly';
+    protected $signature = 'remind:unfixedquarterly';
 
     /**
      * The console command description.
@@ -27,6 +27,6 @@ class RemindMonthlyUnfixedDateCommand extends Command
      */
     public function handle()
     {
-        return app()->call('App\Http\Controllers\ReminderController@unfixedDateNotifyMonthly');
+        return app()->call('App\Http\Controllers\ReminderController@unfixedDateNotifyQuarterly');
     }
 }

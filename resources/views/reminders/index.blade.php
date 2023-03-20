@@ -129,7 +129,7 @@ body, html {
                             </td>
                             <td>{{$val->title }} </td>
                             <td>{{$val->content}}</td>
-                            <td>{{$val->description}} <?php echo  $val->description + 1?></td>
+                            <td>{{$val->description}} <?php echo  Carbon\Carbon::now()->weekOfMonth?></td>
                             @if($val->dateend <= Carbon\Carbon::now()->setTimezone('Asia/Manila'))
                             
                               <?php 
