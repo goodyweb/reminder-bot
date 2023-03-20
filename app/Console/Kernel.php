@@ -36,16 +36,11 @@ class Kernel extends ConsoleKernel
             }elseif($notif->name == "Monthly"){
                 $schedule->command('remind:daily3')->everyMinute();//this is fixed date
                 $schedule->command('remind:unfixedmonthly')->everyMinute();//this is unfixed date
-<<<<<<< HEAD
-            }
-        }
-=======
             }elseif($notif->name == "SemiAnnually"){
                 $schedule->command('remind:daily4')->everyMinute(); 
              }
         }
 
->>>>>>> 4c9b5ed5ae499732cea77abe7f0c0f106939be60
         
 
        
