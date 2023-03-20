@@ -40,6 +40,7 @@ class Kernel extends ConsoleKernel
                 $schedule->command('remind:daily4')->everyMinute(); 
              }
         }
+
         
 
        
