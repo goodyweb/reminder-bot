@@ -11,6 +11,7 @@ class UnfixedDate extends Model
 
     protected $table = 'unfixeddate';
     public $primaryKey = 'id';
+<<<<<<< HEAD
     protected $fillable = [
         'details' ,
         'webhook' ,
@@ -19,6 +20,9 @@ class UnfixedDate extends Model
         'day',
         'frequency'
    ];
+=======
+   
+>>>>>>> 4c9b5ed5ae499732cea77abe7f0c0f106939be60
     public function user()
     {
         return $this->belongsTo('App\Models\User', 'user_id', 'id');

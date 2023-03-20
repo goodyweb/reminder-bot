@@ -130,7 +130,10 @@ body, html {
                         <th class="pt-0">Date End</th>
                         <th class="pt-0">Image <?php echo Carbon\Carbon::now()->dayOfWeek ?></th>
                         <th class="text-center">Actions </th>
+<<<<<<< HEAD
 >>>>>>> dcc7459 (adding and updating unfixed function on reminderController)
+=======
+>>>>>>> 4c9b5ed5ae499732cea77abe7f0c0f106939be60
                     </tr>
                     </thead>
                     <tbody>
