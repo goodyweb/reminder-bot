@@ -80,7 +80,7 @@ class ReminderController extends Controller
 
         foreach($fixeddates as $fixeddate){
 
-            if($fixeddate->endMonth <= $monthNow ){
+            if($fixeddate->endMonth >= $monthNow ){
 
                 $days_remaining = $fixeddate->endDay - $dayNow;
                 
@@ -124,11 +124,11 @@ class ReminderController extends Controller
     }
     public function fixDateNotifyMonthly(){
 
-        $monthNow = 12;
+        $monthNow = Carbon::now()->month;
         $dayNow = Carbon::now()->day;
 
         $fixeddates = FixedDate::where('startMonth', '<=', $monthNow)
-        ->orwhere('endMonth', '>=', $monthNow)
+        ->where('endMonth', '>=', $monthNow)
         ->where('startDay', '<=', $dayNow)
         ->where('frequency', 'like', 'Monthly')
         ->get();
@@ -160,14 +160,48 @@ class ReminderController extends Controller
                      if($fixeddate->endDay == Carbon::now()->day){
 
                         
-                      //  if($fixeddate->startMonth == 12 || $fixeddate->endMonth == 12)
-                       // {
-                        $addstartmonth = $fixeddate->startMonth + 1;
-                        $addendmonth = $fixeddate->endMonth + 1;
-                        $fixeddate->startMonth = $addstartmonth;
-                        $fixeddate->endMonth = $addendmonth;
-                        $fixeddate->save();
+                        if($fixeddate->startMonth <= 11 && $fixeddate->endMonth <= 11)
+                        {
+                            $addstartmonth = $fixeddate->startMonth + 1;
+                            $addendmonth = $fixeddate->endMonth + 1;
+                            $fixeddate->startMonth = $addstartmonth;
+                            $fixeddate->endMonth = $addendmonth;
+                            $fixeddate->year = Carbon::now()->year;
+                            
+                        }elseif($fixeddate->startMonth >= 12 && $fixeddate->endMonth >= 12)
+                        {
 
+                            $addstartmonth = ($fixeddate->startMonth + 1) - 12;
+                            $addendmonth = ($fixeddate->endMonth + 1) - 12;
+                            $fixeddate->startMonth = $addstartmonth;
+                            $fixeddate->endMonth = $addendmonth;
+                            $fixeddate->year = Carbon::now()->year +1;
+
+                            
+
+                        }elseif($fixeddate->startMonth <= 11 && $fixeddate->endMonth >= 12)
+                        {
+
+                            $addstartmonth = $fixeddate->startMonth + 1;
+                            $addendmonth = ($fixeddate->endMonth + 1) - 12;
+                            $fixeddate->startMonth = $addstartmonth;
+                            $fixeddate->endMonth = $addendmonth;
+                            $fixeddate->year = Carbon::now()->year +1;
+                            
+
+                        }elseif($fixeddate->startMonth >= 12 && $fixeddate->endMonth <= 11)
+                        {
+
+                            $addstartmonth = ($fixeddate->startMonth + 1) - 12;
+                            $addendmonth = $fixeddate->endMonth + 1;
+                            $fixeddate->startMonth = $addstartmonth;
+                            $fixeddate->endMonth = $addendmonth;
+                            $fixeddate->year = Carbon::now()->year;
+                            
+
+                        }
+                       
+                        $fixeddate->save();
                         Http::post($fixeddate->webhook, [
                             'content' => "Hello, Good day ". $fixeddate->user->name ,
                             'embeds' => [
@@ -178,13 +212,13 @@ class ReminderController extends Controller
                                 ]
                             ],
                         ]);
-                     }else{
+                     }elseif($fixeddate->endDay > Carbon::now()->day ){
                         Http::post($fixeddate->webhook, [
                             'content' => "Hello, Good day ". $fixeddate->user->name ,
                             'embeds' => [
                                 [
                                     'title' => $fixeddate->details,
-                                    'description' => $days_remaining . " days left ",
+                                    'description' => $days_remaining . " days left this is test ",
                                     'color' => '7506394',
                                 ]
                             ],
