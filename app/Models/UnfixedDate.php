@@ -11,7 +11,6 @@ class UnfixedDate extends Model
 
     protected $table = 'unfixeddate';
     public $primaryKey = 'id';
-<<<<<<< HEAD
     protected $fillable = [
         'details' ,
         'webhook' ,
@@ -20,9 +19,6 @@ class UnfixedDate extends Model
         'day',
         'frequency'
    ];
-=======
-   
->>>>>>> cc37251 (finished adding functions for unfixed date on ReminderController adding kernel and adding commands)
     public function user()
     {
         return $this->belongsTo('App\Models\User', 'user_id', 'id');
