@@ -196,7 +196,7 @@ class ReminderController extends Controller
         }
     }
 
-   
+    
 
     public function fixDateNotifyQuarterly(){
         $yearNow = Carbon::now()->year;
