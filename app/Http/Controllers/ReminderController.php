@@ -698,6 +698,151 @@ class ReminderController extends Controller
                 }
     }
 
+    public function unfixedDateNotifySemiAnnually(){
+        $yearNow = Carbon::now()->year;
+        $monthNow = Carbon::now()->month;
+        $weekNow = Carbon::now()->weekOfMonth;
+        $dayNow = Carbon::now()->dayOfWeek;
+
+        $unfixeddates = UnfixedDate::where('year', '==', $yearNow)
+        ->where('month', '<=', $monthNow)
+        ->where('week', '>=', $weekNow)
+        ->where('day', '>=', $dayNow)
+        ->where('frequency', 'like', 'SemiAnnually')
+        ->get();
+        
+
+        foreach($unfixeddates as $unfixeddate){
+
+            if($unfixeddate->frequency == 'SemiAnnually'){
+
+                if($unfixeddate->month >= $monthNow){ 
+                    
+                
+                    if($unfixeddate->week == $weekNow && $unfixeddate->day >  $dayNow){
+                        
+                        if($unfixeddate->day == 0){
+                
+                            Http::post($unfixeddate->webhook, [
+                                'content' => "Hello, Good day ". $unfixeddate->user->name ,
+                                'embeds' => [
+                                    [
+                                        'title' => $unfixeddate->details,
+                                        'description' => " Your Due date is on Sunday ",
+                                        'color' => '7506394',
+                                    ]
+                                ],
+                            ]);
+                        }elseif($unfixeddate->day == 1){
+                
+                            Http::post($unfixeddate->webhook, [
+                                'content' => "Hello, Good day ". $unfixeddate->user->name ,
+                                'embeds' => [
+                                    [
+                                        'title' => $unfixeddate->details,
+                                        'description' => " Your Due date is on Monday ",
+                                        'color' => '7506394',
+                                    ]
+                                ],
+                            ]);
+                        }elseif($unfixeddate->day == 2){
+                
+                            Http::post($unfixeddate->webhook, [
+                                'content' => "Hello, Good day ". $unfixeddate->user->name ,
+                                'embeds' => [
+                                    [
+                                        'title' => $unfixeddate->details,
+                                        'description' => " Your Due date is on Tuesday ",
+                                        'color' => '7506394',
+                                    ]
+                                ],
+                            ]);
+                        }elseif($unfixeddate->day == 3){
+                
+                            Http::post($unfixeddate->webhook, [
+                                'content' => "Hello, Good day ". $unfixeddate->user->name ,
+                                'embeds' => [
+                                    [
+                                        'title' => $unfixeddate->details,
+                                        'description' => " Your Due date is on Wednesday ",
+                                        'color' => '7506394',
+                                    ]
+                                ],
+                            ]);
+                        }elseif($unfixeddate->day == 4){
+                
+                            Http::post($unfixeddate->webhook, [
+                                'content' => "Hello, Good day ". $unfixeddate->user->name ,
+                                'embeds' => [
+                                    [
+                                        'title' => $unfixeddate->details,
+                                        'description' => " Your Due date is on Thursday ",
+                                        'color' => '7506394',
+                                    ]
+                                ],
+                            ]);
+                        }elseif($unfixeddate->day == 5){
+                
+                            Http::post($unfixeddate->webhook, [
+                                'content' => "Hello, Good day ". $unfixeddate->user->name ,
+                                'embeds' => [
+                                    [
+                                        'title' => $unfixeddate->details,
+                                        'description' => " Your Due date is on Friday ",
+                                        'color' => '7506394',
+                                    ]
+                                ],
+                            ]);
+                        }elseif($unfixeddate->day == 6){
+                
+                            Http::post($unfixeddate->webhook, [
+                                'content' => "Hello, Good day ". $unfixeddate->user->name ,
+                                'embeds' => [
+                                    [
+                                        'title' => $unfixeddate->details,
+                                        'description' => " Your Due date is on Saturday ",
+                                        'color' => '7506394',
+                                    ]
+                                ],
+                            ]);
+                        }
+                    }elseif($unfixeddate->week == $weekNow && $unfixeddate->day ==  $dayNow){
+
+                        if($unfixeddate->month <= 11 )
+                            {
+                                $addmonth = $unfixeddate->month + 6;
+                                $unfixeddate->month = $addmonth;
+                               $unfixeddate->year = Carbon::now()->year;
+                                
+                            }elseif($unfixeddate->month >= 12)
+                            {
+    
+                                $addmonth = ($unfixeddate->month + 6) - 12;
+                                $unfixeddate->month = $addmonth;
+                                $unfixeddate->year = Carbon::now()->year +1;
+    
+                                
+    
+                            }
+                           $unfixeddate->save(); 
+                        Http::post($unfixeddate->webhook, [
+                            'content' => "Hello, Good day ". $unfixeddate->user->name ,
+                            'embeds' => [
+                                [
+                                    'title' => $unfixeddate->details,
+                                    'description' => " Today is Your Due date ",
+                                    'color' => '7506394',
+                                ]
+                            ],
+                        ]);
+                    }
+                }   
+                
+                }
+                }
+    }
+
+
     public function unfixedDateNotifyAnnually(){
         $yearNow = Carbon::now()->year;
         $monthNow = Carbon::now()->month;
