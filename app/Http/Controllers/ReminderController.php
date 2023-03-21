@@ -808,13 +808,13 @@ class ReminderController extends Controller
                         }
                     }elseif($unfixeddate->week == $weekNow && $unfixeddate->day ==  $dayNow){
 
-                        if($unfixeddate->month <= 11 )
+                        if($unfixeddate->month <= 7 )
                             {
                                 $addmonth = $unfixeddate->month + 6;
                                 $unfixeddate->month = $addmonth;
                                $unfixeddate->year = Carbon::now()->year;
                                 
-                            }elseif($unfixeddate->month >= 12)
+                            }elseif($unfixeddate->month >= 8)
                             {
     
                                 $addmonth = ($unfixeddate->month + 6) - 12;
