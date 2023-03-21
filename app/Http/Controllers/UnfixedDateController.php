@@ -1,7 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
+<<<<<<< HEAD
 use App\Models\Unfixeddate;
+=======
+use Carbon\carbon;
+use App\Models\UnfixedDate;
+>>>>>>> 0f4ecff786e0c12427dc54de32fb6394378058d8
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -46,12 +51,18 @@ class UnfixedDateController extends Controller
             'day' => 'required',
             'frequency' => 'required',
 <<<<<<< HEAD
+<<<<<<< HEAD
         ]);
 
 =======
             //'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
+=======
+            //'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+>>>>>>> 0f4ecff786e0c12427dc54de32fb6394378058d8
         /**if ($image = $request->file('image')) {
             $destinationPath = 'img/';
             $reminderImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
@@ -112,7 +123,10 @@ class UnfixedDateController extends Controller
         ]);
         $input = $request->all();
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 0f4ecff786e0c12427dc54de32fb6394378058d8
         
 
 >>>>>>> 20e4bf1 (fixing controller fixed and unfixed)
