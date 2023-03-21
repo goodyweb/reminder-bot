@@ -111,7 +111,6 @@ class FixedDateController extends Controller
         $input = $request->all();
 =======
 
-
         $input = $request->all();
        
 >>>>>>> 0fc700d (rebase main)
