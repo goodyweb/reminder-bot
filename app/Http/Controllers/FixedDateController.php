@@ -48,16 +48,8 @@ class FixedDateController extends Controller
             'endDay' => 'required',
             'year' => 'required',
             'frequency' => 'required',
-<<<<<<< HEAD
         ]);
 
-=======
-            
-        ]);
-
-       
-
->>>>>>> 20e4bf1 (fixing controller fixed and unfixed)
         $fixeddate = new Fixeddate();
         $fixeddate->details = $request->input('details');
         $fixeddate->webhook = $request->input('webhook');
