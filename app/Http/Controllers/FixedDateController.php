@@ -49,16 +49,6 @@ class FixedDateController extends Controller
             'frequency' => 'required',
         ]);
 
-        if ($image = $request->file('image')) {
-            $destinationPath = 'img/';
-            $reminderImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $image->move($destinationPath, $reminderImage);
-            $filename = $reminderImage;
-        } else {
-            $filename = 'no-img.png';
-        }
-       
-
         $fixeddate = new Fixeddate();
         $fixeddate->details = $request->input('details');
         $fixeddate->webhook = $request->input('webhook');

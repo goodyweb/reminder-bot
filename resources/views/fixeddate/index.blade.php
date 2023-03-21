@@ -41,7 +41,7 @@ body, html {
 
 <div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
     <div class="d-flex align-items-center flex-wrap text-nowrap">
-        <a href="{{route('fixeddate.create')}}" class="btn btn-warning btn-icon-text mb-2 mb-md-0" style="border-radius: 15px 50px 30px 5px" >
+        <a href="{{route('fixeddate.create')}}" class="btn btn-dark btn-icon-text mb-2 mb-md-0" style="border-radius: 15px 50px 30px 5px" >
           <i data-feather="plus"></i> Add New Reminders
         </a>
     </div>
@@ -90,7 +90,7 @@ body, html {
             <div class="col text-center">
                 <p class="lead">No Reminders Found</p>
                 <br>
-                <a href="" class="btn btn-primary btn-lg">Create Reminder</a>
+                <a href="{{route('fixeddate.create')}}" class="btn btn-dark btn-icon-text mb-2 mb-md-0">Create Reminder</a>
             </div>
           </div>
         @endif
