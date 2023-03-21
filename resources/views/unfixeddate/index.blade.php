@@ -68,14 +68,14 @@ body, html {
                         <hr>
                         <div class="button-group row">
                           <div class="col-8">
-                            <a href="{{route('reminder_view.show', $val->id)}}" class="btn btn-outline-primary btn-sm"><i data-feather="eye"></i>View</a>            
-                            <a href="{{route('unfixeddate.edit', $val->id)}}" class="btn btn-outline-info btn-sm"><i data-feather="link"></i>Edit</a>
+                            <a href="{{route('reminder_view.show', $val->id)}}" class="btn btn-info btn-sm"><i data-feather="eye"></i>View</a>            
+                            <a href="{{route('unfixeddate.edit', $val->id)}}" class="btn btn-warning btn-sm"><i data-feather="link"></i>Edit</a>
                           </div>
                             <div class="col-4 text-right">
                                 <form action="{{ route('unfixeddate.destroy',$val->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="button" class="btn btn-outline-danger btn-sm" onclick="confirm('Are you sure you want to dissolve the {{ $val->details }} class?') ? this.parentElement.submit() : ''"><i data-feather="trash"></i> Delete</button>
+                                    <button type="button" class="btn btn-danger btn-sm" onclick="confirm('Are you sure you want to dissolve the {{ $val->details }} class?') ? this.parentElement.submit() : ''"><i data-feather="trash"></i> Delete</button>
                                 </form>
                             </div>
                         </div>
