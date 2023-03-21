@@ -93,12 +93,13 @@ li span {
         minute = second * 60,
         hour = minute * 60,
         day = hour * 24;
-
+ 
   //this is for countdown view
   
+
   let today = new Date(),
-      t = {!! json_encode($results->year) !!}.split(/[- :]/),
-      endDate = new Date(t[0], t[1] - 1, t[2], t[3] || 0, t[4] || 0, t[5] || 0),
+      t = (`${results.year}-${results.endMonth}-${results.endDay}`).split(/[- :]/),
+      endDate = new Date(t[0], t[1] - 1, t[2], t[3], t[4], t[5]),
       dd = String(today.getDate()).padStart(2, "0"),
       mm = String(today.getMonth() + 1).padStart(2, "0"),
       yyyy = today.getFullYear(),
@@ -142,16 +143,16 @@ li span {
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
 
-                <center><h1>" {{$results->content}} " countdown</h1></center>
+                <center><h1>Countdown</h1></center>
                     <br><center>
                       <b>Ends @ </b><br>
-                    <?php $date=date_create($results->dateend);
+                    <?php $date=date_create($results->year."-".$results->endMonth."-".$results->endDay);
                         echo date_format($date, "d F Y H:i:s"); 
                     ?>
                    </center>
                     <div class="container1">
                        
-                            <h1 id="headline">Countdown to my {{$results->content}}</h1>
+                            <h1 id="headline">{{$results->details}}</h1>
                             <div id="countdown">
                                 <ul>
                                     
