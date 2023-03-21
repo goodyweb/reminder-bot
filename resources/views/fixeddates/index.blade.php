@@ -69,7 +69,7 @@ body, html {
                         <hr>
                         <div class="button-group row">
                           <div class="col-8">
-                            <a href="{{route('reminder_view.show', $val->id)}}" class="btn btn-info btn-sm"><i data-feather="eye"></i>View</a>            
+                            <a href="{{route('fixeddates.show', $val->id)}}" class="btn btn-info btn-sm"><i data-feather="eye"></i>View</a>            
                             <a href="{{route('fixeddates.edit', $val->id)}}" class="btn btn-warning btn-sm"><i data-feather="link"></i>Edit</a>
                           </div>
                             <div class="col-4 text-right">
@@ -131,7 +131,7 @@ body, html {
                                 <form action="{{ route('fixeddates.destroy',$val->id) }}" method="POST">
                                     {{ csrf_field()  }}
                                     @method('DELETE')
-                                    <a class="btn btn-info" href="{{route('reminder_view.show', $val->id)}}"><i data-feather="eye"></i> Show</a>
+                                    <a class="btn btn-info" href="{{route('fxeddates.show', $val->id)}}"><i data-feather="eye"></i> Show</a>
                                     <a class="btn btn-warning" href="{{route('fixeddates.edit', $val->id)}}"><i data-feather="link"></i> Edit</a>
                                     <button type="button" class="btn btn-danger btn-sm" onclick="confirm('Are you sure you want to dissolve the {{ $val->details }} reminder?') ? this.parentElement.submit() : ''"><i data-feather="trash"></i> Delete</button>
                                 </form>
