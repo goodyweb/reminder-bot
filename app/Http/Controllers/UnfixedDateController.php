@@ -1,7 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
+<<<<<<< HEAD
 use App\Models\Unfixeddate;
+=======
+use Carbon\carbon;
+use App\Models\UnfixedDate;
+>>>>>>> 8159690 (Updating show blade , adding algo for countdown)
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -66,9 +71,11 @@ class UnfixedDateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Unfixeddate $unfixeddate)
+    public function show($id)
     {
-        //
+        $carbonTime = Carbon::now()->toDateTimeString();
+        $results = UnFixeddate::find($id);
+        return view('unfixeddate.show', compact('results', 'carbonTime'));
     }
 
     /**
