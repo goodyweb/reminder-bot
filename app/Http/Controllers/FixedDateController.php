@@ -49,6 +49,7 @@ class FixedDateController extends Controller
             'year' => 'required',
             'frequency' => 'required',
 <<<<<<< HEAD
+<<<<<<< HEAD
             
         ]);
 
@@ -58,7 +59,6 @@ class FixedDateController extends Controller
 <<<<<<< HEAD
         ]);
 
-=======
             
         ]);
 
@@ -66,6 +66,10 @@ class FixedDateController extends Controller
 
 >>>>>>> 20e4bf1 (fixing controller fixed and unfixed)
 >>>>>>> 5593993 (rebase main)
+=======
+        ]);
+
+>>>>>>> 2f6c3f8 (rebase main)
         $fixeddate = new Fixeddate();
         $fixeddate->details = $request->input('details');
         $fixeddate->webhook = $request->input('webhook');
