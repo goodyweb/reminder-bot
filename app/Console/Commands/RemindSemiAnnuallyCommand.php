@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 <?php
 
 namespace App\Console\Commands;
@@ -38,4 +36,3 @@ class RemindSemiAnnuallyCommand extends Command
 
     }
 }
->>>>>>> cbe00ca (modified semi command)
