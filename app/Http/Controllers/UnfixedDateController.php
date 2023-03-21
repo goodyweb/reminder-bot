@@ -2,10 +2,6 @@
 
 namespace App\Http\Controllers;
 use App\Models\Unfixeddate;
-=======
-use Carbon\carbon;
-use App\Models\UnfixedDate;
->>>>>>> 8159690 (Updating show blade , adding algo for countdown)
 use App\Models\User;
 use Illuminate\Http\Request;
 
