@@ -71,7 +71,7 @@ class FixedDateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Fixeddate $fixeddate)
+    public function show($id)
     {
         $carbonTime = Carbon::now()->toDateTimeString();
         $results = Fixeddate::find($id);
