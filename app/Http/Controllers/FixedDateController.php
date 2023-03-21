@@ -104,7 +104,6 @@ class FixedDateController extends Controller
             'frequency' => 'required',
         ]);
 
-
         $input = $request->all();
        
         $fixeddate->update($input);
