@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Carbon\carbon;
 use App\Models\User;
-use App\Models\Reminders;
+use App\Models\Fixeddate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Console\Scheduling\Schedule;
@@ -868,7 +868,7 @@ class PostGuzzleController extends Controller
     public function show($id)
     {
         $carbonTime = Carbon::now()->toDateTimeString();
-        $results = Reminders::find($id);
+        $results = Fixeddate::find($id);
         return view('reminder_view.show', compact('results', 'carbonTime'));
     }
 }
