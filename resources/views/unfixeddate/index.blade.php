@@ -68,7 +68,7 @@ body, html {
                         <hr>
                         <div class="button-group row">
                           <div class="col-8">
-                            <a href="{{route('reminder_view.show', $val->id)}}" class="btn btn-info btn-sm"><i data-feather="eye"></i>View</a>            
+                            <a href="{{route('unfixeddate.show', $val->id)}}" class="btn btn-info btn-sm"><i data-feather="eye"></i>View</a>            
                             <a href="{{route('unfixeddate.edit', $val->id)}}" class="btn btn-warning btn-sm"><i data-feather="link"></i>Edit</a>
                           </div>
                             <div class="col-4 text-right">
