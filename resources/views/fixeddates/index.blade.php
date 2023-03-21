@@ -131,7 +131,7 @@ body, html {
                                 <form action="{{ route('fixeddates.destroy',$val->id) }}" method="POST">
                                     {{ csrf_field()  }}
                                     @method('DELETE')
-                                    <a class="btn btn-info" href="{{route('fxeddates.show', $val->id)}}"><i data-feather="eye"></i> Show</a>
+                                    <a class="btn btn-info" href="{{route('fixeddates.show', $val->id)}}"><i data-feather="eye"></i> Show</a>
                                     <a class="btn btn-warning" href="{{route('fixeddates.edit', $val->id)}}"><i data-feather="link"></i> Edit</a>
                                     <button type="button" class="btn btn-danger btn-sm" onclick="confirm('Are you sure you want to dissolve the {{ $val->details }} reminder?') ? this.parentElement.submit() : ''"><i data-feather="trash"></i> Delete</button>
                                 </form>
