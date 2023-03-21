@@ -85,7 +85,7 @@ Route::prefix('fixeddate')->group(function () {
 //Unfixed Date reminder
 Route::resource('unfixeddate', UnfixedDateController::class);
 Route::prefix('unfixeddate')->group(function () {
-    Route::get('table', [FixedDateController::class, 'table']);
+    Route::get('table', [UnFixedDateController::class, 'table']);
 });
 
 Route::prefix('posts')->group(function () {

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Unfixeddate;
+use App\Models\UnfixedDate;
 use App\Models\User;
 use Illuminate\Http\Request;
 

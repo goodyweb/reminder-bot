@@ -89,7 +89,7 @@ body, html {
             <div class="col text-center">
                 <p class="lead">No Reminders Found</p>
                 <br>
-                <a href="" class="btn btn-primary btn-lg">Create Reminder</a>
+                <a href="{{route('unfixeddate.create')}}" class="btn btn-dark btn-icon-text mb-2 mb-md-0">Create Reminder</a>
             </div>
           </div>
         @endif
