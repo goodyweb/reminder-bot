@@ -47,19 +47,11 @@ class UnfixedDateController extends Controller
             'week' => 'required',
             'day' => 'required',
             'frequency' => 'required',
-<<<<<<< HEAD
-            //'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+
+
         ]);
 
-=======
-<<<<<<< HEAD
-        ]);
 
-=======
-            //'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);
-
->>>>>>> 4955155 (fixing controller fixed and unfixed)
         /**if ($image = $request->file('image')) {
             $destinationPath = 'img/';
             $reminderImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
@@ -70,10 +62,6 @@ class UnfixedDateController extends Controller
         }*/
        
 
-<<<<<<< HEAD
-=======
->>>>>>> 20e4bf1 (fixing controller fixed and unfixed)
->>>>>>> 4955155 (fixing controller fixed and unfixed)
         $unfixeddate = new Unfixeddate();
         $unfixeddate->details = $request->input('details');
         $unfixeddate->webhook = $request->input('webhook');
@@ -122,15 +110,8 @@ class UnfixedDateController extends Controller
             'frequency' => 'required'
         ]);
         $input = $request->all();
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
-=======
-        
 
->>>>>>> 20e4bf1 (fixing controller fixed and unfixed)
->>>>>>> 4955155 (fixing controller fixed and unfixed)
         $unfixeddate->update($input);
         return redirect()->route('unfixeddate.index')
             ->with('success','Reminder updated successfully.');
