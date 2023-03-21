@@ -2,6 +2,13 @@
 
 
 @section('content')
+<head>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Poppins fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+      
 
 <style type="text/css">
    /* general styling */
@@ -85,56 +92,41 @@ li span {
 
 </style>
 
-
+</head>
 <script>
 
- (function () {
-  const second = 1000,
-        minute = second * 60,
-        hour = minute * 60,
-        day = hour * 24;
- 
-  //this is for countdown view
+<?php 
+           $dateTime = strtotime($results->year."-".$results->endMonth."-".$results->endDay. " 24:00:00");
+           $getDateTime = date("F d, Y H:i:s", $dateTime); 
+        ?>
+        var countDownDate = new Date("<?php echo "$getDateTime"; ?>").getTime();
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+            // Find the distance between now an the count down date
+            var distance = countDownDate - now;
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            // Output the result in an element with id="counter"11
+            
+
+            document.getElementById("days").innerText = days;
+            document.getElementById("hours").innerText = hours;
+            document.getElementById("minutes").innerText = minutes;
+            document.getElementById("seconds").innerText = seconds;
   
-
-  let today = new Date(),
-      t = (`${results.year}-${results.endMonth}-${results.endDay}`).split(/[- :]/),
-      endDate = new Date(t[0], t[1] - 1, t[2], t[3], t[4], t[5]),
-      dd = String(today.getDate()).padStart(2, "0"),
-      mm = String(today.getMonth() + 1).padStart(2, "0"),
-      yyyy = today.getFullYear(),
-      nextYear = endDate.getFullYear(),
-      dd1 = String(endDate.getDate()).padStart(2, "0"),
-      mm1 = String(endDate.getMonth() + 1).padStart(2, "0"),
-      birthday = mm1 + "/" + dd1 + "/" + yyyy;
-  today = mm + "/" + dd + "/" + yyyy;
-  if (today > birthday) {
-    birthday = dayMonth + nextYear;
-  }
-  //end
-  
-  const countDown = new Date(birthday).getTime(),
-      x = setInterval(function() {    
-
-        const now = new Date().getTime(),
-              distance = countDown - now;
-              distance1 = Math.floor((distance % (minute)) / second);
-
-        document.getElementById("days").innerText = Math.floor(distance / (day)),
-          document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
-          document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
-          document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
-
-        //do something later when date is reached
-        if (distance1 <= 0.000001) {
-          document.getElementById("headline").innerText = "Times Up!";
-          document.getElementById("countdown").style.display = "none";
-          document.getElementById("content").style.display = "block";
-          clearInterval(x);
-        }
-        //seconds
-      }, 0)
-  }());
+          
+            // If the count down is over, write some text 
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("headline").innerText = "Times Up!";
+            document.getElementById("countdown").style.display = "none";
+            document.getElementById("content").style.display = "block";
+            }
+        }, 1000);
     </script>
 
 <body>
