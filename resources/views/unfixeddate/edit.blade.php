@@ -44,18 +44,18 @@
                                     <label class="form-control-label" for="month">Month</label>
                                     <select id="month" name="month" class="form-select" required>
                                         <option value="{{ old('month') == null ? 'selected' : '' }}">-- // --</option>
-                                        <option value="01" {{ old('month', $unfixeddate->month) == 'January' ? 'selected' : 'selected' }}>January</option>
-                                        <option value="02" {{ old('month', $unfixeddate->month) == 'February' ? 'selected' : '' }}>February</option>
-                                        <option value="03" {{ old('month', $unfixeddate->month) == 'March' ? 'selected' : '' }}>March</option>
-                                        <option value="04" {{ old('month', $unfixeddate->month) == 'April' ? 'selected' : '' }}>April</option>
-                                        <option value="05" {{ old('month', $unfixeddate->month) == 'May' ? 'selected' : '' }}>May</option>
-                                        <option value="06" {{ old('month', $unfixeddate->month) == 'June' ? 'selected' : '' }}>June</option>
-                                        <option value="07" {{ old('month', $unfixeddate->month) == 'July' ? 'selected' : '' }}>July</option>
-                                        <option value="08" {{ old('month', $unfixeddate->month) == 'August' ? 'selected' : '' }}>August</option>
-                                        <option value="09" {{ old('month', $unfixeddate->month) == 'September' ? 'selected' : '' }}>September</option>
-                                        <option value="10" {{ old('month', $unfixeddate->month) == 'October' ? 'selected' : '' }}>October</option>
-                                        <option value="11" {{ old('month', $unfixeddate->month) == 'November' ? 'selected' : '' }}>November</option>
-                                        <option value="12" {{ old('month', $unfixeddate->month) == 'December' ? 'selected' : '' }}>December</option>
+                                        <option value="01" {{ old('month', $unfixeddate->month) == '01' ? 'selected' : 'selected' }}>January</option>
+                                        <option value="02" {{ old('month', $unfixeddate->month) == '02' ? 'selected' : '' }}>February</option>
+                                        <option value="03" {{ old('month', $unfixeddate->month) == '03' ? 'selected' : '' }}>March</option>
+                                        <option value="04" {{ old('month', $unfixeddate->month) == '04' ? 'selected' : '' }}>April</option>
+                                        <option value="05" {{ old('month', $unfixeddate->month) == '05' ? 'selected' : '' }}>May</option>
+                                        <option value="06" {{ old('month', $unfixeddate->month) == '06' ? 'selected' : '' }}>June</option>
+                                        <option value="07" {{ old('month', $unfixeddate->month) == '07' ? 'selected' : '' }}>July</option>
+                                        <option value="08" {{ old('month', $unfixeddate->month) == '08' ? 'selected' : '' }}>August</option>
+                                        <option value="09" {{ old('month', $unfixeddate->month) == '09' ? 'selected' : '' }}>September</option>
+                                        <option value="10" {{ old('month', $unfixeddate->month) == '10' ? 'selected' : '' }}>October</option>
+                                        <option value="11" {{ old('month', $unfixeddate->month) == '11' ? 'selected' : '' }}>November</option>
+                                        <option value="12" {{ old('month', $unfixeddate->month) == '12' ? 'selected' : '' }}>December</option>
                                     </select>
                                 </div>
 

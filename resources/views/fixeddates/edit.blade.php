@@ -8,7 +8,7 @@
             <h4 class="mb-3 mb-md-0 text-muted">EDIT REMINDERS</h4>
         </div>
         <div class="d-flex align-items-center flex-wrap text-nowrap" >
-            <a href="{{route('fixeddate.index')}}" class="btn btn-light btn-icon-text mb-2 mb-md-0" style="border-radius: 15px 50px ">
+            <a href="{{route('fixeddates.index')}}" class="btn btn-light btn-icon-text mb-2 mb-md-0" style="border-radius: 15px 50px ">
                 All Reminders
             </a>
         </div>
@@ -26,7 +26,7 @@
 
 <div class="card mb-3 mb-md-0 " style="border-radius: 15px 50px 30px">
     <div class="card-body">          
-            <form action="{{ route('fixeddate.update', $fixeddate->id) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('fixeddates.update', $fixeddate->id) }}" method="POST" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 @method('PUT')
                 <div class="pl-lg-4 row">

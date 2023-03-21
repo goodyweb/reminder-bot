@@ -26,7 +26,7 @@
                 </a>
             </li>-->
             <li class="nav-item">
-                <a class="nav-link" href="{{url('fixeddate')}}">
+                <a class="nav-link" href="{{url('fixeddates')}}">
                     <i class="link-icon" data-feather="clock"></i>
                     <span class="menu-title">Fixed Date</span>
                 </a>

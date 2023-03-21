@@ -16,7 +16,7 @@ class FixedDateController extends Controller
     {
         $fixeddate = Fixeddate::all();
         $users = User::all();
-        return view('fixeddate.index', compact('fixeddate', 'users'));
+        return view('fixeddates.index', compact('fixeddate', 'users'));
     }
 
 
@@ -27,7 +27,7 @@ class FixedDateController extends Controller
      */
     public function create()
     {
-        return view('fixeddate.create'); 
+        return view('fixeddates.create'); 
     }
     
     /**
@@ -60,7 +60,7 @@ class FixedDateController extends Controller
         $fixeddate->frequency = $request->input('frequency');
         $fixeddate->save();
 
-        return redirect()->route('fixeddate.index')
+        return redirect()->route('fixeddates.index')
             ->with('success','Reminder created successfully.');
     }
 
@@ -83,7 +83,7 @@ class FixedDateController extends Controller
      */
     public function edit(Fixeddate $fixeddate)
     {
-        return view('fixeddate.edit', compact('fixeddate'));
+        return view('fixeddates.edit', compact('fixeddate'));
     }
 
     public function update(Request $request, Fixeddate $fixeddate)
@@ -98,15 +98,16 @@ class FixedDateController extends Controller
             'year' => 'required',
             'frequency' => 'required',
         ]);
+        $input = $request->all();
         $fixeddate->update($input);
-        return redirect()->route('fixeddate.index')
+        return redirect()->route('fixeddates.index')
             ->with('success','Reminder updated successfully.');
     }
 
     public function destroy(Fixeddate $fixeddate)
     {
         $fixeddate->delete();
-        return redirect()->route('fixeddate.index')
+        return redirect()->route('fixeddates.index')
             ->with('success','Reminder deleted successfully');
     }
 }
