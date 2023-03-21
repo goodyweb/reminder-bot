@@ -42,9 +42,24 @@
                             <label for="webhook" class="form-label"><b>Webhook</b><span class="text-danger">*</span></label>
                             <input value="{{$fixeddate->webhook}}" id="webhook" name="webhook" type="text" class="form-control" placeholder="Webhook Link">
                         </div>
+
+                        <div class="row">
+                            <div class="mb-3 col-md-6">
+                                <label for="frequency" class="form-label"><b>Frequency : </b><span class="text-danger">*</span></label>
+                                <select name="frequency" id="frequency" class="form-select">
+                                    <option value="{{ old('endMonth') == null ? 'N/A' : '' }}"> -- / --</option>
+                                    <option value="Monthly" {{ old('frequency', $fixeddate->frequency) == 'Monthly' ? 'selected' : '' }}>Montly</option>
+                                    <option value="Quarterly" {{ old('frequency', $fixeddate->frequency) == 'Quarterly' ? 'selected' : '' }}>Quarterly</option>
+                                    <option value="SemiAnnually" {{ old('frequency', $fixeddate->frequency) == 'SemiAnnually' ? 'selected' : '' }}>Semi-Annually</option>
+                                    <option value="Annually" {{ old('frequency', $fixeddate->frequency) == 'Annually' ? 'selected' : '' }}>Annually</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
-                        <div class="pl-lg-4 row">
-                            <h5 class="heading-small text-muted mb-4 mt-3"><b><hr>Start Date</b></h5>
+                </div>    
+                    <div class="col-md-6">
+                        <div class="row">
+                            <h5 class="heading-small text-muted mb-4 mt-3"><b>Start Date</b></h5>
                                 <div class="col-12 col-md-6">
                                     <label class="form-control-label" for="startMonth">Month</label>
                                     <select id="startMonth" name="startMonth" class="form-select" required>
@@ -101,35 +116,14 @@
                                             <option value='31' {{ old('startDay', $fixeddate->startDay) == '31' ? 'selected' : '' }}>31</option>
                                         </select>
                                     </div>
-                                    <div class="col-12 col-md-2">
+                                    <div class="col-12 col-md-3">
                                         <label class="form-control-label" for="Year">Year</label>
                                         <input class="form-control" value="<?php echo date("Y"); ?>" id="year" name="year" disabled><br>
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="col-12 col-md-6">
-                                <div class="row">
-                                    <div class="mb-3 col-md-4">
-                                        <label for="frequency" class="form-label"><b>Frequency : </b><span class="text-danger">*</span></label>
-                                        <select name="frequency" id="frequency" class="form-select">
-                                            <option value="{{ old('endMonth') == null ? 'N/A' : '' }}"> -- / --</option>
-                                            <option value="Monthly" {{ old('frequency', $fixeddate->frequency) == 'Monthly' ? 'selected' : '' }}>Montly</option>
-                                            <option value="Quarterly" {{ old('frequency', $fixeddate->frequency) == 'Quarterly' ? 'selected' : '' }}>Quarterly</option>
-                                            <option value="SemiAnnually" {{ old('frequency', $fixeddate->frequency) == 'SemiAnnually' ? 'selected' : '' }}>Semi-Annually</option>
-                                            <option value="Annually" {{ old('frequency', $fixeddate->frequency) == 'Annually' ? 'selected' : '' }}>Annually</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="mb-3"><br>
-                                        <label for="image" class="form-label"><b>Reminder Image</b><span class="text-muted">(optional)</span></label>
-                                        <input id="image" name="image" type="file" class="form-control">
-                                        <img id="image" class="mt-2" src="/img/{{ $fixeddate->image }}" width="50px" hidden>
-                                    </div>
-                                </div>
 
                                 <div class="row">
-                                    <h5 class="heading-small text-muted mb-4 mt-3"><b><hr>End Date</b></h5>
+                                    <h5 class="heading-small text-muted mb-4 mt-3"><b>End Date</b></h5>
                                     <div class="col-12 col-md-6">
                                         <label class="form-control-label" for="endMonth">Month</label>
                                         <select id="endMonth" name="endMonth" class="form-select" required>
@@ -152,7 +146,7 @@
                                     <div class="col-12 col-md-2">
                                         <label class="form-control-label" for="endDay">Day</label>
                                         <select class="form-select" id="endDay" name="endDay" required>
-                                        <option value="{{ old('endDay') == null ? 'selected' : '' }}">-- / --</option>
+                                            <option value="{{ old('endDay') == null ? 'selected' : '' }}">-- / --</option>
                                             <option value="01" {{ old('endDay', $fixeddate->endDay) == '01' ? 'selected' : '' }}>01</option>
                                             <option value="02" {{ old('endDay', $fixeddate->endDay) == '02' ? 'selected' : '' }}>02</option>
                                             <option value="03" {{ old('endDay', $fixeddate->endDay) == '03' ? 'selected' : '' }}>03</option>
@@ -203,9 +197,9 @@
                             </div>
                         </div>
                     </div>
-                </form>
+                    </form>
                 </div>
-    </div>
+            </div>
         </div>
     </div>
 @endsection

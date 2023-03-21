@@ -18,8 +18,7 @@ class Fixeddate extends Model
         'endMonth',
         'endDay',
         'year',
-        'frequency',
-        'image'
+        'frequency'
     ];
     public $primaryKey = 'id';
    

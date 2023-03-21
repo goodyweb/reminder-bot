@@ -41,7 +41,7 @@ body, html {
 
 <div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
     <div class="d-flex align-items-center flex-wrap text-nowrap">
-        <a href="{{route('fixeddate.create')}}" class="btn btn-warning btn-icon-text mb-2 mb-md-0" style="border-radius: 15px 50px 30px 5px" >
+        <a href="{{route('fixeddate.create')}}" class="btn btn-dark btn-icon-text mb-2 mb-md-0" style="border-radius: 15px 50px 30px 5px" >
           <i data-feather="plus"></i> Add New Reminders
         </a>
     </div>
@@ -90,7 +90,7 @@ body, html {
             <div class="col text-center">
                 <p class="lead">No Reminders Found</p>
                 <br>
-                <a href="" class="btn btn-primary btn-lg">Create Reminder</a>
+                <a href="{{route('fixeddate.create')}}" class="btn btn-dark btn-icon-text mb-2 mb-md-0">Create Reminder</a>
             </div>
           </div>
         @endif
@@ -115,7 +115,6 @@ body, html {
                         <th class="pt-0">Type Notifications</th>
                         <th class="pt-0">Start Date</th>
                         <th class="pt-0">End Date</th>
-                        <th class="pt-0">Image</th>
                         <th class="text-center">Actions</th>
                     </tr>
                     </thead>
@@ -128,7 +127,6 @@ body, html {
                             <td>{{$val->frequency}}</td>
                             <td>{{$val->startMonth}}/{{$val->startDay}}/<?php echo date("Y"); ?></td>
                             <td>{{$val->endMonth}}/{{$val->endDay}}/{{$val->year}}</td>
-                            <td><img alt="img" src="/img/{{ $val->image }}" class="text-center" width="100px" height="100px"></td>
                             <td>
                                 <form action="{{ route('fixeddate.destroy',$val->id) }}" method="POST">
                                     {{ csrf_field()  }}
