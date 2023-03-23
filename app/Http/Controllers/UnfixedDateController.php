@@ -46,10 +46,18 @@ class UnfixedDateController extends Controller
             'week' => 'required',
             'day' => 'required',
             'frequency' => 'required',
-
             //'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
+        /**if ($image = $request->file('image')) {
+            $destinationPath = 'img/';
+            $reminderImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $reminderImage);
+            $filename = $reminderImage;
+        } else {
+            $filename = 'no-img.png';
+        }*/
+       
 
         $unfixeddate = new Unfixeddate();
         $unfixeddate->details = $request->input('details');
@@ -99,6 +107,7 @@ class UnfixedDateController extends Controller
             'frequency' => 'required'
         ]);
         $input = $request->all();
+        
 
         $unfixeddate->update($input);
         return redirect()->route('unfixeddate.index')
