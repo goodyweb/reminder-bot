@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Carbon\Carbon;
 use App\Models\Unfixeddate;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -66,9 +67,11 @@ class UnfixedDateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Unfixeddate $unfixeddate)
+    public function show($id)
     {
-        //
+        $carbonTime = Carbon::now()->toDateTimeString();
+        $results = Unfixeddate::find($id);
+        return view('unfixeddate.show', compact('results', 'carbonTime'));
     }
 
     /**

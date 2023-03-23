@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Carbon\Carbon;
 use App\Models\Fixeddate;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -70,9 +71,11 @@ class FixedDateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Fixeddate $fixeddate)
+    public function show($id)
     {
-        //
+        $carbonTime = Carbon::now()->toDateTimeString();
+        $results = Fixeddate::find($id);
+        return view('fixeddates.show', compact('results', 'carbonTime'));
     }
 
     /**
