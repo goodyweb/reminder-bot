@@ -53,6 +53,7 @@ class FixedDateController extends Controller
         ]);
 
        
+
         $fixeddate = new Fixeddate();
         $fixeddate->details = $request->input('details');
         $fixeddate->webhook = $request->input('webhook');
@@ -104,7 +105,9 @@ class FixedDateController extends Controller
             'year' => 'required',
             'frequency' => 'required',
         ]);
+
         $input = $request->all();
+       
         $fixeddate->update($input);
         return redirect()->route('fixeddates.index')
             ->with('success','Reminder updated successfully.');
