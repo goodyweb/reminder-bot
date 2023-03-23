@@ -9,17 +9,7 @@ class Fixeddate extends Model
 {
     use HasFactory;
 
-    protected $table = 'fixeddate';
-    protected $fillable = [
-        'details' ,
-        'webhook' ,
-        'startMonth',
-        'startDay' ,
-        'endMonth',
-        'endDay',
-        'year',
-        'frequency'
-    ];
+    protected $table = 'fixeddates';
     public $primaryKey = 'id';
    
     public function user()

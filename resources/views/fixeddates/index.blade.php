@@ -64,7 +64,7 @@ body, html {
                       <!--<img class="card-img-top card-img-top-post" src="/img/{{ $val->image }}">-->
                       <div class="card-body card-body-post"><hr>
                         <h2 class="card-title"><b>{{ $val->details }}</b></h2>             
-                        <p><small>Written by Goody Web | {{ $val->updated_at }}</small></p>
+                        <p><small>Written by {{$val->user->name}} | {{ $val->updated_at }}</small></p>
                       
                         <hr>
                         <div class="button-group row">
