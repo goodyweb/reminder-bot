@@ -70,7 +70,7 @@ class UnfixedDateController extends Controller
     public function show($id)
     {
         $carbonTime = Carbon::now()->toDateTimeString();
-        $results = Fixeddate::find($id);
+        $results = Unfixeddate::find($id);
         return view('unfixeddate.show', compact('results', 'carbonTime'));
     }
 
