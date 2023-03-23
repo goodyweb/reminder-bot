@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use Carbon\Carbon;
+use Carbon\carbon;
 use App\Models\Fixeddate;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -78,7 +78,7 @@ class FixedDateController extends Controller
     {
         $carbonTime = Carbon::now()->toDateTimeString();
         $results = Fixeddate::find($id);
-        return view('fixeddates.show', compact('results', 'carbonTime'));
+        return view('fixeddate.show', compact('results', 'carbonTime'));
     }
 
     /**
@@ -104,13 +104,9 @@ class FixedDateController extends Controller
             'year' => 'required',
             'frequency' => 'required',
         ]);
-<<<<<<< HEAD
-        $input = $request->all();
-=======
 
         $input = $request->all();
        
->>>>>>> d546735 (rebase main)
         $fixeddate->update($input);
         return redirect()->route('fixeddates.index')
             ->with('success','Reminder updated successfully.');
