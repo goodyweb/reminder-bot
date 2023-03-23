@@ -48,7 +48,10 @@ class FixedDateController extends Controller
             'endDay' => 'required',
             'year' => 'required',
             'frequency' => 'required',
+            
         ]);
+
+       
 
         $fixeddate = new Fixeddate();
         $fixeddate->details = $request->input('details');
