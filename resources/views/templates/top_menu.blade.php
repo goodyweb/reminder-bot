@@ -2,7 +2,7 @@
     <div class="container">
         <div class="navbar-content">
             <a href="#" class="navbar-brand" style="color: black">
-                BOT<span><b>Reminder</b></span>
+                GOODY<span><b>Reminder</b></span>
             </a>
             <form class="search-form">
                 <div class="input-group">
@@ -20,7 +20,7 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="appsDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i data-feather="instagram"></i>
+                        <i data-feather="link"></i>
                         <div class="indicator">
                             <div class="circle"></div>
                         </div>
@@ -28,7 +28,7 @@
                     <div class="dropdown-menu p-0" aria-labelledby="appsDropdown">
                         <div class="row g-0 p-1">
                             <div class="col-3 text-center">
-                                <a href="{{url('profile')}}" class="dropdown-item d-flex flex-column align-items-center justify-content-center wd-70 ht-70"><i data-feather="instagram" class="icon-lg mb-1"></i><p class="tx-12">Edit Profile</p></a>
+                                <a href="{{url('profile')}}" class="dropdown-item d-flex flex-column align-items-center justify-content-center wd-70 ht-70"><i data-feather="user" class="icon-lg mb-1"></i><p class="tx-12">Edit Profile</p></a>
                             </div>
                         </div>
                     </div>
