@@ -25,7 +25,7 @@ body {
 
 body {
   align-items: center;
-  background-color: #FFD20A;
+  background-color: lightgray;
   font-family: -apple-system, 
     BlinkMacSystemFont, 
     "Segoe UI", 
