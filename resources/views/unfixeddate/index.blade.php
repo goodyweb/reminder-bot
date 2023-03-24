@@ -70,6 +70,7 @@ body, html {
                           <div class="col-8">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                             <a href="{{route('unfixeddate.show', $val->id)}}" class="btn btn-info btn-sm"><i data-feather="eye"></i>View</a>            
 =======
 <<<<<<< HEAD
@@ -78,6 +79,10 @@ body, html {
                             <a href="{{route('reminder_view.show', $val->id)}}" class="btn btn-info btn-sm"><i data-feather="eye"></i>View</a>            
 >>>>>>> c89504f (rebase)
                             <a href="{{route('unfixeddate.edit', $val->id)}}" class="btn btn-warning btn-sm"><i data-feather="link"></i>Edit</a>
+=======
+                            <a href="{{route('unfixeddate.show', $val->id)}}" class="btn btn-outline-primary btn-sm"><i data-feather="eye"></i>View</a>            
+                            <a href="{{route('unfixeddate.edit', $val->id)}}" class="btn btn-outline-info btn-sm"><i data-feather="link"></i>Edit</a>
+>>>>>>> 8159690 (Updating show blade , adding algo for countdown)
                           </div>
                             <div class="col-4 text-right">
                                 <form action="{{ route('unfixeddate.destroy',$val->id) }}" method="POST">
