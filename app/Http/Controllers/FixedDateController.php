@@ -48,11 +48,7 @@ class FixedDateController extends Controller
             'endDay' => 'required',
             'year' => 'required',
             'frequency' => 'required',
-<<<<<<< HEAD
-    
-=======
             
->>>>>>> 927c58b (rebase main)
         ]);
 
        
