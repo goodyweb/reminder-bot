@@ -107,8 +107,16 @@ class UnfixedDateController extends Controller
             'frequency' => 'required'
         ]);
         $input = $request->all();
+<<<<<<< HEAD
         
 
+=======
+<<<<<<< HEAD
+=======
+        
+
+>>>>>>> d546735 (rebase main)
+>>>>>>> 1d7f72a (rebase)
         $unfixeddate->update($input);
         return redirect()->route('unfixeddate.index')
             ->with('success','Reminder updated successfully.');
