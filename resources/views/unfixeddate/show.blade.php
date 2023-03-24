@@ -1,143 +1,10 @@
+
+
+
 @extends('templates.master')
-<<<<<<< HEAD
-@section('content')
-
-<style type="text/css">
-   /* general styling */
-   :root {
-  --smaller: .75;
-}
-
-=======
-
-
 
 @section('content')
-<head>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <!-- Poppins fonts-->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
-      
-
-<style type="text/css">
-   /* general styling */
-   :root {
-  --smaller: .75;
-}
-
-<<<<<<< HEAD
->>>>>>> c89504f (rebase)
-=======
->>>>>>> 8159690 (Updating show blade , adding algo for countdown)
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  height: 100%;
-  margin: 0;
-}
-
-body {
-  align-items: center;
-<<<<<<< HEAD
-<<<<<<< HEAD
-  background-color: lightgray;
-=======
-  background-color: #ffd54f;
->>>>>>> c89504f (rebase)
-=======
-  background-color: #ffd54f;
->>>>>>> 8159690 (Updating show blade , adding algo for countdown)
-  font-family: -apple-system, 
-    BlinkMacSystemFont, 
-    "Segoe UI", 
-    Roboto, 
-    Oxygen-Sans, 
-    Ubuntu, 
-    Cantarell, 
-    "Helvetica Neue", 
-    sans-serif;
-}
-
-.container1 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-  color: #333;
->>>>>>> c89504f (rebase)
-=======
-  color: #333;
->>>>>>> 8159690 (Updating show blade , adding algo for countdown)
-  margin: 0 auto;
-  text-align: center;
-}
-
-h1 {
-  font-weight: normal;
-  letter-spacing: .125rem;
-  text-transform: uppercase;
-}
-
-li {
-  display: inline-block;
-  font-size: 1.5em;
-  list-style-type: none;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-  padding: 1em;
-  text-transform: uppercase;
->>>>>>> c89504f (rebase)
-=======
-  padding: 1em;
-  text-transform: uppercase;
->>>>>>> 8159690 (Updating show blade , adding algo for countdown)
-}
-
-li span {
-  display: block;
-<<<<<<< HEAD
-<<<<<<< HEAD
-  padding: .5em;
-=======
->>>>>>> c89504f (rebase)
-=======
->>>>>>> 8159690 (Updating show blade , adding algo for countdown)
-  font-size: 4.5rem;
-}
-
-.emoji {
-  display: none;
-  padding: 1rem;
-}
-
-.emoji span {
-  font-size: 4rem;
-  padding: 0 .5rem;
-}
-
-@media all and (max-width: 768px) {
-  h1 {
-    font-size: calc(1.5rem * var(--smaller));
-  }
-  
-  li {
-    font-size: calc(1.125rem * var(--smaller));
-  }
-  
-  li span {
-    font-size: calc(3.375rem * var(--smaller));
-  }
-}
-
-</style>
-
-</head>
 <script>
     <?php 
    
@@ -231,32 +98,16 @@ li span {
             document.getElementById("content").style.display = "block";
             }
         }, 1000);
-<<<<<<< HEAD
-<<<<<<< HEAD
-    </script>    
-=======
+
     </script>
 
-    
->>>>>>> c89504f (rebase)
-=======
-    </script>
-
-    
->>>>>>> 8159690 (Updating show blade , adding algo for countdown)
 
 <body>
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-<<<<<<< HEAD
-<<<<<<< HEAD
+
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg" style="border-radius: 15px 50px 5px">
-=======
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
->>>>>>> c89504f (rebase)
-=======
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
->>>>>>> 8159690 (Updating show blade , adding algo for countdown)
+
                 <div class="p-6 text-gray-900">
 
                 <center><h1>Countdown</h1></center>
