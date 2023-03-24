@@ -1,21 +1,12 @@
 @extends('templates.master')
 
-
-
-
 @section('content')
-<head>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <!-- Poppins fonts-->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-
-      
 
 <style type="text/css">
    /* general styling */
    :root {
   --smaller: .75;
+
 }
 
 
@@ -33,7 +24,7 @@ body {
 body {
   align-items: center;
 
-  background-color: lightgray;
+  background-color: #ffd54f;
 
   font-family: -apple-system, 
     BlinkMacSystemFont, 
@@ -66,15 +57,10 @@ li {
 
   padding: 1em;
   text-transform: uppercase;
-
-  padding: 1em;
-  text-transform: uppercase;
 }
 
 li span {
   display: block;
-
-  padding: .5em;
   font-size: 4.5rem;
 }
 
@@ -198,13 +184,8 @@ li span {
             document.getElementById("content").style.display = "block";
             }
         }, 1000);
-
     </script>
 
-
-    </script>
-
-    
 
 <body>
     <div class="py-12">

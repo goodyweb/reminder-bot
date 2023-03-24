@@ -69,26 +69,10 @@ body, html {
                         <hr>
                         <div class="button-group row">
                           <div class="col-8">
-<<<<<<< HEAD
-<<<<<<< HEAD:resources/views/fixeddates/index.blade.php
-<<<<<<< HEAD
-<<<<<<< HEAD
-                            <a href="{{route('fixeddates.show', $val->id)}}" class="btn btn-info btn-sm"><i data-feather="eye"></i>View</a>            
-=======
-<<<<<<< HEAD:resources/views/fixeddates/index.blade.php
-=======
->>>>>>> 55b2b2a (rebase to main)
-                            <a href="{{route('reminder_view.show', $val->id)}}" class="btn btn-info btn-sm"><i data-feather="eye"></i>View</a>            
->>>>>>> c89504f (rebase)
-                            <a href="{{route('fixeddates.edit', $val->id)}}" class="btn btn-warning btn-sm"><i data-feather="link"></i>Edit</a>
-=======
-                            <a href="{{route('fixeddate.show', $val->id)}}" class="btn btn-info btn-sm"><i data-feather="eye"></i>View</a>            
-                            <a href="{{route('fixeddate.edit', $val->id)}}" class="btn btn-warning btn-sm"><i data-feather="link"></i>Edit</a>
->>>>>>> 8159690 (Updating show blade , adding algo for countdown):resources/views/fixeddate/index.blade.php
-=======
+
                             <a href="{{route('fixeddates.show', $val->id)}}" class="btn btn-info btn-sm"><i data-feather="eye"></i>View</a>            
                             <a href="{{route('fixeddates.edit', $val->id)}}" class="btn btn-warning btn-sm"><i data-feather="link"></i>Edit</a>
->>>>>>> 7be2cd9 (rebase main)
+
                           </div>
                             <div class="col-4 text-right">
                                 <form action="{{ route('fixeddates.destroy',$val->id) }}" method="POST">
