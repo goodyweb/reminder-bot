@@ -30,7 +30,7 @@
     </div>
     <!-- partial -->
 
-    <div class="page-wrapper">
+    <div class="page-wrapper bg-light">
         <div class="page-content">
 
             @yield('content')

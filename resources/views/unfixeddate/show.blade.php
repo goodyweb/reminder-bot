@@ -5,6 +5,85 @@
 
 @section('content')
 
+<style type="text/css">
+   /* general styling */
+   :root {
+  --smaller: .75;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+}
+
+body {
+  align-items: center;
+  background-color: lightgray;
+  font-family: -apple-system, 
+    BlinkMacSystemFont, 
+    "Segoe UI", 
+    Roboto, 
+    Oxygen-Sans, 
+    Ubuntu, 
+    Cantarell, 
+    "Helvetica Neue", 
+    sans-serif;
+}
+
+.container1 {
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1 {
+  font-weight: normal;
+  letter-spacing: .125rem;
+  text-transform: uppercase;
+}
+
+li {
+  display: inline-block;
+  font-size: 1.5em;
+  list-style-type: none;
+}
+
+li span {
+  display: block;
+  font-size: 4.5rem;
+}
+
+.emoji {
+  display: none;
+  padding: 1rem;
+}
+
+.emoji span {
+  font-size: 4rem;
+  padding: 0 .5rem;
+}
+
+@media all and (max-width: 1000px) {
+  h1 {
+    font-size: calc(2.5rem * var(--smaller));
+  }
+  
+  li {
+    font-size: calc(2.125rem * var(--smaller));
+  }
+  
+  li span {
+    font-size: calc(3.375rem * var(--smaller));
+  }
+}
+
+</style>
+
+</head>
 <script>
     <?php 
    
@@ -110,7 +189,7 @@
 
                 <div class="p-6 text-gray-900">
 
-                <center><h1>Countdown</h1></center>
+                <center><h2>--Countdown--</h2></center>
                     <br><center>
                       <b>Ends @ </b><br>
                     <?php $date=date_create($dateString);
@@ -119,15 +198,13 @@
                    </center>
                     <div class="container1">
                        
-                            <h1 id="headline">{{$results->details}}</h1>
+                            <h1 id="headline"><b>{{$results->details}}</b></h1>
                             <div id="countdown">
-                                <ul>
-                                    
-                                <li><span id="days"></span>Days</li>
-                                
-                                <li><span id="hours"></span>Hours</li>
-                                <li><span id="minutes"></span>Minutes</li>
-                                <li><span id="seconds"></span>Seconds</li>
+                                <ul>                                        
+                                    <li style=" padding: 1.5em"><span id="days"></span>Days</li>                                   
+                                    <li style=" padding: 1.5em"><span id="hours"></span>Hours</li>
+                                    <li style=" padding: 1.5em"><span id="minutes"></span>Minutes</li>
+                                    <li style=" padding: 1.5em"><span id="seconds"></span>Seconds</li>
                                 </ul>
                             </div>
                             <div id="content" class="emoji">
