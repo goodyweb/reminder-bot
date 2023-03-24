@@ -68,6 +68,7 @@
                                     <option value="02">2nd Week</option>
                                     <option value="03">3rd Week</option>
                                     <option value="04">4rth Week</option>
+                                    <option value="05">4rth Week</option>
                                 </select>
                             </div>
 
@@ -81,7 +82,7 @@
                                     <option value="04">Thursday</option>
                                     <option value="05">Friday</option>
                                     <option value="06">Saturday</option>
-                                    <option value="07">Sunday</option>
+                                    <option value="0">Sunday</option>
                                 </select>
                             </div>
                         </div>
@@ -97,9 +98,9 @@
                                         <select name="frequency" id="frequency" class="form-select">
                                             <option value="">-- Please select --</option>
                                             <option value="Monthly"> Monthly</option>
-                                            <option value="Daily">Daily</option>
-                                            <option value="Hourly">Hourly</option>
-                                            <option value="Minutes">Minutes</option>
+                                            <option value="Quarterly">Quarterly</option>
+                                            <option value="SemiAnnually">SemiAnnually</option>
+                                            <option value="Annually">Annually</option>
                                         </select>
                                     </div>
                                 </div>

@@ -66,7 +66,8 @@
                                             <option value="01" {{ old('week', $unfixeddate->week) == '01' ? 'selected' : '' }}>Week 1</option>
                                             <option value="02" {{ old('week', $unfixeddate->week) == '02' ? 'selected' : '' }}>Week 2</option>
                                             <option value="03" {{ old('week', $unfixeddate->week) == '03' ? 'selected' : '' }}>Week 3</option>
-                                            <option value="04" {{ old('week', $unfixeddate->week) == '04' ? 'selected' : '' }}>Week 4</option>                         
+                                            <option value="04" {{ old('week', $unfixeddate->week) == '04' ? 'selected' : '' }}>Week 4</option>
+                                            <option value="05" {{ old('week', $unfixeddate->week) == '05' ? 'selected' : '' }}>Week 5</option>                         
                                     </select>
                                 </div>
 
@@ -80,7 +81,7 @@
                                         <option value="04" {{ old('day', $unfixeddate->day) == '04' ? 'selected' : '' }}>Thursday</option>
                                         <option value="05" {{ old('day', $unfixeddate->day) == '05' ? 'selected' : '' }}>Friday</option>
                                         <option value="06" {{ old('day', $unfixeddate->day) == '06' ? 'selected' : '' }}>Saturday</option>
-                                        <option value="07" {{ old('day', $unfixeddate->day) == '07' ? 'selected' : '' }}>Sunday</option>
+                                        <option value="0" {{ old('day', $unfixeddate->day) == '0' ? 'selected' : '' }}>Sunday</option>
                                     </select>
                                 </div>
                             </div>
@@ -96,9 +97,9 @@
                                         <label for="frequency" class="form-label"><b>Frequency : </b><span class="text-danger">*</span></label>
                                         <select name="frequency" id="frequency" class="form-select">
                                             <option value="Monthly" {{ old('frequency', $unfixeddate->frequency) == 'Monthly' ? 'selected' : '' }}> Monthly</option>
-                                            <option value="Daily" {{ old('frequency', $unfixeddate->frequency) == 'Daily' ? 'selected' : '' }}>Daily</option>
-                                            <option value="Hourly" {{ old('frequency', $unfixeddate->frequency) == 'Hourly' ? 'selected' : '' }}>Hourly</option>
-                                            <option value="Minutes" {{ old('frequency', $unfixeddate->frequency) == 'Minutes' ? 'selected' : '' }}>Minutes</option>
+                                            <option value="Quarterly" {{ old('frequency', $unfixeddate->frequency) == 'Quarterly' ? 'selected' : '' }}>Quarterly</option>
+                                            <option value="SemIAnnually" {{ old('frequency', $unfixeddate->frequency) == 'SemiAnnually' ? 'selected' : '' }}>SemiAnnually</option>
+                                            <option value="Annually" {{ old('frequency', $unfixeddate->frequency) == 'Annually' ? 'selected' : '' }}>Annually</option>
                                         </select>
                                     </div>
                                 </div>                               

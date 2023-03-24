@@ -11,6 +11,14 @@ class UnfixedDate extends Model
 
     protected $table = 'unfixeddates';
     public $primaryKey = 'id';
+    protected $fillable = [
+        'details' ,
+        'webhook' ,
+        'month',
+        'week' ,
+        'day',
+        'frequency'
+   ];
   
     public function user()
     {
