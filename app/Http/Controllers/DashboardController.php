@@ -15,6 +15,18 @@ class DashboardController extends Controller
     {
         $fixeddate = Fixeddate::all();
         $unfixeddate = Unfixeddate::all();
-        return view('dashboard', compact('fixeddate', 'unfixeddate'));
+
+        // For Statistics
+        $tot_fixeddate = count($fixeddate);
+        $tot_unfixeddate = count($unfixeddate);
+        $tot_users = count(User::all());
+
+        return view('dashboard')
+                    ->with('fixeddate', $fixeddate)
+                    ->with('unfixeddate', $unfixeddate)
+                    ->with('tot_fixeddate', $tot_fixeddate)
+                    ->with('tot_unfixeddate', $tot_unfixeddate)
+                    ->with('tot_users', $tot_users);
     }
+    
 }
