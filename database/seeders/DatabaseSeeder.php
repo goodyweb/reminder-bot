@@ -16,10 +16,12 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
+           
             UsersTableSeeder::class,
-            NotifyTableSeeder::class,
             UnfixeddateTableSeeder::class,
             FixeddateTableSeeder::class,
+            NotifyTableSeeder::class,
+            
         ]);
     }
 }

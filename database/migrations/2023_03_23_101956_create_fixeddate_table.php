@@ -13,18 +13,19 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('fixeddate', function (Blueprint $table) {
+        Schema::create('fixeddates', function (Blueprint $table) {
             $table->id();
-            $table->int('user_id')->unsigned();
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('details');
             $table->string('webhook');
-            $table->int('startMonth');
-            $table->int('startDay');
-            $table->int('endMonth');
-            $table->int('endDay');
-            $table->int('year');
+            $table->integer('startMonth');
+            $table->integer('startDay');
+            $table->integer('endMonth');
+            $table->integer('endDay');
+            $table->integer('year');
             $table->string('frequency');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            
             $table->timestamps();
         });
     }
@@ -36,6 +37,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('fixeddate');
+        Schema::dropIfExists('fixeddates');
     }
 };

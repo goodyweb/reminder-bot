@@ -63,7 +63,7 @@ body, html {
                   <div class="card shadow" style="border-radius: 15px 50px 5px">
                       <div class="card-body card-body-post"><hr>
                         <h2 class="card-title"><b>{{ $val->details }}</b></h2>             
-                        <p><small>Written by Goody Web | {{ $val->created_at }}</small></p>
+                        <p><small>Written by {{$val->user->name}} | {{ $val->created_at }}</small></p>
                       
                         <hr>
                         <div class="button-group row">

@@ -13,17 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('unfixeddate', function (Blueprint $table) {
+        Schema::create('unfixeddates', function (Blueprint $table) {
             $table->id();
-            $table->int('user_id')->unsigned();
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('details');
             $table->string('webhook');
-            $table->int('month');
-            $table->int('week');
-            $table->int('day');
-            $table->int('year');
+            $table->integer('month');
+            $table->integer('week');
+            $table->integer('day');
+            $table->integer('year');
             $table->string('frequency');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -35,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('unfixeddate');
+        Schema::dropIfExists('unfixeddates');
     }
 };
