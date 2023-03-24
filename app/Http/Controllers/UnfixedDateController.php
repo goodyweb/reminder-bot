@@ -3,10 +3,6 @@
 namespace App\Http\Controllers;
 use Carbon\carbon;
 use App\Models\UnfixedDate;
-<<<<<<< HEAD
-
-=======
->>>>>>> de641a404b37ca97cc3760708a7146a9a2d29419
 use App\Models\User;
 use Illuminate\Http\Request;
 
