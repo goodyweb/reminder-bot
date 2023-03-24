@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Carbon\carbon;
 use App\Models\UnfixedDate;
+
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -107,19 +108,7 @@ class UnfixedDateController extends Controller
             'frequency' => 'required'
         ]);
         $input = $request->all();
-<<<<<<< HEAD
-<<<<<<< HEAD
-        
 
-=======
-<<<<<<< HEAD
-=======
-        
-
->>>>>>> d546735 (rebase main)
->>>>>>> 1d7f72a (rebase)
-=======
->>>>>>> 4539701 (rebase)
         $unfixeddate->update($input);
         return redirect()->route('unfixeddate.index')
             ->with('success','Reminder updated successfully.');
