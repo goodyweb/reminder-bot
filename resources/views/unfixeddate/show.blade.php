@@ -34,15 +34,15 @@
        $month = "December";
    }
 
-   if($results->week == 0){
+   if($results->week == 1){
        $week = "First";
-   }elseif($results->week == 1){
-       $week = "Second";
    }elseif($results->week == 2){
-       $week = "Third";
+       $week = "Second";
    }elseif($results->week == 3){
-       $week = "Fourth";
+       $week = "Third";
    }elseif($results->week == 4){
+       $week = "Fourth";
+   }elseif($results->week == 5){
        $week = "Fifth";
    }
 
