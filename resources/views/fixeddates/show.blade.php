@@ -130,7 +130,7 @@ li span {
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg" style="border-radius: 15px 50px 5px">
                 <div class="p-6 text-gray-900">
 
-                <center><h1>Countdown</h1></center>
+                <center><h2>--Countdown--</h2></center>
                     <br><center>
                       <b>Ends @ </b><br>
                     <?php $date=date_create($results->year."-".$results->endMonth."-".$results->endDay);
@@ -139,7 +139,7 @@ li span {
                    </center>
                     <div class="container1">
                        
-                            <h1 id="headline">{{$results->details}}</h1>
+                            <h1 id="headline"><b>{{$results->details}}</b></h1>
                             <div id="countdown">
                                 <ul>
                                     
