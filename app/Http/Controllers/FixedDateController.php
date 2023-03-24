@@ -78,7 +78,7 @@ class FixedDateController extends Controller
     {
         $carbonTime = Carbon::now()->toDateTimeString();
         $results = Fixeddate::find($id);
-        return view('fixeddate.show', compact('results', 'carbonTime'));
+        return view('fixeddates.show', compact('results', 'carbonTime'));
     }
 
     /**
