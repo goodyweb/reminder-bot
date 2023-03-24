@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-use Carbon\Carbon;
-use App\Models\Unfixeddate;
+use Carbon\carbon;
+use App\Models\UnfixedDate;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -46,7 +46,18 @@ class UnfixedDateController extends Controller
             'week' => 'required',
             'day' => 'required',
             'frequency' => 'required',
+            //'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
+
+        /**if ($image = $request->file('image')) {
+            $destinationPath = 'img/';
+            $reminderImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $reminderImage);
+            $filename = $reminderImage;
+        } else {
+            $filename = 'no-img.png';
+        }*/
+       
 
         $unfixeddate = new Unfixeddate();
         $unfixeddate->details = $request->input('details');
@@ -70,7 +81,7 @@ class UnfixedDateController extends Controller
     public function show($id)
     {
         $carbonTime = Carbon::now()->toDateTimeString();
-        $results = Unfixeddate::find($id);
+        $results = UnFixeddate::find($id);
         return view('unfixeddate.show', compact('results', 'carbonTime'));
     }
 
@@ -96,6 +107,8 @@ class UnfixedDateController extends Controller
             'frequency' => 'required'
         ]);
         $input = $request->all();
+        
+
         $unfixeddate->update($input);
         return redirect()->route('unfixeddate.index')
             ->with('success','Reminder updated successfully.');

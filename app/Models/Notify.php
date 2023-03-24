@@ -10,7 +10,7 @@ class Notify extends Model
     use HasFactory;
 
     
-    protected $table = 'notify';
+    protected $table = 'notifies';
     public $primaryKey = 'id';
     
     public function user()

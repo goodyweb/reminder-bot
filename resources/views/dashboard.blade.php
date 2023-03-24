@@ -110,7 +110,7 @@
                                     <tr>
                                         <th></th>
                                         <th>#</th>
-                                        <th>fixeddate Title</th>
+                                        <th>fixed date Title</th>
                                         <th>Notify</th>
                                         <th>Due Date</th>
                                     </tr>

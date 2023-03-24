@@ -9,7 +9,7 @@ class UnfixedDate extends Model
 {
     use HasFactory;
 
-    protected $table = 'unfixeddate';
+    protected $table = 'unfixeddates';
     public $primaryKey = 'id';
     protected $fillable = [
         'details' ,
@@ -19,6 +19,7 @@ class UnfixedDate extends Model
         'day',
         'frequency'
    ];
+  
     public function user()
     {
         return $this->belongsTo('App\Models\User', 'user_id', 'id');

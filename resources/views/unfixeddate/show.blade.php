@@ -14,13 +14,12 @@
 }
 
 body {
-  height: 100%;
   margin: 0;
 }
 
 body {
   align-items: center;
-  background-color: #FFD20A;
+  background-color: lightgray;
   font-family: -apple-system, 
     BlinkMacSystemFont, 
     "Segoe UI", 
@@ -51,7 +50,6 @@ li {
 
 li span {
   display: block;
-  padding: .5em;
   font-size: 4.5rem;
 }
 
@@ -65,13 +63,13 @@ li span {
   padding: 0 .5rem;
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 1000px) {
   h1 {
-    font-size: calc(1.5rem * var(--smaller));
+    font-size: calc(2.5rem * var(--smaller));
   }
   
   li {
-    font-size: calc(1.125rem * var(--smaller));
+    font-size: calc(2.125rem * var(--smaller));
   }
   
   li span {
@@ -183,7 +181,7 @@ li span {
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg" style="border-radius: 15px 50px 5px">
                 <div class="p-6 text-gray-900">
 
-                <center><h1>Countdown</h1></center>
+                <center><h2>--Countdown--</h2></center>
                     <br><center>
                       <b>Ends @ </b><br>
                     <?php $date=date_create($dateString);
@@ -192,15 +190,13 @@ li span {
                    </center>
                     <div class="container1">
                        
-                            <h1 id="headline">{{$results->details}}</h1>
+                            <h1 id="headline"><b>{{$results->details}}</b></h1>
                             <div id="countdown">
-                                <ul>
-                                    
-                                <li><span id="days"></span>Days</li>
-                                
-                                <li><span id="hours"></span>Hours</li>
-                                <li><span id="minutes"></span>Minutes</li>
-                                <li><span id="seconds"></span>Seconds</li>
+                                <ul>                                        
+                                    <li style=" padding: 1.5em"><span id="days"></span>Days</li>                                   
+                                    <li style=" padding: 1.5em"><span id="hours"></span>Hours</li>
+                                    <li style=" padding: 1.5em"><span id="minutes"></span>Minutes</li>
+                                    <li style=" padding: 1.5em"><span id="seconds"></span>Seconds</li>
                                 </ul>
                             </div>
                             <div id="content" class="emoji">

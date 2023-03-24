@@ -9,7 +9,7 @@ class Fixeddate extends Model
 {
     use HasFactory;
 
-    protected $table = 'fixeddate';
+    protected $table = 'fixeddates';
     protected $fillable = [
         'details' ,
         'webhook' ,

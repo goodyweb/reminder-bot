@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use Carbon\Carbon;
+use Carbon\carbon;
 use App\Models\Fixeddate;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -48,7 +48,10 @@ class FixedDateController extends Controller
             'endDay' => 'required',
             'year' => 'required',
             'frequency' => 'required',
+            
         ]);
+
+       
 
         $fixeddate = new Fixeddate();
         $fixeddate->details = $request->input('details');
@@ -101,7 +104,9 @@ class FixedDateController extends Controller
             'year' => 'required',
             'frequency' => 'required',
         ]);
+
         $input = $request->all();
+       
         $fixeddate->update($input);
         return redirect()->route('fixeddates.index')
             ->with('success','Reminder updated successfully.');
