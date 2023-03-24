@@ -1,14 +1,5 @@
 @extends('templates.master')
-<<<<<<< HEAD
-@section('content')
 
-<style type="text/css">
-   /* general styling */
-   :root {
-  --smaller: .75;
-}
-
-=======
 
 
 
@@ -27,10 +18,7 @@
   --smaller: .75;
 }
 
-<<<<<<< HEAD
->>>>>>> c89504f (rebase)
-=======
->>>>>>> 8159690 (Updating show blade , adding algo for countdown)
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -44,15 +32,9 @@ body {
 
 body {
   align-items: center;
-<<<<<<< HEAD
-<<<<<<< HEAD
+
   background-color: lightgray;
-=======
-  background-color: #ffd54f;
->>>>>>> c89504f (rebase)
-=======
-  background-color: #ffd54f;
->>>>>>> 8159690 (Updating show blade , adding algo for countdown)
+
   font-family: -apple-system, 
     BlinkMacSystemFont, 
     "Segoe UI", 
@@ -65,14 +47,8 @@ body {
 }
 
 .container1 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
+
   color: #333;
->>>>>>> c89504f (rebase)
-=======
-  color: #333;
->>>>>>> 8159690 (Updating show blade , adding algo for countdown)
   margin: 0 auto;
   text-align: center;
 }
@@ -87,27 +63,18 @@ li {
   display: inline-block;
   font-size: 1.5em;
   list-style-type: none;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
+
   padding: 1em;
   text-transform: uppercase;
->>>>>>> c89504f (rebase)
-=======
+
   padding: 1em;
   text-transform: uppercase;
->>>>>>> 8159690 (Updating show blade , adding algo for countdown)
 }
 
 li span {
   display: block;
-<<<<<<< HEAD
-<<<<<<< HEAD
+
   padding: .5em;
-=======
->>>>>>> c89504f (rebase)
-=======
->>>>>>> 8159690 (Updating show blade , adding algo for countdown)
   font-size: 4.5rem;
 }
 
@@ -231,32 +198,20 @@ li span {
             document.getElementById("content").style.display = "block";
             }
         }, 1000);
-<<<<<<< HEAD
-<<<<<<< HEAD
-    </script>    
-=======
+
+    </script>
+
+
     </script>
 
     
->>>>>>> c89504f (rebase)
-=======
-    </script>
-
-    
->>>>>>> 8159690 (Updating show blade , adding algo for countdown)
 
 <body>
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-<<<<<<< HEAD
-<<<<<<< HEAD
+
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg" style="border-radius: 15px 50px 5px">
-=======
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
->>>>>>> c89504f (rebase)
-=======
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
->>>>>>> 8159690 (Updating show blade , adding algo for countdown)
+
                 <div class="p-6 text-gray-900">
 
                 <center><h1>Countdown</h1></center>
