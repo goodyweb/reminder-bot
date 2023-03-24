@@ -9,7 +9,7 @@ class UnfixedDate extends Model
 {
     use HasFactory;
 
-    protected $table = 'unfixeddate';
+    protected $table = 'unfixeddates';
     public $primaryKey = 'id';
     protected $fillable = [
         'details' ,
