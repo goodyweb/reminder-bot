@@ -50,7 +50,6 @@ li {
 
 li span {
   display: block;
-  padding: .5em;
   font-size: 4.5rem;
 }
 
@@ -193,13 +192,11 @@ li span {
                        
                             <h1 id="headline"><b>{{$results->details}}</b></h1>
                             <div id="countdown">
-                                <ul>
-                                    
-                                <li><span id="days"></span>Days</li>
-                                
-                                <li><span id="hours"></span>Hours</li>
-                                <li><span id="minutes"></span>Minutes</li>
-                                <li><span id="seconds"></span>Seconds</li>
+                                <ul>                                        
+                                    <li style=" padding: 1.5em"><span id="days"></span>Days</li>                                   
+                                    <li style=" padding: 1.5em"><span id="hours"></span>Hours</li>
+                                    <li style=" padding: 1.5em"><span id="minutes"></span>Minutes</li>
+                                    <li style=" padding: 1.5em"><span id="seconds"></span>Seconds</li>
                                 </ul>
                             </div>
                             <div id="content" class="emoji">
