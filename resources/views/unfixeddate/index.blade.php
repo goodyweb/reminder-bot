@@ -71,6 +71,7 @@ body, html {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                             <a href="{{route('unfixeddate.show', $val->id)}}" class="btn btn-info btn-sm"><i data-feather="eye"></i>View</a>            
 =======
 <<<<<<< HEAD
@@ -78,6 +79,9 @@ body, html {
 >>>>>>> 55b2b2a (rebase to main)
                             <a href="{{route('reminder_view.show', $val->id)}}" class="btn btn-info btn-sm"><i data-feather="eye"></i>View</a>            
 >>>>>>> c89504f (rebase)
+=======
+                            <a href="{{route('unfixeddate.show', $val->id)}}" class="btn btn-info btn-sm"><i data-feather="eye"></i>View</a>            
+>>>>>>> 7be2cd9 (rebase main)
                             <a href="{{route('unfixeddate.edit', $val->id)}}" class="btn btn-warning btn-sm"><i data-feather="link"></i>Edit</a>
 =======
                             <a href="{{route('unfixeddate.show', $val->id)}}" class="btn btn-outline-primary btn-sm"><i data-feather="eye"></i>View</a>            
