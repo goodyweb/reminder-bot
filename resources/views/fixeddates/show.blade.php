@@ -3,10 +3,6 @@
 
 @section('content')
 <head>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <!-- Poppins fonts-->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
       
 
@@ -29,7 +25,7 @@ body {
 
 body {
   align-items: center;
-  background-color: #ffd54f;
+  background-color: lightgray;
   font-family: -apple-system, 
     BlinkMacSystemFont, 
     "Segoe UI", 
@@ -57,12 +53,11 @@ li {
   display: inline-block;
   font-size: 1.5em;
   list-style-type: none;
-  padding: 1em;
-  text-transform: uppercase;
 }
 
 li span {
   display: block;
+  padding: .5em;
   font-size: 4.5rem;
 }
 
@@ -132,7 +127,7 @@ li span {
 <body>
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg" style="border-radius: 15px 50px 5px">
                 <div class="p-6 text-gray-900">
 
                 <center><h1>Countdown</h1></center>
