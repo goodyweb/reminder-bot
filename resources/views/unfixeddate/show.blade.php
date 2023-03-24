@@ -1,8 +1,4 @@
-
-
-
 @extends('templates.master')
-
 @section('content')
 
 <style type="text/css">
@@ -177,16 +173,12 @@ li span {
             document.getElementById("content").style.display = "block";
             }
         }, 1000);
-
-    </script>
-
+    </script>    
 
 <body>
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg" style="border-radius: 15px 50px 5px">
-
                 <div class="p-6 text-gray-900">
 
                 <center><h2>--Countdown--</h2></center>

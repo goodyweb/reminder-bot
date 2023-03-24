@@ -63,15 +63,13 @@ body, html {
                   <div class="card shadow" style="border-radius: 15px 50px 5px">
                       <div class="card-body card-body-post"><hr>
                         <h2 class="card-title"><b>{{ $val->details }}</b></h2>             
-                        <p><small>Written by {{$val->user->name}} | {{ $val->created_at }}</small></p>
+                        <p><small>Written by Goody Web | {{ $val->created_at }}</small></p>
                       
                         <hr>
                         <div class="button-group row">
                           <div class="col-8">
-
-                            <a href="{{route('unfixeddate.show', $val->id)}}" class="btn btn-outline-primary btn-sm"><i data-feather="eye"></i>View</a>            
-                            <a href="{{route('unfixeddate.edit', $val->id)}}" class="btn btn-outline-info btn-sm"><i data-feather="link"></i>Edit</a>
-
+                            <a href="{{route('unfixeddate.show', $val->id)}}" class="btn btn-info btn-sm"><i data-feather="eye"></i>View</a>            
+                            <a href="{{route('unfixeddate.edit', $val->id)}}" class="btn btn-warning btn-sm"><i data-feather="link"></i>Edit</a>
                           </div>
                             <div class="col-4 text-right">
                                 <form action="{{ route('unfixeddate.destroy',$val->id) }}" method="POST">

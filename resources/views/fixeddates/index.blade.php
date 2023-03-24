@@ -64,15 +64,13 @@ body, html {
                       <!--<img class="card-img-top card-img-top-post" src="/img/{{ $val->image }}">-->
                       <div class="card-body card-body-post"><hr>
                         <h2 class="card-title"><b>{{ $val->details }}</b></h2>             
-                        <p><small>Written by {{$val->user->name}} | {{ $val->updated_at }}</small></p>
+                        <p><small>Written by Goody Web | {{ $val->updated_at }}</small></p>
                       
                         <hr>
                         <div class="button-group row">
                           <div class="col-8">
-
                             <a href="{{route('fixeddates.show', $val->id)}}" class="btn btn-info btn-sm"><i data-feather="eye"></i>View</a>            
                             <a href="{{route('fixeddates.edit', $val->id)}}" class="btn btn-warning btn-sm"><i data-feather="link"></i>Edit</a>
-
                           </div>
                             <div class="col-4 text-right">
                                 <form action="{{ route('fixeddates.destroy',$val->id) }}" method="POST">
