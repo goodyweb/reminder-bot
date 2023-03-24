@@ -49,10 +49,10 @@ class FixedDateController extends Controller
             'year' => 'required',
             'frequency' => 'required',
 
+
             
         ]);
 
-       
 
         $fixeddate = new Fixeddate();
         $fixeddate->details = $request->input('details');
