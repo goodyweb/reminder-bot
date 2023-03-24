@@ -40,8 +40,8 @@
       <ul>
         @auth()
           <li>
-            <a href="{{ route('dashboard') }}" style="color:black; text-decoration:none; font-size: 20px;">
-              Return to Portal {{ auth()->user()->getName() }}!
+            <a href="{{ route('dashboard') }}" style="color:black; text-decoration:none; font-family:Cursive; font-size: 20px;">
+              <strong>Return to Portal {{ auth()->user()->getName() }}!</strong>
             </a>
           </li>
         @endauth
