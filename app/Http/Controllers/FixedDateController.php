@@ -48,6 +48,7 @@ class FixedDateController extends Controller
             'endDay' => 'required',
             'year' => 'required',
             'frequency' => 'required',
+
             
         ]);
 
@@ -105,7 +106,9 @@ class FixedDateController extends Controller
             'frequency' => 'required',
         ]);
 
+
         $input = $request->all();
+
         $fixeddate->update($input);
         return redirect()->route('fixeddates.index')
             ->with('success','Reminder updated successfully.');
