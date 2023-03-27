@@ -47,7 +47,7 @@
                         <div class="mb-3 col-md-6">
                             <label for="frequency" class="form-label"><b>Frequency : </b><span class="text-danger">*</span></label>
                                 <select name="frequency" id="frequency" class="form-select">
-                                    <option value="">-- Please select --</option>
+                                    <option value="" hidden>-- Please select --</option>
                                     <option value="Monthly">Monthly</option>
                                     <option value="Quarterly">Quarterly</option>
                                     <option value="SemiAnnually">Semi-Annually</option>
@@ -63,7 +63,7 @@
                                 <div class="col-12 col-md-6">
                                     <label class="form-control-label" for="startMonth">Month</label>
                                     <select id="startMonth" name="startMonth" class="form-select" required>
-                                        <option value="">-- // --</option>
+                                        <option value="" hidden>-- // --</option>
                                         <option value="1">January</option>
                                         <option value="2">February</option>
                                         <option value="3">March</option>
@@ -82,7 +82,7 @@
                                 <div class="col-12 col-md-2">
                                     <label class="form-control-label" for="startDay">Day</label>
                                         <select id="startDay" name="startDay" class="form-select" required>
-                                            <option value="">-/-</option>
+                                            <option value="" hidden>-/-</option>
                                             <option value='01'>01</option>
                                             <option value='02'>02</option>
                                             <option value='03'>03</option>
@@ -126,7 +126,7 @@
                                     <div class="col-12 col-md-6">
                                         <label class="form-control-label" for="endMonth">Month</label>
                                         <select id="endMonth" name="endMonth" class="form-select" required>
-                                            <option value="">-- // --</option>
+                                            <option value="" hidden>-- // --</option>
                                             <option value="01">January</option>
                                             <option value="02">February</option>
                                             <option value="03">March</option>
@@ -145,7 +145,7 @@
                                     <div class="col-12 col-md-2">
                                         <label class="form-control-label" for="endDay">Day</label>
                                         <select class="form-select" id="endDay" name="endDay" required>
-                                            <option value="">-/-</option>
+                                            <option value="" hidden>-/-</option>
                                             <option value='01'>01</option>
                                             <option value='02'>02</option>
                                             <option value='03'>03</option>
@@ -182,7 +182,7 @@
                                     <div class="col-12 col-md-3">
                                         <label class="form-control-label" for="endYear">Year</label>
                                         <select class="form-select" id="year" name="year" required>
-                                            <option value="">-/-</option>
+                                            <option value="" hidden>-/-</option>
                                             <option value='2023'>2023</option>
                                             <option value='2024'>2024</option>
                                             <option value='2025'>2025</option>

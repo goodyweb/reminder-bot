@@ -47,7 +47,7 @@
                             <div class="mb-3 col-md-6">
                                 <label for="frequency" class="form-label"><b>Frequency : </b><span class="text-danger">*</span></label>
                                 <select name="frequency" id="frequency" class="form-select">
-                                    <option value="{{ old('endMonth') == null ? 'N/A' : '' }}"> -- / --</option>
+                                    <option value="{{ old('endMonth') == null ? 'N/A' : '' }}" hidden> -- / --</option>
                                     <option value="Monthly" {{ old('frequency', $fixeddate->frequency) == 'Monthly' ? 'selected' : '' }}>Montly</option>
                                     <option value="Quarterly" {{ old('frequency', $fixeddate->frequency) == 'Quarterly' ? 'selected' : '' }}>Quarterly</option>
                                     <option value="SemiAnnually" {{ old('frequency', $fixeddate->frequency) == 'SemiAnnually' ? 'selected' : '' }}>Semi-Annually</option>
@@ -63,7 +63,7 @@
                                 <div class="col-12 col-md-6">
                                     <label class="form-control-label" for="startMonth">Month</label>
                                     <select id="startMonth" name="startMonth" class="form-select" required>
-                                        <option value="{{ old('startMonth') == null ? 'selected' : '' }}">-- Select Month --</option>
+                                        <option value="{{ old('startMonth') == null ? 'selected' : '' }}" hidden>-- Select Month --</option>
                                         <option value="1" {{ old('startMonth', $fixeddate->startMonth) == '1' ? 'selected' : 'selected' }}>January</option>
                                         <option value="2" {{ old('startMonth', $fixeddate->startMonth) == '2' ? 'selected' : '' }}>February</option>
                                         <option value="3" {{ old('startMonth', $fixeddate->startMonth) == '3' ? 'selected' : '' }}>March</option>
@@ -82,7 +82,7 @@
                                 <div class="col-12 col-md-2">
                                     <label class="form-control-label" for="startDay">Day</label>
                                         <select id="startDay" name="startDay" class="form-select" required>
-                                            <option value="{{ old('startDay') == null ? 'selected' : '' }}">-- / --</option>
+                                            <option value="{{ old('startDay') == null ? 'selected' : '' }}" hidden>-- / --</option>
                                             <option value="01" {{ old('startDay', $fixeddate->startDay) == '01' ? 'selected' : '' }}>01</option>
                                             <option value="02" {{ old('startDay', $fixeddate->startDay) == '02' ? 'selected' : '' }}>02</option>
                                             <option value="03" {{ old('startDay', $fixeddate->startDay) == '03' ? 'selected' : '' }}>03</option>
@@ -127,7 +127,7 @@
                                     <div class="col-12 col-md-6">
                                         <label class="form-control-label" for="endMonth">Month</label>
                                         <select id="endMonth" name="endMonth" class="form-select" required>
-                                            <option value="{{ old('endMonth') == null ? 'selected' : '' }}">-- Select Month --</option>
+                                            <option value="{{ old('endMonth') == null ? 'selected' : '' }}" hidden>-- Select Month --</option>
                                             <option value="1" {{ old('endMonth', $fixeddate->endMonth) == '1' ? 'selected' : 'selected' }}>January</option>
                                             <option value="2" {{ old('endMonth', $fixeddate->endMonth) == '2' ? 'selected' : '' }}>February</option>
                                             <option value="3" {{ old('endMonth', $fixeddate->endMonth) == '3' ? 'selected' : '' }}>March</option>
@@ -146,7 +146,7 @@
                                     <div class="col-12 col-md-2">
                                         <label class="form-control-label" for="endDay">Day</label>
                                         <select class="form-select" id="endDay" name="endDay" required>
-                                            <option value="{{ old('endDay') == null ? 'selected' : '' }}">-- / --</option>
+                                            <option value="{{ old('endDay') == null ? 'selected' : '' }}" hidden>-- / --</option>
                                             <option value="01" {{ old('endDay', $fixeddate->endDay) == '01' ? 'selected' : '' }}>01</option>
                                             <option value="02" {{ old('endDay', $fixeddate->endDay) == '02' ? 'selected' : '' }}>02</option>
                                             <option value="03" {{ old('endDay', $fixeddate->endDay) == '03' ? 'selected' : '' }}>03</option>
@@ -183,6 +183,7 @@
                                     <div class="col-12 col-md-3">
                                         <label class="form-control-label" for="endYear">Year</label>
                                         <select class="form-select" id="year" name="year" required>
+                                            <option value="{{ old('year') == null ? 'selected' : '' }}" hidden>-- / --</option>
                                             <option value='2023' {{ old('year', $fixeddate->year) == '2023' ? 'selected' : '' }}>2023</option>
                                             <option value='2024' {{ old('year', $fixeddate->year) == '2024' ? 'selected' : '' }}>2024</option>
                                             <option value='2025' {{ old('year', $fixeddate->year) == '2025' ? 'selected' : '' }}>2025</option>
