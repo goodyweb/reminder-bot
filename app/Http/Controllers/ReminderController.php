@@ -423,8 +423,8 @@ class ReminderController extends Controller
 
         $unfixeddates = UnfixedDate::where('year', '<=', $yearNow)
         ->where('month', '<=', $monthNow)
-        ->where('week', '>=', $weekNow)
-        ->where('day', '>=', $dayNow)
+        ->where('week', '<=', $weekNow)
+        ->where('day', '<=', $dayNow)
         ->where('frequency', 'like', 'Monthly')
         ->get();
         
@@ -562,8 +562,8 @@ class ReminderController extends Controller
 
         $unfixeddates = UnfixedDate::where('year', '<=', $yearNow)
         ->where('month', '<=', $monthNow)
-        ->where('week', '>=', $weekNow)
-        ->where('day', '>=', $dayNow)
+        ->where('week', '<=', $weekNow)
+        ->where('day', '<=', $dayNow)
         ->where('frequency', 'like', 'Quarterly')
         ->get();
         
@@ -706,8 +706,8 @@ class ReminderController extends Controller
 
         $unfixeddates = UnfixedDate::where('year', '<=', $yearNow)
         ->where('month', '<=', $monthNow)
-        ->where('week', '>=', $weekNow)
-        ->where('day', '>=', $dayNow)
+        ->where('week', '<=', $weekNow)
+        ->where('day', '<=', $dayNow)
         ->where('frequency', 'like', 'SemiAnnually')
         ->get();
         
@@ -851,8 +851,8 @@ class ReminderController extends Controller
 
         $unfixeddates = UnfixedDate::where('year', '<=', $yearNow)
         ->where('month', '<=', $monthNow)
-        ->where('week', '>=', $weekNow)
-        ->where('day', '>=', $dayNow)
+        ->where('week', '<=', $weekNow)
+        ->where('day', '<=', $dayNow)
         ->where('frequency', 'like', 'Annually')
         ->get();
         
