@@ -43,7 +43,7 @@
                                 <div class="col-12 col-md-5">
                                     <label class="form-control-label" for="month">Month</label>
                                     <select id="month" name="month" class="form-select" required>
-                                        <option value="{{ old('month') == null ? 'selected' : '' }}">-- // --</option>
+                                        <option value="{{ old('month') == null ? 'selected' : '' }}" hidden>-- // --</option>
                                         <option value="01" {{ old('month', $unfixeddate->month) == '01' ? 'selected' : 'selected' }}>January</option>
                                         <option value="02" {{ old('month', $unfixeddate->month) == '02' ? 'selected' : '' }}>February</option>
                                         <option value="03" {{ old('month', $unfixeddate->month) == '03' ? 'selected' : '' }}>March</option>
@@ -62,7 +62,7 @@
                                 <div class="col-12 col-md-4">
                                     <label class="form-control-label" for="week">Week</label>
                                         <select id="week" name="week" class="form-select" required>
-                                            <option value="{{ old('week') == null ? 'selected' : '' }}">-- // --</option>
+                                            <option value="{{ old('week') == null ? 'selected' : '' }}" hidden>-- // --</option>
                                             <option value="01" {{ old('week', $unfixeddate->week) == '01' ? 'selected' : '' }}>Week 1</option>
                                             <option value="02" {{ old('week', $unfixeddate->week) == '02' ? 'selected' : '' }}>Week 2</option>
                                             <option value="03" {{ old('week', $unfixeddate->week) == '03' ? 'selected' : '' }}>Week 3</option>
@@ -74,7 +74,7 @@
                                 <div class="col-12 col-md-3">
                                 <label class="form-control-label" for="day">Week</label>
                                     <select class="form-select" id="day" name="day" required>
-                                        <option value="">-- / --</option>
+                                        <option value="" hidden>-- / --</option>
                                         <option value="01" {{ old('day', $unfixeddate->day) == '01' ? 'selected' : '' }}>Monday</option>
                                         <option value="02" {{ old('day', $unfixeddate->day) == '02' ? 'selected' : '' }}>Tuesday</option>
                                         <option value="03" {{ old('day', $unfixeddate->day) == '03' ? 'selected' : '' }}>Wednesday</option>

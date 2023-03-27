@@ -44,7 +44,7 @@
                             <div class="col-12 col-md-5">
                                 <label class="form-control-label" for="month">Month</label>
                                 <select id="month" name="month" class="form-select" required>
-                                    <option value="">-- //--</option>
+                                    <option value="" hidden>-- //--</option>
                                     <option value="01">January</option>
                                     <option value="02">February</option>
                                     <option value="03">March</option>
@@ -63,7 +63,7 @@
                             <div class="col-12 col-md-4">
                                 <label class="form-control-label" for="week">Week</label>
                                 <select class="form-select" id="week" name="week" required>
-                                    <option value="">-- // --</option>
+                                    <option value="" hidden>-- // --</option>
                                     <option value="01">1st Week</option>
                                     <option value="02">2nd Week</option>
                                     <option value="03">3rd Week</option>
@@ -75,7 +75,7 @@
                             <div class="col-12 col-md-3">
                                 <label class="form-control-label" for="day">Week</label>
                                 <select class="form-select" id="day" name="day" required>
-                                    <option value="">-- / --</option>
+                                    <option value="" hidden>-- / --</option>
                                     <option value="01">Monday</option>
                                     <option value="02">Tuesday</option>
                                     <option value="03">Wednesday</option>
@@ -96,7 +96,7 @@
                                     <div class="mb-3 md-6">
                                         <label for="frequency" class="form-label"><b>Frequency : </b><span class="text-danger">*</span></label>
                                         <select name="frequency" id="frequency" class="form-select">
-                                            <option value="">-- Please select --</option>
+                                            <option value="" hidden>-- Please select --</option>
                                             <option value="Monthly"> Monthly</option>
                                             <option value="Quarterly">Quarterly</option>
                                             <option value="SemiAnnually">SemiAnnually</option>
