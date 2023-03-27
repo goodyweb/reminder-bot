@@ -1,3 +1,5 @@
+@extends('templates.master')
+@section('content')
 <style>
 * {box-sizing: border-box}
 
@@ -32,12 +34,9 @@ body, html {
   height: auto;
   border-radius: 15px 50px;
 }
-
 #Home {background-color: #FFD20A;}
 #News {background-color: #FFD20A;}
 </style>
-@extends('templates.master')
-@section('content')
 
 <div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
     <div class="d-flex align-items-center flex-wrap text-nowrap">

@@ -3,7 +3,7 @@
 use App\Http\Controllers\PostGuzzleController;
 use App\Http\Controllers\DiscordNotificationController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DashboardController; 
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\FixedDateController;
 use App\Http\Controllers\UnfixedDateController;
