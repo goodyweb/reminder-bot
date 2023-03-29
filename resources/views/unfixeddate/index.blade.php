@@ -11,15 +11,15 @@ body, html {
 /* Style tab links */
 .tablink {
   background-color: black;
-  border-radius: 15px 50px 5px; 
   color: white;
-  float: left;
+  border-radius: 5px;
+  float: right;
   border: none;
   outline: none;
   cursor: pointer;
-  padding: 12px 14px;
+  padding: 12px 10px;
   font-size: 15px;
-  width: 20%;
+  width: 15%;
 }
 
 .tablink:hover {
@@ -30,13 +30,11 @@ body, html {
 .tabcontent {
   color: black;
   display: none;
-  padding: 15px 20px;
+  padding: 15px;
   height: auto;
-  border-radius: 15px 50px;
 }
-
-#Home {background-color: #FFD20A;}
-#News {background-color: #FFD20A;}
+#Home {border-color: coral;}
+#News {background-color: light;}
 </style>
 
 <div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
@@ -47,12 +45,14 @@ body, html {
     </div>
 </div>
 
-  <button class="tablink" onclick="openPage('Home', this, '#FFD20A')" id="defaultOpen">Card View</button>
-  <button class="tablink" onclick="openPage('News', this, '#FFD20A')">Table View</button> 
-    <div>
-        <h2 class="mb-3 mb-md-0 text-center text-color: yellow background-color: #F9B904;"><b>ALL REMINDERS</b></h2>
-        <hr>
+<button class="tablink" onclick="openPage('News', this, '#FFD20A')">Table View</button> 
+<button class="tablink" onclick="openPage('Home', this, '#FFD20A')" id="defaultOpen">Card View</button>
+
+  <div class="container">
+    <div class="container">
+        <h2 class="mb-1 mb-md-0 text-left text-color: yellow background-color: #FFD20A;"><b>ALL REMINDERS</b></h2>
       </div>
+    </div>
 
 <div id="Home" class="tabcontent">
 <div class="container">
@@ -60,7 +60,7 @@ body, html {
           <div class="row">
               @foreach ($unfixeddate as $index => $val)
               <div class="col-xl-4 mt-4 mb-4 mb-xl-0">
-                  <div class="card shadow" style="border-radius: 15px 50px 5px">
+                  <div class="card shadow">
                       <div class="card-body card-body-post"><hr>
                         <h2 class="card-title"><b>{{ $val->details }}</b></h2>             
                         <p><small>Written by Goody Web | {{ $val->created_at }}</small></p>
@@ -97,7 +97,7 @@ body, html {
 </div>
 
 <div id="News" class="tabcontent">
-    <div class="card" style="border-radius: 15px 50px 5px">
+    <div class="card">
         <div class="card-body">
             @if ($message = session('success'))
                 <div class="alert alert-success">
