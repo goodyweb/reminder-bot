@@ -39,18 +39,22 @@
     <nav class="nav-portal">
       <ul>
         @auth()
-          <li>
-            <a href="{{ route('dashboard') }}" style="color:black; text-decoration:none; font-family:Cursive; font-size: 20px;">
-              <strong>Return to Portal {{ auth()->user()->getName() }}!</strong>
+          <li class="btn btn-dark">
+            <a class="col- auto" href="{{ route('dashboard') }}" style="color:#FFD20A; text-decoration:none; font-size: 18px;">
+              <strong>return to portal ...</strong>
             </a>
           </li>
         @endauth
         @guest()
-        <div class="row input-group-newsletter">       
-                            <div class="col- auto"><button class="btn btn-primary" id="submitButton" type="submit"> <a style="text-decoration:none" href="{{ route('login') }}">Log in</button> </div>
-                                <br>
-                            <div class="col- auto"><button class="btn btn-primary" id="submitButton" type="submit"> <a style="text-decoration:none" href="{{ route('register') }}">Register</button> </div>
+            <div class="row input-group-newsletter">       
+                <div class="col- auto">
+                    <button class="btn btn-primary" id="submitButton" type="submit"> <a style="text-decoration:none" href="{{ route('login') }}">Log in</button> 
+                </div><br>
+
+                <div class="col- auto">
+                    <button class="btn btn-primary" id="submitButton" type="submit"> <a style="text-decoration:none" href="{{ route('register') }}">Register</button> 
                 </div>
+            </div>
         @endguest
       
     </nav>
