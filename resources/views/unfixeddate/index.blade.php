@@ -17,9 +17,9 @@ body, html {
   border: none;
   outline: none;
   cursor: pointer;
-  padding: 12px 10px;
-  font-size: 15px;
-  width: 15%;
+  padding: 5px 5px;
+  font-size: 14px;
+  width: 10%;
 }
 
 .tablink:hover {
@@ -28,18 +28,31 @@ body, html {
 
 /* Style the tab content (and add height:100% for full page content) */
 .tabcontent {
+  border-radius: 5px;
   color: black;
+  border-style: solid;
+  border-color: lightgray;
+  border-width: 1px;
   display: none;
-  padding: 15px;
+  padding: 2px;
   height: auto;
 }
-#Home {border-color: coral;}
+
+@media all and (max-width: 1000px) {
+  .tablink {
+    padding: 2px 2px;
+    font-size: 10px;
+    width: 15%;
+  }
+}
+
+#Home {background-color: light;}
 #News {background-color: light;}
 </style>
 
 <div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
     <div class="d-flex align-items-center flex-wrap text-nowrap">
-        <a href="{{route('unfixeddate.create')}}" class="btn btn-dark btn-icon-text mb-2 mb-md-0" style="border-radius: 15px 50px 30px 5px" >
+        <a href="{{route('unfixeddate.create')}}" class="btn btn-dark btn-icon-text mb-2 mb-md-0">
           <i data-feather="plus"></i> Add New Reminders
         </a>
     </div>
@@ -50,7 +63,7 @@ body, html {
 
   <div class="container">
     <div class="container">
-        <h2 class="mb-1 mb-md-0 text-left text-color: yellow background-color: #FFD20A;"><b>ALL REMINDERS</b></h2>
+        <h2 class="mb-1 mb-md-1 text-left text-color: yellow background-color: #FFD20A;"><b>ALL REMINDERS</b></h2>
       </div>
     </div>
 
@@ -68,14 +81,14 @@ body, html {
                         <hr>
                         <div class="button-group row">
                           <div class="col-8">
-                            <a href="{{route('unfixeddate.show', $val->id)}}" class="btn btn-info btn-sm"><i data-feather="eye"></i>View</a>            
-                            <a href="{{route('unfixeddate.edit', $val->id)}}" class="btn btn-warning btn-sm"><i data-feather="link"></i>Edit</a>
+                            <a href="{{route('unfixeddate.show', $val->id)}}" class="btn btn-outline-info btn-sm"><i data-feather="eye"></i>View</a>            
+                            <a href="{{route('unfixeddate.edit', $val->id)}}" class="btn btn-outline-warning btn-sm"><i data-feather="link"></i>Edit</a>
                           </div>
                             <div class="col-4 text-right">
                                 <form action="{{ route('unfixeddate.destroy',$val->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="button" class="btn btn-danger btn-sm" onclick="confirm('Are you sure you want to dissolve the {{ $val->details }} class?') ? this.parentElement.submit() : ''"><i data-feather="trash"></i> Delete</button>
+                                    <button type="button" class="btn btn-outline-danger btn-sm" onclick="confirm('Are you sure you want to dissolve the {{ $val->details }} class?') ? this.parentElement.submit() : ''"><i data-feather="trash"></i> Delete</button>
                                 </form>
                             </div>
                         </div>
@@ -128,13 +141,13 @@ body, html {
                             <td>{{$val->month}}</td>
                             <td>{{$val->week}}</td>
                             <td>{{$val->day}}</td>
-                            <td>
+                            <td class="text-center">
                                 <form action="{{ route('unfixeddate.destroy',$val->id) }}" method="POST">
                                     {{ csrf_field()  }}
                                     @method('DELETE')
-                                    <a class="btn btn-sm btn-success" href="{{route('unfixeddate.show', $val->id)}}"><i data-feather="eye"></i> Show</a>
-                                    <a class="btn btn-sm btn-warning" href="{{route('unfixeddate.edit', $val->id)}}"><i data-feather="link"></i> Edit</a>
-                                    <button type="button" class="btn btn-danger btn-sm" onclick="confirm('Are you sure you want to dissolve the {{ $val->details }} reminder?') ? this.parentElement.submit() : ''"><i data-feather="trash"></i> Delete</button>
+                                    <a class="btn btn-sm btn-outline-success" href="{{route('unfixeddate.show', $val->id)}}"><i data-feather="eye"></i> Show</a>
+                                    <a class="btn btn-sm btn-outline-warning" href="{{route('unfixeddate.edit', $val->id)}}"><i data-feather="link"></i> Edit</a>
+                                    <button type="button" class="btn btn-outline-danger btn-sm" onclick="confirm('Are you sure you want to dissolve the {{ $val->details }} reminder?') ? this.parentElement.submit() : ''"><i data-feather="trash"></i> Delete</button>
                                 </form>
                             </td>
                         </tr>

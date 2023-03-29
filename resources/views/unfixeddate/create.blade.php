@@ -1,15 +1,14 @@
 @extends('templates.master')
-
 @section('content')
 
-<div class="card" style="border-radius: 15px 50px 30px; background-color: #FFD20A">
+<div class="card">
 <div class="card-body">
     <div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
         <div>
             <h4 class="mb-3 mb-md-0 text-muted" >ADD NEW REMINDER</h4> 
         </div>
         <div class="d-flex align-items-center flex-wrap text-nowrap">
-            <a href="{{route('unfixeddate.index')}}" class="btn btn-light btn-icon-text mb-2 mb-md-0" style="border-radius: 15px 50px">
+            <a href="{{route('unfixeddate.index')}}" class="btn btn-info btn-icon-text mb-2 mb-md-0">
                 All Reminders
             </a>
         </div>
@@ -25,7 +24,7 @@
         </div>
     @endif
 
-        <div class="card shadow-lg p-3 mb-3 mb-md-0" style="border-radius: 15px 50px 30px">
+        <div class="card mb-3 mb-md-0" style="border-radius: 15px">
             <div class="card-body">
                 <form action="{{ route('unfixeddate.store') }}" method="POST" enctype="multipart/form-data">
                 {{ csrf_field() }}

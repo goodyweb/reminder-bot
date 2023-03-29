@@ -11,15 +11,15 @@ body, html {
 /* Style tab links */
 .tablink {
   background-color: black;
- 
   color: white;
+  border-radius: 5px;
   float: right;
   border: none;
   outline: none;
   cursor: pointer;
-  padding: 12px 10px;
-  font-size: 15px;
-  width: 15%;
+  padding: 5px 5px;
+  font-size: 14px;
+  width: 10%;
 }
 
 .tablink:hover {
@@ -28,29 +28,42 @@ body, html {
 
 /* Style the tab content (and add height:100% for full page content) */
 .tabcontent {
+  border-radius: 5px;
   color: black;
+  border-style: solid;
+  border-color: lightgray;
+  border-width: 1px;
   display: none;
-  padding: 15px 20px;
+  padding: 12px 15px;
   height: auto;
 }
+
+@media all and (max-width: 1000px) {
+  .tablink {
+    padding: 2px 2px;
+    font-size: 10px;
+    width: 15%;
+  }
+}
+
 #Home {background-color: light;}
 #News {background-color: light;}
 </style>
 
 <div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
     <div class="d-flex align-items-center flex-wrap text-nowrap">
-        <a href="{{route('fixeddates.create')}}" class="btn btn-dark btn-icon-text mb-2 mb-md-0" style="border-radius: 15px 50px 30px 5px" >
+        <a href="{{route('fixeddates.create')}}" class="btn btn-dark btn-icon-text mb-2 mb-md-0" >
           <i data-feather="plus"></i> Add New Reminders
         </a>
     </div>
 </div>
 
-  <button class="tablink" onclick="openPage('Home', this, '#FFD20A')" id="defaultOpen">Card View</button>
   <button class="tablink" onclick="openPage('News', this, '#FFD20A')">Table View</button> 
+  <button class="tablink" onclick="openPage('Home', this, '#FFD20A')" id="defaultOpen">Card View</button>
 
   <div class="container">
     <div class="container">
-        <h2 class="mb-1 mb-md-0 text-left text-color: yellow background-color: #FFD20A;"><b>ALL REMINDERS</b></h2>
+        <h2 class="mb-1 mb-md-1 text-left text-color: yellow background-color: #FFD20A;"><b>ALL REMINDERS</b></h2>
       </div>
     </div>
 
@@ -59,23 +72,23 @@ body, html {
         @if(count($fixeddate) > 0)
           <div class="row">
               @foreach ($fixeddate as $index => $val)
-              <div class="col-xl-4 mt-4 mb-4 mb-xl-0">
+              <div class="col-xl-4 mt-4 mb-2 mb-xl-0">
                   <div class="card shadow" >
                       <!--<img class="card-img-top card-img-top-post" src="/img/{{ $val->image }}">-->
                       <div class="card-body card-body-post"><hr>
                         <h2 class="card-title"><b>{{ $val->details }}</b></h2>             
-                        <p><small>Written by Goody Web | {{ $val->updated_at }}</small></p>
+                        <p><small>Written by Goody Web | {{ $val->updated_at }}</small></p><hr>
 
                         <div class="button-group row">
                           <div class="col-8">
-                            <a href="{{route('fixeddates.show', $val->id)}}" class="btn btn-info btn-sm"><i data-feather="eye"></i>View</a>            
-                            <a href="{{route('fixeddates.edit', $val->id)}}" class="btn btn-warning btn-sm"><i data-feather="link"></i>Edit</a>
+                            <a href="{{route('fixeddates.show', $val->id)}}" class="btn btn-outline-info btn-sm"><i data-feather="eye"></i>View</a>            
+                            <a href="{{route('fixeddates.edit', $val->id)}}" class="btn btn-outline-warning btn-sm"><i data-feather="link"></i>Edit</a>
                           </div>
                             <div class="col-4 text-right">
                                 <form action="{{ route('fixeddates.destroy',$val->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="button" class="btn btn-danger btn-sm" onclick="confirm('Are you sure you want to dissolve the {{ $val->details }} class?') ? this.parentElement.submit() : ''"><i data-feather="trash"></i> Delete</button>
+                                    <button type="button" class="btn btn-outline-danger btn-sm" onclick="confirm('Are you sure you want to dissolve the {{ $val->details }} class?') ? this.parentElement.submit() : ''"><i data-feather="trash"></i> Delete</button>
                                 </form>
                             </div>
                         </div>
@@ -126,13 +139,13 @@ body, html {
                             <td>{{$val->frequency}}</td>
                             <td>{{$val->startMonth}}/{{$val->startDay}}/<?php echo date("Y"); ?></td>
                             <td>{{$val->endMonth}}/{{$val->endDay}}/{{$val->year}}</td>
-                            <td>
+                            <td class="text-center">
                                 <form action="{{ route('fixeddates.destroy',$val->id) }}" method="POST">
                                     {{ csrf_field()  }}
                                     @method('DELETE')
-                                    <a class="btn btn-info" href="{{route('fixeddates.show', $val->id)}}"><i data-feather="eye"></i> Show</a>
-                                    <a class="btn btn-warning" href="{{route('fixeddates.edit', $val->id)}}"><i data-feather="link"></i> Edit</a>
-                                    <button type="button" class="btn btn-danger btn-sm" onclick="confirm('Are you sure you want to dissolve the {{ $val->details }} reminder?') ? this.parentElement.submit() : ''"><i data-feather="trash"></i> Delete</button>
+                                    <a class="btn btn-outline-info" href="{{route('fixeddates.show', $val->id)}}"><i data-feather="eye"></i> Show</a>
+                                    <a class="btn btn-outline-warning" href="{{route('fixeddates.edit', $val->id)}}"><i data-feather="link"></i> Edit</a>
+                                    <button type="button" class="btn btn-outline-danger btn-sm" onclick="confirm('Are you sure you want to dissolve the {{ $val->details }} reminder?') ? this.parentElement.submit() : ''"><i data-feather="trash"></i> Delete</button>
                                 </form>
                             </td>
                         </tr>
