@@ -28,8 +28,8 @@
     </div>
     <!-- partial -->
 
-    <div class="page-wrapper bg-warning">
-        <div class="page-content bg-light">
+    <div class="page-wrapper bg-dark">
+        <div class="page-content bg-warning">
 
             @yield('content')
 
