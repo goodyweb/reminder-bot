@@ -34,7 +34,7 @@ body, html {
   border-color: lightgray;
   border-width: 1px;
   display: none;
-  padding: 12px 15px;
+  padding: 5px 5px;
   height: auto;
 }
 
@@ -52,7 +52,7 @@ body, html {
 
 <div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
     <div class="d-flex align-items-center flex-wrap text-nowrap">
-        <a href="{{route('fixeddates.create')}}" class="btn btn-dark btn-icon-text mb-2 mb-md-0" >
+        <a href="{{route('fixeddates.create')}}" class="btn btn-dark btn-icon-text mb-2 mb-md-0 text-warning" >
           <i data-feather="plus"></i> Add New Reminders
         </a>
     </div>
@@ -72,7 +72,7 @@ body, html {
         @if(count($fixeddate) > 0)
           <div class="row">
               @foreach ($fixeddate as $index => $val)
-              <div class="col-xl-4 mt-4 mb-2 mb-xl-0">
+              <div class="col-xl-4 mt-3 mb-2 mb-xl-0">
                   <div class="card shadow" >
                       <!--<img class="card-img-top card-img-top-post" src="/img/{{ $val->image }}">-->
                       <div class="card-body card-body-post"><hr>

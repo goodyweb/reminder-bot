@@ -2,16 +2,17 @@
     <div class="container">
         <div class="navbar-content">
             <a href="#" class="navbar-brand" style="color: black">
-                GOODY<span><b>Reminder</b></span>
+                GOODY<span><b>Minder</b></span>
             </a>
-            <form class="search-form">
+            <!--
+            <form class="search-form" >
                 <div class="input-group">
                     <div class="input-group-text">
                         <i data-feather="search"></i>
                     </div>
                     <input type="text" class="form-control" id="navbarForm" placeholder="Search here...">
                 </div>
-            </form>
+            </form> -->
             <ul class="navbar-nav">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

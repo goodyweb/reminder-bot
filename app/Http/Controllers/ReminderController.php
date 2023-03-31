@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\FixedDate;
-use App\Models\UnfixedDate;
+use App\Models\Fixeddate;
+use App\Models\Unfixeddate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Carbon\Carbon;

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use Carbon\carbon;
-use App\Models\UnfixedDate;
+use App\Models\Unfixeddate;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -58,10 +58,13 @@ class UnfixedDateController extends Controller
             $filename = 'no-img.png';
         }*/
        
+        $userID = auth()->user()->id;
 
         $unfixeddate = new Unfixeddate();
         $unfixeddate->details = $request->input('details');
+        $unfixeddate->user_id = $userID;
         $unfixeddate->webhook = $request->input('webhook');
+        $unfixeddate->year = Carbon::now()->year;
         $unfixeddate->month = $request->input('month');
         $unfixeddate->week = $request->input('week');
         $unfixeddate->day = $request->input('day');

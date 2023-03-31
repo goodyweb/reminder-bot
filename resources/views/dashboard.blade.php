@@ -97,7 +97,7 @@
                         <div class="bg-info card-header border-0">
                             <div class="row align-items-center">
                                 <div class="col">
-                                    <h3 class="mb-0">Fix Date Events</h3>
+                                <h6 class="mb-3 mb-md-0 text-dark" ><strong>FIXED DATE</strong> EVENTS</h6> 
                                 </div>
                                 <div class="col-12 col-md-2">
                                     <a href="{{route('fixeddates.index')}}" class="btn btn-sm btn-warning align-items-right">Manage all</a>
@@ -139,7 +139,7 @@
                 <div class="bg-info card-header border-0">
                             <div class="row align-items-center">
                                 <div class="col">
-                                    <h3 class="mb-0">Unfix Date Events</h3>
+                                <h6 class="mb-3 mb-md-0 text-dark" ><strong>UNFIXED DATE</strong> EVENTS</h6> 
                                 </div>
                                 <div class="col-12 col-md-3">
                                     <a href="{{route('unfixeddate.index')}}" class="btn btn-sm btn-warning align-items-right">Manage all</a>

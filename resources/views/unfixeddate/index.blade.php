@@ -34,7 +34,7 @@ body, html {
   border-color: lightgray;
   border-width: 1px;
   display: none;
-  padding: 2px;
+  padding: 5px 5px;
   height: auto;
 }
 
@@ -52,7 +52,7 @@ body, html {
 
 <div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
     <div class="d-flex align-items-center flex-wrap text-nowrap">
-        <a href="{{route('unfixeddate.create')}}" class="btn btn-dark btn-icon-text mb-2 mb-md-0">
+        <a href="{{route('unfixeddate.create')}}" class="btn btn-dark btn-icon-text mb-2 mb-md-0 text-warning">
           <i data-feather="plus"></i> Add New Reminders
         </a>
     </div>
@@ -72,7 +72,7 @@ body, html {
         @if(count($unfixeddate) > 0)
           <div class="row">
               @foreach ($unfixeddate as $index => $val)
-              <div class="col-xl-4 mt-4 mb-4 mb-xl-0">
+              <div class="col-xl-4 mt-3 mb-2 mb-xl-0">
                   <div class="card shadow">
                       <div class="card-body card-body-post"><hr>
                         <h2 class="card-title"><b>{{ $val->details }}</b></h2>             
@@ -138,9 +138,9 @@ body, html {
                             <td>{{$val->details}}</td>
                             <!--<td>{{$val->webhook}}</td>-->
                             <td>{{$val->frequency}}</td>
-                            <td>{{$val->month}}</td>
-                            <td>{{$val->week}}</td>
-                            <td>{{$val->day}}</td>
+                            <td>{{ $val->getmonth() }}</td>
+                            <td>{{$val->getweek()}}</td>
+                            <td>{{$val->getday()}}</td>
                             <td class="text-center">
                                 <form action="{{ route('unfixeddate.destroy',$val->id) }}" method="POST">
                                     {{ csrf_field()  }}

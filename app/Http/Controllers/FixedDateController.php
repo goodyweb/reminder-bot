@@ -51,9 +51,11 @@ class FixedDateController extends Controller
             
         ]);
 
-       
+        $userID = auth()->user()->id;
+        
 
         $fixeddate = new Fixeddate();
+        $fixeddate->user_id = $userID;
         $fixeddate->details = $request->input('details');
         $fixeddate->webhook = $request->input('webhook');
         $fixeddate->startMonth = $request->input('startMonth');
