@@ -50,19 +50,41 @@ body, html {
 #News {background-color: light;}
 </style>
 
+
 <div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
     <div class="d-flex align-items-center flex-wrap text-nowrap">
-        <a href="{{route('fixeddates.create')}}" class="btn btn-dark btn-icon-text mb-2 mb-md-0 text-warning" >
+        <a href="{{route('fixeddates.create')}}" class="btn btn-dark btn-icon-text mb-0 mb-md-0 text-warning" >
           <i data-feather="plus"></i> Add New Reminders
         </a>
     </div>
-</div>
+  @if ($message = session('success'))
+    <div class="col col-lg-4">
+        <div class="alert alert-success alert-dismissible d-flex align-items-center fade show">
+          <i class="bi-check-circle-fill"></i>
+            <strong class="mx-2">Success!</strong> {{ $message }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div> 
+    </div>
+  @endif
 
+  @if(count($fixeddate) > 0 || $search != null)
+    <div class="col col-lg-3">
+          <form action="/fixeddates?" method="get" class="search-form" >
+              <div class="input-group input-group-sm pt-0">
+                    <input name="search" class="form-control" placeholder="Search here..." type="text" >
+                    <div class="input-group-prepend">
+                      <button class="btn btn-dark" type="submit"><i data-feather="search"></i></button>
+                  </div>
+              </div>
+          </form>
+      </div>
+  @endif
+</div>
   <button class="tablink" onclick="openPage('News', this, '#FFD20A')">Table View</button> 
   <button class="tablink" onclick="openPage('Home', this, '#FFD20A')" id="defaultOpen">Card View</button>
 
-  <div class="container">
     <div class="container">
+      <div class="container">
         <h2 class="mb-1 mb-md-1 text-left text-color: yellow background-color: #FFD20A;"><b>ALL REMINDERS</b></h2>
       </div>
     </div>
@@ -76,8 +98,9 @@ body, html {
                   <div class="card shadow" >
                       <!--<img class="card-img-top card-img-top-post" src="/img/{{ $val->image }}">-->
                       <div class="card-body card-body-post"><hr>
-                        <h2 class="card-title"><b>{{ $val->details }}</b></h2>             
-                        <p><small>Written by Goody Web | {{ $val->updated_at }}</small></p><hr>
+                        <h2 class="card-title"><b>{{ $val->details }}</b></h2>   
+                        <h6 class="text-muted">Due: <strong>{{$val->getendmonth()}} {{$val->endDay}}, {{ $val->year }}</strong> </h6>          
+                        <p><small>Written by {{$val->user->name}} | {{ $val->updated_at }}</small></p><hr>
 
                         <div class="button-group row">
                           <div class="col-8">
@@ -112,11 +135,6 @@ body, html {
 <div id="News" class="tabcontent">
     <div class="card">
         <div class="card-body">
-            @if ($message = session('success'))
-                <div class="alert alert-success">
-                    <p>{{ $message }}</p>
-                </div>
-            @endif
             <div class="table-responsive">
                 <table class="table table-sm table-hover mb-0">
                     <thead>

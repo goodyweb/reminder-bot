@@ -8,6 +8,58 @@ use Illuminate\Http\Request;
 
 class UnfixedDateController extends Controller
 {
+
+    private function getUnfixeddate($search)
+    {
+        
+        
+        if( $search != null ) {
+            if($search == "January" || $search == "january" || $search == "Jan" || $search == "jan" || $search == "JAN" || $search == "JANUARY"){
+                $search = 1;
+            }elseif($search == "February" || $search == "february" || $search == "Feb" || $search == "feb" || $search == "FEB" || $search == "FEBRUARY"){
+                $search = 2;
+            }elseif($search == "March" || $search == "march" || $search == "Mar" || $search == "mar" || $search == "MAR" || $search == "MARCH"){
+                $search = 3;
+            }elseif($search == "April" || $search == "april" || $search == "Apr" || $search == "apr" || $search == "APR" || $search == "APRIL"){
+                $search = 4;
+            }elseif($search == "May" || $search == "may" || $search == "MAY"){
+                $search = 5;
+            }elseif($search == "June" || $search == "june" || $search == "Jun" || $search == "jun" || $search == "JUN" || $search == "JUNE"){
+                $search = 6;
+            }elseif($search == "July" || $search == "july" || $search == "Jul" || $search == "jul" || $search == "JUL" || $search == "JULY"){
+                $search = 7;
+            }elseif($search == "August" || $search == "august" || $search == "Aug" || $search == "aug" || $search == "AUG" || $search == "AUGUST"){
+                $search = 8;
+            }elseif($search == "September" || $search == "september" || $search == "Sep" || $search == "sep" || $search == "SEP" || $search == "SEPTEMBER"){
+                $search = 9;
+            }elseif($search == "October" || $search == "october" || $search == "Oct" || $search == "oct" || $search == "OCT" || $search == "OCTOBER"){
+                $search = 10;
+            }elseif($search == "November" || $search == "november" || $search == "Nov" || $search == "nov" || $search == "NOV" || $search == "NOVEMBER"){
+                $search = 11;
+            }elseif($search == "December" || $search == "december" || $search == "Dec" || $search == "dec" || $search == "DEC" || $search == "DECEMBER"){
+                $search = 12;
+            }
+
+            $unfixeddate = Unfixeddate::join('users', 'unfixeddates.user_id', '=', 'users.id')
+                            ->where(function($q) use ($search) {
+                            $q->Where('details', 'like', '%'.$search.'%')
+                            ->orWhere('name', 'like', '%'.$search.'%')
+                            ->orWhere('month', 'like', $search)
+                            ->orWhere('week', 'like', $search)
+                            ->orWhere('day', 'like', $search)
+                            ->orWhere('year', 'like', $search)
+                            ->orWhere('frequency', 'like', '%'.$search.'%');
+                        })
+                        ->orderBy('details', 'asc')
+                        ->paginate(10);
+            $unfixeddate->appends(['search' => $search]);
+        } else {
+            $unfixeddate = Unfixeddate::orderBy('details', 'asc')
+                        ->paginate(10);
+        }
+
+        return $unfixeddate;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,9 +67,18 @@ class UnfixedDateController extends Controller
      */
     public function index()
     {
-        $unfixeddate = Unfixeddate::all();
-        $users = User::all();
-        return view('unfixeddate.index', compact('unfixeddate', 'users'));
+        if ( request()->has('search') )
+        $search = request('search');
+    else
+        $search = null;
+
+    $unfixeddate = $this->getUnfixeddate($search);
+
+    $users = User::all();
+    return view('unfixeddate.index')
+            ->with('unfixeddate', $unfixeddate)
+            ->with('users', $users)
+            ->with('search', $search);
     }
 
 
@@ -84,7 +145,7 @@ class UnfixedDateController extends Controller
     public function show($id)
     {
         $carbonTime = Carbon::now()->toDateTimeString();
-        $results = UnFixeddate::find($id);
+        $results = Unfixeddate::find($id);
         return view('unfixeddate.show', compact('results', 'carbonTime'));
     }
 
