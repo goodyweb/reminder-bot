@@ -70,7 +70,15 @@ body, html {
     @if(count($unfixeddate) > 0 || $search != null)
     <div class="col col-lg-3">
         <form action="/unfixeddate?" method="get" class="search-form" >
-            <div class="input-group input-group-sm pt-0">                
+            <div class="input-group input-group-sm pt-0"> 
+            @if($search != null)
+              <div class="input-group-prepend">
+                    <a href="/fixeddates" class="btn btn-outline-secondary">
+                      {{ str_limit($search, 20) }}
+                        <span class="btn-inner--icon"><i data-feather="x-circle"></i></span>
+                    </a>
+                </div>
+              @endif               
                   <input name="search" class="form-control" placeholder="Search here..." type="text" >
                   <div class="input-group-prepend">
                     <button class="btn btn-dark" type="submit"><i data-feather="search"></i></button>
