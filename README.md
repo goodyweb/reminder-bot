@@ -56,7 +56,7 @@ GOODYMinder is a reminder bot system, designed by Goody Web Solutions Inc. first
 3. Forgot your password
 ![forgot](https://user-images.githubusercontent.com/125423452/229721182-1ede2aae-1962-416e-9ffc-3451c15ec6df.png)
 4. Dashboard <br>
-After logging in for the first time, you can see on the dashboard the number of users, all reminders, and the upcoming events.
+After logging in for the first time, you can see on the dashboard the number of users, fixed date upcoming events, and unfixed date upcoming events.
 ![dashboard](https://user-images.githubusercontent.com/125423452/229721723-0716ded5-ba0b-4e09-8b7e-52b56b286d4e.png)
 5. Fixed Date <br>
     - Card View
