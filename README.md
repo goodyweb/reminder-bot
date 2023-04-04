@@ -73,7 +73,7 @@ After logging in for the first time, you can see on the dashboard the number of 
     - Table View
     ![tableviewunfixed](https://user-images.githubusercontent.com/125423452/229722774-5b63a1e9-4c60-4c9d-a894-64f21b9f2a48.png)
 7. View, Edit, and Delete Reminder <br>
-If you go to Reminders. Here you can view all reminders. Reminders can be viewed, edited, deleted from here. <br>
+If you go to Fixed Date and Unfixed Date Reminders. Here you can view all the reminders. Reminders can be viewed, edited, deleted from there. <br>
 8. Add New Reminder
     - Fixed Date Reminder
     ![addfixed](https://user-images.githubusercontent.com/125423452/229723544-b41d912d-701f-4af1-aa3c-e7f29913157d.png)
@@ -81,7 +81,7 @@ If you go to Reminders. Here you can view all reminders. Reminders can be viewed
     ![addunfixed](https://user-images.githubusercontent.com/125423452/229723699-924c0b15-a0e7-4db8-b730-099f83c0ec20.png)
 9. php artisan schedule:work <br>
 Run <code>php artisan schedule:work</code>after adding a reminder to allow it to execute and sends data to the specified webhook.
-
+<br>
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
