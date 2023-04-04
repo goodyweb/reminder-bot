@@ -1,4 +1,4 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<p align="center"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
 <a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
@@ -10,16 +10,16 @@
 # Documentation
 
 # Table of Contents
-1. [BOTReminder](#BOTReminder)
+1. [GOODYMinder](#GOODYMinder)
 2. [Pre-requisite](#pre-requisite)
 3. [Installation](#Installation)
     1. [Clone the repository](#clone)
     2. [Database Configuration](#database-configuration)
 4. [Steps to follow](#steps-to-follow)
 
-## BOTReminder<a name="BOTReminder"></a>
+## GOODYMinder<a name="GOODYMinder"></a>
 
-A reminder bot system, designed by Goody Web Solutions Inc. first student interns from Central Mindanao University, was built using Laravel 9 and bootstrap.
+GOODYMinder is a reminder bot system, designed by Goody Web Solutions Inc. first student interns from Central Mindanao University, was built using Laravel 9 and bootstrap.
 
 ## Pre-requisite<a name="pre-requisite"></a>
 - XAMPP
@@ -57,9 +57,10 @@ A reminder bot system, designed by Goody Web Solutions Inc. first student intern
 
 ## Steps to follow<a name="steps-to-follow"></a>
 1. Register
-2. Login
-3. Forgot your password
-4. Dashboard <br>
+
+3. Login
+4. Forgot your password
+5. Dashboard <br>
 After logging in for the first time, you can see on the dashboard the number of users, all reminders, and the upcoming events.
 5. View, Edit, and Delete Reminder <br>
 If you go to Reminders. Here you can view all reminders. Reminders can be viewed, edited, deleted from here.
