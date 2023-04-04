@@ -62,19 +62,20 @@ GOODYMinder is a reminder bot system, designed by Goody Web Solutions Inc. first
 4. Forgot your password
 5. Dashboard <br>
 After logging in for the first time, you can see on the dashboard the number of users, all reminders, and the upcoming events.
-5. View, Edit, and Delete Reminder <br>
-If you go to Reminders. Here you can view all reminders. Reminders can be viewed, edited, deleted from here.
-6. Reminders <br>
+6. Fixed Date <br>
     - Card View
-
     - Table View
-
-7. Add New Reminder
+7.  Unfixed Date <br>
+    - Card View
+    - Table View
+8. View, Edit, and Delete Reminder <br>
+If you go to Reminders. Here you can view all reminders. Reminders can be viewed, edited, deleted from here.
+9. Add New Reminder
     - Multiple Reminder
 
     - Countdown Reminder
 
-8. php artisan schedule:work <br>
+10. php artisan schedule:work <br>
 Run <code>php artisan schedule:work</code>after adding a reminder to allow it to execute and sends data to the specified webhook.
 
 ## About Laravel
