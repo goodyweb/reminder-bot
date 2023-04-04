@@ -1,4 +1,4 @@
-https://github.com/goodyweb/reminder-bot/issues/4#issue-1653329064
+![landingpage](https://user-images.githubusercontent.com/125423452/229718350-ff299536-31bf-494b-b63d-1a4b968c4499.png)
 
 <p align="center">
 <a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
