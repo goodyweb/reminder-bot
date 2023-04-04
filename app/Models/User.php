@@ -51,7 +51,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    public function reminder() {
-        return $this->hasMany('App\Models\Reminders', 'user_id', 'id');
+    public function fixeddate() {
+        return $this->hasMany('App\Models\fixeddate', 'user_id', 'id');
+    }
+    public function unfixeddate() {
+        return $this->hasMany('App\Models\Unfixeddate', 'user_id', 'id');
     }
 }

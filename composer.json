@@ -9,6 +9,7 @@
         "guzzlehttp/guzzle": "^7.5",
         "laravel-notification-channels/discord": "^1.4",
         "laravel/framework": "^9.19",
+        "laravel/helpers": "^1.6",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
         "nesbot/carbon": "^2.66",

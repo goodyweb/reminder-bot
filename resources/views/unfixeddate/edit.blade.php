@@ -5,10 +5,10 @@
         <div class="card-body">
     <div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
         <div>
-            <h4 class="mb-3 mb-md-0 text-muted">EDIT REMINDERS</h4>
+        <h4 class="mb-3 mb-md-0 text-muted" >EDIT <strong>UNFIXED DATE</strong> REMINDER</h4> 
         </div>
         <div class="d-flex align-items-center flex-wrap text-nowrap" >
-            <a href="{{route('unfixeddate.index')}}" class="btn btn-info btn-icon-text mb-2 mb-md-0">
+            <a href="{{route('unfixeddate.index')}}" class="btn btn-warning btn-icon-text mb-2 mb-md-0">
                 All Reminders
             </a>
         </div>
@@ -72,7 +72,7 @@
                                 </div>
 
                                 <div class="col-12 col-md-3">
-                                <label class="form-control-label" for="day">Week</label>
+                                <label class="form-control-label" for="day">Day</label>
                                     <select class="form-select" id="day" name="day" required>
                                         <option value="" hidden>-- / --</option>
                                         <option value="01" {{ old('day', $unfixeddate->day) == '01' ? 'selected' : '' }}>Monday</option>
@@ -98,7 +98,7 @@
                                         <select name="frequency" id="frequency" class="form-select">
                                             <option value="Monthly" {{ old('frequency', $unfixeddate->frequency) == 'Monthly' ? 'selected' : '' }}> Monthly</option>
                                             <option value="Quarterly" {{ old('frequency', $unfixeddate->frequency) == 'Quarterly' ? 'selected' : '' }}>Quarterly</option>
-                                            <option value="SemIAnnually" {{ old('frequency', $unfixeddate->frequency) == 'SemiAnnually' ? 'selected' : '' }}>SemiAnnually</option>
+                                            <option value="SemiAnnually" {{ old('frequency', $unfixeddate->frequency) == 'SemiAnnually' ? 'selected' : '' }}>SemiAnnually</option>
                                             <option value="Annually" {{ old('frequency', $unfixeddate->frequency) == 'Annually' ? 'selected' : '' }}>Annually</option>
                                         </select>
                                     </div>
@@ -106,7 +106,7 @@
                             </div>
                         </div>
                             <div class="mb-3"><br>
-                                <button type="submit" class="btn btn-primary btn-icon-text mb-2 mb-md-0">Save Reminder Data</button>
+                                <button type="submit" class="btn btn-dark btn-icon-text mb-2 mb-md-0 text-warning">Save Reminder Data</button>
                             </div>
                         </div>
                     </div>

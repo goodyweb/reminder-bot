@@ -5,10 +5,10 @@
         <div class="card-body">
     <div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
         <div>
-            <h4 class="mb-3 mb-md-0 text-muted">EDIT REMINDERS</h4>
+        <h4 class="mb-3 mb-md-0 text-muted" >EDIT <strong>FIXED DATE</strong> REMINDER</h4> 
         </div>
         <div class="d-flex align-items-center flex-wrap text-nowrap" >
-            <a href="{{route('fixeddates.index')}}" class="btn btn-info btn-icon-text mb-2 mb-md-0">
+            <a href="{{route('fixeddates.index')}}" class="btn btn-warning btn-icon-text mb-2 mb-md-0">
                 All Reminders
             </a>
         </div>
@@ -194,7 +194,7 @@
                             </div>
                         </div>
                             <div class="mb-3"><br>
-                                <button type="submit" class="btn btn-primary btn-icon-text mb-2 mb-md-0">Save Reminder Data</button>
+                                <button type="submit" class="btn btn-dark btn-icon-text mb-2 mb-md-0 text-warning">Save Reminder Data</button>
                             </div>
                         </div>
                     </div>

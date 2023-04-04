@@ -2,37 +2,47 @@
     <div class="container">
         <div class="navbar-content">
             <a href="#" class="navbar-brand" style="color: black">
-                GOODY<span><b>Reminder</b></span>
+                GOODY<span><b>Minder</b></span>
             </a>
-            <form class="search-form">
+            <!--
+            <form class="search-form" >
                 <div class="input-group">
                     <div class="input-group-text">
                         <i data-feather="search"></i>
                     </div>
                     <input type="text" class="form-control" id="navbarForm" placeholder="Search here...">
                 </div>
-            </form>
+            </form> -->
             <ul class="navbar-nav">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="flag-icon flag-icon-us mt-1" title="us"></i> <span class="ms-1 me-1 d-none d-md-inline-block"></span>
                     </a>
                 </li>
+
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="appsDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i data-feather="link"></i>
+                    <a class="nav-link dropdown-toggle" href="{{url('profile')}}">
+                        <i data-feather="user"></i>
                         <div class="indicator">
                             <div class="circle"></div>
                         </div>
                     </a>
-                    <div class="dropdown-menu p-0" aria-labelledby="appsDropdown">
-                        <div class="row g-0 p-1">
+                </li>
+                <!--<li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="appsDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i data-feather="user"></i>
+                        <div class="indicator">
+                            <div class="circle"></div>
+                        </div>
+                    </a>
+                    <div class="dropdown-menu p-0 align-items-center" aria-labelledby="appsDropdown">
+                        <div class="row g-0 p-0">
                             <div class="col-3 text-center">
                                 <a href="{{url('profile')}}" class="dropdown-item d-flex flex-column align-items-center justify-content-center wd-70 ht-70"><i data-feather="user" class="icon-lg mb-1"></i><p class="tx-12">Edit Profile</p></a>
                             </div>
                         </div>
                     </div>
-                </li>
+                </li>-->
 
                 
                 <li class="nav-item dropdown">

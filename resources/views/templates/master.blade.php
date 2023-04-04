@@ -16,7 +16,7 @@
     <link href="{{asset('css/style.min.css')}}" rel="stylesheet" />
     <!-- end common css -->
     <link href="{{asset('css/card.min.css')}}" rel="stylesheet" />
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet">
     <link href="{{asset('css/style.min.css')}}" rel="stylesheet" />
     <link  type="text/css" href="{{asset('css/dataTables.bootstrap5.min.css')}}" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="{{asset('css/toastr.min.css')}}">

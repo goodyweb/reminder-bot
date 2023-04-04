@@ -92,14 +92,14 @@
 
     <div class="container-fluid mt--7">
         <div class="row mt-5">
-            <div class="col-xl-7 mb-5 mb-xl-0">
+            <div class="col-xl-6 mb-5 mb-xl-0">
                 <div class="card shadow">
                         <div class="bg-info card-header border-0">
                             <div class="row align-items-center">
                                 <div class="col">
-                                    <h3 class="mb-0">Fix Date Events</h3>
+                                <h6 class="mb-3 mb-md-0 text-dark" ><strong>FIXED DATE</strong> EVENTS</h6> 
                                 </div>
-                                <div class="col-12 col-md-2">
+                                <div class="col-12 col-md-3">
                                     <a href="{{route('fixeddates.index')}}" class="btn btn-sm btn-warning align-items-right">Manage all</a>
                                 </div>
                             </div>
@@ -122,7 +122,7 @@
                                         <td>{{++$index}}</td>
                                         <td>{{$val->details}}</td>
                                         <td>{{$val->frequency}}</td>
-                                        <td>{{$val->endMonth}}/{{$val->endDay}}/{{$val->year}}</td>
+                                        <td>{{$val->getendmonth()}} {{$val->endDay}}, {{$val->year}}</td>
                                     </tr>
                                 @endforeach
                                     <tr>
@@ -134,12 +134,12 @@
                 </div>
             </div>
             
-            <div class="col-xl-5 mb-5 mb-xl-0">
+            <div class="col-xl-6 mb-5 mb-xl-0">
                 <div class="card shadow">
                 <div class="bg-info card-header border-0">
                             <div class="row align-items-center">
                                 <div class="col">
-                                    <h3 class="mb-0">Unfix Date Events</h3>
+                                <h6 class="mb-3 mb-md-0 text-dark" ><strong>UNFIXED DATE</strong> EVENTS</h6> 
                                 </div>
                                 <div class="col-12 col-md-3">
                                     <a href="{{route('unfixeddate.index')}}" class="btn btn-sm btn-warning align-items-right">Manage all</a>
@@ -154,6 +154,7 @@
                                         <th scope="pt-4">#</th>
                                         <th scope="pt-4">Unfixed Date Title</th>
                                         <th scope="pt-4">Notify</th>
+                                        <th scope="pt-4">Due Date</th>
                                     </tr>
                                 </thead>
                                 <tbody>                              
@@ -163,6 +164,7 @@
                                         <td>{{++$index}}</td>
                                         <td>{{$val->details}}</td>
                                         <td>{{$val->frequency}}</td>
+                                        <td>{{$val->getday()}} {{$val->getweek()}} of {{$val->getmonth()}}</td>
                                     </tr>
                                 @endforeach
                                     <tr>
