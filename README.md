@@ -50,8 +50,7 @@ GOODYMinder is a reminder bot system, designed by Goody Web Solutions Inc. first
 
 ## Steps to follow<a name="steps-to-follow"></a>
 1. Register
-<p align="center">![register](https://user-images.githubusercontent.com/125423452/229719673-3c21b712-b300-4854-ad19-d000c826c6fe.png)
- width="400" alt="Laravel Logo"></a></p>
+![register](https://user-images.githubusercontent.com/125423452/229719673-3c21b712-b300-4854-ad19-d000c826c6fe.png)
 3. Login
 4. Forgot your password
 5. Dashboard <br>
