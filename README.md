@@ -74,7 +74,7 @@ If you go to Reminders. Here you can view all reminders. Reminders can be viewed
 
     - Countdown Reminder
 
-8. php artisan schedule:work
+8. php artisan schedule:work <br>
 Run <code>php artisan schedule:work</code>after adding a reminder to allow it to execute and sends data to the specified webhook.
 
 ## About Laravel
