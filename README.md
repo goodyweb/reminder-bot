@@ -51,24 +51,31 @@ GOODYMinder is a reminder bot system, designed by Goody Web Solutions Inc. first
 ## Steps to follow<a name="steps-to-follow"></a>
 1. Register
 ![register](https://user-images.githubusercontent.com/125423452/229719673-3c21b712-b300-4854-ad19-d000c826c6fe.png)
-3. Login
-4. Forgot your password
-5. Dashboard <br>
+2. Login
+![login](https://user-images.githubusercontent.com/125423452/229720818-8458ec66-f94c-4fc9-8ebc-1b404a581ea1.png)
+3. Forgot your password
+![forgot](https://user-images.githubusercontent.com/125423452/229721182-1ede2aae-1962-416e-9ffc-3451c15ec6df.png)
+4. Dashboard <br>
 After logging in for the first time, you can see on the dashboard the number of users, all reminders, and the upcoming events.
-6. Fixed Date <br>
+![dashboard](https://user-images.githubusercontent.com/125423452/229721723-0716ded5-ba0b-4e09-8b7e-52b56b286d4e.png)
+5. Fixed Date <br>
     - Card View
+    ![cardviewfixed](https://user-images.githubusercontent.com/125423452/229721977-3c3e121d-4369-470c-8c62-007b24d5e4ac.png) <br>
     - Table View
-7.  Unfixed Date <br>
+    ![tableviewfixed](https://user-images.githubusercontent.com/125423452/229722168-8c621f0e-cd21-41d2-a3db-893e65ff88ef.png)
+6.  Unfixed Date <br>
     - Card View
+    ![cardviewunfixed](https://user-images.githubusercontent.com/125423452/229722317-bd31b03a-0ee6-4f89-ae01-3f6c548d66a8.png)
     - Table View
-8. View, Edit, and Delete Reminder <br>
+    ![tableviewunfixed](https://user-images.githubusercontent.com/125423452/229722774-5b63a1e9-4c60-4c9d-a894-64f21b9f2a48.png)
+7. View, Edit, and Delete Reminder <br>
 If you go to Reminders. Here you can view all reminders. Reminders can be viewed, edited, deleted from here.
-9. Add New Reminder
-    - Multiple Reminder
-
-    - Countdown Reminder
-
-10. php artisan schedule:work <br>
+8. Add New Reminder
+    - Fixed Date Reminder
+    ![addfixed](https://user-images.githubusercontent.com/125423452/229723544-b41d912d-701f-4af1-aa3c-e7f29913157d.png)
+    - Unfixed Date Reminder
+    ![addunfixed](https://user-images.githubusercontent.com/125423452/229723699-924c0b15-a0e7-4db8-b730-099f83c0ec20.png)
+9. php artisan schedule:work <br>
 Run <code>php artisan schedule:work</code>after adding a reminder to allow it to execute and sends data to the specified webhook.
 
 ## About Laravel
