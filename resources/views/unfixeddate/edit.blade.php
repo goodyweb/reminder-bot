@@ -72,7 +72,7 @@
                                 </div>
 
                                 <div class="col-12 col-md-3">
-                                <label class="form-control-label" for="day">Week</label>
+                                <label class="form-control-label" for="day">Day</label>
                                     <select class="form-select" id="day" name="day" required>
                                         <option value="" hidden>-- / --</option>
                                         <option value="01" {{ old('day', $unfixeddate->day) == '01' ? 'selected' : '' }}>Monday</option>
@@ -98,7 +98,7 @@
                                         <select name="frequency" id="frequency" class="form-select">
                                             <option value="Monthly" {{ old('frequency', $unfixeddate->frequency) == 'Monthly' ? 'selected' : '' }}> Monthly</option>
                                             <option value="Quarterly" {{ old('frequency', $unfixeddate->frequency) == 'Quarterly' ? 'selected' : '' }}>Quarterly</option>
-                                            <option value="SemIAnnually" {{ old('frequency', $unfixeddate->frequency) == 'SemiAnnually' ? 'selected' : '' }}>SemiAnnually</option>
+                                            <option value="SemiAnnually" {{ old('frequency', $unfixeddate->frequency) == 'SemiAnnually' ? 'selected' : '' }}>SemiAnnually</option>
                                             <option value="Annually" {{ old('frequency', $unfixeddate->frequency) == 'Annually' ? 'selected' : '' }}>Annually</option>
                                         </select>
                                     </div>

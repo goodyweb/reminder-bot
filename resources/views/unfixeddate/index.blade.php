@@ -73,7 +73,7 @@ body, html {
             <div class="input-group input-group-sm pt-0"> 
             @if($search != null)
               <div class="input-group-prepend">
-                    <a href="/fixeddates" class="btn btn-outline-secondary">
+                    <a href="/unfixeddate" class="btn btn-outline-secondary">
                       {{ str_limit($search, 20) }}
                         <span class="btn-inner--icon"><i data-feather="x-circle"></i></span>
                     </a>
@@ -85,8 +85,7 @@ body, html {
                 </div>
             </div>
         </form>
-    </div>  
-              
+    </div>          
 @endif
 </div>
 

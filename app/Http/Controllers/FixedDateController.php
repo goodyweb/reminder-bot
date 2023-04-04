@@ -48,14 +48,13 @@ class FixedDateController extends Controller
                 $search = 12;
             }
 
-            $fixeddate = Fixeddate::join('users', 'fixeddates.user_id', '=', 'users.id')
-                            ->where(function($q) use ($search) {
+            $fixeddate = Fixeddate::where(function($q) use ($search) {
                             $q->Where('details', 'like', '%'.$search.'%')
-                            ->orWhere('name', 'like', '%'.$search.'%')
-                            ->orWhere('startMonth', 'like', $search)
-                            ->orWhere('startDay', 'like', $search)
+                            //->orWhere('name', 'like', '%'.$search.'%')
+                            //->orWhere('startMonth', 'like', $search)
+                            //->orWhere('startDay', 'like', $search)
                             ->orWhere('endMonth', 'like', $search)
-                            ->orWhere('endDay', 'like', $search)
+                            //->orWhere('endDay', 'like', $search)
                             ->orWhere('year', 'like', $search)
                             ->orWhere('frequency', 'like', '%'.$search.'%');
                         })

@@ -10,10 +10,12 @@ class UnfixedDateController extends Controller
 {
 
     private function getUnfixeddate($search)
-    {
-        
-        
+    {     
+       
         if( $search != null ) {
+
+         
+                        
             if($search == "January" || $search == "january" || $search == "Jan" || $search == "jan" || $search == "JAN" || $search == "JANUARY"){
                 $search = 1;
             }elseif($search == "February" || $search == "february" || $search == "Feb" || $search == "feb" || $search == "FEB" || $search == "FEBRUARY"){
@@ -40,24 +42,29 @@ class UnfixedDateController extends Controller
                 $search = 12;
             }
 
-            $unfixeddate = Unfixeddate::join('users', 'unfixeddates.user_id', '=', 'users.id')
-                            ->where(function($q) use ($search) {
+
+
+           
+            $unfixeddate = Unfixeddate::where(function($q) use ($search) {
                             $q->Where('details', 'like', '%'.$search.'%')
-                            ->orWhere('name', 'like', '%'.$search.'%')
+                            //->orWhere('user_id', 'like', $user->id)
                             ->orWhere('month', 'like', $search)
-                            ->orWhere('week', 'like', $search)
-                            ->orWhere('day', 'like', $search)
                             ->orWhere('year', 'like', $search)
                             ->orWhere('frequency', 'like', '%'.$search.'%');
                         })
-                        ->orderBy('details', 'asc')
+                        ->orderBy('month', 'asc')
                         ->paginate(10);
+                    
             $unfixeddate->appends(['search' => $search]);
+                    
+           
+                    
+                    
         } else {
-            $unfixeddate = Unfixeddate::orderBy('details', 'asc')
+            $unfixeddate = Unfixeddate::orderBy('month', 'asc')
                         ->paginate(10);
         }
-
+        
         return $unfixeddate;
     }
     /**
@@ -155,8 +162,9 @@ class UnfixedDateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Unfixeddate $unfixeddate)
+    public function edit($id)
     {
+        $unfixeddate = Unfixeddate::find($id);
         return view('unfixeddate.edit', compact('unfixeddate'));
     }
 
