@@ -54,6 +54,7 @@ GOODYMinder is a reminder bot system, designed by Goody Web Solutions Inc. first
 - Run command <code>php artisan optimize</code> to creates a compiled file of commonly used classes in other to reduce the amount of files that must be included on each request.
 - Run <code>php artisan serve</code> to start your laravel server.
 - You can now register a new user to use the system.
+- Run <code>php artisan schedule:work</code>after adding a reminder to allow it to execute and sends data to the specified webhook.
 
 ## Steps to follow<a name="steps-to-follow"></a>
 1. Register
