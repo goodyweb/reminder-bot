@@ -1,5 +1,4 @@
-<p align="center">![](public/img/landingpage.png</p>
-![](public/img/landingpage.png
+<p align="center"><img src="public/img/langding.page"></p>
 
 <p align="center">
 <a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
