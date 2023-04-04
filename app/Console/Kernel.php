@@ -34,8 +34,8 @@ class Kernel extends ConsoleKernel
                 $schedule->command('remind:daily2')->dailyAt('7:00');//this is fixed date
                 $schedule->command('remind:unfixedquarterly')->dailyAt('7:00');//this is unfixed date
             }elseif($notif->name == "Monthly"){
-                $schedule->command('remind:daily3')->dailyAt('7:00');//this is fixed date
-                $schedule->command('remind:unfixedmonthly')->dailyAt('7:00');//this is unfixed date
+                $schedule->command('remind:daily3')->dailyAt('18:22');//this is fixed date
+                $schedule->command('remind:unfixedmonthly')->dailyAt('18:22');//this is unfixed date
             }elseif($notif->name == "SemiAnnually"){
                 $schedule->command('remind:daily4')->dailyAt('7:00'); 
                 $schedule->command('remind:unfixedsemiannually')->dailyAt('7:00');//this is unfixed date

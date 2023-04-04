@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use Carbon\carbon;
-use App\Models\UnfixedDate;
+use App\Models\Unfixeddate;
 use App\Models\User;
 use Illuminate\Http\Request;
 
