@@ -10,7 +10,7 @@
     2. [Database Configuration](#database-configuration)
 4. [Steps to follow](#steps-to-follow)
 
-*Hello **Interns**, Greetings from <span style="color:black; background-color:yellow;">GoodyMinder!*</span> 😉 <br>
+*Hello **Interns**, Greetings from <span style="color:yellow;">GoodyMinder!*</span> 😉 <br>
 **Reminder Details** <br>
 **49** days left. <br>
 **Due:** February 14, 2024
