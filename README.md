@@ -10,7 +10,7 @@
     2. [Database Configuration](#database-configuration)
 4. [Steps to follow](#steps-to-follow)
 
-
+> __Note__
 *Hello **Interns**, Greetings from > __GoodyMinder!*__ 😉 <br>
 **Reminder Details** <br>
 **49** days left. <br>
