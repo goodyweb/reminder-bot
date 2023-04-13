@@ -10,6 +10,11 @@
     2. [Database Configuration](#database-configuration)
 4. [Steps to follow](#steps-to-follow)
 
+**Hello *Interns*, Greetings from GoodyMinder!**
+**Reminder Details**
+**49** days left.
+__Due:__ February 14, 2024
+
 ## GOODYMinder<a name="GOODYMinder"></a>
 
 GOODYMinder is a reminder bot system, designed by Goody Web Solutions Inc. first student interns from Central Mindanao University, was built using Laravel 9 and bootstrap.
