@@ -11,11 +11,11 @@
 4. [Steps to follow](#steps-to-follow)
 
 ```diff
-*Hello **Interns**, Greetings from + GoodyMinder!* 😉 <br>
-```
+*Hello **Interns**, Greetings from GoodyMinder!* 😉 <br>
 **Reminder Details** <br>
 **49** days left. <br>
 **Due:** February 14, 2024
+```
 
 ## GOODYMinder<a name="GOODYMinder"></a>
 
