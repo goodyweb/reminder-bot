@@ -10,9 +10,9 @@
     2. [Database Configuration](#database-configuration)
 4. [Steps to follow](#steps-to-follow)
 
-**Hello *Interns*, Greetings from GoodyMinder!**
-**Reminder Details**
-**49** days left.
+**Hello *Interns*, Greetings from GoodyMinder!** <br>
+**Reminder Details** <br>
+**49** days left. <br>
 __Due:__ February 14, 2024
 
 ## GOODYMinder<a name="GOODYMinder"></a>
