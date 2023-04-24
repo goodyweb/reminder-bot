@@ -11,7 +11,7 @@
 4. [Steps to follow](#steps-to-follow)
 
 > __Note__<br>
-*Hello **Interns**, Greetings from GoodyMinder!* 😉 <br>
+*Hello **Interns**, Greetings from GoodyMinder*😉!  <br>
 **Reminder Details** <br>
 **49** days left. <br>
 **Due:** February 14, 2024
