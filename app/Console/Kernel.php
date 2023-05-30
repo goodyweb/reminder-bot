@@ -21,9 +21,6 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-
-        
-
        $notify = Notify::All();
        foreach($notify as $notif){
         
@@ -39,15 +36,9 @@ class Kernel extends ConsoleKernel
             }elseif($notif->name == "SemiAnnually"){
                 $schedule->command('remind:daily4')->dailyAt('7:30'); 
                 $schedule->command('remind:unfixedsemiannually')->dailyAt('7:30');//this is unfixed date
-             }
+            }
         }
-
-        
-
-       
     }
-
-
     /**
      * Register the commands for the application.
      *
@@ -55,8 +46,6 @@ class Kernel extends ConsoleKernel
      */
     protected function commands()
     {
-        
-
         $this->load(__DIR__.'/Commands');
 
         require base_path('routes/console.php');
