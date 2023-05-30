@@ -63,11 +63,12 @@
                                     <label class="form-control-label" for="week">Week</label>
                                         <select id="week" name="week" class="form-select" required>
                                             <option value="{{ old('week') == null ? 'selected' : '' }}" hidden>-- // --</option>
-                                            <option value="01" {{ old('week', $unfixeddate->week) == '01' ? 'selected' : '' }}>Week 1</option>
-                                            <option value="02" {{ old('week', $unfixeddate->week) == '02' ? 'selected' : '' }}>Week 2</option>
-                                            <option value="03" {{ old('week', $unfixeddate->week) == '03' ? 'selected' : '' }}>Week 3</option>
-                                            <option value="04" {{ old('week', $unfixeddate->week) == '04' ? 'selected' : '' }}>Week 4</option>
-                                            <option value="05" {{ old('week', $unfixeddate->week) == '05' ? 'selected' : '' }}>Week 5</option>                         
+                                            <option value="00" {{ old('week', $unfixeddate->week) == '00' ? 'selected' : '' }}>Week 1</option>
+                                            <option value="01" {{ old('week', $unfixeddate->week) == '01' ? 'selected' : '' }}>Week 2</option>
+                                            <option value="02" {{ old('week', $unfixeddate->week) == '02' ? 'selected' : '' }}>Week 3</option>
+                                            <option value="03" {{ old('week', $unfixeddate->week) == '03' ? 'selected' : '' }}>Week 4</option>
+                                            <option value="04" {{ old('week', $unfixeddate->week) == '04' ? 'selected' : '' }}>Week 5</option> 
+                                            <option value="05" {{ old('week', $unfixeddate->week) == '05' ? 'selected' : '' }}>Week 5</option>                                    
                                     </select>
                                 </div>
 

@@ -48,11 +48,10 @@
         @guest()
             <div class="row input-group-newsletter">       
                 <div class="col- auto">
-                    <button class="btn btn-primary" id="submitButton" type="submit"> <a style="text-decoration:none" href="{{ route('login') }}">Log in</button> 
-                </div><br>
-
+                    <button class="btn btn-primary"> <a  style="text-decoration:none" href="{{ route('login') }}">Log in</a></button>
+                </div> <br>
                 <div class="col- auto">
-                    <button class="btn btn-primary" id="submitButton" type="submit"> <a style="text-decoration:none" href="{{ route('register') }}">Register</button> 
+                    <button class="btn btn-primary">  <a style="text-decoration:none" href="{{ route('register') }}">Register</a></button>
                 </div>
             </div>
         @endguest

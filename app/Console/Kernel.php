@@ -28,17 +28,17 @@ class Kernel extends ConsoleKernel
        foreach($notify as $notif){
         
            if($notif->name == "Annually"){
-                $schedule->command('remind:daily1')->dailyAt('7:00');//this is fixed date
-                $schedule->command('remind:unfixedannually')->dailyAt('7:00');//this is unfixed date
+                $schedule->command('remind:daily1')->dailyAt('7:30');//this is fixed date
+                $schedule->command('remind:unfixedannually')->dailyAt('7:30');//this is unfixed date
            }elseif($notif->name == "Quarterly"){
-                $schedule->command('remind:daily2')->dailyAt('7:00');//this is fixed date
-                $schedule->command('remind:unfixedquarterly')->dailyAt('7:00');//this is unfixed date
+                $schedule->command('remind:daily2')->dailyAt('7:30');//this is fixed date
+                $schedule->command('remind:unfixedquarterly')->dailyAt('7:30');//this is unfixed date
             }elseif($notif->name == "Monthly"){
-                $schedule->command('remind:daily3')->dailyAt('17:31');//this is fixed date
-                $schedule->command('remind:unfixedmonthly')->dailyAt('17:26');//this is unfixed date
+                $schedule->command('remind:daily3')->dailyAt('7:30');//this is fixed date
+                $schedule->command('remind:unfixedmonthly')->dailyAt('7:30');//this is unfixed date
             }elseif($notif->name == "SemiAnnually"){
-                $schedule->command('remind:daily4')->dailyAt('7:00'); 
-                $schedule->command('remind:unfixedsemiannually')->dailyAt('7:00');//this is unfixed date
+                $schedule->command('remind:daily4')->dailyAt('7:30'); 
+                $schedule->command('remind:unfixedsemiannually')->dailyAt('7:30');//this is unfixed date
              }
         }
 

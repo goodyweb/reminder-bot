@@ -82,6 +82,7 @@ class UnfixedDateController extends Controller
     $unfixeddate = $this->getUnfixeddate($search);
 
     $users = User::all();
+
     return view('unfixeddate.index')
             ->with('unfixeddate', $unfixeddate)
             ->with('users', $users)

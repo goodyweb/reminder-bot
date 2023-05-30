@@ -52,16 +52,18 @@ class Unfixeddate extends Model
 
     public function getweek(){
         $week = $this->attributes['week'];
-        if($week == 1)
-        return "1st week";
+        if($week == 0)
+        return "first";
+        else if($week == 1)
+        return "second";
         else if($week == 2)
-        return "2nd week";
+        return "third";
         else if($week == 3)
-        return "3rd week";
+        return "fourth";
         else if($week == 4)
-        return "4th week";
+        return "fifth";
         else if($week == 5)
-        return "5th week";
+        return "sixth";
         else return "";
     }
     public function getday(){
@@ -73,13 +75,24 @@ class Unfixeddate extends Model
         else if($day == 2)
         return "Tuesday";
         else if($day == 3)
-        return "wednesday";
+        return "Wednesday";
         else if($day == 4)
         return "Thursday";
         else if($day == 5)
         return "Friday";
         else if($day == 6)
         return "Saturday";
+
+    }
+
+    public function getDate(){
+        $day = $this->getday();
+        $month = $this->getmonth();
+        $week = $this->getweek();
+        $year = $this->attributes['year'];
+        $date = $week . " ". $day ." of " .$month." ". $year;
+
+        return date('F d, Y', strtotime($date));
 
     }
    

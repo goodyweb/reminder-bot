@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e597f67ac96c464d63b4fce8ee8dba63",
+    "content-hash": "42dad5b8d8f434c18ccc4f78ebac9270",
     "packages": [
         {
             "name": "brick/math",
@@ -547,6 +547,56 @@
                 }
             ],
             "time": "2022-02-20T15:07:15+00:00"
+        },
+        {
+            "name": "goodypay/goodypay-calculator",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/goodyweb/goodypay-calculator.git",
+                "reference": "212d0cf06368f633af75eb136c721c00ca60915f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/goodyweb/goodypay-calculator/zipball/212d0cf06368f633af75eb136c721c00ca60915f",
+                "reference": "212d0cf06368f633af75eb136c721c00ca60915f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "GoodyPayCalculator\\": "src/GoodyPayCalculator/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Robin Ortizuela",
+                    "email": "robinortizuela456@gmail.com"
+                },
+                {
+                    "name": "Reymark Jan Gandalla",
+                    "email": "reymarkjan01@gmail.com"
+                }
+            ],
+            "description": "A payment calculator library for GoodyPay.",
+            "keywords": [
+                "calculator",
+                "goodypay",
+                "payment"
+            ],
+            "support": {
+                "issues": "https://github.com/goodyweb/goodypay-calculator/issues",
+                "source": "https://github.com/goodyweb/goodypay-calculator/tree/master"
+            },
+            "time": "2023-04-26T07:56:18+00:00"
         },
         {
             "name": "graham-campbell/result-type",
@@ -8459,8 +8509,10 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
-    "stability-flags": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "goodypay/goodypay-calculator": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

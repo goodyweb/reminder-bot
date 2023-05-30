@@ -48,7 +48,7 @@
                                 <label for="frequency" class="form-label"><b>Frequency : </b><span class="text-danger">*</span></label>
                                 <select name="frequency" id="frequency" class="form-select">
                                     <option value="{{ old('endMonth') == null ? 'N/A' : '' }}" hidden> -- / --</option>
-                                    <option value="Monthly" {{ old('frequency', $fixeddate->frequency) == 'Monthly' ? 'selected' : '' }}>Montly</option>
+                                    <option value="Monthly" {{ old('frequency', $fixeddate->frequency) == 'Monthly' ? 'selected' : '' }}>Monthly</option>
                                     <option value="Quarterly" {{ old('frequency', $fixeddate->frequency) == 'Quarterly' ? 'selected' : '' }}>Quarterly</option>
                                     <option value="SemiAnnually" {{ old('frequency', $fixeddate->frequency) == 'SemiAnnually' ? 'selected' : '' }}>Semi-Annually</option>
                                     <option value="Annually" {{ old('frequency', $fixeddate->frequency) == 'Annually' ? 'selected' : '' }}>Annually</option>

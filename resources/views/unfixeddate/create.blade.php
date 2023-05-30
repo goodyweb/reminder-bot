@@ -64,11 +64,12 @@
                                 <label class="form-control-label" for="week">Week</label>
                                 <select class="form-select" id="week" name="week" required>
                                     <option value="" hidden>-- // --</option>
-                                    <option value="01">1st Week</option>
-                                    <option value="02">2nd Week</option>
-                                    <option value="03">3rd Week</option>
-                                    <option value="04">4rth Week</option>
-                                    <option value="05">4rth Week</option>
+                                    <option value="00">1st Week</option>
+                                    <option value="01">2nd Week</option>
+                                    <option value="02">3rd Week</option>
+                                    <option value="03">4th Week</option>
+                                    <option value="04">5th Week</option>
+                                    <option value="05">6th Week</option>
                                 </select>
                             </div>
 
